@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [RegressionSutie]">
+  <test name="CialfoNewversion(failed)">
+    <classes>
+      <class name="BasePackage.BaseClass">
+        <methods>
+          <include name="launchAUTApplication"/>
+        </methods>
+      </class> <!-- BasePackage.BaseClass -->
+      <class name="TestCialfoNew.TestRegister">
+        <methods>
+          <include name="emptyEmailIDChecks"/>
+          <include name="emptyFirstnameValidationChecks"/>
+          <include name="emptyPhoneNoValidationChecks"/>
+          <include name="inValidMobileNOvalidationChecks"/>
+          <include name="inValidPasswordErrorChecks"/>
+          <include name="invalidEmailIdvalidationChecks"/>
+          <include name="missMatchPasswordvalidationChecks"/>
+          <include name="existingEmailIDValidationChecks"/>
+          <include name="emptyUserNamevalidationchecks"/>
+          <include name="emptyLocationvalidationChecks"/>
+          <include name="emptyLastNameValidationChecks"/>
+          <include name="validRegistration"/>
+        </methods>
+      </class> <!-- TestCialfoNew.TestRegister -->
+    </classes>
+  </test> <!-- CialfoNewversion(failed) -->
+</suite> <!-- Failed suite [RegressionSutie] -->

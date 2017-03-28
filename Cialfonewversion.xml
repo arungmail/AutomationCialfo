@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="RegressionSutie">
+   <test name="CialfoNewversion">
+  
+
+
+
+       
+
+      <classes>
+      <class name="BasePackage.BaseClass" />
+       <class name="TestCialfoNew.TestRegister" />
+     
+       
+   </classes>
+   </test> 
+</suite>

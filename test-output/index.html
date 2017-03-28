@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-RegressionSutie">
+              <span class="suite-name border-skipped">RegressionSutie</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-RegressionSutie">
+                    <span>C:\Users\nichiuser\workspace\CialfoNewVersion\Cialfonewversion.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-RegressionSutie">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-RegressionSutie">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-RegressionSutie">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-RegressionSutie">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-RegressionSutie">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-RegressionSutie">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">12 methods,  12 skipped,  </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-RegressionSutie" class="hide-methods skipped suite-RegressionSutie"> (hide)</a> <!-- hide-methods skipped suite-RegressionSutie -->
+                      <a href="#" panel-name="suite-RegressionSutie" class="show-methods skipped suite-RegressionSutie"> (show)</a> <!-- show-methods skipped suite-RegressionSutie -->
+                    </span>
+                    <div class="method-list-content skipped suite-RegressionSutie">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="emptyEmailIDChecks">emptyEmailIDChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="emptyFirstnameValidationChecks">emptyFirstnameValidationChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="emptyLastNameValidationChecks">emptyLastNameValidationChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="emptyLocationvalidationChecks">emptyLocationvalidationChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="emptyPhoneNoValidationChecks">emptyPhoneNoValidationChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="emptyUserNamevalidationchecks">emptyUserNamevalidationchecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="existingEmailIDValidationChecks">existingEmailIDValidationChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="inValidMobileNOvalidationChecks">inValidMobileNOvalidationChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="inValidPasswordErrorChecks">inValidPasswordErrorChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="invalidEmailIdvalidationChecks">invalidEmailIdvalidationChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="missMatchPasswordvalidationChecks">missMatchPasswordvalidationChecks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.TestRegister" hash-for-method="validRegistration">validRegistration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-RegressionSutie -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-RegressionSutie" class="panel RegressionSutie">
+          <div class="suite-RegressionSutie-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">TestCialfoNew.TestRegister</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyEmailIDChecks">
+                  </a> <!-- emptyEmailIDChecks -->
+                  <span class="method-name">emptyEmailIDChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyFirstnameValidationChecks">
+                  </a> <!-- emptyFirstnameValidationChecks -->
+                  <span class="method-name">emptyFirstnameValidationChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyLastNameValidationChecks">
+                  </a> <!-- emptyLastNameValidationChecks -->
+                  <span class="method-name">emptyLastNameValidationChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyLocationvalidationChecks">
+                  </a> <!-- emptyLocationvalidationChecks -->
+                  <span class="method-name">emptyLocationvalidationChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyPhoneNoValidationChecks">
+                  </a> <!-- emptyPhoneNoValidationChecks -->
+                  <span class="method-name">emptyPhoneNoValidationChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyUserNamevalidationchecks">
+                  </a> <!-- emptyUserNamevalidationchecks -->
+                  <span class="method-name">emptyUserNamevalidationchecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="existingEmailIDValidationChecks">
+                  </a> <!-- existingEmailIDValidationChecks -->
+                  <span class="method-name">existingEmailIDValidationChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="inValidMobileNOvalidationChecks">
+                  </a> <!-- inValidMobileNOvalidationChecks -->
+                  <span class="method-name">inValidMobileNOvalidationChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="inValidPasswordErrorChecks">
+                  </a> <!-- inValidPasswordErrorChecks -->
+                  <span class="method-name">inValidPasswordErrorChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidEmailIdvalidationChecks">
+                  </a> <!-- invalidEmailIdvalidationChecks -->
+                  <span class="method-name">invalidEmailIdvalidationChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="missMatchPasswordvalidationChecks">
+                  </a> <!-- missMatchPasswordvalidationChecks -->
+                  <span class="method-name">missMatchPasswordvalidationChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validRegistration">
+                  </a> <!-- validRegistration -->
+                  <span class="method-name">validRegistration</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-RegressionSutie-class-skipped -->
+        </div> <!-- panel RegressionSutie -->
+        <div panel-name="test-xml-RegressionSutie" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\nichiuser\workspace\CialfoNewVersion\Cialfonewversion.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;RegressionSutie&quot;&gt;
+  &lt;test name=&quot;CialfoNewversion&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;BasePackage.BaseClass&quot;/&gt;
+      &lt;class name=&quot;TestCialfoNew.TestRegister&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- CialfoNewversion --&gt;
+&lt;/suite&gt; &lt;!-- RegressionSutie --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-RegressionSutie" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for RegressionSutie</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">CialfoNewversion (2 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-RegressionSutie" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for RegressionSutie</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-RegressionSutie" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for RegressionSutie</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_RegressionSutie');
+function tableData_RegressionSutie() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(12);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'emptyPhoneNoValidationChecks')
+data.setCell(0, 2, 'TestCialfoNew.TestRegister')
+data.setCell(0, 3, 1);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'missMatchPasswordvalidationChecks')
+data.setCell(1, 2, 'TestCialfoNew.TestRegister')
+data.setCell(1, 3, 1);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'emptyEmailIDChecks')
+data.setCell(2, 2, 'TestCialfoNew.TestRegister')
+data.setCell(2, 3, 0);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'emptyUserNamevalidationchecks')
+data.setCell(3, 2, 'TestCialfoNew.TestRegister')
+data.setCell(3, 3, 0);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'invalidEmailIdvalidationChecks')
+data.setCell(4, 2, 'TestCialfoNew.TestRegister')
+data.setCell(4, 3, 0);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'validRegistration')
+data.setCell(5, 2, 'TestCialfoNew.TestRegister')
+data.setCell(5, 3, 0);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'inValidMobileNOvalidationChecks')
+data.setCell(6, 2, 'TestCialfoNew.TestRegister')
+data.setCell(6, 3, 0);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'existingEmailIDValidationChecks')
+data.setCell(7, 2, 'TestCialfoNew.TestRegister')
+data.setCell(7, 3, 0);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'emptyLastNameValidationChecks')
+data.setCell(8, 2, 'TestCialfoNew.TestRegister')
+data.setCell(8, 3, 0);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'emptyFirstnameValidationChecks')
+data.setCell(9, 2, 'TestCialfoNew.TestRegister')
+data.setCell(9, 3, 0);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'inValidPasswordErrorChecks')
+data.setCell(10, 2, 'TestCialfoNew.TestRegister')
+data.setCell(10, 3, 0);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'emptyLocationvalidationChecks')
+data.setCell(11, 2, 'TestCialfoNew.TestRegister')
+data.setCell(11, 3, 0);
+window.suiteTableData['RegressionSutie']= { tableData: data, tableDiv: 'times-div-RegressionSutie'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 2 ms</span>
+              <div id="times-div-RegressionSutie">
+              </div> <!-- times-div-RegressionSutie -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-RegressionSutie" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for RegressionSutie</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-RegressionSutie" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-RegressionSutie" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">BasePackage.BaseClass</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">launchAUTApplication</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCialfoNew.TestRegister</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">validRegistration</span>
+                <span class="method-start">33755 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">emptyUserNamevalidationchecks</span>
+                <span class="method-start">33761 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">emptyEmailIDChecks</span>
+                <span class="method-start">33772 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">invalidEmailIdvalidationChecks</span>
+                <span class="method-start">33784 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">existingEmailIDValidationChecks</span>
+                <span class="method-start">33798 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">emptyFirstnameValidationChecks</span>
+                <span class="method-start">33802 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">emptyLastNameValidationChecks</span>
+                <span class="method-start">33810 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">emptyPhoneNoValidationChecks</span>
+                <span class="method-start">33816 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">inValidMobileNOvalidationChecks</span>
+                <span class="method-start">33820 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">inValidPasswordErrorChecks</span>
+                <span class="method-start">33827 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">missMatchPasswordvalidationChecks</span>
+                <span class="method-start">33830 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">emptyLocationvalidationChecks</span>
+                <span class="method-start">33848 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

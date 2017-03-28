@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="12" failed="0" total="12" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="RegressionSutie" duration-ms="116" started-at="2017-03-28T12:12:48Z" finished-at="2017-03-28T12:12:48Z">
+    <groups>
+    </groups>
+    <test name="CialfoNewversion" duration-ms="116" started-at="2017-03-28T12:12:48Z" finished-at="2017-03-28T12:12:48Z">
+      <class name="BasePackage.BaseClass">
+        <test-method status="FAIL" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@548e7350]" name="launchAUTApplication" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:15Z" finished-at="2017-03-28T17:42:15Z">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+            <message>
+              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'NIS-PC091', ip: '192.168.1.91', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
+Driver info: driver.version: OperaDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'NIS-PC091', ip: '192.168.1.91', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
+Driver info: driver.version: OperaDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:144)
+	at org.openqa.selenium.opera.OperaDriver.<init>(OperaDriver.java:169)
+	at org.openqa.selenium.opera.OperaDriver.<init>(OperaDriver.java:158)
+	at org.openqa.selenium.opera.OperaDriver.<init>(OperaDriver.java:115)
+	at BasePackage.DriverClass.launchBrowser(DriverClass.java:41)
+	at BasePackage.BaseClass.launchAUTApplication(BaseClass.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:216)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:143)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+Caused by: org.openqa.selenium.WebDriverException: java.net.SocketException: Connection reset
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'NIS-PC091', ip: '192.168.1.91', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
+Driver info: driver.version: OperaDriver
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+	... 27 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:139)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:155)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:284)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:261)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:165)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:272)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:124)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchAUTApplication -->
+        <test-method status="SKIP" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@548e7350]" name="cleanUp" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:49Z" finished-at="2017-03-28T17:42:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- BasePackage.BaseClass -->
+      <class name="TestCialfoNew.TestRegister">
+        <test-method status="SKIP" signature="validRegistration()[pri:1, instance:TestCialfoNew.TestRegister@1a968a59]" name="validRegistration" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validRegistration -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="emptyUserNamevalidationchecks()[pri:2, instance:TestCialfoNew.TestRegister@1a968a59]" name="emptyUserNamevalidationchecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyUserNamevalidationchecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="emptyEmailIDChecks()[pri:3, instance:TestCialfoNew.TestRegister@1a968a59]" name="emptyEmailIDChecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyEmailIDChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="invalidEmailIdvalidationChecks()[pri:4, instance:TestCialfoNew.TestRegister@1a968a59]" name="invalidEmailIdvalidationChecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidEmailIdvalidationChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="existingEmailIDValidationChecks()[pri:5, instance:TestCialfoNew.TestRegister@1a968a59]" name="existingEmailIDValidationChecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- existingEmailIDValidationChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="emptyFirstnameValidationChecks()[pri:6, instance:TestCialfoNew.TestRegister@1a968a59]" name="emptyFirstnameValidationChecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyFirstnameValidationChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="emptyLastNameValidationChecks()[pri:7, instance:TestCialfoNew.TestRegister@1a968a59]" name="emptyLastNameValidationChecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyLastNameValidationChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="emptyPhoneNoValidationChecks()[pri:8, instance:TestCialfoNew.TestRegister@1a968a59]" name="emptyPhoneNoValidationChecks" duration-ms="1" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyPhoneNoValidationChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="inValidMobileNOvalidationChecks()[pri:9, instance:TestCialfoNew.TestRegister@1a968a59]" name="inValidMobileNOvalidationChecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inValidMobileNOvalidationChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="inValidPasswordErrorChecks()[pri:10, instance:TestCialfoNew.TestRegister@1a968a59]" name="inValidPasswordErrorChecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inValidPasswordErrorChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="missMatchPasswordvalidationChecks()[pri:11, instance:TestCialfoNew.TestRegister@1a968a59]" name="missMatchPasswordvalidationChecks" duration-ms="1" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- missMatchPasswordvalidationChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+        <test-method status="SKIP" signature="emptyLocationvalidationChecks()[pri:12, instance:TestCialfoNew.TestRegister@1a968a59]" name="emptyLocationvalidationChecks" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyLocationvalidationChecks -->
+        <test-method status="SKIP" signature="clickGoTOSignpage()[pri:0, instance:TestCialfoNew.TestRegister@1a968a59]" name="clickGoTOSignpage" is-config="true" duration-ms="0" started-at="2017-03-28T17:42:48Z" finished-at="2017-03-28T17:42:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGoTOSignpage -->
+      </class> <!-- TestCialfoNew.TestRegister -->
+    </test> <!-- CialfoNewversion -->
+  </suite> <!-- RegressionSutie -->
+</testng-results>
