@@ -1,9 +1,20 @@
 package BasePackage;
 
+import java.io.File;
+import java.util.List;
+
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.sun.jna.platform.FileUtils;
 
 public class Utility extends DriverClass{
 	
@@ -89,4 +100,42 @@ public class Utility extends DriverClass{
 			action.dragAndDrop(element1, element2).build().perform();
 		}
 		
+		public void selectradioButton(String valueToSelect, String tagname )
+		{
+			List<WebElement> allOptions = driver.findElements(By.tagName(tagname));
+			for (WebElement option : allOptions) {
+				   //System.out.println("Option value "+option.getText());
+				        if (valueToSelect.equals(option.getText())) {
+				            option.click();
+				            break;
+				        }
+			}
+		}
+		/*public void takeScreenShot(WebDriver driver,String screenshotName)
+		{
+			 
+			try 
+			{
+			TakesScreenshot ts=(TakesScreenshot)driver;
+			 
+			File source=ts.getScreenshotAs(OutputType.FILE);
+			 
+			FileUtils.copyFile(source new File("c:\\username\\screenshot.png"));
+			 
+			System.out.println("Screenshot taken");
+			} 
+			catch (Exception e)
+			{
+			 
+			System.out.println("Exception while taking screenshot "+e.getMessage());
+			} 
+		}*/
+		
+		public WebElement explicitTimeout(WebElement elementToBeLoaded)
+		{
+			WebDriverWait wait = new WebDriverWait(driver,60);
+			WebElement element = wait.until(ExpectedConditions.visibilityOf(elementToBeLoaded));
+			return element;	
+		}
 }
+

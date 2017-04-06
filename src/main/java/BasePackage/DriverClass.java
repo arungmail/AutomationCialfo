@@ -42,9 +42,10 @@ public class DriverClass {
 			break;						
 		}
 		
-		driver.manage().window().maximize();
+		//
 		//launching baseUrl
 		driver.get(getValuesFromPropertiesFile("url"));
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
 	}

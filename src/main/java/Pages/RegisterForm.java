@@ -92,7 +92,7 @@ public class RegisterForm extends DriverClass{
 	public void selectRole(String valueToSelect) {
 		
 	//Selecting radio button As per string 	
-	WebElement element = driver.findElement(By.xpath("html/body/div[1]/app-root/app-signup/body/div/div[2]/form/div[5]/div[1]/div/div/label[1]"));
+	//WebElement element = driver.findElement(By.xpath("html/body/div[1]/app-root/app-signup/body/div/div[2]/form/div[5]/div[1]/div/div/label[1]"));
 	List<WebElement> allOptions = driver.findElements(By.tagName("label"));
 	for (WebElement option : allOptions) {
 		   //System.out.println("Option value "+option.getText());
@@ -115,6 +115,7 @@ public class RegisterForm extends DriverClass{
 	public void clickRegisterButton(){
 		driver.findElement(RegisterButton).click();
 	}
+	//Returning Username validation error 
 	public String UsernamegetErrorvalidation()
 	{
 		
@@ -122,6 +123,7 @@ public class RegisterForm extends DriverClass{
 		System.out.println(error);
 		return error;
 	}
+	//Returning Invalid Email error
 	public String emailErrorvalidation()
 	{
 		
@@ -129,6 +131,7 @@ public class RegisterForm extends DriverClass{
 		System.out.println(error);
 		return error;
 	}
+	//Returning Firstname validation error 
 	public String firstNameErrorvalidation()
 	{
 		

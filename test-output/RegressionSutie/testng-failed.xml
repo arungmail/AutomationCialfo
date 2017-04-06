@@ -6,24 +6,17 @@
       <class name="BasePackage.BaseClass">
         <methods>
           <include name="launchAUTApplication"/>
+          <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.TestRegister">
+      <class name="TestCialfoNew.ForgotPasswordTest">
         <methods>
-          <include name="emptyEmailIDChecks"/>
-          <include name="emptyFirstnameValidationChecks"/>
-          <include name="emptyPhoneNoValidationChecks"/>
-          <include name="inValidMobileNOvalidationChecks"/>
-          <include name="inValidPasswordErrorChecks"/>
-          <include name="invalidEmailIdvalidationChecks"/>
-          <include name="missMatchPasswordvalidationChecks"/>
-          <include name="existingEmailIDValidationChecks"/>
-          <include name="emptyUserNamevalidationchecks"/>
-          <include name="emptyLocationvalidationChecks"/>
-          <include name="emptyLastNameValidationChecks"/>
-          <include name="validRegistration"/>
+          <include name="newmailIDValidationError"/>
+          <include name="clickGoTOSignpage"/>
+          <include name="emptyEmailValidationError"/>
+          <include name="invalidEmailIdvalidationError"/>
         </methods>
-      </class> <!-- TestCialfoNew.TestRegister -->
+      </class> <!-- TestCialfoNew.ForgotPasswordTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

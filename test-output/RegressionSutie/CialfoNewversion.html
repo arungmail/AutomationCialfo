@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>CialfoNewversion</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/12</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/2</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Mar 28 17:42:48 IST 2017</td>
+<td>Started on:</td><td>Wed Apr 05 11:15:00 IST 2017</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (116 ms)</td>
+<tr><td>Total time:</td><td>8 seconds (8509 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,66 +75,42 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='BasePackage.BaseClass.launchAUTApplication()'><b>launchAUTApplication</b><br>Test class: BasePackage.BaseClass</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+<td title='TestCialfoNew.ForgotPasswordTest.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.ForgotPasswordTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 11 milliseconds
 Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
 System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: driver.version: OperaDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:169)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:158)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:115)
-	at BasePackage.DriverClass.launchBrowser(DriverClass.java:41)
-	at BasePackage.BaseClass.launchAUTApplication(BaseClass.java:16)
-Caused by: org.openqa.selenium.WebDriverException: java.net.SocketException: Connection reset
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir6020_2340}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 7781828e3b8ba74977df0f124051693f
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
+	at TestCialfoNew.ForgotPasswordTest.clickGoTOSignpage(ForgotPasswordTest.java:20)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1537471098", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1537471098'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 11 milliseconds
 Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
 System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: driver.version: OperaDriver
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
-	... 27 more
-Caused by: java.net.SocketException: Connection reset
-	at java.net.SocketInputStream.read(Unknown Source)
-	at java.net.SocketInputStream.read(Unknown Source)
-	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:139)
-	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:155)
-	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:284)
-	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
-	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
-	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:261)
-	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:165)
-	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167)
-	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:272)
-	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:124)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	... 28 more
-... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace838473569", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace838473569'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
-System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: driver.version: OperaDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:169)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:158)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:115)
-	at BasePackage.DriverClass.launchBrowser(DriverClass.java:41)
-	at BasePackage.BaseClass.launchAUTApplication(BaseClass.java:16)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir6020_2340}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 7781828e3b8ba74977df0f124051693f
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
+	at TestCialfoNew.ForgotPasswordTest.clickGoTOSignpage(ForgotPasswordTest.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -142,8 +118,16 @@ Driver info: driver.version: OperaDriver
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
 	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:216)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:143)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
@@ -154,41 +138,9 @@ Driver info: driver.version: OperaDriver
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-Caused by: org.openqa.selenium.WebDriverException: java.net.SocketException: Connection reset
-Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
-System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: driver.version: OperaDriver
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
-	... 27 more
-Caused by: java.net.SocketException: Connection reset
-	at java.net.SocketInputStream.read(Unknown Source)
-	at java.net.SocketInputStream.read(Unknown Source)
-	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:139)
-	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:155)
-	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:284)
-	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
-	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
-	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:261)
-	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:165)
-	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167)
-	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:272)
-	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:124)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	... 28 more
 </pre></div></td>
 <td>0</td>
-<td>null</td></tr>
+<td>TestCialfoNew.ForgotPasswordTest@146ba0ac</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
@@ -198,65 +150,60 @@ Caused by: java.net.SocketException: Connection reset
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
+<td title='TestCialfoNew.ForgotPasswordTest.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.ForgotPasswordTest</td>
 <td></td>
 <td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
+<td>TestCialfoNew.ForgotPasswordTest@146ba0ac</td></tr>
 <tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
+<td title='TestCialfoNew.ForgotPasswordTest.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.ForgotPasswordTest</td>
 <td></td>
 <td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
+<td>TestCialfoNew.ForgotPasswordTest@146ba0ac</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.clickGoTOSignpage()'><b>clickGoTOSignpage</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
+<td title='TestCialfoNew.ForgotPasswordTest.newmailIDValidationError()'><b>newmailIDValidationError</b><br>Test class: TestCialfoNew.ForgotPasswordTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at Pages.LoginForm.clickOnForgotPassword(LoginForm.java:46)
+	at TestCialfoNew.ForgotPasswordTest.newmailIDValidationError(ForgotPasswordTest.java:45)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace452121674", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace452121674'><pre>java.lang.NullPointerException
+	at Pages.LoginForm.clickOnForgotPassword(LoginForm.java:46)
+	at TestCialfoNew.ForgotPasswordTest.newmailIDValidationError(ForgotPasswordTest.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+</pre></div></td>
+<td>8</td>
+<td>TestCialfoNew.ForgotPasswordTest@146ba0ac</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -266,65 +213,15 @@ Caused by: java.net.SocketException: Connection reset
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestCialfoNew.TestRegister.emptyEmailIDChecks()'><b>emptyEmailIDChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
+<td title='TestCialfoNew.ForgotPasswordTest.emptyEmailValidationError()'><b>emptyEmailValidationError</b><br>Test class: TestCialfoNew.ForgotPasswordTest</td>
 <td></td>
 <td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
+<td>TestCialfoNew.ForgotPasswordTest@146ba0ac</td></tr>
 <tr>
-<td title='TestCialfoNew.TestRegister.emptyFirstnameValidationChecks()'><b>emptyFirstnameValidationChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
+<td title='TestCialfoNew.ForgotPasswordTest.invalidEmailIdvalidationError()'><b>invalidEmailIdvalidationError</b><br>Test class: TestCialfoNew.ForgotPasswordTest</td>
 <td></td>
 <td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.emptyLastNameValidationChecks()'><b>emptyLastNameValidationChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.emptyLocationvalidationChecks()'><b>emptyLocationvalidationChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.emptyPhoneNoValidationChecks()'><b>emptyPhoneNoValidationChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.emptyUserNamevalidationchecks()'><b>emptyUserNamevalidationchecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.existingEmailIDValidationChecks()'><b>existingEmailIDValidationChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.inValidMobileNOvalidationChecks()'><b>inValidMobileNOvalidationChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.inValidPasswordErrorChecks()'><b>inValidPasswordErrorChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.invalidEmailIdvalidationChecks()'><b>invalidEmailIdvalidationChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.missMatchPasswordvalidationChecks()'><b>missMatchPasswordvalidationChecks</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
-<tr>
-<td title='TestCialfoNew.TestRegister.validRegistration()'><b>validRegistration</b><br>Test class: TestCialfoNew.TestRegister</td>
-<td></td>
-<td>0</td>
-<td>TestCialfoNew.TestRegister@1a968a59</td></tr>
+<td>TestCialfoNew.ForgotPasswordTest@146ba0ac</td></tr>
 </table><p>
 </body>
 </html>

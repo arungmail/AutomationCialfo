@@ -11,14 +11,16 @@ import org.testng.annotations.Test;
 
 import BasePackage.BaseClass;
 import BasePackage.DriverClass;
+import BasePackage.Utility;
 import Pages.LoginForm;
 import Pages.RegisterForm;
 import junit.framework.Assert;
 
-public class TestRegister extends DriverClass {
+public class RegistrationTest extends DriverClass {
 	LoginForm login 	= new LoginForm();
 	RegisterForm reg 	= new RegisterForm();
 	BaseClass base = new BaseClass();
+	Utility util = new Utility();
 	
 	@AfterMethod
 	public void clickGoTOSignpage(){
@@ -29,12 +31,12 @@ public class TestRegister extends DriverClass {
 		base.launchAUTApplication();
 		
 	*/
-	
+	//Testing valid registration 
 	@Test(priority=1)
 	public void validRegistration () throws InterruptedException{
 		login.clickOnRegister();
-		reg.enterUserName("Arun pananagattu123hgjghgh");
-		reg.enterEmail("auto35655@mailinator.com");
+		reg.enterUserName("Arun pananagattu123hfdhdfd");
+		reg.enterEmail("auto356556gg@mailinator.com");
 		reg.enterFirstname("Arun");
 		reg.enterLastName("auto");
 		reg.enterPhoneNumber("919901395048");
@@ -44,10 +46,13 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		//reg.selectRole("Player");
+		//reg.selectRole("Male");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		Thread.sleep(500);
+		
 		String ActualUrl = driver.getCurrentUrl();
 		String ExpectedUrl = "http://192.168.1.206:4200/login";
 		Assert.assertEquals(ExpectedUrl, ActualUrl);	
@@ -67,16 +72,18 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
+		//Printing UserName validation Error
 		String Actual = reg.UsernamegetErrorvalidation();
+		//Asserting the Error and expected value 
 		Assert.assertEquals(Actual,"This field is required!");
 		
 	}
 	@Test(priority=3)
-	public void emptyEmailIDChecks(){
-
+	public void emptyEmailIDChecks()
+	{
 		login.clickOnRegister();
 		reg.enterUserName("Arun pananagattu1");
 		reg.enterEmail("");
@@ -89,9 +96,10 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
+		
 		String Actual = reg.emailErrorvalidation();
 		Assert.assertEquals(Actual,"This field is required!");
 		
@@ -112,8 +120,8 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.emailErrorvalidation();
 		Assert.assertEquals(Actual,"Invalid email address!");
@@ -123,7 +131,6 @@ public class TestRegister extends DriverClass {
 	@Test(priority=5)
 	public void existingEmailIDValidationChecks()
 	{
-
 		login.clickOnRegister();
 		reg.enterUserName("Arun");
 		reg.enterEmail("arun@mailinator.com");
@@ -136,8 +143,8 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.existingEmailId();
 		Assert.assertEquals(Actual,"Email you are entered not available");
@@ -158,8 +165,8 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.firstNameErrorvalidation();
 		Assert.assertEquals(Actual,"This field is required!");
@@ -180,8 +187,8 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.lastnameErrorvalidation();
 		Assert.assertEquals(Actual,"This field is required!");
@@ -203,8 +210,8 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.phoneNumberErrorvalidation();
 		Assert.assertEquals(Actual,"This field is required!");
@@ -227,8 +234,8 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.phoneNumberErrorvalidation();
 		Assert.assertEquals(Actual,"Phone number format Ex:- 917022939501");
@@ -250,8 +257,8 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.passwordvaldiation();
 		Assert.assertEquals(Actual,"Password must contain at least 8 characters!");
@@ -273,11 +280,11 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.missmatchtErrorvalidation();
-		Assert.assertEquals(Actual,"Password do not match.");
+		Assert.assertEquals("Password do not match.",Actual);
 		
 	}
 	
@@ -296,8 +303,8 @@ public class TestRegister extends DriverClass {
 		reg.selectYear("1990");
 		reg.selectMonth("Apr");
 		reg.selectDate("28");
-		reg.selectRole("Coach");
-		reg.selectRole("Female");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
 		reg.clickRegisterButton();
 		String Actual = reg.locationErrorvalidation();
 		Assert.assertEquals(Actual,"This field is required!");
