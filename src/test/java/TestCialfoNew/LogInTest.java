@@ -15,6 +15,12 @@ public class LogInTest extends DriverClass {
 	public void clickGoTOSignpage(){
 		driver.get("http://192.168.1.206:4200/login");
 	}
+	public void normalLogin(){
+		login.enterEmailId("auto356556gg@mailinator.com");
+		login.enterPassword("Nichi123");
+		login.clickSignButton();
+		
+	}
 	
 	@Test(priority=1)
 	public void validLogin() throws InterruptedException{

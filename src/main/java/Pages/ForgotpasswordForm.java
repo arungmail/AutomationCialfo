@@ -12,7 +12,7 @@ public class ForgotpasswordForm extends DriverClass {
 	
 	private By EmailForgotPassword 			= By.id("forgot_email");
 	private By SignButtonInForgotPassword	= By.partialLinkText("Sign In");
-	private By EmptyEmailValidationError	= By.xpath("//p[@id='forgot_email_validation']");
+	private By EmptyEmailValidationError	= By.id("forgot_email_validation");
 	private By EmailMeButton 				= By.xpath("(//button[@type='submit'])[1]");
 	private By Forgotpasswordsuccessmessage = By.xpath("//*[contains(text(),'Reset link send to your mail')]");			
 			
@@ -23,8 +23,8 @@ public class ForgotpasswordForm extends DriverClass {
 	}
 	public String getEmailIdValidationError()
 	{
-		WebElement errormessage = driver.findElement(EmptyEmailValidationError);
-		util.explicitTimeout(errormessage);
+		//WebElement errormessage = driver.findElement(EmptyEmailValidationError);
+		//util.explicitTimeout(errormessage);
 		String error = driver.findElement(EmptyEmailValidationError).getText();
 		System.out.println(error);
 		return error;

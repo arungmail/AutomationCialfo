@@ -11,10 +11,11 @@
       </class> <!-- BasePackage.BaseClass -->
       <class name="TestCialfoNew.ForgotPasswordTest">
         <methods>
+          <include name="openSignpage"/>
           <include name="newmailIDValidationError"/>
-          <include name="clickGoTOSignpage"/>
           <include name="emptyEmailValidationError"/>
           <include name="invalidEmailIdvalidationError"/>
+          <include name="ValidForgotPassword"/>
         </methods>
       </class> <!-- TestCialfoNew.ForgotPasswordTest -->
     </classes>

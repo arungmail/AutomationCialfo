@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,  2 skipped,  </span>
+                    <span class="method-stats">4 methods, 4 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,29 +102,25 @@
                     <div class="method-list-content failed suite-RegressionSutie">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.ForgotPasswordTest" hash-for-method="newmailIDValidationError">newmailIDValidationError</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.ForgotPasswordTest" hash-for-method="ValidForgotPassword">ValidForgotPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-RegressionSutie -->
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-RegressionSutie" class="hide-methods skipped suite-RegressionSutie"> (hide)</a> <!-- hide-methods skipped suite-RegressionSutie -->
-                      <a href="#" panel-name="suite-RegressionSutie" class="show-methods skipped suite-RegressionSutie"> (show)</a> <!-- show-methods skipped suite-RegressionSutie -->
-                    </span>
-                    <div class="method-list-content skipped suite-RegressionSutie">
                       <span>
-                        <img width="3%" src="skipped.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.ForgotPasswordTest" hash-for-method="emptyEmailValidationError">emptyEmailValidationError</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="skipped.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.ForgotPasswordTest" hash-for-method="invalidEmailIdvalidationError">invalidEmailIdvalidationError</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-RegressionSutie -->
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.ForgotPasswordTest" hash-for-method="newmailIDValidationError">newmailIDValidationError</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-RegressionSutie -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -144,29 +140,52 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="newmailIDValidationError">
-                  </a> <!-- newmailIDValidationError -->
-                  <span class="method-name">newmailIDValidationError</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at Pages.LoginForm.clickOnForgotPassword(LoginForm.java:46)
-	at TestCialfoNew.ForgotPasswordTest.newmailIDValidationError(ForgotPasswordTest.java:45)
-... Removed 25 stack frames
+                  <a name="ValidForgotPassword">
+                  </a> <!-- ValidForgotPassword -->
+                  <span class="method-name">ValidForgotPassword</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 40 milliseconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir4448_10030}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 47e908e9625218c2e2fccc5a4f74ba78
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at Pages.ForgotpasswordForm.clickSubmitButton(ForgotpasswordForm.java:38)
+	at TestCialfoNew.ForgotPasswordTest.ValidForgotPassword(ForgotPasswordTest.java:28)
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-RegressionSutie-class-failed -->
-          <div class="suite-RegressionSutie-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">TestCialfoNew.ForgotPasswordTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="emptyEmailValidationError">
                   </a> <!-- emptyEmailValidationError -->
                   <span class="method-name">emptyEmailValidationError</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 28 milliseconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir4448_10030}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 47e908e9625218c2e2fccc5a4f74ba78
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at Pages.ForgotpasswordForm.clickSubmitButton(ForgotpasswordForm.java:38)
+	at TestCialfoNew.ForgotPasswordTest.emptyEmailValidationError(ForgotPasswordTest.java:71)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -174,10 +193,53 @@
                   <a name="invalidEmailIdvalidationError">
                   </a> <!-- invalidEmailIdvalidationError -->
                   <span class="method-name">invalidEmailIdvalidationError</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 24 milliseconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir4448_10030}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 47e908e9625218c2e2fccc5a4f74ba78
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at Pages.ForgotpasswordForm.clickSubmitButton(ForgotpasswordForm.java:38)
+	at TestCialfoNew.ForgotPasswordTest.invalidEmailIdvalidationError(ForgotPasswordTest.java:59)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="newmailIDValidationError">
+                  </a> <!-- newmailIDValidationError -->
+                  <span class="method-name">newmailIDValidationError</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 25 milliseconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir4448_10030}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 47e908e9625218c2e2fccc5a4f74ba78
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at Pages.ForgotpasswordForm.clickSubmitButton(ForgotpasswordForm.java:38)
+	at TestCialfoNew.ForgotPasswordTest.newmailIDValidationError(ForgotPasswordTest.java:46)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-RegressionSutie-class-skipped -->
+          </div> <!-- suite-RegressionSutie-class-failed -->
         </div> <!-- panel RegressionSutie -->
         <div panel-name="test-xml-RegressionSutie" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -231,24 +293,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'newmailIDValidationError')
+data.setCell(0, 1, 'ValidForgotPassword')
 data.setCell(0, 2, 'TestCialfoNew.ForgotPasswordTest')
-data.setCell(0, 3, 8203);
+data.setCell(0, 3, 483);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'emptyEmailValidationError')
+data.setCell(1, 1, 'newmailIDValidationError')
 data.setCell(1, 2, 'TestCialfoNew.ForgotPasswordTest')
-data.setCell(1, 3, 2);
+data.setCell(1, 3, 409);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'invalidEmailIdvalidationError')
 data.setCell(2, 2, 'TestCialfoNew.ForgotPasswordTest')
-data.setCell(2, 3, 1);
+data.setCell(2, 3, 332);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'emptyEmailValidationError')
+data.setCell(3, 2, 'TestCialfoNew.ForgotPasswordTest')
+data.setCell(3, 3, 283);
 window.suiteTableData['RegressionSutie']= { tableData: data, tableDiv: 'times-div-RegressionSutie'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-RegressionSutie">
               </div> <!-- times-div-RegressionSutie -->
             </div> <!-- times-div -->
@@ -285,31 +351,49 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">newmailIDValidationError</span>
-                <span class="method-start">7791 ms</span>
+                <span class="method-name">ValidForgotPassword</span>
+                <span class="method-start">5875 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">clickGoTOSignpage</span>
-                <span class="method-start">16170 ms</span>
+                <span class="method-name">openSignpage</span>
+                <span class="method-start">6370 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">invalidEmailIdvalidationError</span>
-                <span class="method-start">16239 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">newmailIDValidationError</span>
+                <span class="method-start">7592 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">openSignpage</span>
+                <span class="method-start">8005 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">emptyEmailValidationError</span>
-                <span class="method-start">16243 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">invalidEmailIdvalidationError</span>
+                <span class="method-start">8673 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">openSignpage</span>
+                <span class="method-start">9010 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">emptyEmailValidationError</span>
+                <span class="method-start">9714 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">openSignpage</span>
+                <span class="method-start">9999 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">BasePackage.BaseClass</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">cleanUp</span>
-                <span class="method-start">16345 ms</span>
+                <span class="method-start">10749 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
