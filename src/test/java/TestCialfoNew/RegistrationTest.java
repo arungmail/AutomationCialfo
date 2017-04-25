@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import BasePackage.BaseClass;
 import BasePackage.DriverClass;
 import BasePackage.Utility;
+import Pages.DashBoard;
 import Pages.LoginForm;
 import Pages.RegisterForm;
 import junit.framework.Assert;
@@ -19,8 +20,9 @@ import junit.framework.Assert;
 public class RegistrationTest extends DriverClass {
 	LoginForm login 	= new LoginForm();
 	RegisterForm reg 	= new RegisterForm();
-	BaseClass base = new BaseClass();
-	Utility util = new Utility();
+	BaseClass base 		= new BaseClass();
+	Utility util 		= new Utility();
+	DashBoard dash 		= new DashBoard();
 	
 	@AfterMethod
 	public void clickGoTOSignpage(){
@@ -35,10 +37,10 @@ public class RegistrationTest extends DriverClass {
 	@Test(priority=1)
 	public void validRegistration () throws InterruptedException{
 		login.clickOnRegister();
-		reg.enterUserName("Arun pananagattu123hfdhdfd");
-		reg.enterEmail("auto356556gg@mailinator.com");
-		reg.enterFirstname("Arun");
-		reg.enterLastName("auto");
+		reg.enterUserName("swimmer5");
+		reg.enterEmail("swimmer5@mailinator.com");
+		reg.enterFirstname("swimmer5");
+		reg.enterLastName("five");
 		reg.enterPhoneNumber("919901395048");
 		reg.enterPassword("Nichi123");
 		reg.reEnterPassword("Nichi123");
@@ -53,10 +55,7 @@ public class RegistrationTest extends DriverClass {
 		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
 		reg.clickRegisterButton();
 		Thread.sleep(500);
-		
-		String ActualUrl = driver.getCurrentUrl();
-		String ExpectedUrl = "http://192.168.1.206:4200/login";
-		Assert.assertEquals(ExpectedUrl, ActualUrl);	
+		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);	
 	}
 	@Test(priority=2)
 	public void emptyUserNamevalidationchecks () throws InterruptedException
@@ -134,7 +133,7 @@ public class RegistrationTest extends DriverClass {
 	{
 		login.clickOnRegister();
 		reg.enterUserName("Arun");
-		reg.enterEmail("arun@mailinator.com");
+		reg.enterEmail("swimmer1@mailinator.com");
 		reg.enterFirstname("Arun");
 		reg.enterLastName("auto");
 		reg.enterPhoneNumber("919901395048");

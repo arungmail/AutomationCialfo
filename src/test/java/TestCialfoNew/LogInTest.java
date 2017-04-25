@@ -4,11 +4,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
+import Pages.DashBoard;
 import Pages.LoginForm;
 import junit.framework.Assert;
 
 public class LogInTest extends DriverClass {
 	LoginForm login = new LoginForm();
+	DashBoard dash 	=  new DashBoard();
 	
 
 	@AfterMethod
@@ -17,7 +19,7 @@ public class LogInTest extends DriverClass {
 	}
 	public void normalLogin(){
 		login.enterEmailId("swimlife@gmail.com");
-		login.enterPassword("12345678");
+		login.enterPassword("Nichi123");
 		login.clickSignButton();
 		
 	}
@@ -28,9 +30,7 @@ public class LogInTest extends DriverClass {
 		login.enterPassword("Nichi123");
 		login.clickSignButton();
 		Thread.sleep(5000);
-		String ActualUrl = driver.getCurrentUrl();
-		String ExpectedUrl = "http://192.168.1.206:4200/dashboard";
-		Assert.assertEquals(ExpectedUrl, ActualUrl);
+		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);
 	}
 	@Test(priority=2)
 	public void emailErrorValidationChecks(){

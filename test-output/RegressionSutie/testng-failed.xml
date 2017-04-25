@@ -14,6 +14,14 @@
           <include name="verifyProfileNameinOverviewpage"/>
         </methods>
       </class> <!-- TestCialfoNew.ProfileEditTest -->
+      <class name="TestCialfoNew.RegistrationTest">
+        <methods>
+          <include name="missMatchPasswordvalidationChecks"/>
+          <include name="validRegistration"/>
+          <include name="existingEmailIDValidationChecks"/>
+          <include name="clickGoTOSignpage"/>
+        </methods>
+      </class> <!-- TestCialfoNew.RegistrationTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

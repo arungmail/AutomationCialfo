@@ -31,7 +31,7 @@ public class ProfilePage extends DriverClass{
   private By	NewPasswordValidation 			= By.id("password_validation");
   private By    ConfirmPasswordValidation		= By.id("confirmpassword_validation");
   private By    ConfirmPasswordInChangepassword = By.id("confirmpassword");
-  private By    ChangePasswordButton			= By.id("Change Password");
+  private By    ChangePasswordButton			= By.xpath(".//*[@id='tab_3-3']/form/div[3]/a[1]");
   private By    StreetInAddress					= By.id("street");
   private By    Streetvalidation 				= By.id("street_validation");
   private By    LandmarkInAddress				= By.id("landmark");
@@ -52,6 +52,7 @@ public class ProfilePage extends DriverClass{
   private By 	MobileNumberinOverviewPage      = By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[2]/a");
   private By    EmailIdInOverviewPage			= By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[3]/a");
   public  By    ProfleNameInOverViewpage		= By.xpath(".//*[@id='tab_1_1']/div/div[2]/div[1]/div[1]/h1");
+  public By LogOutbutton 						= By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/ul/li[2]/div[2]/a");
   
   
   
@@ -127,7 +128,7 @@ public class ProfilePage extends DriverClass{
 	  driver.findElement(ConfirmPasswordInChangepassword).clear();
 	  driver.findElement(ConfirmPasswordInChangepassword).sendKeys(value);
   }
-  public void clickOnChangePassword()
+  public void clickOnChangePasswordButton()
   {
 	  driver.findElement(ChangePasswordButton).click();
   }
@@ -258,6 +259,9 @@ public class ProfilePage extends DriverClass{
 	 String [] values	= new String []{firstname,lastname,mobilenumber,landline};
 	 return values;
  }
-  
+  public void clickOnLogOutButton ()
+  {
+	  driver.findElement(LogOutbutton).click();
+  }
 }
 

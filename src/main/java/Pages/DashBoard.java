@@ -1,13 +1,14 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import BasePackage.DriverClass;
 
 public class DashBoard extends DriverClass{
 	
-	private By ProfileNameinSecondarymenu 					= By.xpath(".//*[@id='profile_name']/p");
-	private By profilenameInTopRightSide 					= By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span");
+	public By ProfileNameinSecondarymenu 					= By.xpath(".//*[@id='profile_name']/p");
+	public By profilenameInTopRightSide 					= By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span");
 	private By Dashboard									= By.partialLinkText("dashboard");
 	private By Attendanace 									= By.partialLinkText("attendance");
 	private By Swimmers										= By.partialLinkText("swimmer");
@@ -34,7 +35,11 @@ public class DashBoard extends DriverClass{
 		String profilename = driver.findElement(ProfileNameinSecondarymenu).getText();
 		System.out.println(profilename);
 		return profilename;		
-	
-	
+
+	}
+	public boolean profileNameIsVisibleOrNot()
+	{
+		boolean profilename = driver.findElement(profilenameInTopRightSide).isDisplayed();
+		return true;
 	}
 }

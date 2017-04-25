@@ -19,13 +19,13 @@ public class ProfileEditTest extends DriverClass {
 	
 	@Test(priority=1)
     public void enterValuesInPersonalInfoAndCheckSucessMessage() throws InterruptedException{
-		driver.get("http://192.168.1.206:4200/login");
-    	log.normalLogin();
-    	dash.clickOnProfileNameOnTop();
-    	Thread.sleep(500);
-    	profile.clickOnProfile();
-    	Thread.sleep(500);
-    	profile.clickOnAccount();
+			driver.get("http://192.168.1.206:4200/login");
+	    	log.normalLogin();
+	    	dash.clickOnProfileNameOnTop();
+	    	Thread.sleep(500);
+	    	profile.clickOnProfile();
+	    	Thread.sleep(500);
+	    	profile.clickOnAccount();
     	profile.enterFirstname("Samsung ");
     	profile.enterLastName("SwimClub");
     	profile.entermobileno("919901395048");
@@ -179,7 +179,10 @@ public class ProfileEditTest extends DriverClass {
     	String adressValues =  profile.getAddressAttributes()[0]+","+profile.getAddressAttributes()[1]+","+profile.getAddressAttributes()[2]+","+profile.getAddressAttributes()[3]+","+profile.getAddressAttributes()[4]+","+profile.getAddressAttributes()[5];
     	System.out.println(adressValues);
     	String expectedStreet = "Street1,Knonanakunte Cross,Bangalore,Karnataka,680665,Indian";
-    	Assert.assertEquals(adressValues, expectedStreet);    	
+    	Assert.assertEquals(adressValues, expectedStreet); 
+    	dash.clickOnProfileNameOnTop();
+		profile.clickOnLogOutButton();
+    	
 	}
 	/*@Test(priority=10)
     public void verifyStreetvalidationError ()

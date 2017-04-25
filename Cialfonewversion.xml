@@ -10,6 +10,10 @@
       <classes>
       <class name="BasePackage.BaseClass" />
       <class name="TestCialfoNew.ProfileEditTest"/>
+      <class name="TestCialfoNew.ChangePasswordTest" />
+      <class name="TestCialfoNew.RegistrationTest" />
+    
+      
      
        
        
