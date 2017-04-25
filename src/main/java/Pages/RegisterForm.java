@@ -36,7 +36,7 @@ public class RegisterForm extends DriverClass{
 	private By LocationValidation 		=  By.xpath("//p[@id='location_validation']");
 	private By DOBValidation 			= By.xpath("//p[@id='error_validation']");
 	private By Missmatchpass            = By.xpath("//p[@id='error_validation']");
-	private By ClubDropDown				= By.id("select2-c201-container");
+	private By ClubDropDown				= By.xpath("//span[@role='presentation']");
 	
 	private By AlreadyHaveAnMember 		= By.partialLinkText("I already have a membership");
 	
@@ -119,6 +119,7 @@ public class RegisterForm extends DriverClass{
 	}
 	public void selectClubFromDropdownlist(String clubname){
 		WebElement element = driver.findElement(ClubDropDown);
+		element.click();
 		util.selectValueByVisibleText(element,clubname);
 	}
 	//Returning Username validation error 

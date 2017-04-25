@@ -116,6 +116,25 @@ public class ProfileEditTest extends DriverClass {
     	String expctecdError = "This field is required!";
     	Assert.assertEquals(actualError, expctecdError);
     }
+    public void enterAddressAndSave()
+    {
+    	if (driver.findElement(profile.Account).isSelected()){	
+    	}
+    	else{
+    		driver.findElement(profile.Account).click(); 
+    }
+    	profile.enterStreetName("Street1");
+    	profile.enterlandmark("Knonanakunte Cross");
+    	profile.enterCity("Bangalore");
+    	profile.enterState("Karnataka");
+    	profile.enterZip("680665");
+    	profile.enterCoutry("Indian");
+    	profile.clickOnSaveChanges();
+    	String actualSuccessmessage = profile.checkSucsessMessage();
+    	String expectedSuccessmessage = "Address updated successfully";
+    	Assert.assertEquals(actualSuccessmessage, expectedSuccessmessage); 	
+    	
+    }	
 
 
 }

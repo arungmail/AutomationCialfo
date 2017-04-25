@@ -49,7 +49,8 @@ public class RegistrationTest extends DriverClass {
 		//reg.selectRole("Player");
 		//reg.selectRole("Male");
 		util.selectradioButton("Female","label");
-		util.selectradioButton("Coach","label");
+		util.selectradioButton("Player","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
 		reg.clickRegisterButton();
 		Thread.sleep(500);
 		
