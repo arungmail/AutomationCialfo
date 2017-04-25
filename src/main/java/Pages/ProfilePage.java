@@ -1,5 +1,8 @@
 package Pages;
 
+import java.awt.List;
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 
 import BasePackage.DriverClass;
@@ -8,8 +11,8 @@ import BasePackage.Utility;
 public class ProfilePage extends DriverClass{
 	Utility util  = new Utility ();
 
-  public  By     Profile 						= By.id("Profile");
-  public  By     Account							= By.id("Account");
+  public  By     Profile 						= By.linkText("Profile");
+  public  By     Account						= By.linkText("Account");
   private By    PersonalInfo					= By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[1]/a");
   private By	ChangeProfileImage				= By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[2]/a");
   private By	ChangePasswrd					= By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[3]/a");
@@ -234,6 +237,26 @@ public class ProfilePage extends DriverClass{
 	 String clubname = driver.findElement(ProfleNameInOverViewpage).getText();
 	 System.out.println(clubname);
 	 return clubname;
+ }
+ public String[] getAddressAttributes()
+ {
+	 String street = driver.findElement(StreetInAddress).getAttribute("value");
+	 String landmark = driver.findElement(LandmarkInAddress).getAttribute("value");
+	 String city		= driver.findElement(CityInAddress).getAttribute("value");
+	 String state 		= driver.findElement(StateInAddress).getAttribute("value");
+	 String zip			= driver.findElement(ZipCodeInAddress).getAttribute("value");
+	 String country 	= driver.findElement(CountryInAddress).getAttribute("value");
+	 String[] values    = new String[]{street,landmark,city,state,zip,country};
+	 return values;
+ }
+ public String [] getPersonalInfoAttributes()
+ {
+	 String firstname 	= driver.findElement(FirstNameInPersonalInfo).getAttribute("value");
+	 String lastname 	= driver.findElement(LastNameInPersonalInfo).getAttribute("value");
+	 String mobilenumber=driver.findElement(Mobile).getAttribute("value");
+	 String landline 	= driver.findElement(Landline).getAttribute("value");
+	 String [] values	= new String []{firstname,lastname,mobilenumber,landline};
+	 return values;
  }
   
 }

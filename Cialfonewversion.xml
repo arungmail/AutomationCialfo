@@ -9,9 +9,9 @@
 
       <classes>
       <class name="BasePackage.BaseClass" />
-      <class name="TestCialfoNew.RegistrationTest"/>
+      <class name="TestCialfoNew.ProfileEditTest"/>
      
-       <class name="TestCialfoNew.ForgotPasswordTest"/>
+       
        
      
        

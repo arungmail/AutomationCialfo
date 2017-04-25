@@ -1,6 +1,9 @@
 package TestCialfoNew;
 
+import java.util.List;
+
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
 import BasePackage.Utility;
@@ -14,7 +17,9 @@ public class ProfileEditTest extends DriverClass {
 	Utility util 		= new Utility();
 
 	
+	@Test(priority=1)
     public void enterValuesInPersonalInfoAndCheckSucessMessage() throws InterruptedException{
+		driver.get("http://192.168.1.206:4200/login");
     	log.normalLogin();
     	dash.clickOnProfileNameOnTop();
     	Thread.sleep(500);
@@ -24,19 +29,20 @@ public class ProfileEditTest extends DriverClass {
     	profile.enterFirstname("Samsung ");
     	profile.enterLastName("SwimClub");
     	profile.entermobileno("919901395048");
-    	profile.enterLandline("sdjksdkjhdjks");
-    	util.selectradioButton("Male","lable");
-    	util.selectradioButton("Player","lable");
-    	profile.selectDOBInProfilePage("1980","march","31");
+    	profile.enterLandline("8086251295");
+    	//util.selectradioButton("Female","lable");
+    	//util.selectradioButton("Player","lable");
+    	profile.selectDOBInProfilePage("1980","March","24");
     	profile.clickOnSaveChanges();
     	String actualSeccesmessage = profile.checkSucsessMessage();
     	String expectedSuccessMessage = "Details updated successfully";
     	Assert.assertEquals(actualSeccesmessage, expectedSuccessMessage);	
-    	/*String actualProfilenameonToRightSide = dash.getProfilenameOnTopRightSide();
+    	String actualProfilenameonToRightSide = dash.getProfilenameOnTopRightSide();
     	String expctedProfilenameonToRightSide = "Samsung SwimClub";
-    	Assert.assertEquals(actualProfilenameonToRightSide, expctedProfilenameonToRightSide);*/	
+    	Assert.assertEquals(actualProfilenameonToRightSide, expctedProfilenameonToRightSide);	
     }
     
+	@Test(priority=2)
     public void verifyProfileNameinOverviewpage(){
     	driver.navigate().refresh();
     	if (driver.findElement(profile.Overview).isSelected()){	
@@ -49,6 +55,7 @@ public class ProfileEditTest extends DriverClass {
     	Assert.assertEquals(actualprofileName, expectedprofileNmae);
     			
     }
+	@Test(priority=3)
     public void profileNameInTopRightSide(){
     	driver.navigate().refresh();
     	if (driver.findElement(profile.Account).isSelected()){	
@@ -61,6 +68,7 @@ public class ProfileEditTest extends DriverClass {
     	String expctedProfilenameonToRightSide = "Samsung SwimClub";
     	Assert.assertEquals(actualProfilenameonToRightSide, expctedProfilenameonToRightSide);
     }
+	@Test(priority=4)
     public void profileNameInSecondaryMenu ()
     {
     	if (driver.findElement(profile.Account).isSelected()){	
@@ -73,12 +81,29 @@ public class ProfileEditTest extends DriverClass {
     	String expectedProfileNameOnSecondaryMenu = "Samsung SwimClub";
     	Assert.assertEquals(actualProfileNameOnSecondaryMenu, expectedProfileNameOnSecondaryMenu);
      }
-    public void verifyFirstNamevalidationError(){
+	
+	@Test(priority=5)
+	public void verifyPersonalInfoIsUpdatedOrNot()
+	{
+		String personalInfoValues = profile.getPersonalInfoAttributes()[0]+","+profile.getPersonalInfoAttributes()[1]+","+profile.getPersonalInfoAttributes()[2]+","+profile.getPersonalInfoAttributes()[3];
+		System.out.println(personalInfoValues);
+		String expctedvalues = "Samsung,SwimClub,919901395048,8086251295";
+	}
+	/*@Test(priority=5)
+    public void verifyFirstNamevalidationError() throws InterruptedException{
+		driver.navigate().refresh();
     	if (driver.findElement(profile.Account).isSelected()){	
     	}
     	else{
     		driver.findElement(profile.Account).click(); 
     }
+    	driver.get("http://192.168.1.206:4200/login");
+    	log.normalLogin();
+    	dash.clickOnProfileNameOnTop();
+    	Thread.sleep(500);
+    	profile.clickOnProfile();
+    	Thread.sleep(500);
+    	profile.clickOnAccount();
     	profile.clickOnPersonalInfo();
     	profile.enterFirstname("");
     	profile.clickOnSaveChanges();
@@ -86,8 +111,11 @@ public class ProfileEditTest extends DriverClass {
     	String expctecdError = "This field is required!";
     	Assert.assertEquals(actualError, expctecdError);
     }
+	@Test(priority=6)
     public void verifyLastNameValidationError()
     {
+		driver.navigate().refresh();
+		profile.clickOnAccount();
     	profile.enterFirstname("Samsung");
     	profile.enterLastName("");
     	profile.clickOnSaveChanges();
@@ -95,6 +123,7 @@ public class ProfileEditTest extends DriverClass {
     	String expctecdError = "This field is required!";
     	Assert.assertEquals(actualError, expctecdError);
     }
+	@Test(priority=7)
     public void verifyMobileNumbervalidationError()
     {
     	profile.enterFirstname("Samsung");
@@ -105,6 +134,7 @@ public class ProfileEditTest extends DriverClass {
     	String expctecdError = "This field is required!";
     	Assert.assertEquals(actualError, expctecdError);
     }
+	@Test(priority=8)
     public void verifyLandlinevalidation()
     {
     	profile.enterFirstname("Samsung");
@@ -115,7 +145,8 @@ public class ProfileEditTest extends DriverClass {
     	String actualError = profile.checkmobileNoValidationError();
     	String expctecdError = "This field is required!";
     	Assert.assertEquals(actualError, expctecdError);
-    }
+    }*/
+	@Test(priority=9)
     public void enterAddressAndSave()
     {
     	if (driver.findElement(profile.Account).isSelected()){	
@@ -123,6 +154,7 @@ public class ProfileEditTest extends DriverClass {
     	else{
     		driver.findElement(profile.Account).click(); 
     }
+    	profile.clickOnAddress();
     	profile.enterStreetName("Street1");
     	profile.enterlandmark("Knonanakunte Cross");
     	profile.enterCity("Bangalore");
@@ -134,7 +166,84 @@ public class ProfileEditTest extends DriverClass {
     	String expectedSuccessmessage = "Address updated successfully";
     	Assert.assertEquals(actualSuccessmessage, expectedSuccessmessage); 	
     	
-    }	
+    }
+	@Test(priority=10)
+	public void checkStreetUpdatedOrNot()
+	{
+		if (driver.findElement(profile.Account).isSelected()){	
+    	}
+    	else{
+    		driver.findElement(profile.Account).click(); 
+    }
+    	profile.clickOnAddress();
+    	String adressValues =  profile.getAddressAttributes()[0]+","+profile.getAddressAttributes()[1]+","+profile.getAddressAttributes()[2]+","+profile.getAddressAttributes()[3]+","+profile.getAddressAttributes()[4]+","+profile.getAddressAttributes()[5];
+    	System.out.println(adressValues);
+    	String expectedStreet = "Street1,Knonanakunte Cross,Bangalore,Karnataka,680665,Indian";
+    	Assert.assertEquals(adressValues, expectedStreet);    	
+	}
+	/*@Test(priority=10)
+    public void verifyStreetvalidationError ()
+    {
+    	profile.enterStreetName("");
+    	profile.clickOnSaveChanges();
+    	String actualErrormessage = profile.streetvalidationError();
+    	String expectdErrorMessage = "This field is required!";
+    	Assert.assertEquals(actualErrormessage, expectdErrorMessage);
+    }
+	@Test(priority=11)
+    public void verifyLandmarkValiadtionError()
+    {
+    	profile.enterStreetName("Street1");
+    	profile.enterlandmark("");
+    	String actualErrormessage = profile.streetvalidationError();
+    	String expectdErrorMessage = "This field is required!";
+    	Assert.assertEquals(actualErrormessage, expectdErrorMessage);	
+    }
+	@Test(priority=12)
+    public void verifyCityValidationError()
+    {
+    	profile.enterStreetName("Street1");
+    	profile.enterlandmark("konanakkunte cross");
+    	profile.enterCity("");
+    	String actualErrormessage = profile.streetvalidationError();
+    	String expectdErrorMessage = "This field is required!";
+    	Assert.assertEquals(actualErrormessage, expectdErrorMessage);
+    }
+	@Test(priority=13)
+    public void verifyStateValidationError()
+    {
+    	profile.enterStreetName("Street1");
+    	profile.enterlandmark("konanakkunte cross");
+    	profile.enterCity("bangalore");
+    	profile.enterState("");
+    	String actualErrormessage = profile.streetvalidationError();
+    	String expectdErrorMessage = "This field is required!";
+    	Assert.assertEquals(actualErrormessage, expectdErrorMessage);
+    	
+    }
+	@Test(priority=14)
+    public void verifyZipValidationError()
+    {
+
+    	profile.enterStreetName("Street1");
+    	profile.enterlandmark("konanakkunte cross");
+    	profile.enterCity("bangalore");
+    	profile.enterState("Karnataka");
+    	profile.enterZip("");
+    	String actualErrormessage = profile.streetvalidationError();
+    	String expectdErrorMessage = "This field is required!";
+    	Assert.assertEquals(actualErrormessage, expectdErrorMessage);
+    }
+	@Test(priority=15)
+    public void verifyCountryValidationError()
+    {
+    	profile.enterStreetName("Street1");
+    	profile.enterlandmark("konanakkunte cross");
+    	profile.enterCity("bangalore");
+    	profile.enterState("Karnataka");
+    	profile.enterZip("Karnataka");
+    	profile.enterCoutry("");
+    }*/
 
 
 }

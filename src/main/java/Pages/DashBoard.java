@@ -6,7 +6,7 @@ import BasePackage.DriverClass;
 
 public class DashBoard extends DriverClass{
 	
-	private By ProfileNameinSecondarymenu 					= By.id("profile_name");
+	private By ProfileNameinSecondarymenu 					= By.xpath(".//*[@id='profile_name']/p");
 	private By profilenameInTopRightSide 					= By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span");
 	private By Dashboard									= By.partialLinkText("dashboard");
 	private By Attendanace 									= By.partialLinkText("attendance");

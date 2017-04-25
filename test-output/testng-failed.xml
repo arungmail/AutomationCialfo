@@ -9,23 +9,11 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.ForgotPasswordTest">
+      <class name="TestCialfoNew.ProfileEditTest">
         <methods>
-          <include name="openSignpage"/>
-          <include name="newmailIDValidationError"/>
-          <include name="emptyEmailValidationError"/>
-          <include name="invalidEmailIdvalidationError"/>
-          <include name="ValidForgotPassword"/>
+          <include name="verifyProfileNameinOverviewpage"/>
         </methods>
-      </class> <!-- TestCialfoNew.ForgotPasswordTest -->
-      <class name="TestCialfoNew.RegistrationTest">
-        <methods>
-          <include name="missMatchPasswordvalidationChecks"/>
-          <include name="validRegistration"/>
-          <include name="existingEmailIDValidationChecks"/>
-          <include name="clickGoTOSignpage"/>
-        </methods>
-      </class> <!-- TestCialfoNew.RegistrationTest -->
+      </class> <!-- TestCialfoNew.ProfileEditTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

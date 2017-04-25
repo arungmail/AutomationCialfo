@@ -16,8 +16,8 @@ public class LogInTest extends DriverClass {
 		driver.get("http://192.168.1.206:4200/login");
 	}
 	public void normalLogin(){
-		login.enterEmailId("auto356556gg@mailinator.com");
-		login.enterPassword("Nichi123");
+		login.enterEmailId("swimlife@gmail.com");
+		login.enterPassword("12345678");
 		login.clickSignButton();
 		
 	}
