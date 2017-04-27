@@ -11,8 +11,8 @@ import BasePackage.Utility;
 public class ProfilePage extends DriverClass{
 	Utility util  = new Utility ();
 
-  public  By     Profile 						= By.linkText("Profile");
-  public  By     Account						= By.linkText("Account");
+  public  By    Profile 						= By.linkText("Profile");
+  public  By    Account							= By.linkText("Account");
   private By    PersonalInfo					= By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[1]/a");
   private By	ChangeProfileImage				= By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[2]/a");
   private By	ChangePasswrd					= By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[3]/a");
@@ -52,7 +52,7 @@ public class ProfilePage extends DriverClass{
   private By 	MobileNumberinOverviewPage      = By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[2]/a");
   private By    EmailIdInOverviewPage			= By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[3]/a");
   public  By    ProfleNameInOverViewpage		= By.xpath(".//*[@id='tab_1_1']/div/div[2]/div[1]/div[1]/h1");
-  public By LogOutbutton 						= By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/ul/li[2]/div[2]/a");
+  public  By 	LogOutbutton 						= By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/ul/li[2]/div[2]/a");
   
   
   
@@ -241,8 +241,8 @@ public class ProfilePage extends DriverClass{
  }
  public String[] getAddressAttributes()
  {
-	 String street = driver.findElement(StreetInAddress).getAttribute("value");
-	 String landmark = driver.findElement(LandmarkInAddress).getAttribute("value");
+	 String street 		= driver.findElement(StreetInAddress).getAttribute("value");
+	 String landmark 	= driver.findElement(LandmarkInAddress).getAttribute("value");
 	 String city		= driver.findElement(CityInAddress).getAttribute("value");
 	 String state 		= driver.findElement(StateInAddress).getAttribute("value");
 	 String zip			= driver.findElement(ZipCodeInAddress).getAttribute("value");

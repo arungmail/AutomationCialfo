@@ -9,19 +9,11 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.ProfileEditTest">
+      <class name="TestCialfoNew.MyTest">
         <methods>
-          <include name="verifyProfileNameinOverviewpage"/>
+          <include name="checkCoach"/>
         </methods>
-      </class> <!-- TestCialfoNew.ProfileEditTest -->
-      <class name="TestCialfoNew.RegistrationTest">
-        <methods>
-          <include name="missMatchPasswordvalidationChecks"/>
-          <include name="validRegistration"/>
-          <include name="existingEmailIDValidationChecks"/>
-          <include name="clickGoTOSignpage"/>
-        </methods>
-      </class> <!-- TestCialfoNew.RegistrationTest -->
+      </class> <!-- TestCialfoNew.MyTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

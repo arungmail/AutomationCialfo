@@ -104,7 +104,7 @@ public class Utility extends DriverClass{
 		{
 			List<WebElement> allOptions = driver.findElements(By.tagName(tagname));
 			for (WebElement option : allOptions) {
-				   //System.out.println("Option value "+option.getText());
+				   System.out.println("Option value "+option.getText());
 				        if (valueToSelect.equals(option.getText())) {
 				            option.click();
 				            break;

@@ -12,7 +12,7 @@ public class DashBoard extends DriverClass{
 	private By Dashboard									= By.partialLinkText("dashboard");
 	private By Attendanace 									= By.partialLinkText("attendance");
 	private By Swimmers										= By.partialLinkText("swimmer");
-	private By Coach										= By.partialLinkText("coach");
+	private By Coach										= By.partialLinkText("Coach");
 	private By ManageGroup									= By.partialLinkText("manage-group");
 	private By ManageBatch									= By.partialLinkText("manage-batch");
 	private By Message 										= By.partialLinkText("message");
@@ -41,5 +41,8 @@ public class DashBoard extends DriverClass{
 	{
 		boolean profilename = driver.findElement(profilenameInTopRightSide).isDisplayed();
 		return true;
+	}
+	public void clickOnCoach(){
+		driver.findElement(Coach).click();
 	}
 }
