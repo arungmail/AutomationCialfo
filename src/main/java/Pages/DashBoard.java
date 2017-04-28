@@ -14,7 +14,7 @@ public class DashBoard extends DriverClass{
 	private By Swimmers										= By.partialLinkText("swimmer");
 	private By Coach										= By.partialLinkText("Coach");
 	private By ManageGroup									= By.partialLinkText("manage-group");
-	private By ManageBatch									= By.partialLinkText("manage-batch");
+	private By ManageBatch									= By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[7]/a/span");
 	private By Message 										= By.partialLinkText("message");
 	
 	
@@ -44,5 +44,10 @@ public class DashBoard extends DriverClass{
 	}
 	public void clickOnCoach(){
 		driver.findElement(Coach).click();
+	}
+	public void clickOnManageBatch()
+	{
+		driver.findElement(ManageBatch).click();
+		
 	}
 }

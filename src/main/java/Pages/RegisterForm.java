@@ -73,9 +73,9 @@ public class RegisterForm extends DriverClass{
 	}
 	public void selectDate(String value)
 	{
-		WebElement Day = driver.findElement(DayDropDown);
-		Day.click();
-		util.selectValueByVisibleText(Day, value);
+		WebElement day = driver.findElement(DayDropDown);
+		day.click();
+		util.selectValueByVisibleText(day, value);
 	}
 	public void selectMonth(String value)
 	{

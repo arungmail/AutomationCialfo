@@ -1,6 +1,11 @@
 package Pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import BasePackage.DriverClass;
 
@@ -15,9 +20,39 @@ public class SwimmersPage extends DriverClass{
 	private By CloseButton 				= By.xpath(".//*[@id='myModal']/div/div/div[3]/button[1]'");
 	private By ErrorValidation 			= By.id("error_validation");
 	private By Successvalidation 		= By.id("success_validation");
+	private By SwimmersTable			= By.xpath("//table[@id='swimmertable']");
+	private By SwimmersRow				= By.tagName("tr");
+	private By SwimmersColoumn			= By.tagName("td");
 	
 	
 	
+	public void getCoachNameFromTable (String actual,String expected)
+	{
+	
+		WebElement table =  driver.findElement(SwimmersTable);
+		List <WebElement> row = driver.findElements(SwimmersRow);
+		row.size();
+		for (int i=0;i<row.size();i++){	
+			List <WebElement> col = row.get(i).findElements(SwimmersColoumn);
+			col.size();	
+		List <String> swimmersName = new ArrayList <String>();
+			for (int j=0;j<col.size();j++){
+				String name = col.get(j).getText();
+				if(name.equals(actual)){
+					swimmersName.add(name);
+					Assert.assertEquals(name,expected);
+				
+					//String status = System.out.println("Coach1");
+					/*String xp1 = "html/body/div[1]/div[5]/div[2]/div/div/table/tbody/tr[";
+					String xp2 = "]/td[6]";
+					driver.findElement(By.xpath(xp1+i+xp2)).click();*/	
+				}
+				System.out.println(name);
+			
+			}
+		}
+	
+	}
 	
 	
 

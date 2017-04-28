@@ -20,7 +20,7 @@ public class MyTest extends DriverClass{
 	@Test
 	public void checkCoach(){
 		login.enterEmailId("swimlife@gmail.com");
-		login.enterPassword("Nichi123");
+		login.enterPassword("12345678");
 		login.clickSignButton();
 		dash.clickOnCoach();
 		WebElement table =  driver.findElement(By.xpath("//table [@id='example']"));
@@ -32,21 +32,26 @@ public class MyTest extends DriverClass{
 		List <String> coachnames = new ArrayList <String>();
 			for (int j=0;j<col.size();j++){
 				String cv = col.get(j).getText();
-				if(cv.equals("coach1")){
+				if(cv.contentEquals("one coach")){
 					coachnames.add(cv);
-					Assert.assertEquals(cv,"sdgsdgd");
-				
+					Assert.assertEquals(cv,"onc coach");
+				}
+					
+			        
+				//Assert.assertEquals(cv,"one Coach");
 					//String status = System.out.println("Coach1");
 					/*String xp1 = "html/body/div[1]/div[5]/div[2]/div/div/table/tbody/tr[";
 					String xp2 = "]/td[6]";
 					driver.findElement(By.xpath(xp1+i+xp2)).click();*/	
-				}
 				System.out.println(cv);
+				
+			}
+			
+		}
 			
 			
 			
 		}
 	}
 
-}
-}
+

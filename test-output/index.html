@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-RegressionSutie">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.MyTest" hash-for-method="checkCoach">checkCoach</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="addingBatch">addingBatch</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-RegressionSutie -->
@@ -120,17 +120,22 @@
           <div class="suite-RegressionSutie-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">TestCialfoNew.MyTest</span>
+              <span class="class-name">TestCialfoNew.BatchTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checkCoach">
-                  </a> <!-- checkCoach -->
-                  <span class="method-name">checkCoach</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [sdgsdgd] but found [coach1]
-	at TestCialfoNew.MyTest.checkCoach(MyTest.java:37)
-... Removed 31 stack frames
+                  <a name="addingBatch">
+                  </a> <!-- addingBatch -->
+                  <span class="method-name">addingBatch</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementsByTagName(RemoteWebElement.java:320)
+	at org.openqa.selenium.By$ByTagName.findElements(By.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:190)
+	at Pages.BatchList.selectCoach(BatchList.java:63)
+	at TestCialfoNew.BatchTest.addingBatch(BatchTest.java:31)
+... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -149,7 +154,7 @@
   &lt;test name=&quot;CialfoNewversion&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;BasePackage.BaseClass&quot;/&gt;
-      &lt;class name=&quot;TestCialfoNew.MyTest&quot;/&gt;
+      &lt;class name=&quot;TestCialfoNew.BatchTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- CialfoNewversion --&gt;
 &lt;/suite&gt; &lt;!-- RegressionSutie --&gt;
@@ -191,14 +196,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'checkCoach')
-data.setCell(0, 2, 'TestCialfoNew.MyTest')
-data.setCell(0, 3, 1329);
+data.setCell(0, 1, 'addingBatch')
+data.setCell(0, 2, 'TestCialfoNew.BatchTest')
+data.setCell(0, 3, 12208);
 window.suiteTableData['RegressionSutie']= { tableData: data, tableDiv: 'times-div-RegressionSutie'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-RegressionSutie">
               </div> <!-- times-div-RegressionSutie -->
             </div> <!-- times-div -->
@@ -231,19 +236,21 @@ return data;
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCialfoNew.MyTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestCialfoNew.BatchTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">checkCoach</span>
-                <span class="method-start">4877 ms</span>
+                <span class="method-name">addingBatch</span>
+                <span class="method-start">6625 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">BasePackage.BaseClass</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">cleanUp</span>
-                <span class="method-start">6254 ms</span>
+                <span class="method-start">18931 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

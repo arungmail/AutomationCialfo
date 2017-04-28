@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Apr 27 18:13:36 IST 2017</td>
+<td>Started on:</td><td>Fri Apr 28 19:03:38 IST 2017</td>
 </tr>
-<tr><td>Total time:</td><td>1 seconds (1351 ms)</td>
+<tr><td>Total time:</td><td>12 seconds (12246 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,18 +75,22 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestCialfoNew.MyTest.checkCoach()'><b>checkCoach</b><br>Test class: TestCialfoNew.MyTest</td>
-<td><div><pre>java.lang.AssertionError: expected [sdgsdgd] but found [coach1]
-	at TestCialfoNew.MyTest.checkCoach(MyTest.java:37)
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2087785333", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2087785333'><pre>java.lang.AssertionError: expected [sdgsdgd] but found [coach1]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at TestCialfoNew.MyTest.checkCoach(MyTest.java:37)
+<td title='TestCialfoNew.BatchTest.addingBatch()'><b>addingBatch</b><br>Test class: TestCialfoNew.BatchTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementsByTagName(RemoteWebElement.java:320)
+	at org.openqa.selenium.By$ByTagName.findElements(By.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:190)
+	at Pages.BatchList.selectCoach(BatchList.java:63)
+	at TestCialfoNew.BatchTest.addingBatch(BatchTest.java:31)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace236304360", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace236304360'><pre>java.lang.NullPointerException
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementsByTagName(RemoteWebElement.java:320)
+	at org.openqa.selenium.By$ByTagName.findElements(By.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:190)
+	at Pages.BatchList.selectCoach(BatchList.java:63)
+	at TestCialfoNew.BatchTest.addingBatch(BatchTest.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -113,8 +117,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
 </pre></div></td>
-<td>1</td>
-<td>TestCialfoNew.MyTest@204f30ec</td></tr>
+<td>12</td>
+<td>TestCialfoNew.BatchTest@204f30ec</td></tr>
 </table><p>
 </body>
 </html>
