@@ -61,11 +61,19 @@ public class BatchList extends DriverClass{
     	WebElement coach = driver.findElement(CoachSelection);
     	coach.click();
     	List<WebElement> listItems = coach.findElements(By.tagName("li"));
+    	listItems.size();
+    	for (int i=0;i<listItems.size();i++){
+    		String name = listItems.get(i).getText();
+    		if (name.equals("coach1")){
+    			
+    		}
+    	}
+    		
     	//List <String> coachesName = new ArrayList <String>();
     	//listItems.get(0).click();
     	
     		
-    	}
+    	
     	
     }
     public void selectSwimmer(String name)
