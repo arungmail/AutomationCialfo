@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import BasePackage.DriverClass;
 import BasePackage.Utility;
+import junit.framework.Assert;
 
 public class BatchList extends DriverClass{
 	Utility util = new Utility();
@@ -56,19 +57,23 @@ public class BatchList extends DriverClass{
     	System.out.println(successMessage);
     	return successMessage;
     }
-    public void selectCoach()
+    /*public void selectCoach()
     {
     	WebElement coach = driver.findElement(CoachSelection);
     	coach.click();
-    	List<WebElement> listItems = coach.findElements(By.tagName("li"));
+    	driver.findElement(By.xpath("//*[contains(@id,'rajajicoach')]")).click();
+    	driver.findElement(S)
+    	//List<WebElement> listItems = coach.findElements(By.tagName("li"));
     	listItems.size();
-    	for (int i=0;i<listItems.size();i++){
-    		String name = listItems.get(i).getText();
+    	for (int i=0;i<lifstItems.size();i++){
+    		WebElement name = listItems.get(i);
+    		name.getText();
+    		System.out.println(name);
     		if (name.equals("coach1")){
+    			name.click();
     			
     		}
-    	}
-    		
+    	
     	//List <String> coachesName = new ArrayList <String>();
     	//listItems.get(0).click();
     	
@@ -82,6 +87,32 @@ public class BatchList extends DriverClass{
     	swimmer.click();
     	util.selectValueByVisibleText(swimmer, name);
     	
-    }
+    }*/
     
+    public void getBatchFromList(String batchNameInList)
+    {
+    	WebElement table = driver.findElement(BatchTable);
+    	List <WebElement> tablerow = driver.findElements(BatchRow);
+    	tablerow.size();
+    	for (int i = 0;i<tablerow.size();i++){
+    	  List <WebElement> tableColoumn = tablerow.get(i).findElements(BacthColumn);
+    	  tableColoumn.size();
+    	  List <String> batchname = new ArrayList <String>();
+    	  for (int j=0;j<tableColoumn.size();j++){
+    		  String name =  tableColoumn.get(j).getText();
+    		  System.out.println(name);
+    		  if (name.equals(batchNameInList)){
+    			 
+    			  batchname.add(name);
+    			  //break;
+    			  Assert.assertEquals(batchNameInList, name);
+    			  break;
+    			 	  
+    		  }
+    		  
+    		  
+    	  }
+    	}
+    	
+    }
 }

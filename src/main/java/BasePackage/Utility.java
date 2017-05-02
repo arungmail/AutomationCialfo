@@ -30,6 +30,13 @@ public class Utility extends DriverClass{
 	Select select = new Select (element);
 	select.selectByVisibleText(valueToSet);	
 	}
+	public boolean checkValueIsVisibleOrNot (WebElement element, String valueToVisible)
+	{
+		Select select = new Select (element);
+		select.selectByVisibleText(valueToVisible);
+		return true;
+	}
+	
 	//Select item from drop down by value
 	public void selectValueByValue(WebElement element, String valueToSet)
 	{
@@ -136,6 +143,11 @@ public class Utility extends DriverClass{
 			WebDriverWait wait = new WebDriverWait(driver,60);
 			WebElement element = wait.until(ExpectedConditions.visibilityOf(elementToBeLoaded));
 			return element;	
+		}
+		public String getErrorMessage (WebElement element)
+		{
+			String error = driver.findElement((By) element).getText();
+			return error;
 		}
 }
 

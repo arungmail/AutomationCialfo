@@ -11,7 +11,7 @@ public class DashBoard extends DriverClass{
 	public By profilenameInTopRightSide 					= By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span");
 	private By Dashboard									= By.partialLinkText("dashboard");
 	private By Attendanace 									= By.partialLinkText("attendance");
-	private By Swimmers										= By.partialLinkText("swimmer");
+	private By Swimmers										= By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[4]/a/span");
 	private By Coach										= By.partialLinkText("Coach");
 	private By ManageGroup									= By.partialLinkText("manage-group");
 	private By ManageBatch									= By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[7]/a/span");
@@ -49,5 +49,9 @@ public class DashBoard extends DriverClass{
 	{
 		driver.findElement(ManageBatch).click();
 		
+	}
+	public void clickOnSwimmers ()
+	{
+		driver.findElement(Swimmers).click();
 	}
 }
