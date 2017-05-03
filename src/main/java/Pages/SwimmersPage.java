@@ -14,21 +14,21 @@ public class SwimmersPage extends DriverClass{
 	
 	Utility util = new Utility ();
 	
-	public By BatchSelection			= By.xpath("//span[@title='Select Batch']");
-	private By Searchbutton 			= By.xpath("//input[@type='search']");
-	private By EntrySelection 			= By.xpath("//select[@name='swimmertable_length']");
-	private By Homebredcrumbs			= By.xpath("html/body/div[1]/app-root/app-player/div/section[1]/ol/li[1]/a");
-	private By TranferButton			= By.xpath("(//button[@type='button'])[1]");
-	private By BatchSelectionInTranferPlayer = By.xpath("//span[@title='Select Batch']");
-	private By SubmitButton				= By.xpath(".//*[@id='myModal']/div/div/div[3]/button[2]");
-	private By CloseButton 				= By.xpath(".//*[@id='myModal']/div/div/div[3]/button[1]'");
-	private By ErrorValidation 			= By.id("error_validation");
-	private By Successvalidation 		= By.id("success_validation");
-	private By SwimmersTable			= By.xpath("//table[@id='swimmertable']");
-	private By SwimmersRow				= By.tagName("tr");
-	private By SwimmersColoumn			= By.tagName("td");
+	public By BatchSelection			= By.xpath(".//*[@id='select2-5dzp-container']");
+	public By Searchbutton 			= By.xpath("//input[@type='search']");
+	public By EntrySelection 			= By.xpath("//select[@name='swimmertable_length']");
+	public By Homebredcrumbs			= By.xpath("html/body/div[1]/app-root/app-player/div/section[1]/ol/li[1]/a");
+	public By TranferButton			= By.xpath("(//button[@type='button'])[1]");
+	public By BatchSelectionInTranferPlayer = By.xpath(".//*[@id='myModal']/div/div/div[2]/div/div/span/span[1]/span");
+	public By SubmitButton				= By.xpath(".//*[@id='myModal']/div/div/div[3]/button[2]");
+	public By CloseButton 				= By.xpath(".//*[@id='myModal']/div/div/div[3]/button[1]'");
+	public By ErrorValidation 			= By.id("error_validation");
+	public By Successvalidation 		= By.id("success_validation");
+	public By SwimmersTable			= By.xpath("//table[@id='swimmertable']");
+	public By SwimmersRow				= By.tagName("tr");
+	public By SwimmersColoumn			= By.tagName("td");
 	public By DataEmptyMessage 			= By.xpath("//td[@class='dataTables_empty']");
-	public WebElement batchname = driver.findElement(BatchSelection);
+	//public WebElement batchname = driver.findElement(BatchSelection);
 	
 	
 	
@@ -59,31 +59,32 @@ public class SwimmersPage extends DriverClass{
 		}
 	
 	}
-	public boolean checkBatchNameIsListedOrNot(String name)
+	/*public  checkBatchNameIsListedOrNot(String name)
 	{
 		WebElement batchList = driver.findElement(BatchSelection);
-		boolean name2 = util.checkValueIsVisibleOrNot(batchList, name);
+		WebElement name2 = driver.findElement(By.xpath(".//*[@id='select2-5dzp-result-kei1-590876017b31794b2a5bfe32']"));
 		return name2;
 	}
+	*/
 	
-	
-	public void getmatchingCoachNameforSwimmers (String name, String expectedName)
+	public void getmatchingCoachNameforSwimmers (String swimmername, String expectedCoachName)
 	{
-		WebElement coachtable = driver.findElement(SwimmersTable);
-		List <WebElement> coachRow = driver.findElements(SwimmersRow);
-		coachRow.size();
+		WebElement swimmerstable = driver.findElement(SwimmersTable);
+		List <WebElement> swimRow = driver.findElements(SwimmersRow);
+		swimRow.size();
 		
-		for (int i=0;i<coachRow.size();i++){
-			List <WebElement> coachCol = coachRow.get(i).findElements(SwimmersColoumn);
-			coachCol.size();
+		for (int i=0;i<swimRow.size();i++){
+			List <WebElement> swimcol = swimRow.get(i).findElements(SwimmersColoumn);
+			swimcol.size();
 			 
-			for (int j=0;j< coachCol.size();j++){
-				String swimmername = coachCol.get(j).getText();
-				if (swimmername.equalsIgnoreCase(name)){
-					String xpath1 = ".//*[@id='swimmertable']/tbody/tr/td[";
-					String xpath2 = "]/a";
+			for (int j=0;j< swimcol.size();j++){
+				String swimmernames = swimcol.get(j).getText();
+				System.err.println(swimmernames);
+				if (swimmernames.equalsIgnoreCase(swimmername)){
+					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
+					String xpath2 = "]/td[9]";
 					String actualCoachname = driver.findElement(By.xpath(xpath1+i+xpath2)).getText();
-					String expectedResult  = expectedName;
+					String expectedResult  = expectedCoachName;
 					Assert.assertEquals(actualCoachname, expectedResult);
 					
 				}
@@ -92,11 +93,67 @@ public class SwimmersPage extends DriverClass{
 		}
 		
 	}
+	
+	public void getmatchingBatch (String swimmername, String batchName)
+	{
+		WebElement swimmerstable = driver.findElement(SwimmersTable);
+		List <WebElement> swimRow = driver.findElements(SwimmersRow);
+		swimRow.size();
+		
+		for (int i=0;i<swimRow.size();i++){
+			List <WebElement> swimcol = swimRow.get(i).findElements(SwimmersColoumn);
+			swimcol.size();
+			 
+			for (int j=0;j< swimcol.size();j++){
+				String swimmernames = swimcol.get(j).getText();
+				System.err.println(swimmernames);
+				if (swimmernames.equalsIgnoreCase(swimmername)){
+					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
+					String xpath2 = "]/td[8]";
+					String actualbatchname = driver.findElement(By.xpath(xpath1+i+xpath2)).getText();
+					String expectedResult  = batchName;
+					Assert.assertEquals(actualbatchname, expectedResult);
+					
+				}
+				
+			}
+		}
+		
+	}
+				
 	public void search(String searchKey)
 	{
 		WebElement searchButton = driver.findElement(Searchbutton);
 		searchButton.click();
 		searchButton.sendKeys(searchKey);
+	}
+	public void clickCheckBoxBasedOnSwimmersName(String swimmername)
+	{
+		WebElement swimmerstable = driver.findElement(SwimmersTable);
+		List <WebElement> swimRow = driver.findElements(SwimmersRow);
+		swimRow.size();
+		
+		for (int i=0;i<swimRow.size();i++){
+			List <WebElement> swimcol = swimRow.get(i).findElements(SwimmersColoumn);
+			swimcol.size();
+			 
+			for (int j=0;j< swimcol.size();j++){
+				String swimmernames = swimcol.get(j).getText();
+				System.err.println(swimmernames);
+				if (swimmernames.equalsIgnoreCase(swimmername)){
+					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
+					String xpath2 = "]/td[1]/input";
+					driver.findElement(By.xpath(xpath1+i+xpath2)).click();
+					
+					
+				}
+				
+			}
+		}
+	}
+	public void clickOnTranferButton(){
+		driver.findElement(TranferButton).click();
+		
 	}
 	
 

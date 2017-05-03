@@ -15,21 +15,29 @@ public class BatchList extends DriverClass{
 	private By Brecrumbs			= By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[1]/ol/li[1]/a");
 	private By AddButton 			= By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[1]/button[1]");
     private By Tranfer				= By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[1]/button[2]");
-    private By BatchTable			= By.xpath("//table[@id='batcheslist']");
-    private By BatchRow				= By.tagName("tr");
-    private By BacthColumn			= By.tagName("td");
+    public By BatchTable			= By.xpath("//table[@id='batcheslist']");
+    public By BatchRow				= By.tagName("tr");
+    public By BacthColumn			= By.tagName("td");
     private By BatchName			= By.id("batch_name");
-    public By CoachSelection 		= By.xpath("(//span[@title=' Select Coach'])[1]");
+    public By CoachSelection 		= By.xpath(".//*[@id='coachModal']/div/div/div[2]/div/div/span/span[1]/span/span[2]");
     public By PlayerSelection		= By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[2]/div/div/div/div/form/div[1]/div[3]/div/span/span[1]/span");
     private By CreatebatchButton 	= By.xpath("//button[@type='submit']");
     private By namevalidation 		= By.id("name_validation");
     private By Commenvalidation 	= By.id("common_validation");
+    public By SubmitButton 		    = By.xpath("(//button[@type='button'])[6]");
+    public By CoachSearchinputBox  = By.xpath("(//input[@type='search'])[3]");
+    public By Search  			=   By.xpath("(//input[@type='search'])[2]");
     
     
     public void clickOnBredCrumbs()
     {
     	driver.findElement(Brecrumbs).click();
     }
+    public void clickOnSubmitButton(){
+    	driver.findElement(SubmitButton).click();
+    }
+    
+    
     public void clickOnAddbacthButton ()
     {
     	driver.findElement(AddButton).click();
@@ -115,4 +123,35 @@ public class BatchList extends DriverClass{
     	}
     	
     }
+    public void selectCheckBoxbasedOnBatchName(String batchname)
+	{
+		WebElement batchtable = driver.findElement(BatchTable);
+		List <WebElement> batchRow = driver.findElements(BatchRow);
+		batchRow.size();
+		
+		for (int i=0;i<batchRow.size();i++){
+			List <WebElement> swimcol = batchRow.get(i).findElements(BacthColumn);
+			swimcol.size();
+			 
+			for (int j=0;j< swimcol.size();j++){
+				String swimmernames = swimcol.get(j).getText();
+				System.out.println(swimmernames);
+				if (swimmernames.equalsIgnoreCase(batchname)){
+					String xpath1 = ".//*[@id='batcheslist']/tbody/tr[";
+					String xpath2 = "]/td[1]/input";
+					driver.findElement(By.xpath(xpath1+j+xpath2)).click();
+					
+					
+				}
+				
+				
+			}
+			break;
+		}
+	}
+		public void searchBatch(String searchkey)
+		{
+			driver.findElement(Search).sendKeys(searchkey);
+		}
+
 }

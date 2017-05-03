@@ -5,19 +5,27 @@ import java.util.List;
 
 import org.apache.commons.collections.bag.SynchronizedSortedBag;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
+import BasePackage.Utility;
+import Pages.BatchList;
 import Pages.DashBoard;
 import Pages.LoginForm;
+import Pages.SwimmersPage;
 
 public class MyTest extends DriverClass{
 	LoginForm login = new LoginForm();
 	DashBoard dash= new DashBoard();
+	BatchList batch = new BatchList();
+	Utility util = new Utility();
+	SwimmersPage swimmers = new SwimmersPage ();
 	
-	@Test
+	
+	
 	public void checkCoach(){
 		login.enterEmailId("swimlife@gmail.com");
 		login.enterPassword("12345678");
@@ -52,6 +60,29 @@ public class MyTest extends DriverClass{
 			
 			
 		}
+	/*@Test
+	public void checkBatchNamevalidation() throws InterruptedException
+	{
+		login.enterEmailId("swimlife@gmail.com");
+		login.enterPassword("12345678");
+		login.clickSignButton();
+		dash.clickOnManageBatch();
+		batch.clickOnAddbacthButton();
+		batch.enterBacthname("");
+		driver.findElement(batch.CoachSelection).click();
+		driver.findElement(By.xpath("//*[contains(@id,'rajajicoach')]")).click();
+		Thread.sleep(5000);
+		driver.findElement(batch.PlayerSelection).click();
+		driver.findElement(By.xpath("//*[contains(@id,'Ipadswimmer')]")).click();
+		batch.clickOnCreateButton();
+		String actualSuccessMessage = batch.getBatchnamevalidation();
+		String expectedSucesMessage = "This field is required!";
+		Assert.assertEquals(actualSuccessMessage, expectedSucesMessage); 
 	}
+	
+	*/
+	
+	
+}
 
 

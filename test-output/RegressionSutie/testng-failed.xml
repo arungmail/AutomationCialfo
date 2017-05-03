@@ -11,7 +11,10 @@
       </class> <!-- BasePackage.BaseClass -->
       <class name="TestCialfoNew.BatchTest">
         <methods>
-          <include name="addingBatch"/>
+          <include name="checkCoachnameAfterTranfer"/>
+          <include name="checkCoachNameIsSwimmersPageAftertransfer"/>
+          <include name="afterMathos"/>
+          <include name="checkBatchNamevalidation"/>
         </methods>
       </class> <!-- TestCialfoNew.BatchTest -->
     </classes>
