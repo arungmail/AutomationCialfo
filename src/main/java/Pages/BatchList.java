@@ -12,9 +12,9 @@ import junit.framework.Assert;
 
 public class BatchList extends DriverClass{
 	Utility util = new Utility();
-	private By Brecrumbs			= By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[1]/ol/li[1]/a");
-	private By AddButton 			= By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[1]/button[1]");
-    private By Tranfer				= By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[1]/button[2]");
+	private By Brecrumbs			= By.xpath("(//a[@routerlink='/dashboard'])[3]");
+	private By AddButton 			= By.xpath("(//button[@type='button'])[2]");
+    private By Tranfer				= By.xpath("(//button[@type='button'])[3]");
     public By BatchTable			= By.xpath("//table[@id='batcheslist']");
     public By BatchRow				= By.tagName("tr");
     public By BacthColumn			= By.tagName("td");
