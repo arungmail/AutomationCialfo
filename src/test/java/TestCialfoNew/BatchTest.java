@@ -50,7 +50,7 @@ public class BatchTest extends DriverClass{
 	}
 	
 	@Test(priority=2)
-	public void checkBatchIsAddedOrNotr()
+	public void checkBatchIsAddedOrNot()
 	{
 		batch.getBatchFromList("");
 	}
@@ -123,6 +123,7 @@ public class BatchTest extends DriverClass{
 		driver.findElement(batch.PlayerSelection).click();
 		driver.findElement(By.xpath("//*[contains(@id,'Ipadswimmer')]")).click();*/
 		batch.clickOnCreateButton();
+		Thread.sleep(500);
 		String actualSuccessMessage = batch.getBatchnamevalidation();
 		String expectedSucesMessage = "This field is required!";
 		Assert.assertEquals(actualSuccessMessage, expectedSucesMessage); 
@@ -218,7 +219,7 @@ public class BatchTest extends DriverClass{
 		Thread.sleep(500);
 		WebElement coachresult = driver.findElement(batch.CoachResult);
 		
-		batch.selectCoachFromCoachList(coachresult,"Murali");
+		batch.selectCoachFromCoachList(coachresult,"RajKumar");
 		
 		
 		batch.clickOnSubmitButton();
@@ -250,7 +251,7 @@ public class BatchTest extends DriverClass{
 					String xpath1 = ".//*[@id='batcheslist']/tbody/tr[";
 					String xpath2 = "]/td[5]";
 					String actualCoachname = driver.findElement(By.xpath(xpath1+i+xpath2)).getText();
-					String expectedResult  = "Murali";
+					String expectedResult  = "Raj Kumar";
 					Assert.assertEquals(actualCoachname, expectedResult);
 					
 				}
@@ -268,7 +269,7 @@ public class BatchTest extends DriverClass{
 		login.enterPassword("12345678");
 		login.clickSignButton();*/
 		dash.clickOnSwimmers();
-		swimmers.search("Ipadone edited");
+		swimmers.search("Divya");
 		Thread.sleep(500);
 		WebElement swimmertable = driver.findElement(swimmers.SwimmersTable);
 		List <WebElement> swimRow = driver.findElements(swimmers.SwimmersRow);
@@ -281,11 +282,11 @@ public class BatchTest extends DriverClass{
 			for (int j=0;j< swimcol.size();j++){
 				String swimmernames = swimcol.get(j).getText();
 				System.err.println(swimmernames);
-				if (swimmernames.equalsIgnoreCase("Ipadone edited")){
+				if (swimmernames.equalsIgnoreCase("Divya")){
 					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
 					String xpath2 = "]/td[9]";
 					String actualCoachname = driver.findElement(By.xpath(xpath1+i+xpath2)).getText();
-					String expectedResult  = "three coach";
+					String expectedResult  = "Raj Kumar";
 					Assert.assertEquals(actualCoachname, expectedResult);
 					
 				}

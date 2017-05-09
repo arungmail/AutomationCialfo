@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">10 methods, 6 failed,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,10 +102,64 @@
                     <div class="method-list-content failed suite-RegressionSutie">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.MyTest" hash-for-method="addingBatch">addingBatch</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="addingBatch">addingBatch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="checkBatchIsAddedOrNotr">checkBatchIsAddedOrNotr</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="checkBatchNamevalidation">checkBatchNamevalidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="checkCoachNameIsSwimmersPageAftertransfer">checkCoachNameIsSwimmersPageAftertransfer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="checkCoachnameAfterTranfer">checkCoachnameAfterTranfer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="tranferBatch">tranferBatch</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-RegressionSutie -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-RegressionSutie" class="hide-methods passed suite-RegressionSutie"> (hide)</a> <!-- hide-methods passed suite-RegressionSutie -->
+                      <a href="#" panel-name="suite-RegressionSutie" class="show-methods passed suite-RegressionSutie"> (show)</a> <!-- show-methods passed suite-RegressionSutie -->
+                    </span>
+                    <div class="method-list-content passed suite-RegressionSutie">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="checkBatchNameIsMaatchingOrNot">checkBatchNameIsMaatchingOrNot</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="checkCoachIsmatchingorNot">checkCoachIsmatchingorNot</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="checkCoachNameisMatchingOrNot">checkCoachNameisMatchingOrNot</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.BatchTest" hash-for-method="searchBatch">searchBatch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-RegressionSutie -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -120,7 +174,7 @@
           <div class="suite-RegressionSutie-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">TestCialfoNew.MyTest</span>
+              <span class="class-name">TestCialfoNew.BatchTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -128,14 +182,154 @@
                   <a name="addingBatch">
                   </a> <!-- addingBatch -->
                   <span class="method-name">addingBatch</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [Batch Added Successfully] but found []
-	at TestCialfoNew.MyTest.addingBatch(MyTest.java:274)
+                  <div class="stack-trace">java.lang.AssertionError: expected [Batch Added Sucessfully] but found []
+	at TestCialfoNew.BatchTest.addingBatch(BatchTest.java:49)
 ... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkBatchIsAddedOrNotr">
+                  </a> <!-- checkBatchIsAddedOrNotr -->
+                  <span class="method-name">checkBatchIsAddedOrNotr</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 37 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir17028_24579}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: b544d78af8bc1889d01e92ef9edd8f95
+*** Element info: {Using=tag name, value=td}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:214)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementsByTagName(RemoteWebElement.java:320)
+	at org.openqa.selenium.By$ByTagName.findElements(By.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:190)
+	at Pages.BatchList.getBatchFromList(BatchList.java:113)
+	at TestCialfoNew.BatchTest.checkBatchIsAddedOrNotr(BatchTest.java:55)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkBatchNamevalidation">
+                  </a> <!-- checkBatchNamevalidation -->
+                  <span class="method-name">checkBatchNamevalidation</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 35 milliseconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir17028_24579}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: b544d78af8bc1889d01e92ef9edd8f95
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at TestCialfoNew.BatchTest.checkBatchNamevalidation(BatchTest.java:120)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkCoachNameIsSwimmersPageAftertransfer">
+                  </a> <!-- checkCoachNameIsSwimmersPageAftertransfer -->
+                  <span class="method-name">checkCoachNameIsSwimmersPageAftertransfer</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Raj Kumar] but found [Murali Master]
+	at TestCialfoNew.BatchTest.checkCoachNameIsSwimmersPageAftertransfer(BatchTest.java:289)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkCoachnameAfterTranfer">
+                  </a> <!-- checkCoachnameAfterTranfer -->
+                  <span class="method-name">checkCoachnameAfterTranfer</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Raj Kumar] but found [Murali Master]
+	at TestCialfoNew.BatchTest.checkCoachnameAfterTranfer(BatchTest.java:254)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tranferBatch">
+                  </a> <!-- tranferBatch -->
+                  <span class="method-name">tranferBatch</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//span[@role=&apos;combobox&apos;])[8]&quot;}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC091&apos;, ip: &apos;192.168.1.91&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir17028_24579}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: b544d78af8bc1889d01e92ef9edd8f95
+*** Element info: {Using=xpath, value=(//span[@role=&apos;combobox&apos;])[8]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at TestCialfoNew.BatchTest.tranferBatch(BatchTest.java:217)
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-RegressionSutie-class-failed -->
+          <div class="suite-RegressionSutie-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCialfoNew.BatchTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkBatchNameIsMaatchingOrNot">
+                  </a> <!-- checkBatchNameIsMaatchingOrNot -->
+                  <span class="method-name">checkBatchNameIsMaatchingOrNot</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkCoachIsmatchingorNot">
+                  </a> <!-- checkCoachIsmatchingorNot -->
+                  <span class="method-name">checkCoachIsmatchingorNot</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkCoachNameisMatchingOrNot">
+                  </a> <!-- checkCoachNameisMatchingOrNot -->
+                  <span class="method-name">checkCoachNameisMatchingOrNot</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchBatch">
+                  </a> <!-- searchBatch -->
+                  <span class="method-name">searchBatch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-RegressionSutie-class-passed -->
         </div> <!-- panel RegressionSutie -->
         <div panel-name="test-xml-RegressionSutie" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -149,7 +343,7 @@
   &lt;test name=&quot;CialfoNewversion&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;BasePackage.BaseClass&quot;/&gt;
-      &lt;class name=&quot;TestCialfoNew.MyTest&quot;/&gt;
+      &lt;class name=&quot;TestCialfoNew.BatchTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- CialfoNewversion --&gt;
 &lt;/suite&gt; &lt;!-- RegressionSutie --&gt;
@@ -189,16 +383,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(10);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'addingBatch')
-data.setCell(0, 2, 'TestCialfoNew.MyTest')
-data.setCell(0, 3, 7533);
+data.setCell(0, 1, 'tranferBatch')
+data.setCell(0, 2, 'TestCialfoNew.BatchTest')
+data.setCell(0, 3, 122881);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'checkCoachnameAfterTranfer')
+data.setCell(1, 2, 'TestCialfoNew.BatchTest')
+data.setCell(1, 3, 62732);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'searchBatch')
+data.setCell(2, 2, 'TestCialfoNew.BatchTest')
+data.setCell(2, 3, 62514);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'checkCoachIsmatchingorNot')
+data.setCell(3, 2, 'TestCialfoNew.BatchTest')
+data.setCell(3, 3, 61471);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'checkBatchIsAddedOrNotr')
+data.setCell(4, 2, 'TestCialfoNew.BatchTest')
+data.setCell(4, 3, 60171);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'addingBatch')
+data.setCell(5, 2, 'TestCialfoNew.BatchTest')
+data.setCell(5, 3, 9336);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'checkBatchNamevalidation')
+data.setCell(6, 2, 'TestCialfoNew.BatchTest')
+data.setCell(6, 3, 1997);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'checkCoachNameisMatchingOrNot')
+data.setCell(7, 2, 'TestCialfoNew.BatchTest')
+data.setCell(7, 3, 1962);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'checkCoachNameIsSwimmersPageAftertransfer')
+data.setCell(8, 2, 'TestCialfoNew.BatchTest')
+data.setCell(8, 3, 1204);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'checkBatchNameIsMaatchingOrNot')
+data.setCell(9, 2, 'TestCialfoNew.BatchTest')
+data.setCell(9, 3, 893);
 window.suiteTableData['RegressionSutie']= { tableData: data, tableDiv: 'times-div-RegressionSutie'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 6 minutes</span>
               <div id="times-div-RegressionSutie">
               </div> <!-- times-div-RegressionSutie -->
             </div> <!-- times-div -->
@@ -231,19 +461,65 @@ return data;
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCialfoNew.MyTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestCialfoNew.BatchTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">addingBatch</span>
-                <span class="method-start">5339 ms</span>
+                <span class="method-start">8918 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkBatchIsAddedOrNotr</span>
+                <span class="method-start">18296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkCoachIsmatchingorNot</span>
+                <span class="method-start">78487 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">searchBatch</span>
+                <span class="method-start">139960 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkBatchNamevalidation</span>
+                <span class="method-start">202476 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkCoachNameisMatchingOrNot</span>
+                <span class="method-start">204477 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkBatchNameIsMaatchingOrNot</span>
+                <span class="method-start">206441 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tranferBatch</span>
+                <span class="method-start">207344 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkCoachnameAfterTranfer</span>
+                <span class="method-start">330229 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkCoachNameIsSwimmersPageAftertransfer</span>
+                <span class="method-start">392963 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">BasePackage.BaseClass</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">cleanUp</span>
-                <span class="method-start">12905 ms</span>
+                <span class="method-start">394791 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

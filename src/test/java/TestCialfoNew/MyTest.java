@@ -259,8 +259,8 @@ public void addingBatch() throws InterruptedException
 	driver.findElement(batch.PlayerSelection).click();
 	WebElement swimmersLilst = driver.findElement(batch.SwimmersResult);
 	batch.selectSwimmersFromCoachList(swimmersLilst, "Divya");
-	//driver.findElement(By.xpath("//*[contains(@id,'Ipadswimmer')]")).click();
-	//batch.clickOnCreateButton();
+	
+	batch.clickOnCreateButton();
 	
 }
 }

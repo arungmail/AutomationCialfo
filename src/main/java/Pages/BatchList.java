@@ -29,7 +29,7 @@ public class BatchList extends DriverClass{
     public By Search  			=   By.xpath("(//input[@type='search'])[2]");
     public By CoachResult 			= By.xpath("//span[@class='select2-results']");
     public By SwimmersResult 		= By.xpath("//span[@class='select2-results']");
-    public By CoachSelectionInTranferBatch = By.xpath("(//span[@role='combobox'])[8]");
+    public By CoachSelectionInTranferBatch = By.xpath("(//span[@title=' Select Coach'])[2]");
     
     //public void clickOnCoachSelection 
     

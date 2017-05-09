@@ -54,8 +54,10 @@ public class SwimmersTest extends DriverClass {
 		login.enterPassword("12345678");
 		login.clickSignButton();
 		dash.clickOnSwimmers();
+		
+		swimmers.batchSelection(element, batchName);
 		//driver.findElement(swimmers.BatchSelection).click();
-		Thread.sleep(500);
+		/*Thread.sleep(500);
 		driver.findElement(By.xpath("html/body/div[1]/app-root/app-player/div/section[2]/div/div/div/div[1]/div[2]/span/span[1]/span/span[2]")).click();
 		Thread.sleep(5000);
 		
@@ -81,7 +83,7 @@ public class SwimmersTest extends DriverClass {
 			System.out.println(results.size());
 			
 		}
-		
+		*/
 	}
 		
 	public void checkCoachNameIsMatchingOrNot()
