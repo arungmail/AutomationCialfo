@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -14,7 +15,7 @@ public class SwimmersPage extends DriverClass{
 	
 	Utility util = new Utility ();
 	
-	public By BatchSelection			= By.xpath(".//*[@id='select2-5dzp-container']");
+	public By BatchSelection			= By.xpath("(//span[@class='select2-selection__rendered'])[2]");
 	public By Searchbutton 			= By.xpath("//input[@type='search']");
 	public By EntrySelection 			= By.xpath("//select[@name='swimmertable_length']");
 	public By Homebredcrumbs			= By.xpath("html/body/div[1]/app-root/app-player/div/section[1]/ol/li[1]/a");
@@ -28,9 +29,26 @@ public class SwimmersPage extends DriverClass{
 	public By SwimmersRow				= By.tagName("tr");
 	public By SwimmersColoumn			= By.tagName("td");
 	public By DataEmptyMessage 			= By.xpath("//td[@class='dataTables_empty']");
+	public By batchresults				= By.xpath("//span[@class='select2-results']");
 	//public WebElement batchname = driver.findElement(BatchSelection);
 	
+	public void batchSelection(WebElement element, String batchName) throws InterruptedException
+	{
+        WebElement batchlist = driver.findElement(batchresults);
+		List <WebElement> batches  = batchlist.findElements(By.tagName("li"));
+		for (WebElement webElement : batches){
+			System.out.println(webElement.getText());
+			if (webElement.getText().equalsIgnoreCase(batchName)){
+				//Thread.sleep(500);
+				webElement.click();
+				break;
+				
+				
+			}
+			
+		}
 	
+	}
 	
 	public void getCoachNameFromTable (String actual,String expected)
 	{
@@ -103,7 +121,7 @@ public class SwimmersPage extends DriverClass{
 		for (int i=0;i<swimRow.size();i++){
 			List <WebElement> swimcol = swimRow.get(i).findElements(SwimmersColoumn);
 			swimcol.size();
-			 
+			
 			for (int j=0;j< swimcol.size();j++){
 				String swimmernames = swimcol.get(j).getText();
 				System.err.println(swimmernames);

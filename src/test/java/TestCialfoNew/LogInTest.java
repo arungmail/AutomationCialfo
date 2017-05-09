@@ -13,10 +13,10 @@ public class LogInTest extends DriverClass {
 	DashBoard dash 	=  new DashBoard();
 	
 
-	@AfterMethod
+	/*@AfterMethod
 	public void clickGoTOSignpage(){
-		driver.get("http://192.168.1.206:4200/login");
-	}
+		driver.get("http://192.168.1.206:4200/login");*/
+	//}
 	public void normalLogin(){
 		login.enterEmailId("swimlife@gmail.com");
 		login.enterPassword("Nichi123");
@@ -31,6 +31,7 @@ public class LogInTest extends DriverClass {
 		login.clickSignButton();
 		Thread.sleep(5000);
 		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);
+		dash.logingOut();
 	}
 	@Test(priority=2)
 	public void emailErrorValidationChecks(){

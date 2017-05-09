@@ -24,41 +24,46 @@ public class BatchTest extends DriverClass{
 	
 	
 	
-	/*
+	
 	@Test(priority=1)
 	public void addingBatch() throws InterruptedException
 	{
+
 		login.enterEmailId("swimlife@gmail.com");
 		login.enterPassword("12345678");
 		login.clickSignButton();
 		dash.clickOnManageBatch();
 		batch.clickOnAddbacthButton();
-		//batch.enterBacthname("Autommation bActch One");
-	    WebElement coachSelection = (WebElement) batch.CoachSelection;
-	    WebElement swimmerSelection = (WebElement) batch.PlayerSelection;
-	    util.selectValueByVisibleText(coachSelection,"coach1");
-	    util.selectValueByVisibleText(swimmerSelection, "swimmer2");
-		batch.enterBacthname("Automation Batch 1");
+		batch.enterBacthname("Sunday Batch on 6PM to 7 PM");
 		driver.findElement(batch.CoachSelection).click();
-		driver.findElement(By.xpath("//*[contains(@id,'rajajicoach')]")).click();
+		Thread.sleep(500);
+		WebElement coachlist = driver.findElement(batch.CoachResult);
+		batch.selectCoachFromCoachList(coachlist,"Murali");
+		//driver.findElement(By.xpath("//*[contains(@id,'rajajicoach')]")).click();
 		Thread.sleep(5000);
 		driver.findElement(batch.PlayerSelection).click();
-		driver.findElement(By.xpath("//*[contains(@id,'Ipadswimmer')]")).click();
+		WebElement swimmersLilst = driver.findElement(batch.SwimmersResult);
+		batch.selectSwimmersFromCoachList(swimmersLilst, "Divya");
 		batch.clickOnCreateButton();
-		String actualSuccessMessage = batch.getSuccessmessage();
-		String expectedSucesMessage = "Batch Added Successfully";
-		Assert.assertEquals(actualSuccessMessage, expectedSucesMessage);   	
-	}*/
+		String SuccessMessage = batch.getSuccessmessage();
+		Assert.assertEquals(SuccessMessage, "Batch Added Sucessfully");	  	
+	}
 	
 	@Test(priority=2)
+	public void checkBatchIsAddedOrNotr()
+	{
+		batch.getBatchFromList("");
+	}
+	
+	@Test(priority=3)
 	public void checkCoachIsmatchingorNot() throws InterruptedException
 	{
-		login.enterEmailId("swimlife@gmail.com");
+		/*login.enterEmailId("swimlife@gmail.com");
 		login.enterPassword("12345678");
 		login.clickSignButton();
 		dash.clickOnManageBatch();
 		batch.searchBatch("Automation");
-		Thread.sleep(500);
+		Thread.sleep(500);*/
 		WebElement batchestable = driver.findElement(batch.BatchTable);
 		List <WebElement> batchRow = driver.findElements(batch.BatchRow);
 		batchRow.size();
@@ -70,11 +75,12 @@ public class BatchTest extends DriverClass{
 			for (int j=0;j< batchCol.size();j++){
 				String batchesNames = batchCol.get(j).getText();
 				System.err.println(batchesNames);
-				if (batchesNames.equalsIgnoreCase("Automation Batch 1")){
+				if (batchesNames.equalsIgnoreCase("Sunday Batch on 6PM to 7 PM")){
 					String xpath1 = ".//*[@id='batcheslist']/tbody/tr[";
 					String xpath2 = "]/td[5]";
 					String actualCoachname = driver.findElement(By.xpath(xpath1+i+xpath2)).getText();
-					String expectedResult  = "rajaji rcoach1";
+					//Add coachname for Asert
+					String expectedResult  = "Murali Master";
 					Assert.assertEquals(actualCoachname, expectedResult);
 					
 					
@@ -86,34 +92,36 @@ public class BatchTest extends DriverClass{
 		
 		
 	
-	@Test(priority=3)
-	public void addedbatchIsListedOrNot() throws InterruptedException
+	@Test(priority=4)
+	public void searchBatch() throws InterruptedException
 	{
 		/*login.enterEmailId("swimlife@gmail.com");
 		login.enterPassword("12345678");
 		login.clickSignButton();*/
-		dash.clickOnManageBatch();
-		batch.searchBatch("Automation");
+		//dash.clickOnManageBatch();
+		driver.navigate().refresh();
+		batch.searchBatch("Sunday Batch on 6PM to 7 PM");
 		Thread.sleep(500);
-		batch.getBatchFromList("Automation Batch 1");
+		batch.getBatchFromList("Sunday Batch on 6PM to 7 PM");
 	}
 
 		
 	
-	@Test(priority=4)
+	@Test(priority=5)
 	public void checkBatchNamevalidation() throws InterruptedException
 	{
 		/*login.enterEmailId("swimlife@gmail.com");
 		login.enterPassword("12345678");
 		login.clickSignButton();*/
-		dash.clickOnManageBatch();
+		//dash.clickOnManageBatch();
+		driver.navigate().refresh();
 		batch.clickOnAddbacthButton();
 		batch.enterBacthname("");
 		driver.findElement(batch.CoachSelection).click();
-		driver.findElement(By.xpath("//*[contains(@id,'rajajicoach')]")).click();
+		/*driver.findElement(By.xpath("//*[contains(@id,'rajajicoach')]")).click();
 		Thread.sleep(5000);
 		driver.findElement(batch.PlayerSelection).click();
-		driver.findElement(By.xpath("//*[contains(@id,'Ipadswimmer')]")).click();
+		driver.findElement(By.xpath("//*[contains(@id,'Ipadswimmer')]")).click();*/
 		batch.clickOnCreateButton();
 		String actualSuccessMessage = batch.getBatchnamevalidation();
 		String expectedSucesMessage = "This field is required!";
@@ -128,7 +136,7 @@ public class BatchTest extends DriverClass{
 		login.enterPassword("12345678");
 		login.clickSignButton();*/
 		dash.clickOnSwimmers();
-		swimmers.search("Ipadone edited");
+		swimmers.search("Divya");
 		Thread.sleep(500);
 		WebElement swimmertable = driver.findElement(swimmers.SwimmersTable);
 		List <WebElement> swimRow = driver.findElements(swimmers.SwimmersRow);
@@ -141,11 +149,11 @@ public class BatchTest extends DriverClass{
 			for (int j=0;j< swimcol.size();j++){
 				String swimmernames = swimcol.get(j).getText();
 				System.err.println(swimmernames);
-				if (swimmernames.equalsIgnoreCase("Ipadone edited")){
+				if (swimmernames.equalsIgnoreCase("Divya")){
 					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
 					String xpath2 = "]/td[9]";
 					String actualCoachname = driver.findElement(By.xpath(xpath1+i+xpath2)).getText();
-					String expectedResult  = "rajaji rcoach1";
+					String expectedResult  = "Murali Master";
 					Assert.assertEquals(actualCoachname, expectedResult);
 					
 				}
@@ -164,9 +172,9 @@ public class BatchTest extends DriverClass{
 		login.enterPassword("12345678");
 		login.clickSignButton();*/
 		dash.clickOnSwimmers();
-		swimmers.search("Ipadone edited");
+		swimmers.search("Divya");
 		Thread.sleep(500);
-		swimmers.getmatchingBatch("Ipadone edited ", "Automation Batch 1");
+		swimmers.getmatchingBatch("Divya", "Sunday Batch on 6PM to 7 PM");
 		WebElement swimmerstable = driver.findElement(swimmers.SwimmersTable);
 		List <WebElement> swimRow = driver.findElements(swimmers.SwimmersRow);
 		swimRow.size();
@@ -178,11 +186,11 @@ public class BatchTest extends DriverClass{
 			for (int j=0;j< swimcol.size();j++){
 				String swimmernames = swimcol.get(j).getText();
 				System.err.println(swimmernames);
-				if (swimmernames.equalsIgnoreCase("Ipadone edited")){
+				if (swimmernames.equalsIgnoreCase("Divya")){
 					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
 					String xpath2 = "]/td[8]";
 					String actualCoachname = driver.findElement(By.xpath(xpath1+i+xpath2)).getText();
-					String expectedBatchname  = "Automation Batch 1";
+					String expectedBatchname  = "Sunday Batch on 6PM to 7 PM";
 					Assert.assertEquals(actualCoachname, expectedBatchname);
 					
 				}
@@ -200,17 +208,18 @@ public class BatchTest extends DriverClass{
 		login.clickSignButton();*/
 		dash.clickOnManageBatch();
 		//batch.searchBatch("Automation");
-		batch.selectCheckBoxbasedOnBatchName("First bacth");
+		batch.selectCheckBoxbasedOnBatchName("Sunday Batch on 6PM to 7 PM");
 		batch.clickOnTranferButton();
 		Thread.sleep(500);
 		String paranetwindowhandle = driver.getWindowHandle();	
 		System.out.println(paranetwindowhandle);
 		driver.switchTo().window(paranetwindowhandle);
-		driver.findElement(batch.CoachSelection).click();
-		Thread.sleep(500);;
-		driver.findElement(batch.CoachSearchinputBox).sendKeys("Coach3");
+		driver.findElement(batch.CoachSelectionInTranferBatch).click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath("//li[@role='treeitem']")).click();
+		WebElement coachresult = driver.findElement(batch.CoachResult);
+		
+		batch.selectCoachFromCoachList(coachresult,"Murali");
+		
 		
 		batch.clickOnSubmitButton();
 		Thread.sleep(500);
@@ -225,7 +234,7 @@ public class BatchTest extends DriverClass{
 		login.enterEmailId("swimlife@gmail.com");
 		login.enterPassword("12345678");
 		login.clickSignButton();*/
-		dash.clickOnManageBatch();
+		driver.navigate().refresh();
 		WebElement batchestable = driver.findElement(batch.BatchTable);
 		List <WebElement> swimRow = driver.findElements(batch.BatchRow);
 		swimRow.size();
@@ -237,11 +246,11 @@ public class BatchTest extends DriverClass{
 			for (int j=0;j< swimcol.size();j++){
 				String batchesNames = swimcol.get(j).getText();
 				System.err.println(batchesNames);
-				if (batchesNames.equalsIgnoreCase("Automation Batch 1")){
+				if (batchesNames.equalsIgnoreCase("Sunday Batch on 6PM to 7 PM")){
 					String xpath1 = ".//*[@id='batcheslist']/tbody/tr[";
 					String xpath2 = "]/td[5]";
 					String actualCoachname = driver.findElement(By.xpath(xpath1+i+xpath2)).getText();
-					String expectedResult  = "three coach";
+					String expectedResult  = "Murali";
 					Assert.assertEquals(actualCoachname, expectedResult);
 					
 				}
@@ -286,12 +295,12 @@ public class BatchTest extends DriverClass{
 		
 		
 	}
-	
+	/*
 	@AfterMethod
 	public void afterMathos(){
 		driver.findElement(By.xpath("//a[@href='/dashboard']")).click();
 	}
-	
+	*/
 	
 	
 	

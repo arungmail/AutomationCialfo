@@ -23,6 +23,12 @@ public class DashBoard extends DriverClass{
 		driver.findElement(profilenameInTopRightSide).click();
 	}
 	
+	public void logingOut() throws InterruptedException
+	{
+		driver.findElement(profilenameInTopRightSide).click();
+		driver.findElement(By.linkText("Sign out"));
+		Thread.sleep(500);
+	}
 	public String getProfilenameOnTopRightSide()
 	{
 		String profilename = driver.findElement(ProfileNameinSecondarymenu).getText();

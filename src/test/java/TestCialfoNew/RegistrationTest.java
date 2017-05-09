@@ -35,7 +35,7 @@ public class RegistrationTest extends DriverClass {
 	*/
 	//Testing valid registration 
 	@Test(priority=1)
-	public void validRegistration () throws InterruptedException{
+	public void validSwimmerRegistration () throws InterruptedException{
 		login.clickOnRegister();
 		reg.enterUserName("swimmer5");
 		reg.enterEmail("swimmer5@mailinator.com");
@@ -57,7 +57,32 @@ public class RegistrationTest extends DriverClass {
 		Thread.sleep(500);
 		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);	
 	}
+	
 	@Test(priority=2)
+	public void validCoachRegistration () throws InterruptedException
+	{
+		login.clickOnRegister();
+		reg.enterUserName("swimmer5");
+		reg.enterEmail("swimmer5@mailinator.com");
+		reg.enterFirstname("swimmer5");
+		reg.enterLastName("five");
+		reg.enterPhoneNumber("919901395048");
+		reg.enterPassword("Nichi123");
+		reg.reEnterPassword("Nichi123");
+		reg.enterLocation("Cochin");		
+		reg.selectYear("1990");
+		reg.selectMonth("Apr");
+		reg.selectDate("28");
+		//reg.selectRole("Player");
+		//reg.selectRole("Male");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Player","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
+		reg.clickRegisterButton();
+		Thread.sleep(500);
+		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);	
+	}
+	@Test(priority=3)
 	public void emptyUserNamevalidationchecks () throws InterruptedException
 	{
 		login.clickOnRegister();
@@ -81,7 +106,7 @@ public class RegistrationTest extends DriverClass {
 		Assert.assertEquals(Actual,"This field is required!");
 		
 	}
-	@Test(priority=3)
+	@Test(priority=4)
 	public void emptyEmailIDChecks()
 	{
 		login.clickOnRegister();
@@ -105,7 +130,7 @@ public class RegistrationTest extends DriverClass {
 		
 	}
 	
-	@Test(priority=4)
+	@Test(priority=5)
 	public void invalidEmailIdvalidationChecks ()
 	{
 		login.clickOnRegister();
@@ -128,7 +153,7 @@ public class RegistrationTest extends DriverClass {
 		
 	}
 	 
-	@Test(priority=5)
+	@Test(priority=6)
 	public void existingEmailIDValidationChecks()
 	{
 		login.clickOnRegister();
@@ -150,7 +175,7 @@ public class RegistrationTest extends DriverClass {
 		Assert.assertEquals(Actual,"Email you are entered not available");
 		
 	}
-	@Test(priority=6)
+	@Test(priority=7)
 	public void emptyFirstnameValidationChecks()
 	{
 		login.clickOnRegister();
@@ -172,7 +197,7 @@ public class RegistrationTest extends DriverClass {
 		Assert.assertEquals(Actual,"This field is required!");
 		
 	}
-	@Test(priority=7)
+	@Test(priority=8)
 	public void emptyLastNameValidationChecks()
 	{
 		login.clickOnRegister();
@@ -195,7 +220,7 @@ public class RegistrationTest extends DriverClass {
 		
 	}
 	
-	@Test(priority=8)
+	@Test(priority=9)
 	public void emptyPhoneNoValidationChecks()
 	{
 		login.clickOnRegister();
@@ -219,7 +244,7 @@ public class RegistrationTest extends DriverClass {
 	}
 	
 
-	@Test(priority=9)
+	@Test(priority=10)
 	public void inValidMobileNOvalidationChecks ()
 	{
 		login.clickOnRegister();
@@ -242,7 +267,7 @@ public class RegistrationTest extends DriverClass {
 		
 	}
 	
-	@Test(priority=10)
+	@Test(priority=11)
 	public void inValidPasswordErrorChecks ()
 	{
 		login.clickOnRegister();
@@ -265,7 +290,7 @@ public class RegistrationTest extends DriverClass {
 		
 	}
 	
-	@Test(priority=11)
+	@Test(priority=12)
 	public void missMatchPasswordvalidationChecks ()
 	{
 		login.clickOnRegister();
@@ -288,8 +313,8 @@ public class RegistrationTest extends DriverClass {
 		
 	}
 	
-	@Test(priority=12)
-	public void emptyLocationvalidationChecks()
+	@Test(priority=13)
+	public void emptyLocationvalidationChecks() throws InterruptedException
 	{
 		login.clickOnRegister();
 		reg.enterUserName("Arun pananagattu1");
@@ -308,6 +333,7 @@ public class RegistrationTest extends DriverClass {
 		reg.clickRegisterButton();
 		String Actual = reg.locationErrorvalidation();
 		Assert.assertEquals(Actual,"This field is required!");
+		dash.logingOut();
 		
 	}
 }

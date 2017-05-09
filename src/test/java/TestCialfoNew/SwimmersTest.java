@@ -1,5 +1,6 @@
 package TestCialfoNew;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -22,7 +23,8 @@ public class SwimmersTest extends DriverClass {
 	DashBoard dash = new DashBoard ();
 	Utility util =new Utility ();
 	SwimmersPage swimmers = new SwimmersPage ();
-	/*
+	
+	
 	@Test
 	public void checkAddedBatchIsListedOrNot()
 	{
@@ -30,13 +32,22 @@ public class SwimmersTest extends DriverClass {
 		login.enterPassword("12345678");
 		login.clickSignButton();
 		dash.clickOnSwimmers();
-		//boolean name = util.selectValueByVisibleText(swimmers.batchname, "Automation Batch 1");
-		boolean batchlist = swimmers.checkBatchNameIsListedOrNot("Automation Batch 1");
-		Assert.assertEquals(batchlist, true);
+		driver.findElement(swimmers.BatchSelection).click();
+		List <String> batchname = new ArrayList <String>(); 
+		WebElement batchlist = driver.findElement(By.xpath("html/body/span/span/span[2]"));
+		List <WebElement> batches  = batchlist.findElements(By.tagName("li"));
+		for (WebElement webElement : batches){
+			System.out.println(webElement.getText());
+			if (webElement.getText().equalsIgnoreCase("Week End Batch")){
+				//Thread.sleep(500);
+				batchname.add("Week End Batch");
+				Assert.assertEquals(webElement, "Week End Batch");
+				break;
+			}
+		}
 		
 	}
-	
-	
+		
 	public void checkSwimmersAreListedOrNot() throws InterruptedException
 	{
 		login.enterEmailId("swimlife@gmail.com");
@@ -69,7 +80,7 @@ public class SwimmersTest extends DriverClass {
 		for (int i=0;i<results.size();i++){
 			System.out.println(results.size());
 			
-		//}
+		}
 		
 	}
 		
@@ -82,7 +93,7 @@ public class SwimmersTest extends DriverClass {
 		WebElement bactlist = driver.findElement(swimmers.BatchSelection);
 		util.selectValueByVisibleText(bactlist, "Automation Batch 1");
 		swimmers.getmatchingCoachNameforSwimmers("Ipadone edited ", "rajaji rcoach1");
-	}*/
+	}
 	
 	
 	public void searchSwimmers () throws InterruptedException
@@ -224,6 +235,7 @@ driver.switchTo().window(paranetwindowhandle);*/
         //}
 	}
 }
+
 	
 
 
