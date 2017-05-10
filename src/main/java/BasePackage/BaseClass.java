@@ -14,7 +14,7 @@ public class BaseClass extends DriverClass{
 	public void launchAUTApplication () throws IOException
 	{
 		driverclass.launchBrowser(driverclass.getValuesFromPropertiesFile("BrowserName"));			
-		
+		//driver.manage().window().maximize();
 	}
 	
 	@AfterSuite

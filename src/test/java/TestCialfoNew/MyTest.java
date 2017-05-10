@@ -263,6 +263,33 @@ public void addingBatch() throws InterruptedException
 	batch.clickOnCreateButton();
 	
 }
+@Test
+public void tranferBatch() throws InterruptedException
+{
+	login.enterEmailId("swimlife@gmail.com");
+	login.enterPassword("12345678");
+	login.clickSignButton();
+	dash.clickOnManageBatch();
+	//batch.searchBatch("Automation");
+	batch.selectCheckBoxbasedOnBatchName("Sunday Batch on 6PM to 7 PM");
+	batch.clickOnTranferButton();
+	Thread.sleep(500);
+	String paranetwindowhandle = driver.getWindowHandle();	
+	System.out.println(paranetwindowhandle);
+	driver.switchTo().window(paranetwindowhandle);
+	driver.findElement(batch.CoachSelectionInTranferBatch).click();
+	Thread.sleep(500);
+	WebElement coachresult = driver.findElement(batch.CoachResult);
+	
+	batch.selectCoachFromCoachList(coachresult,"RajKumar");
+	
+	
+	batch.clickOnSubmitButton();
+	Thread.sleep(500);
+	batch.getSuccessmessage();
+	System.out.println(batch.getSuccessmessage());
+	
+}
 }
 
 	
