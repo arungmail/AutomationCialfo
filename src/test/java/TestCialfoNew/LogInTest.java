@@ -11,6 +11,7 @@ import junit.framework.Assert;
 public class LogInTest extends DriverClass {
 	LoginForm login = new LoginForm();
 	DashBoard dash 	=  new DashBoard();
+	InputValues input = new InputValues ();
 	
 
 	/*@AfterMethod
@@ -18,8 +19,8 @@ public class LogInTest extends DriverClass {
 		driver.get("http://192.168.1.206:4200/login");*/
 	//}
 	public void normalLogin(){
-		login.enterEmailId("swimlife@gmail.com");
-		login.enterPassword("Nichi123");
+		login.enterEmailId(input.club);
+		login.enterPassword(input.ClubPassword);
 		login.clickSignButton();
 		
 	}

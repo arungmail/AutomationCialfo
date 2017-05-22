@@ -17,6 +17,8 @@ public class DashBoard extends DriverClass {
 	private By ManageGroup = By.partialLinkText("manage-group");
 	private By ManageBatch = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[7]/a/span");
 	public By Message = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[8]/a/span");
+	public By PendingUsers = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[12]/a/span");
+	
 	
 
 	public void clickOnProfileNameOnTop() {

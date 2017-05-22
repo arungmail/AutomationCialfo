@@ -13,12 +13,13 @@ public class CoachesTest extends DriverClass{
 	LoginForm login = new LoginForm();
 	DashBoard dash	= new DashBoard();
 	CoachesPage coach = new CoachesPage();
+	InputValues input = new InputValues ();
 	
 	@Test(priority=1)
 	public void checkTitleOfCoachPage () throws InterruptedException
 	{
-		login.enterEmailId("swimlife@gmail.com");
-		login.enterPassword("12345678");
+		login.enterEmailId(input.club);
+		login.enterPassword(input.ClubPassword);
 		login.clickSignButton();
 		dash.clickOnCoach();
 		Thread.sleep(500);
@@ -41,17 +42,17 @@ public class CoachesTest extends DriverClass{
 	{
 		
 		
-		String actuLCoachName = driver.findElement(By.linkText("rajaji rcoach1")).getText();
-		String expectedCoach = "rajaji rcoach1";
+		String actuLCoachName = driver.findElement(By.linkText(input.coach)).getText();
+		String expectedCoach = input.coach;
 		Assert.assertEquals(expectedCoach, actuLCoachName);
 		
 	}
 	@Test(priority=4)
 	public void verifySearch()
 	{
-		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("rajaji");
-		String actuLCoachName = driver.findElement(By.linkText("rajaji rcoach1")).getText();
-		String expectedCoach = "rajaji rcoach1";
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys(input.coach);
+		String actuLCoachName = driver.findElement(By.linkText(input.coach)).getText();
+		String expectedCoach = input.coach;
 		Assert.assertEquals(expectedCoach, actuLCoachName);
 		
 	}
@@ -59,10 +60,10 @@ public class CoachesTest extends DriverClass{
      public void coachRedirectingToCoachProfilePage () throws InterruptedException
      {
     	 dash.clickOnCoach();
-    	 driver.findElement(By.linkText("rajaji rcoach1")).click();
+    	 driver.findElement(By.linkText(input.coach)).click();
     	 Thread.sleep(500);
     	 String actualCoachProfileName = driver.findElement(By.xpath("//h1[@class='font-green sbold uppercase']")).getText();
-    	 String expectedCoachname = "rajaji rcoach1";
+    	 String expectedCoachname = input.coach;
     	 Assert.assertEquals(expectedCoachname, actualCoachProfileName);
     	 Thread.sleep(500);
     	 dash.logingOut();

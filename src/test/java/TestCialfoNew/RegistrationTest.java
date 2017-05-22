@@ -23,6 +23,7 @@ public class RegistrationTest extends DriverClass {
 	BaseClass base 		= new BaseClass();
 	Utility util 		= new Utility();
 	DashBoard dash 		= new DashBoard();
+	InputValues input = new InputValues ();
 	
 	@AfterMethod
 	public void clickGoTOSignpage(){
@@ -38,7 +39,7 @@ public class RegistrationTest extends DriverClass {
 	public void validSwimmerRegistration () throws InterruptedException{
 		login.clickOnRegister();
 		reg.enterUserName("swimmer5");
-		reg.enterEmail("swimmer5@mailinator.com");
+		reg.enterEmail(input.swimmer);
 		reg.enterFirstname("swimmer5");
 		reg.enterLastName("five");
 		reg.enterPhoneNumber("919901395048");
@@ -63,7 +64,7 @@ public class RegistrationTest extends DriverClass {
 	{
 		login.clickOnRegister();
 		reg.enterUserName("swimmer5");
-		reg.enterEmail("swimmer5@mailinator.com");
+		reg.enterEmail(input.coach);
 		reg.enterFirstname("swimmer5");
 		reg.enterLastName("five");
 		reg.enterPhoneNumber("919901395048");

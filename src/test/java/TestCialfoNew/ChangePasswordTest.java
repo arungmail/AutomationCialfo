@@ -13,6 +13,7 @@ public class ChangePasswordTest extends DriverClass{
 	LogInTest login 		= new LogInTest();
 	DashBoard dash 			= new DashBoard ();
 	ProfilePage	 profile	= new ProfilePage();
+	InputValues input = new InputValues ();
 	
 	@Test(priority=1)
 	public void checkPasswordChangesSucessMesssage ()
@@ -35,7 +36,7 @@ public class ChangePasswordTest extends DriverClass{
 	@Test(priority=2)
 	public void verigyLoginWithNewPassword() throws InterruptedException
 	{
-		login1.enterEmailId("swimlife@gmail.com");
+		login1.enterEmailId(input.club);
 		login1.enterPassword("Nichi123");
 		login1.clickSignButton();
 		Thread.sleep(500);
@@ -46,7 +47,7 @@ public class ChangePasswordTest extends DriverClass{
 	@Test(priority=3)
 	public void verifyLoginWithOldpassword()
 	{
-		login1.enterEmailId("swimlife@gmail.com");
+		login1.enterEmailId(input.club);
 		login1.enterPassword("12345678");
 		login1.clickSignButton();
 		String actualError   	= login1.signInPasswordValidationError();

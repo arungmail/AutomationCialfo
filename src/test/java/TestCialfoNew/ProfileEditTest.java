@@ -15,6 +15,7 @@ public class ProfileEditTest extends DriverClass {
 	DashBoard dash		= new DashBoard ();
 	ProfilePage profile = new ProfilePage();
 	Utility util 		= new Utility();
+	InputValues input = new InputValues ();
 
 	
 	@Test(priority=1)

@@ -25,13 +25,31 @@ public class SwimmersTest extends DriverClass {
 	Utility util = new Utility();
 	SwimmersPage swimmers = new SwimmersPage();
 	BatchList batch = new BatchList();
+	DriverClass driverclass = new DriverClass();
+	InputValues input = new InputValues ();
+	
 	
 	
 	@Test
-	public void checkAddedBatchIsListedOrNot()
+	
+	
+	public void checkUnassingedSwimmer() throws InterruptedException
 	{
-		login.enterEmailId("swimlife@gmail.com");
-		login.enterPassword("12345678");
+
+		login.enterEmailId(input.club);
+		login.enterPassword(input.ClubPassword);
+		login.clickSignButton();
+		dash.clickOnSwimmers();
+		WebElement batchselection = driver.findElement(swimmers.BatchSelection);
+		swimmers.batchSelection(batchselection, "Un Assigned");
+		String actualSwimmer = driver.findElement(By.linkText(input.swimmer)).getText();
+		String expectedSwimmer = input.swimmer;
+		Assert.assertEquals(actualSwimmer, expectedSwimmer);
+	}
+	/*public void checkAddedBatchIsListedOrNot()
+	{
+		login.enterEmailId(input.club);
+		login.enterPassword(input.ClubPassword);
 		login.clickSignButton();
 		dash.clickOnSwimmers();
 		driver.findElement(swimmers.BatchSelection).click();
@@ -50,12 +68,12 @@ public class SwimmersTest extends DriverClass {
 			}
 		}
 		
-	}
+	}*/
 	
 	public void searchSwimmers () throws InterruptedException
 	{
-		login.enterEmailId("swimlife@gmail.com");
-		login.enterPassword("12345678");
+		login.enterEmailId(input.club);
+		login.enterPassword(input.ClubPassword);
 		login.clickSignButton();
 		dash.clickOnSwimmers();
 		swimmers.search("sngbdjgbsd");
@@ -70,16 +88,16 @@ public class SwimmersTest extends DriverClass {
 	
 	public void simmerAfterSearch() throws InterruptedException
 	{
-		login.enterEmailId("swimlife@gmail.com");
-		login.enterPassword("12345678");
+		login.enterEmailId(input.club);
+		login.enterPassword(input.ClubPassword);
 		login.clickSignButton();
 		dash.clickOnSwimmers();
-		swimmers.search("Opera1");
+		swimmers.search(input.swimmer2);
 		Thread.sleep(5000);
 		
-		String actulaSwimmername = driver.findElement(By.linkText("Opera1")).getText();
+		String actulaSwimmername = driver.findElement(By.linkText(input.swimmer2)).getText();
 		System.out.println(actulaSwimmername);
-		String expectedSwimmername = "Opera1";
+		String expectedSwimmername = input.swimmer2;
 		Assert.assertEquals(actulaSwimmername, expectedSwimmername);
 	}
 	
@@ -87,7 +105,6 @@ public class SwimmersTest extends DriverClass {
 public void tranferSwimmersToBatch () throws InterruptedException
 {
 	driver.navigate().refresh();
-	
 	driver.findElement(swimmers.BatchSelection).click();
 	WebElement batchResult = driver.findElement(swimmers.batchresults);
 	swimmers.batchSelection(batchResult, "");
@@ -102,8 +119,9 @@ public void tranferSwimmersToBatch () throws InterruptedException
 	
 	}
 	catch(Exception e){
+		System.out.println("swimmer not found");
 	}
-	System.out.println("swimmer not found");
+	
 }
 	
 
@@ -115,6 +133,7 @@ public void checkSwimmersisdiaplayingAfterSwimmertranfer() throws InterruptedExc
 	WebElement batchList3 = driver.findElement(swimmers.batchresults);
 	swimmers.batchSelection(batchList3, "");
 	String actulaSwimmer = driver.findElement(By.linkText("Divya")).getText();
+	
 	String expectedSwimmer = "Divya";
 	Assert.assertEquals(actulaSwimmer, expectedSwimmer);
 	
@@ -125,7 +144,8 @@ public void checkbatchnameIsMatchingOrNot()
 }
 public void checkCoachIsmatchingOrNot()
 {
-	swimmers.getmatchingCoachNameforSwimmers(swimmername, expectedCoachName);
+	//swimmers.getmatchingCoachNameforSwimmers(swimmername, expectedCoachName);
+	//swimmers.getmatchingCoachNameforSwimmers((driverclass.getValuesFromPropertiesFile("BrowserName"), "fdgf"));
 }
 }
 

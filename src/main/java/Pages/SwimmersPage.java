@@ -173,5 +173,17 @@ public class SwimmersPage extends DriverClass {
 		driver.findElement(TranferButton).click();
 
 	}
+	
+	public boolean getBooleanvalue (String value)
+	{
+		boolean status = driver.findElement(By.linkText(value)).isDisplayed();
+		return status;
+		
+	}
+	public String getStringvalue(String name){
+		String value = driver.findElement(By.linkText(name)).getText();
+		return value;
+		
+	}
 
 }
