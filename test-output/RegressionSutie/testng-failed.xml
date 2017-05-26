@@ -9,11 +9,11 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.MessageTest">
+      <class name="TestCialfoNew.MyTest">
         <methods>
-          <include name="composeMail"/>
+          <include name="testt"/>
         </methods>
-      </class> <!-- TestCialfoNew.MessageTest -->
+      </class> <!-- TestCialfoNew.MyTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

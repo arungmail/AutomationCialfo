@@ -15,6 +15,7 @@ import BasePackage.Utility;
 import Pages.BatchList;
 import Pages.DashBoard;
 import Pages.LoginForm;
+import Pages.PendingUsers;
 import Pages.SwimmersPage;
 
 public class MyTest extends DriverClass{
@@ -23,6 +24,9 @@ public class MyTest extends DriverClass{
 	BatchList batch = new BatchList();
 	Utility util = new Utility();
 	SwimmersPage swimmers = new SwimmersPage ();
+	InputValues input = new InputValues ();
+	PendingUsers pending = new PendingUsers();
+	
 	
 	
 	
@@ -263,7 +267,7 @@ public void addingBatch() throws InterruptedException
 	batch.clickOnCreateButton();
 	
 }
-@Test
+
 public void tranferBatch() throws InterruptedException
 {
 	login.enterEmailId("swimlife@gmail.com");
@@ -290,6 +294,20 @@ public void tranferBatch() throws InterruptedException
 	System.out.println(batch.getSuccessmessage());
 	
 }
+@Test 
+
+public void testt ()
+{
+	login.enterEmailId(input.club);
+	login.enterPassword(input.ClubPassword);
+	login.clickSignButton();
+	driver.findElement(dash.PendingUsers).click();
+	WebElement select = driver.findElement(pending.FilterDropDown);
+	util.selectValueByValue(select, "reject");
+	pending.approveSwimmerSBasedOnName("Liya");
+}
+
+
 }
 
 	

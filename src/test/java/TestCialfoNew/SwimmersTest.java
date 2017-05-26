@@ -102,7 +102,7 @@ public class SwimmersTest extends DriverClass {
 	}
 	
 
-public void tranferSwimmersToBatch () throws InterruptedException
+/*public void tranferSwimmersToBatch () throws InterruptedException
 {
 	driver.navigate().refresh();
 	driver.findElement(swimmers.BatchSelection).click();
@@ -122,7 +122,7 @@ public void tranferSwimmersToBatch () throws InterruptedException
 		System.out.println("swimmer not found");
 	}
 	
-}
+}*/
 	
 
 public void checkSwimmersisdiaplayingAfterSwimmertranfer() throws InterruptedException
