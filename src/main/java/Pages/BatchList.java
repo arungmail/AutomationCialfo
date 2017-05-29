@@ -174,4 +174,54 @@ public class BatchList extends DriverClass {
 
 		}
 	}
+
+	public boolean coachesFromCoachList(WebElement element, String swimmerName) {
+		boolean coachstatus = false;
+		List<WebElement> swimmers = element.findElements(By.tagName("li"));
+
+		for (WebElement webElement : swimmers) {
+			System.out.println(webElement.getText());
+
+			if (webElement.getText().equals(swimmerName)) {
+				coachstatus = true;
+			} else {
+				coachstatus = false;
+			}
+		}
+		return coachstatus;
+	}
+
+	public boolean SwimmersFromCoachList(WebElement element, String swimmerName) {
+		boolean swimmerstatus = false;
+		List<WebElement> swimmers = element.findElements(By.tagName("li"));
+
+		for (WebElement webElement : swimmers) {
+			System.out.println(webElement.getText());
+
+			if (webElement.getText().equals(swimmerName)) {
+				swimmerstatus = true;
+			} else {
+				swimmerstatus = false;
+			}
+		}
+		return swimmerstatus;
+	}
+
+	public boolean checkSwimmersAreDisplayedOrNot(WebElement element, String swimmerName){
+		List<WebElement> swimmers = element.findElements(By.tagName("li"));
+		for (WebElement webElement : swimmers) {
+			System.out.println(webElement.getText());
+			boolean swimmer;
+			if (webElement.getText().equals(swimmerName)) {
+				swimmer = true;
+
+			}
+			else {
+				swimmer = false;
+			}
+
+		}
+		
+		return .swimmer;
+	}
 }

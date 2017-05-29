@@ -79,9 +79,6 @@ public class PendingUsers extends DriverClass{
 				System.err.println(swimmernames);
 				if (swimmernames.equals(name)){
 					swimmername.add(name);
-				
-					
-					
 					break;
 				}
 					
@@ -92,7 +89,7 @@ public class PendingUsers extends DriverClass{
 		return name;
 	}
 	
-	public String swimmerIsListedOrnot (String name)
+	public boolean swimmerIsListedOrnot (String name)
 	{
 		WebElement table = driver.findElement(SwimmersTable);
 		List <WebElement> row = table.findElements(Row);
@@ -101,18 +98,34 @@ public class PendingUsers extends DriverClass{
 			List<WebElement> col = row.get(i).findElements(Col);
 			for (int j = 0; j < col.size(); j++) {
 				String swimmernames = col.get(j).getText();
-				
+				//boolean swimmerstustus;
 				System.err.println(swimmernames);
-				if (swimmernames){
-					break;
+				/*if (swimmernames.equals(name)){
+					return swimmerstustus = true;
 				}
+				else {
+					return swimmerstustus = false;
+				}*/
+				boolean swimmerstatus = false;
+				if (swimmerstatus = swimmernames.equals(name)){
+					return swimmerstatus;
+				}
+				else {
+					return swimmerstatus;
 					
 				}
 			
 			
 		}
-		return true;
-				
+		}
+		boolean swimmerstatus = false;
+		return swimmerstatus;
+		
 	}
 }
+	/*	
+		boolean swimmerstustus = false;
+		return swimmerstustus;*/
+		
+				
 

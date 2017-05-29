@@ -192,6 +192,8 @@ public class BatchTest extends DriverClass {
 		}
 	}
 
+	
+	//Tranfring coach from Coach2
 	@Test(priority = 7)
 	public void tranferCoach() throws InterruptedException {
 		/*
@@ -293,6 +295,8 @@ public class BatchTest extends DriverClass {
 	 * driver.findElement(By.xpath("//a[@href='/dashboard']")).click(); }
 	 */
 	
+	
+	//Tranfering Swimmers2 to Coach2
 	public void tranferSwimmersToBatch () throws InterruptedException
 	{
 		driver.navigate().refresh();
@@ -323,4 +327,5 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(status, false);
 		
 	}
+	
 }
