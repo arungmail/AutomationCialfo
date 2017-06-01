@@ -39,6 +39,20 @@ public class RegisterForm extends DriverClass {
 	private By ClubDropDown = By.xpath("//span[@role='presentation']");
 
 	private By AlreadyHaveAnMember = By.partialLinkText("I already have a membership");
+	private By EnterOTP         = By.xpath("//input[@id='otp_text']");
+	public By OTPSubmitButton 	= By.xpath("(//button[@type='button'])[3]");
+	public By ResendButton 	= By.xpath("(//button[@type='button'])[2]");
+	
+	
+	public void enterOTP(String otp) throws InterruptedException
+	{
+		driver.findElement(EnterOTP).clear();
+		driver.findElement(EnterOTP).sendKeys(otp);
+		Thread.sleep(50000);
+		driver.findElement(OTPSubmitButton).click();
+	}
+	
+	
 
 	public void enterUserName(String value) {
 		driver.findElement(Username).sendKeys(value);

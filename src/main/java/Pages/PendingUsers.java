@@ -14,7 +14,7 @@ public class PendingUsers extends DriverClass{
 	public By SwimmersTable  = By.xpath("//table[@id='swimmertable']");
 	public By Row 				= By.tagName("tr");
 	public By Col				= By.tagName("td");
-	
+	boolean swimmerstatus ;
 	
 	public void approveSwimmerSBasedOnName(String name) {
 		WebElement table = driver.findElement(SwimmersTable);
@@ -94,31 +94,26 @@ public class PendingUsers extends DriverClass{
 		WebElement table = driver.findElement(SwimmersTable);
 		List <WebElement> row = table.findElements(Row);
 		row.size();
+		
 		for (int i=0;i<row.size();i++){
 			List<WebElement> col = row.get(i).findElements(Col);
 			for (int j = 0; j < col.size(); j++) {
 				String swimmernames = col.get(j).getText();
-				//boolean swimmerstustus;
 				System.err.println(swimmernames);
-				/*if (swimmernames.equals(name)){
-					return swimmerstustus = true;
-				}
-				else {
-					return swimmerstustus = false;
-				}*/
-				boolean swimmerstatus = false;
-				if (swimmerstatus = swimmernames.equals(name)){
+				
+				if (swimmernames.equals(name)){
+					swimmerstatus = true;
 					return swimmerstatus;
 				}
 				else {
+					swimmerstatus = false;
 					return swimmerstatus;
-					
 				}
 			
-			
+		
 		}
 		}
-		boolean swimmerstatus = false;
+
 		return swimmerstatus;
 		
 	}

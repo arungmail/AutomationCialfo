@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TestCialfoNew.SwimmersTest">
+      <class name="TestCialfoNew.MyTest">
         <methods>
-          <include name="checkCoachIsmatchingOrNot"/>
+          <include name="testt"/>
         </methods>
-      </class> <!-- TestCialfoNew.SwimmersTest -->
+      </class> <!-- TestCialfoNew.MyTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

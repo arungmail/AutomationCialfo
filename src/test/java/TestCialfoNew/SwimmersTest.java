@@ -33,19 +33,6 @@ public class SwimmersTest extends DriverClass {
 	@Test
 	
 	
-	public void checkUnassingedSwimmer() throws InterruptedException
-	{
-
-		login.enterEmailId(input.club);
-		login.enterPassword(input.ClubPassword);
-		login.clickSignButton();
-		dash.clickOnSwimmers();
-		WebElement batchselection = driver.findElement(swimmers.BatchSelection);
-		swimmers.batchSelection(batchselection, "Un Assigned");
-		String actualSwimmer = driver.findElement(By.linkText(input.swimmer)).getText();
-		String expectedSwimmer = input.swimmer;
-		Assert.assertEquals(actualSwimmer, expectedSwimmer);
-	}
 	/*public void checkAddedBatchIsListedOrNot()
 	{
 		login.enterEmailId(input.club);
@@ -70,20 +57,6 @@ public class SwimmersTest extends DriverClass {
 		
 	}*/
 	
-	public void searchSwimmers () throws InterruptedException
-	{
-		login.enterEmailId(input.club);
-		login.enterPassword(input.ClubPassword);
-		login.clickSignButton();
-		dash.clickOnSwimmers();
-		swimmers.search("sngbdjgbsd");
-		Thread.sleep(5000);
-		WebElement error = driver.findElement(swimmers.DataEmptyMessage);
-		String actualError = util.getErrorMessage(error);
-		String expectedError = "No data available in table";
-		Assert.assertEquals(actualError, expectedError);
-		
-	}
 	
 	
 	public void simmerAfterSearch() throws InterruptedException
@@ -99,6 +72,19 @@ public class SwimmersTest extends DriverClass {
 		System.out.println(actulaSwimmername);
 		String expectedSwimmername = input.swimmer2;
 		Assert.assertEquals(actulaSwimmername, expectedSwimmername);
+	}
+	
+	public void searchInvalidSwimmers () throws InterruptedException
+	{
+		driver.navigate().refresh();
+		dash.clickOnSwimmers();
+		swimmers.search("sngbdjgbsd");
+		Thread.sleep(5000);
+		WebElement error = driver.findElement(swimmers.DataEmptyMessage);
+		String actualError = util.getErrorMessage(error);
+		String expectedError = "No data available in table";
+		Assert.assertEquals(actualError, expectedError);
+		
 	}
 	
 

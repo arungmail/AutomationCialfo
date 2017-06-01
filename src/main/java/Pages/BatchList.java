@@ -211,17 +211,17 @@ public class BatchList extends DriverClass {
 		List<WebElement> swimmers = element.findElements(By.tagName("li"));
 		for (WebElement webElement : swimmers) {
 			System.out.println(webElement.getText());
-			boolean swimmer;
+			boolean swimmer = false;
 			if (webElement.getText().equals(swimmerName)) {
-				swimmer = true;
-
+				return swimmer;
 			}
 			else {
-				swimmer = false;
+				return swimmer;
 			}
 
 		}
 		
-		return .swimmer;
+		boolean swimmer = false;
+		return swimmer;
 	}
 }

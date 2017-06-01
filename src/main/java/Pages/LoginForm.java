@@ -8,6 +8,7 @@ import BasePackage.Utility;
 
 public class LoginForm extends DriverClass {
 	static Utility util = new Utility();
+	DashBoard dash = new DashBoard();
 
 	private static By email = By.xpath("(//input[@placeholder='Email'])[1]");
 	private static By Password = By.id("password");
@@ -56,5 +57,6 @@ public class LoginForm extends DriverClass {
 		System.out.println(error);
 		return error;
 	}
+	
 
 }

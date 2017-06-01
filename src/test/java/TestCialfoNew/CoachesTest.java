@@ -36,17 +36,7 @@ public class CoachesTest extends DriverClass{
 		String expctedCoachPageSubTitle = "Coach List";
 		Assert.assertEquals(expctedCoachPageSubTitle, actualCoachPageSubTitle);
 	}
-	@Test(priority=3)
 	
-	public void checkCoachAddedOrnot()
-	{
-		
-		
-		String actuLCoachName = driver.findElement(By.linkText(input.coach)).getText();
-		String expectedCoach = input.coach;
-		Assert.assertEquals(expectedCoach, actuLCoachName);
-		
-	}
 	@Test(priority=4)
 	public void verifySearch()
 	{

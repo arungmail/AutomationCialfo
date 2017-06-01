@@ -36,12 +36,12 @@ public class RegistrationTest extends DriverClass {
 	*/
 	//Testing valid registration 
 	@Test(priority=1)
-	public void validSwimmerRegistration () throws InterruptedException{
+	public void validSwimmerRegistrationforSwimmer () throws InterruptedException{
 		login.clickOnRegister();
-		reg.enterUserName("swimmer5");
-		reg.enterEmail(input.swimmer);
-		reg.enterFirstname("swimmer5");
-		reg.enterLastName("five");
+		reg.enterUserName("Venu");
+		reg.enterEmail("venu@mailinator.com");
+		reg.enterFirstname("Venu");
+		reg.enterLastName("viya");
 		reg.enterPhoneNumber("919901395048");
 		reg.enterPassword("Nichi123");
 		reg.reEnterPassword("Nichi123");
@@ -56,17 +56,21 @@ public class RegistrationTest extends DriverClass {
 		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
 		reg.clickRegisterButton();
 		Thread.sleep(500);
-		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);	
+		util.handleWindow();
+		reg.enterOTP("");
+		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);
+		dash.logingOut();
+		
 	}
 	
 	@Test(priority=2)
-	public void validCoachRegistration () throws InterruptedException
+	public void validCoachRegistrationForSwimmer2 () throws InterruptedException
 	{
 		login.clickOnRegister();
-		reg.enterUserName("swimmer5");
-		reg.enterEmail(input.coach);
-		reg.enterFirstname("swimmer5");
-		reg.enterLastName("five");
+		reg.enterUserName("Seenu");
+		reg.enterEmail("seenu@mailinator.com");
+		reg.enterFirstname("Seenu");
+		reg.enterLastName("Mohan");
 		reg.enterPhoneNumber("919901395048");
 		reg.enterPassword("Nichi123");
 		reg.reEnterPassword("Nichi123");
@@ -81,7 +85,61 @@ public class RegistrationTest extends DriverClass {
 		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
 		reg.clickRegisterButton();
 		Thread.sleep(500);
+		util.handleWindow();
+		reg.enterOTP("");	
+		dash.logingOut();
+	}
+	
+	
+	public void validCoachRegistrationForCoach () throws InterruptedException
+	{
+		login.clickOnRegister();
+		reg.enterUserName("Naren");
+		reg.enterEmail("naren@mailinator.com");
+		reg.enterFirstname("Naren");
+		reg.enterLastName("Kumar");
+		reg.enterPhoneNumber("919901395048");
+		reg.enterPassword("Nichi123");
+		reg.reEnterPassword("Nichi123");
+		reg.enterLocation("Cochin");		
+		reg.selectYear("1990");
+		reg.selectMonth("Apr");
+		reg.selectDate("28");
+		//reg.selectRole("Player");
+		//reg.selectRole("Male");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
+		reg.clickRegisterButton();
+		Thread.sleep(500);
+		util.handleWindow();
+		reg.enterOTP("");	
+		dash.logingOut();
+	}
+	
+	public void validCoachRegistrationForCaoch2 () throws InterruptedException
+	{
+		login.clickOnRegister();
+		reg.enterUserName("Sreeedhar");
+		reg.enterEmail("sreedhar@mailinator.com");
+		reg.enterFirstname("Sreedhar");
+		reg.enterLastName("Kumar");
+		reg.enterPhoneNumber("919901395048");
+		reg.enterPassword("Nichi123");
+		reg.reEnterPassword("Nichi123");
+		reg.enterLocation("Cochin");		
+		reg.selectYear("1990");
+		reg.selectMonth("Apr");
+		reg.selectDate("28");
+		//reg.selectRole("Player");
+		//reg.selectRole("Male");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
+		reg.clickRegisterButton();
+		Thread.sleep(500);
 		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);	
+		dash.logingOut();
 	}
 	@Test(priority=3)
 	public void emptyUserNamevalidationchecks () throws InterruptedException

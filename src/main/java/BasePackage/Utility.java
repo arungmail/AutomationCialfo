@@ -149,5 +149,11 @@ public class Utility extends DriverClass{
 			String error = driver.findElement((By) element).getText();
 			return error;
 		}
+		public void handleWindow ()
+		{
+			String paranetwindowhandle = driver.getWindowHandle();
+			System.out.println(paranetwindowhandle);
+			driver.switchTo().window(paranetwindowhandle);
+		}
 }
 
