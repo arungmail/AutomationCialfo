@@ -2,6 +2,7 @@ package TestCialfoNew;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
 import BasePackage.Utility;
@@ -96,7 +97,13 @@ public class PendingUsersTest extends DriverClass {
 
 	}
 
-	public void checkSwimmerNotDisplayedInPendingListAfterReject() {
+	@Test
+	public void checkSwimmerNotDisplayedInPendingListAfterReject() throws InterruptedException {
+
+		login.enterEmailId(input.club);
+		login.enterPassword(input.ClubPassword);
+		login.clickSignButton();
+		Thread.sleep(500);
 		driver.navigate().refresh();
 		driver.findElement(dash.PendingUsers).click();
 		WebElement filter = driver.findElement(pending.FilterDropDown);

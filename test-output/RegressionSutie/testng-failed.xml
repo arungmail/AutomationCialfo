@@ -9,11 +9,11 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.MyTest">
+      <class name="TestCialfoNew.PendingUsersTest">
         <methods>
-          <include name="testt"/>
+          <include name="checkSwimmerNotDisplayedInPendingListAfterReject"/>
         </methods>
-      </class> <!-- TestCialfoNew.MyTest -->
+      </class> <!-- TestCialfoNew.PendingUsersTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

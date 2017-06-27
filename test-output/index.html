@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-RegressionSutie">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.MyTest" hash-for-method="testt">testt</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.PendingUsersTest" hash-for-method="checkSwimmerNotDisplayedInPendingListAfterReject">checkSwimmerNotDisplayedInPendingListAfterReject</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-RegressionSutie -->
@@ -120,16 +120,21 @@
           <div class="suite-RegressionSutie-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">TestCialfoNew.MyTest</span>
+              <span class="class-name">TestCialfoNew.PendingUsersTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testt">
-                  </a> <!-- testt -->
-                  <span class="method-name">testt</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at TestCialfoNew.MyTest.testt(MyTest.java:320)
+                  <a name="checkSwimmerNotDisplayedInPendingListAfterReject">
+                  </a> <!-- checkSwimmerNotDisplayedInPendingListAfterReject -->
+                  <span class="method-name">checkSwimmerNotDisplayedInPendingListAfterReject</span>
+                  <div class="stack-trace">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:282)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:149)
+	at junit.framework.Assert.assertEquals(Assert.java:155)
+	at TestCialfoNew.PendingUsersTest.checkSwimmerNotDisplayedInPendingListAfterReject(PendingUsersTest.java:118)
 ... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -149,7 +154,7 @@
   &lt;test name=&quot;CialfoNewversion&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;BasePackage.BaseClass&quot;/&gt;
-      &lt;class name=&quot;TestCialfoNew.MyTest&quot;/&gt;
+      &lt;class name=&quot;TestCialfoNew.PendingUsersTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- CialfoNewversion --&gt;
 &lt;/suite&gt; &lt;!-- RegressionSutie --&gt;
@@ -191,14 +196,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testt')
-data.setCell(0, 2, 'TestCialfoNew.MyTest')
-data.setCell(0, 3, 14164);
+data.setCell(0, 1, 'checkSwimmerNotDisplayedInPendingListAfterReject')
+data.setCell(0, 2, 'TestCialfoNew.PendingUsersTest')
+data.setCell(0, 3, 65822);
 window.suiteTableData['RegressionSutie']= { tableData: data, tableDiv: 'times-div-RegressionSutie'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-RegressionSutie">
               </div> <!-- times-div-RegressionSutie -->
             </div> <!-- times-div -->
@@ -231,21 +236,19 @@ return data;
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCialfoNew.MyTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestCialfoNew.PendingUsersTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testt</span>
-                <span class="method-start">7400 ms</span>
+                <span class="method-name">checkSwimmerNotDisplayedInPendingListAfterReject</span>
+                <span class="method-start">9148 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">BasePackage.BaseClass</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">cleanUp</span>
-                <span class="method-start">21616 ms</span>
+                <span class="method-start">75396 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

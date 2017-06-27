@@ -294,7 +294,7 @@ public void tranferBatch() throws InterruptedException
 	System.out.println(batch.getSuccessmessage());
 	
 }
-@Test 
+
 
 public void testt () throws InterruptedException
 {
@@ -324,7 +324,35 @@ public void testt () throws InterruptedException
 			
 }
 
-
+@Test 
+public void testtfg () throws InterruptedException
+{
+	login.enterEmailId(input.club);
+	login.enterPassword(input.ClubPassword);
+	login.clickSignButton();
+	Thread.sleep(500);
+	driver.findElement(dash.ChangeLocationButton).click();
+	util.handleWindow();
+	driver.findElement(By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[1]/ul[2]/li[2]/ul/li[4]/a/span")).click();
+	WebElement allLocation = driver.findElement(dash.ChangeLocationList);
+	Thread.sleep(500);
+	List <WebElement> alllocationList = allLocation.findElements(By.tagName("li"));
+	for (WebElement webElement : alllocationList){
+		System.out.println(webElement.getText());
+		if (webElement.getText().equalsIgnoreCase("Citi Nest Sports Centre, Indiranagar")){
+			Thread.sleep(500);
+			webElement.click();
+			break;
+		}
+		else {
+			System.out.println("zdgdsg");
+		}
+		driver.findElement(By.id("sfgdfgsdf")).click();
+	}
+	
+	
+			
+}
 }
 
 	

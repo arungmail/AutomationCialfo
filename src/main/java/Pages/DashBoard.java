@@ -6,8 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import BasePackage.DriverClass;
+import BasePackage.Utility;
 
 public class DashBoard extends DriverClass {
+	
+	Utility util = new Utility ();
+	
 
 	public By ProfileNameinSecondarymenu = By.xpath(".//*[@id='profile_name']/p");
 	public By profilenameInTopRightSide = By
@@ -66,19 +70,28 @@ public class DashBoard extends DriverClass {
 	public void clickOnSwimmers() {
 		driver.findElement(Swimmers).click();
 	}
-	public void selectLocation(String location)
+	public void selectLocation(String location) throws InterruptedException
 	{
+		
 		driver.findElement(ChangeLocationButton).click();
+		util.handleWindow();
+		driver.findElement(By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[1]/ul[2]/li[2]/ul/li[4]/a/span")).click();
 		WebElement allLocation = driver.findElement(ChangeLocationList);
+		Thread.sleep(500);
 		List <WebElement> alllocationList = allLocation.findElements(By.tagName("li"));
-		for (WebElement location1 :alllocationList ){
-			System.out.println(location1.getText());
-			if (location1.equals(location)){
-				location1.click();
-	
+		for (WebElement webElement : alllocationList){
+			System.out.println(webElement.getText());
+			if (webElement.getText().equalsIgnoreCase("Citi Nest Sports Centre, Indiranagar")){
+				Thread.sleep(500);
+				webElement.click();
+				break;
 			}
-			
+			else {
+				System.out.println("zdgdsg");
+			}
+			driver.findElement(By.id("sfgdfgsdf")).click();
 		}
+		
 		
 		
 	}
