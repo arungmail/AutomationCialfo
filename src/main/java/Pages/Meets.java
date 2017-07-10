@@ -121,7 +121,8 @@ public class Meets extends DriverClass{
 	
 	}
 	
-	public boolean getTextFromSwimmersTable (String value){
+	//
+	public boolean getSwimmerStatus (String value){
 		WebElement table = driver.findElement(By.xpath("//id[@id='swimmertable']"));
 		List <WebElement> row = table.findElements(By.tagName("tr"));
 		row.size();
@@ -136,11 +137,14 @@ public class Meets extends DriverClass{
 					else {
 						return Swimmerstatus = false;
 					}				 
-				}			 
+				}
+			break;
 			}
 			
 		return Swimmerstatus;		
-	}		
+	}	
+	
+	
 }
 
 
