@@ -95,4 +95,22 @@ public class DashBoard extends DriverClass {
 		
 		
 	}
+	
+	public void selectUserFromQuickMessage (String name,String name1){
+		driver.findElement(By.xpath("//li[@class='select2-search select2-search--inline']")).click();
+		List <WebElement> Alllist = driver.findElements(By.xpath("//span[@class='select2-results']"));
+		for (WebElement lists : Alllist){
+			System.out.println(lists.getText());
+			if (lists.getText().equals(name)){
+				lists.click();
+				continue;	
+				}
+			if (lists.equals(name1)){
+				lists.click();
+				break;
+				
+			}
+		}
+		
+	}
 }

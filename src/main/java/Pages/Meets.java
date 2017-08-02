@@ -72,7 +72,10 @@ public class Meets extends DriverClass{
 	public By SummeryValidationError				= By.id("summery_validation");
 	public By SearchSwimmerInSwimmerPage			= By.xpath("(//input[@placeholder=''])[2]");
 	public By SubmitButtonInAddSwiimer 				= By.xpath("html/body/div/app-root/app-meets/div[1]/section[2]/div/div/div/div[2]/div/div/div/div[3]/div[1]/form/div[6]/div[2]/button");
-	boolean Swimmerstatus;
+	public boolean Swimmerstatus;
+	public By SwimmerTable = By.id("swimmertable");
+	public By MeetsTable = By.id("meettable");
+	public boolean meetStatus;
 	
 	
 	
@@ -108,6 +111,9 @@ public class Meets extends DriverClass{
 		}
 		
 	}
+	
+	//public void 
+
 	public String getValidationError(WebElement element)
 	{
 		WebElement validation = driver.findElement((By) element);
@@ -122,7 +128,9 @@ public class Meets extends DriverClass{
 	}
 	
 	//
-	public boolean getSwimmerStatus (String value){
+	public boolean getSwimmerStatus (String value) throws InterruptedException{
+		driver.findElement(SearchSwimmerInSwimmerPage).sendKeys("sdfsdfd");
+		Thread.sleep(500);
 		WebElement table = driver.findElement(By.xpath("//id[@id='swimmertable']"));
 		List <WebElement> row = table.findElements(By.tagName("tr"));
 		row.size();
@@ -145,6 +153,57 @@ public class Meets extends DriverClass{
 	}	
 	
 	
+
+	public void editAndDelete (String swimmerName, String ediDeletevalue) throws InterruptedException{
+		driver.findElement(SearchSwimmerInSwimmerPage).sendKeys("sdfsdfd");
+		Thread.sleep(500);
+		WebElement table = driver.findElement(SwimmerTable);
+		List <WebElement> row = table.findElements(By.tagName("tr"));
+		row.size();
+		for (int i=0;i<row.size();i++){
+			List<WebElement> col = row.get(i).findElements(By.tagName("td"));
+			col.size();
+			for (int j=0;j<col.size();j++){
+				String swimmersname = col.get(j).getText();
+				if (Swimmerstatus = swimmersname.equals(swimmerName)){	
+					String xpa1 = "html/body/div[1]/app-root/app-meets/div[1]/section[2]/div/div/div/div[2]/div/div/div/div[3]/div[2]/div/div/div[2]/table/tbody/tr[";
+					String xpa2 = "1]/td[7]";
+					WebElement action = driver.findElement(By.xpath(xpa1+i+xpa2));
+					if (ediDeletevalue.endsWith("edit"))
+					action.findElement(By.xpath("//a[@class='edit_swimmer']")).click();
+					//WebElement delete = driver.findElement(By.xpath(xpa1+i+xpa2));
+					else {
+					action.findElement(By.xpath("//a[@class='delete_swimmer']"));
+					break;
+					}
+				}
+			}
+		}
+	}
+	
+	public boolean getMeetStatus (String meetsName){
+		driver.findElement(SearchMeet).sendKeys("dgdsg");
+		WebElement meetsTable = driver.findElement(MeetsTable);
+		List <WebElement> row = meetsTable.findElements(By.tagName("tr"));
+		row.size();
+		for (int i=0;i<row.size();i++){
+			List<WebElement> col = row.get(i).findElements(By.tagName("td"));
+			col.size();
+			for (int j=0;j<col.size();j++){
+				String meetsNames =col.get(j).getText();
+				if (meetsNames.equals(meetsName)){
+					meetStatus = true;
+				}
+				else {
+					meetStatus = false;
+				}
+					
+				}
+				
+			}
+		return meetStatus;
+		
+	}				
 }
 
 

@@ -36,10 +36,10 @@ public class RegistrationTest extends DriverClass {
 	*/
 	//Testing valid registration 
 	@Test(priority=1)
-	public void validSwimmerRegistrationforSwimmer () throws InterruptedException{
+	public void validSwimmerRegistration () throws InterruptedException{
 		login.clickOnRegister();
 		reg.enterUserName("Venu");
-		reg.enterEmail("venu@mailinator.com");
+		reg.enterEmail(input.UnApprovedSwimmerEmailID);
 		reg.enterFirstname("Venu");
 		reg.enterLastName("viya");
 		reg.enterPhoneNumber("919901395048");
@@ -64,11 +64,11 @@ public class RegistrationTest extends DriverClass {
 	}
 	
 	@Test(priority=2)
-	public void validCoachRegistrationForSwimmer2 () throws InterruptedException
+	public void validCoachRegistration () throws InterruptedException
 	{
 		login.clickOnRegister();
 		reg.enterUserName("Seenu");
-		reg.enterEmail("seenu@mailinator.com");
+		reg.enterEmail(input.UnApprovedCoach1EmailID);
 		reg.enterFirstname("Seenu");
 		reg.enterLastName("Mohan");
 		reg.enterPhoneNumber("919901395048");
@@ -91,7 +91,7 @@ public class RegistrationTest extends DriverClass {
 	}
 	
 	
-	public void validCoachRegistrationForCoach () throws InterruptedException
+	public void validCoachRegistratio () throws InterruptedException
 	{
 		login.clickOnRegister();
 		reg.enterUserName("Naren");

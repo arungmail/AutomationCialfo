@@ -21,7 +21,7 @@ public class CoachesPage extends DriverClass {
 	private By SearchButton = By.xpath("//input[@type='search']");
 	private By ShowingEntries = By.id("example_info");
 
-	public void getCoachNameFromtable(String expectedCoach) {
+	/*public void getCoachNameFromtable(String expectedCoach) {
 		WebElement table = driver.findElement(CoachTable);
 		List<WebElement> row = driver.findElements(CoachRow);
 		row.size();
@@ -40,6 +40,11 @@ public class CoachesPage extends DriverClass {
 			}
 		}
 
-	}
+	}*/
 
-}
+	public boolean coachStatus (String coach){
+		boolean coachName = driver.findElement(By.linkText(coach)).isDisplayed();
+		return coachName;
+	}
+	
+	}

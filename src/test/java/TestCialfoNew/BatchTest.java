@@ -22,8 +22,62 @@ public class BatchTest extends DriverClass {
 	Utility util = new Utility();
 	SwimmersPage swimmers = new SwimmersPage();
 	InputValues input = new InputValues ();
+	
+	
+	
+	
+	
+	public void verifyUnApprovedCoachesStatusInAddBatchPage (){
+		dash.clickOnManageBatch();
+		batch.clickOnAddbacthButton();
+		batch.enterBacthname(input.batchName);
+		driver.findElement(batch.CoachSelectionInCreateBatch).click();
+		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.UnApprovedCoach), false);
+	}
+	
+	public void verifyApprovedCoachesStatusInAddbatchPage (){
+		driver.findElement(batch.CoachSelectionInCreateBatch).click();
+		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.UnApprovedCoach1), true);
+	}
+	
+	public void verifyUnApprovedSwimmersStatusInAddBatchPage (){
+		driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
+		Assert.assertEquals(batch.SwimmersStatusFromCreateBatch(input.UnApprovedSwimmer), false);
+	}
+	
+	public void verifyApprovedSwimmersStatusInAddBatchPAge(){
+		driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
+		Assert.assertEquals(batch.SwimmersStatusFromCreateBatch(input.UnApprovedSwimmer1), true);
+	}
+	
+	public void createBatch (){
+		driver.navigate().refresh();
+		dash.clickOnSwimmers();
+		dash.clickOnManageBatch();
+		batch.enterBacthname(input.batchName);
+		driver.findElement(batch.CoachSelectionInCreateBatch).click();
+		try {
+			batch.selectCoachFromCreatebatch(input.UnApprovedCoach1);
+			
+		}
+		catch (Exception e){
+			System.out.println(e+"Coach not found, Selecting different coach");
+			batch.selectCoachFromCreatebatch(input.ApprovedCoach1);
+		}
+		try {
+		batch.selectCoachFromCreatebatch(input.UnApprovedSwimmer1);
+		}
+		catch (Exception e){
+			System.out.println(e+"Selection another swimmer");
+			batch.selectSwimmersFromCreateBatch(input.ApprovedSwimmer1);
+		}
+		batch.clickOnCreateButton();
+		System.out.println(batch.getSuccessmessage());
+	}
+	
+	
 
-	@Test(priority = 1)
+	/*@Test(priority = 1)
 	public void addingBatch() throws InterruptedException {
 		login.enterEmailId(input.club);
 		login.enterPassword(input.ClubPassword);
@@ -52,12 +106,12 @@ public class BatchTest extends DriverClass {
 
 	@Test(priority = 3)
 	public void checkCoachIsmatchingorNotInBatchesPage() throws InterruptedException {
-		/*
+		
 		 * login.enterEmailId("swimlife@gmail.com");
 		 * login.enterPassword("12345678"); login.clickSignButton();
 		 * dash.clickOnManageBatch(); batch.searchBatch("Automation");
 		 * Thread.sleep(500);
-		 */
+		 
 		WebElement batchestable = driver.findElement(batch.BatchTable);
 		List<WebElement> batchRow = driver.findElements(batch.BatchRow);
 		batchRow.size();
@@ -85,10 +139,10 @@ public class BatchTest extends DriverClass {
 
 	@Test(priority = 4)
 	public void searchBatchInbatchesPage() throws InterruptedException {
-		/*
+		
 		 * login.enterEmailId("swimlife@gmail.com");
 		 * login.enterPassword("12345678"); login.clickSignButton();
-		 */
+		 
 		// dash.clickOnManageBatch();
 		driver.navigate().refresh();
 		batch.searchBatch(input.batchName);
@@ -98,22 +152,22 @@ public class BatchTest extends DriverClass {
 
 	@Test(priority = 5)
 	public void checkBatchNamevalidation() throws InterruptedException {
-		/*
+		
 		 * login.enterEmailId("swimlife@gmail.com");
 		 * login.enterPassword("12345678"); login.clickSignButton();
-		 */
+		 
 		// dash.clickOnManageBatch();
 		driver.navigate().refresh();
 		batch.clickOnAddbacthButton();
 		batch.enterBacthname("");
 		driver.findElement(batch.CoachSelection).click();
-		/*
+		
 		 * driver.findElement(By.xpath("//*[contains(@id,'rajajicoach')]")).
 		 * click(); Thread.sleep(5000);
 		 * driver.findElement(batch.PlayerSelection).click();
 		 * driver.findElement(By.xpath("//*[contains(@id,'Ipadswimmer')]")).
 		 * click();
-		 */
+		 
 		batch.clickOnCreateButton();
 		Thread.sleep(500);
 		String actualSuccessMessage = batch.getBatchnamevalidation();
@@ -124,10 +178,10 @@ public class BatchTest extends DriverClass {
 	@Test(priority = 5)
 	public void checkCoachNameisMatchingOrNotInSwimmersPage() throws InterruptedException {
 
-		/*
+		
 		 * login.enterEmailId("swimlife@gmail.com");
 		 * login.enterPassword("12345678"); login.clickSignButton();
-		 */
+		 
 		dash.clickOnSwimmers();
 		swimmers.search(input.swimmer);
 		Thread.sleep(500);
@@ -160,10 +214,10 @@ public class BatchTest extends DriverClass {
 
 	public void checkBatchNameIsMaatchingOrNotInSwimmersPage() throws InterruptedException {
 
-		/*
+		
 		 * login.enterEmailId("swimlife@gmail.com");
 		 * login.enterPassword("12345678"); login.clickSignButton();
-		 */
+		 
 		dash.clickOnSwimmers();
 		swimmers.search(input.swimmer);
 		Thread.sleep(500);
@@ -196,10 +250,10 @@ public class BatchTest extends DriverClass {
 	//Tranfring coach from Coach2
 	@Test(priority = 7)
 	public void tranferCoach() throws InterruptedException {
-		/*
+		
 		 * login.enterEmailId("swimlife@gmail.com");
 		 * login.enterPassword("12345678"); login.clickSignButton();
-		 */
+		 
 		dash.clickOnManageBatch();
 		// batch.searchBatch("Automation");
 		batch.selectCheckBoxbasedOnBatchName(input.batchName);
@@ -223,13 +277,13 @@ public class BatchTest extends DriverClass {
 
 	@Test(priority = 8)
 	public void checkCoachnameInBatchespageAfterTranfer() {
-		/*
+		
 												 * login.enterEmailId(
 												 * "swimlife@gmail.com");
 												 * login.enterPassword(
 												 * "12345678");
 												 * login.clickSignButton();
-												 */
+												 
 		driver.navigate().refresh();
 		WebElement batchestable = driver.findElement(batch.BatchTable);
 		List<WebElement> swimRow = driver.findElements(batch.BatchRow);
@@ -259,10 +313,10 @@ public class BatchTest extends DriverClass {
 	@Test(priority = 9)
 	public void checkCoachNameIsSwimmersPageAftertransfer() throws InterruptedException {
 
-		/*
+		
 		 * login.enterEmailId("swimlife@gmail.com");
 		 * login.enterPassword("12345678"); login.clickSignButton();
-		 */
+		 
 		dash.clickOnSwimmers();
 		swimmers.search(input.swimmer);
 		Thread.sleep(500);
@@ -290,10 +344,10 @@ public class BatchTest extends DriverClass {
 		}
 
 	}
-	/*
+	
 	 * @AfterMethod public void afterMathos(){
 	 * driver.findElement(By.xpath("//a[@href='/dashboard']")).click(); }
-	 */
+	 
 	
 	
 	//Tranfering Swimmers2 to Coach2
@@ -327,5 +381,5 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(status, false);
 		
 	}
-	
+	*/
 }

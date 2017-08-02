@@ -15,12 +15,12 @@ public class SwimmersPage extends DriverClass {
 
 	Utility util = new Utility();
 
-	public By BatchSelection = By.xpath("(//span[@class='select2-selection__rendered'])[2]");
+	public By BatchSelection = By.xpath("(//b[@role='presentation'])[4]");
 	public By Searchbutton = By.xpath("//input[@type='search']");
 	public By EntrySelection = By.xpath("//select[@name='swimmertable_length']");
 	public By Homebredcrumbs = By.xpath("html/body/div[1]/app-root/app-player/div/section[1]/ol/li[1]/a");
-	public By TranferButton = By.xpath("(//button[@type='button'])[1]");
-	public By BatchSelectionInTranferPlayer = By.xpath(".//*[@id='myModal']/div/div/div[2]/div/div/span/span[1]/span");
+	public By TranferButton = By.xpath("(//button[@id='assign_btn']");
+	//public By BatchSelectionInTranferPlayer = By.xpath(".//*[@id='myModal']/div/div/div[2]/div/div/span/span[1]/span");
 	public By SubmitButton = By.xpath(".//*[@id='myModal']/div/div/div[3]/button[2]");
 	public By CloseButton = By.xpath(".//*[@id='myModal']/div/div/div[3]/button[1]'");
 	public By ErrorValidation = By.id("error_validation");
@@ -30,12 +30,63 @@ public class SwimmersPage extends DriverClass {
 	public By SwimmersColoumn = By.tagName("td");
 	public By DataEmptyMessage = By.xpath("//td[@class='dataTables_empty']");
 	public By batchresults = By.xpath("//span[@class='select2-results']");
-	public By BatchSelectionInTranferSwimmerpage 	= By.xpath("//span[@title='Select Batch']");
-	public By BatchResultsInTransferSwimmerpage  = By.xpath("//span[@class='select2-results']");
-	public By SubmitButonInTransferSwimmerPage = By.xpath("(//button[@type='button'])[5]");
+	//public By BatchSelectionInTranferSwimmerpage 	= By.xpath("//span[@title='Select Batch']");
+	//public By BatchResultsInTransferSwimmerpage  = By.xpath("//span[@class='select2-results']");
+	//public By SubmitButonInTransferSwimmerPage = By.xpath("(//button[@type='button'])[5]");
+	public By CoachSelection       = By.xpath("//span[@class='select2-selection__arrow'])[6]");
+	public By CoachList = By.xpath("//span[@class='select2-dropdown select2-dropdown--below']");
+	public By CoachSelectionInAssignSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[11]");
+	public By BatchSelectionInAssigSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[12]");
+	public By CoachListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
+	public By BatchListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
+	public By AddSwimmerButton = By.xpath("//button[@routerlink='/signup']");
+	public By ScreenName = By.xpath("//input[@formcontrolname='name']");
+    public By EmailId = By.xpath("//input[@formcontrolname='email']");
+    public By Firstname = By.xpath("//input[@formcontrolname='first_name']");
+    public By Lastname = By.xpath("//input[@formcontrolname='last_name']");
+    public By Password = By.xpath("//input[@formcontrolname='password']");
+    public By ConfirmPassword = By.xpath("//input[@formcontrolname='confirmpassword']");
+    public By Location = By.xpath("//input[@formcontrolname='location']");
+    public By Year = By.id("year");
+    public By Month = By.id("month");
+    public By Day = By.id("day");
+    public By RegisterButton = By.id("register_btn");
+    public By NameValidation = By.id("name_validation");
+    public By EmailValidation = By.id("email_validation");
+    public By FirstNameValidation = By.id("first_name_validation" );
+    public By LastNameValidation = By.id("last_name_validation" );
+    public By PasswordValidation = By.id("password_validation");
+    public By ConfirmPasswordValidation = By.id("confirmpassword_validation");
+    public By PhoneNumberValidation = By.id("location_validation");
+    public By DOBValidation = By.id("error_validation" );
+    public By AvailablePhonenumbervalidation = By.id("available_phone_error_validation");
+    public By PasswordMatchingValidation = By.id("error_validation");
+    public By PhoneNumber = By.xpath("//input[@placeholder='Phone Number']");
+    
+    
+    
+    
+    		
+    
+    
+    
+			
+	
+	
+	public String actualbatchname;
+
+	public String coachName;
+
+	public boolean coachStatus;
+
+	public boolean batchStatus;
+
+	public String attendancePercentage;
 	// public WebElement batchname = driver.findElement(BatchSelection);
 
-	public void batchSelection(WebElement element, String batchName) throws InterruptedException {
+	
+	//batch Selection 
+	public void batchSelection(String batchName) throws InterruptedException {
 		WebElement batchlist = driver.findElement(batchresults);
 		List<WebElement> batches = batchlist.findElements(By.tagName("li"));
 		for (WebElement webElement : batches) {
@@ -48,10 +99,57 @@ public class SwimmersPage extends DriverClass {
 			}
 
 		}
+	}
+		
+		public void coachSelection (String coachName){
+			WebElement coachesList = driver.findElement(CoachList);
+			List <WebElement> coaches = coachesList.findElements(By.tagName("li"));
+			for (WebElement coachesnames : coaches){
+				System.out.println(coachesnames.getText());
+				if (coachesnames.getText().equals(coachName)){
+					coachesnames.click();
+					break;
+					
+				}
+				
+		}
 
 	}
 
-	public void getCoachNameFromTable(String actual, String expected) {
+		public boolean checkBatchStatus (String batchName){
+			WebElement batchlist = driver.findElement(batchresults);
+			List<WebElement> batches = batchlist.findElements(By.tagName("li"));
+			for (WebElement webElement : batches) {
+				System.out.println(webElement.getText());
+				if (webElement.getText().equalsIgnoreCase(batchName)) {
+					batchStatus = true;
+				}
+				else {
+					batchStatus = false;
+				}
+				break;
+			}
+			return batchStatus;
+			
+		}
+		
+		public boolean checkCoachStatus (String coachName){
+			WebElement coachesList = driver.findElement(CoachList);
+			List <WebElement> coaches = coachesList.findElements(By.tagName("li"));
+			for (WebElement coachesnames : coaches){
+				System.out.println(coachesnames.getText());
+				if (coachesnames.getText().equals(coachName)){
+					coachStatus = true;
+					
+				}
+				else {
+					coachStatus = false;
+				}
+			}
+			return coachStatus;
+		}
+	
+	/*public void getCoachNameFromTable(String swimmerName) {
 
 		WebElement table = driver.findElement(SwimmersTable);
 		List<WebElement> row = driver.findElements(SwimmersRow);
@@ -67,12 +165,12 @@ public class SwimmersPage extends DriverClass {
 					Assert.assertEquals(name, expected);
 
 					// String status = System.out.println("Coach1");
-					/*
+					
 					 * String xp1 =
 					 * "html/body/div[1]/div[5]/div[2]/div/div/table/tbody/tr[";
 					 * String xp2 = "]/td[6]";
 					 * driver.findElement(By.xpath(xp1+i+xp2)).click();
-					 */
+					 
 				}
 				System.out.println(name);
 
@@ -80,7 +178,7 @@ public class SwimmersPage extends DriverClass {
 		}
 
 	}
-	/*
+	
 	 * public checkBatchNameIsListedOrNot(String name) { WebElement batchList =
 	 * driver.findElement(BatchSelection); WebElement name2 =
 	 * driver.findElement(By.xpath(
@@ -88,7 +186,9 @@ public class SwimmersPage extends DriverClass {
 	 * name2; }
 	 */
 
-	public void getmatchingCoachNameforSwimmers(String swimmername, String expectedCoachName) {
+	
+	//get CoachName
+	public String getmatchingCoachNameforSwimmers(String swimmername) {
 		WebElement swimmerstable = driver.findElement(SwimmersTable);
 		List<WebElement> swimRow = driver.findElements(SwimmersRow);
 		swimRow.size();
@@ -103,18 +203,22 @@ public class SwimmersPage extends DriverClass {
 				if (swimmernames.equalsIgnoreCase(swimmername)) {
 					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
 					String xpath2 = "]/td[9]";
-					String actualCoachname = driver.findElement(By.xpath(xpath1 + i + xpath2)).getText();
-					String expectedResult = expectedCoachName;
-					Assert.assertEquals(actualCoachname, expectedResult);
-
+					String coachName = driver.findElement(By.xpath(xpath1 + i + xpath2)).getText();
+					/*
+					 * String expectedResult = expectedCoachName;
+					 * Assert.assertEquals(actualCoachname, expectedResult);
+					 */
+					break;
 				}
 
 			}
 		}
+		return coachName;
 
 	}
 
-	public void getmatchingBatch(String swimmername, String batchName) {
+	// Get Batch
+	public String getmatchingBatch(String swimmername) {
 		WebElement swimmerstable = driver.findElement(SwimmersTable);
 		List<WebElement> swimRow = driver.findElements(SwimmersRow);
 		swimRow.size();
@@ -130,13 +234,13 @@ public class SwimmersPage extends DriverClass {
 					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
 					String xpath2 = "]/td[8]";
 					String actualbatchname = driver.findElement(By.xpath(xpath1 + i + xpath2)).getText();
-					String expectedResult = batchName;
-					Assert.assertEquals(actualbatchname, expectedResult);
+					break;
 
 				}
 
 			}
 		}
+		return actualbatchname;
 
 	}
 
@@ -159,9 +263,10 @@ public class SwimmersPage extends DriverClass {
 				String swimmernames = swimcol.get(j).getText();
 				System.err.println(swimmernames);
 				if (swimmernames.equalsIgnoreCase(swimmername)) {
-					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
-					String xpath2 = "]/td[1]/input";
+					String xpath1 = "html/body/div[1]/app-root/app-player/div/section[2]/div/div/div/div[2]/div[2]/table/tbody/tr[";
+					String xpath2 = "]/td[1]";
 					driver.findElement(By.xpath(xpath1 + i + xpath2)).click();
+					break;
 
 				}
 
@@ -173,17 +278,172 @@ public class SwimmersPage extends DriverClass {
 		driver.findElement(TranferButton).click();
 
 	}
-	
-	public boolean getBooleanvalue (String value)
-	{
+
+	public boolean getBooleanvalue(String value) {
 		boolean status = driver.findElement(By.linkText(value)).isDisplayed();
 		return status;
-		
-	}
-	public String getStringvalue(String name){
-		String value = driver.findElement(By.linkText(name)).getText();
-		return value;
-		
+
 	}
 
+	public String getStringvalue(String name) {
+		String value = driver.findElement(By.linkText(name)).getText();
+		return value;
+
+	}
+
+	public void selectCoachFromCoacheSelectionInAssignSwimmerPage(String coachName) throws InterruptedException {
+		driver.findElement(CoachSelectionInAssignSwimmerPage).click();
+		Thread.sleep(500);
+		WebElement coaches = driver.findElement(CoachListInAssignSwimmerPage);
+		List<WebElement> coachList = coaches.findElements(By.tagName("li"));
+		for (WebElement coachNames : coachList) {
+			System.out.println(coachNames.getText());
+			if (coachNames.getText().equals(coachName)) {
+				coachNames.click();
+			}
+			break;
+
+		}
+
+	}
+
+	public void selectBatchFromBatchesListInAssignSwimmerPage(String batchName) throws InterruptedException {
+		driver.findElement(BatchSelectionInAssigSwimmerPage);
+		Thread.sleep(500);
+		WebElement batches = driver.findElement(BatchListInAssignSwimmerPage);
+		List<WebElement> batchList = batches.findElements(By.tagName("li"));
+		for (WebElement batchNames : batchList) {
+			System.out.println(batchNames.getText());
+			if (batchNames.getText().equals(batchName)) {
+				batchNames.click();
+				break;
+			}
+
+		}
+
+	}
+
+	public boolean checkCoachStatusinAssignSwimmerPage(String coachName) throws InterruptedException {
+		driver.findElement(CoachSelectionInAssignSwimmerPage).click();
+		Thread.sleep(500);
+		WebElement coaches = driver.findElement(CoachListInAssignSwimmerPage);
+		List<WebElement> coachList = coaches.findElements(By.tagName("li"));
+		for (WebElement coachNames : coachList) {
+			System.out.println(coachNames.getText());
+			if (coachNames.getText().equals(coachName)) {
+				coachStatus = true;
+			} else {
+				coachStatus = false;
+			}
+			break;
+
+		}
+		return coachStatus;
+
+	}
+
+	public boolean checkBatchStatusAssignSwimmerPage(String batchName) throws InterruptedException {
+		driver.findElement(BatchSelectionInAssigSwimmerPage);
+		Thread.sleep(500);
+		WebElement batches = driver.findElement(BatchListInAssignSwimmerPage);
+		List<WebElement> batchList = batches.findElements(By.tagName("li"));
+		for (WebElement batchNames : batchList) {
+			System.out.println(batchNames.getText());
+			if (batchNames.getText().equals(batchName)) {
+				batchStatus = true;
+			} else {
+				batchStatus = false;
+			}
+			break;
+
+		}
+		return batchStatus;
+
+	}
+	public String getAnValidationError (By nameValidation2){
+		String error = ((WebElement) nameValidation2).getText();
+		return error;
+	}
+	
+	/*public void addingSwimmer (){
+		driver.findElement(AddSwimmerButton).click();
+		driver.findElement(ScreenName).sendKeys("Arun");
+		driver.findElement(Firstname).sendKeys("Arun");
+		driver.findElement(Lastname).sendKeys("asdsdas");
+		driver.findElement(Password).sendKeys("Nichi12");
+		driver.findElement(ConfirmPassword).sendKeys("Nichi123");
+		driver.findElement(Location).sendKeys("Bangalore");
+		util.selectValueByVisibleText(Year, "2016");
+				
+				
+	}
+*/
+	public String getAtendancePercentage(String swimmerName) {
+
+		WebElement table = driver.findElement(SwimmersTable);
+		List<WebElement> row = driver.findElements(SwimmersRow);
+		row.size();
+		for (int i = 0; i < row.size(); i++) {
+			List<WebElement> col = row.get(i).findElements(SwimmersColoumn);
+			col.size();
+			List<String> swimmersName = new ArrayList<String>();
+			for (int j = 0; j < col.size(); j++) {
+				String name = col.get(j).getText();
+				if (name.equals(swimmerName)) {
+					swimmersName.add(name);
+					String xp1 = "html/body/div[1]/app-root/app-player/div/section[2]/div/div/div/div[2]/div[2]/table/tbody/tr[";
+					String xp2 = "]/td[6]";
+					String attendancePercentage = driver.findElement(By.xpath(xp1+i+xp2)).getText();
+					/*WebElement attendance = driver.findElement(By.xpath(xp1+i+xp2));
+					attendance.click();*/
+					
+					break;
+				}
+			}
+		}
+		return attendancePercentage;
+		/*WebElement attendance = driver.findElement(By.xpath(xp1+i+xp2));
+		attendance.click();*/
+		
+		
+		
+	}
+	
+	
+	public void clickOnAttendance (String swimmerName){
+
+		WebElement table = driver.findElement(SwimmersTable);
+		List<WebElement> row = driver.findElements(SwimmersRow);
+		row.size();
+		for (int i = 0; i < row.size(); i++) {
+			List<WebElement> col = row.get(i).findElements(SwimmersColoumn);
+			col.size();
+			List<String> swimmersName = new ArrayList<String>();
+			for (int j = 0; j < col.size(); j++) {
+				String name = col.get(j).getText();
+				if (name.equals(swimmerName)) {
+					swimmersName.add(name);
+					String xp1 = "html/body/div[1]/app-root/app-player/div/section[2]/div/div/div/div[2]/div[2]/table/tbody/tr[";
+					String xp2 = "]/td[6]";
+					WebElement  attendancePercentage = driver.findElement(By.xpath(xp1+i+xp2));
+					attendancePercentage.findElement(By.xpath("//a[@class='attendance-profile']"));
+					break;
+				}
+			}
+		}
+		
+	}
+	public void clickOnDowbLoadData (String downloadType){
+		switch (downloadType){
+		
+		case "CSV":
+			driver.findElement(By.xpath("(//span[@style='color:white;font-weight:bold;'])[1]"));
+			break;
+		case "Excel":
+			driver.findElement(By.xpath("(//span[@style='color:white;font-weight:bold;'])[2]"));
+		case "PDF":	
+			driver.findElement(By.xpath("(//span[@style='color:white;font-weight:bold;'])[3]"));
+		}
+		
+	}
 }

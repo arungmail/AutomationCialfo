@@ -20,6 +20,7 @@ public class LoginForm extends DriverClass {
 	private static By GooglePlus = By.xpath("html/body/div[1]/app-root/app-login/body/div/div[2]/div/a[2]");
 	private static By InvaliErrorEmail = By.xpath("//p[@id='email_validation']");
 	private static By WrongPassword = By.xpath("//p[@id='error_validation']");
+	public By ErrorValidation = By.id("error_validation");
 
 	public static void enterEmailId(String value) {
 		driver.findElement(email).sendKeys(value);
@@ -54,6 +55,11 @@ public class LoginForm extends DriverClass {
 
 	public static String signInPasswordValidationError() {
 		String error = driver.findElement(WrongPassword).getText();
+		System.out.println(error);
+		return error;
+	}
+	public String errorvalidation (){
+		String error = driver.findElement(ErrorValidation).getText();
 		System.out.println(error);
 		return error;
 	}

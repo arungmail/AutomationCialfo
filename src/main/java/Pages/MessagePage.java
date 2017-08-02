@@ -22,6 +22,7 @@ public class MessagePage extends DriverClass {
 	public By SuccessAlert = By.id("success-alert");
 	public By CommentValidation = By.id("common_validation");
 	public By Inboxtable = By.xpath("//table[@class='table table-hover table-striped' ]");
+	private String receiver;
 
 	public void clickOnComposeButton() {
 		driver.findElement(ComposeButton).click();
@@ -31,15 +32,14 @@ public class MessagePage extends DriverClass {
 		driver.findElement(InBox).click();
 	}
 
-	public void selectUserFromList(WebElement element, String user) {
+	public void selectUserFromList(String user) {
 		WebElement usersList = driver.findElement(UserList);
 		List<WebElement> allusers = usersList.findElements(By.tagName("li"));
 		allusers.size();
 		for (WebElement users : allusers) {
 			String username = users.getText();
 			if (username.equalsIgnoreCase(user)) {
-				users.click();
-				
+				users.click();	
 				break;
 				
 				
@@ -61,29 +61,33 @@ public class MessagePage extends DriverClass {
 		driver.findElement(SendButton).click();
 	}
 
-	public void getEmailSubJectInInBoxTable(String subject) {
+	
+	//Ask doubt to Bhuvan
+	public String getEmailSubJectInInBoxTable(String subject) {
 		WebElement table = driver.findElement(Inboxtable);
 		List<WebElement> inboxRow = table.findElements(By.tagName("tr"));
 		inboxRow.size();
 		List<String> subjectsname = new ArrayList<String>();
 		// List<String> batchname = new ArrayList<String>();
 		for (int i = 0; i < inboxRow.size(); i++) {
-			List<WebElement> InboxCol = inboxRow.get(i).findElements(By.tagName("td"));
-			InboxCol.size();
-			for (int j = 0; j < InboxCol.size(); j++) {
-				String subjects = InboxCol.get(j).getText();
+			List<WebElement> inboxCol = inboxRow.get(i).findElements(By.tagName("td"));
+			inboxCol.size();
+			for (int j = 0; j < inboxCol.size(); j++) {
+				String subjects = inboxCol.get(j).getText();
 				System.out.println(subjects);
 				if (subjects.contentEquals(subject)) {
 					subjectsname.add(subjects);
 					///Assert.assertEquals(subjects, subject);
-
+					//return subjectsname;	
+					break;
 				}
 
 			}
 		}
+		return subject;
 	}
 
-	public void getReceiverNameBasedOnSubject(String receiverName, String subject) {
+	public String getReceiverNameBasedOnSubject(String subject) {
 		WebElement table = driver.findElement(Inboxtable);
 		List<WebElement> inboxRow = table.findElements(By.tagName("tr"));
 		inboxRow.size();
@@ -100,11 +104,14 @@ public class MessagePage extends DriverClass {
 					String xpath1 = "html/body/div[1]/app-root/app-message-conversation/div/section[2]/div/div[2]/div/div[2]/div[2]/table/tbody/tr[";
 					String xpath2 = "]/td[3]";
 					String receiver = driver.findElement(By.xpath(xpath1 + i + xpath2)).getText();
-					String expectedReceiver = receiverName;
-					Assert.assertEquals(receiver, expectedReceiver);
+					//String expectedReceiver = receiverName;
+					//Assert.assertEquals(receiver, expectedReceiver);
+					break;
 
 				}
 			}
 		}
+		return receiver;
 	}
+	
 }
