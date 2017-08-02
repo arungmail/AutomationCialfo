@@ -58,7 +58,7 @@ public class BatchTest extends DriverClass {
 		batch.enterBacthname(input.batchName);
 		driver.findElement(batch.CoachSelectionInCreateBatch).click();
 		try {
-			batch.selectCoachFromCreatebatch(input.UnApprovedCoach1);
+			batch.selectCoachFromCreatebatch(input.UnApprovedCoach2);
 			
 		}
 		catch (Exception e){
