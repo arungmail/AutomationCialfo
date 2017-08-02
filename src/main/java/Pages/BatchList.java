@@ -14,7 +14,7 @@ public class BatchList extends DriverClass {
 	Utility util = new Utility();
 	private By Brecrumbs = By.xpath("(//a[@routerlink='/dashboard'])[3]");
 	private By AddButton = By.xpath("(//button[@type='button'])[2]");
-	private By Tranfer = By.xpath("(//button[@type='button'])[3]");
+	private By Assign = By.xpath("(//button[@type='button'])[3]");
 	public By BatchTable = By.xpath("//table[@id='batcheslist']");
 	public By BatchRow = By.tagName("tr");
 	public By BacthColumn = By.tagName("td");
@@ -22,21 +22,25 @@ public class BatchList extends DriverClass {
 	public By CoachSelectionInCreateBatch = By.xpath("(//span[@class='select2-selection__arrow'])[3]");
 	public By CoachListInCreateBatch = By.xpath("//span[@class='select2-results']");
 	public By SwimmersSelectionInCrreateBatch = By.xpath("//span[@class='select2-selection select2-selection--multiple']");
-	public By PlayerListInCreateBatch = By.xpath("//ul[@id='select2-mrjk-results']");
+	public By SwimmerListInCreateBatch = By.xpath("//ul[@id='select2-mrjk-results']");
 	private By CreatebatchButton = By.xpath("//button[@type='submit']");
 	private By namevalidation = By.xpath("//p[@id='name_validation']");
 	private By Commenvalidation = By.xpath("//p[@id='common_validation']");
 	public By SubmitButton = By.xpath("(//button[@type='button'])[6]");
-	public By CoachSelectionInCoachTranfer = By.xpath("(//span[@class='select2-selection__arrow'])[4]");
+	public By CoachSelectionInCoachAssign  = By.xpath("(//span[@class='select2-selection__arrow'])[4]");
 	public By Search = By.xpath("(//input[@type='search'])[2]");
-	public By CoachResultInCoachTranferPage = By.xpath("//span[@class='select2-results']");
+	public By CoachResultInCoachAssignPage = By.xpath("//span[@class='select2-results']");
 	//public By SwimmersResult = By.xpath("//span[@class='select2-results']");
-	public By CoachSelectionInTranferBatch = By.xpath("(//span[@title=' Select Coach'])[2]");
+	public By CoachSelectionInAssignBatch = By.xpath("(//span[@title=' Select Coach'])[2]");
+	public By CoachValidation 			= By.id("coachs_validation");
+	public By SwimmerValdiation 		= By.id("swimmer_validation");
+	public By AssignButtonInAssignPage   = By.xpath("");
 	public String batchName;
 	public Boolean coachStatus;
 	public Boolean swimmerstatus;
 	private String getCoachName;
 	private String swimmersCount;
+	
 
 	// public void clickOnCoachSelection
 
@@ -52,8 +56,8 @@ public class BatchList extends DriverClass {
 		driver.findElement(AddButton).click();
 	}
 
-	public void clickOnTranferButton() {
-		driver.findElement(Tranfer).click();
+	public void clickOnAssign() {
+		driver.findElement(Assign).click();
 	}
 
 	public void enterBacthname(String name) {
@@ -99,7 +103,7 @@ public class BatchList extends DriverClass {
 	 * 
 	 * }
 	 */
-
+    //Get batches details from list
 	public String getBatchFromList(String batchNameInList) {
 		WebElement table = driver.findElement(BatchTable);
 		List<WebElement> tablerow = driver.findElements(BatchRow);
@@ -121,6 +125,7 @@ public class BatchList extends DriverClass {
 
 	}
 
+	//Select check box based on batch name 
 	public void selectCheckBoxbasedOnBatchName(String batchname) throws InterruptedException {
 		WebElement batchtable = driver.findElement(BatchTable);
 		List<WebElement> batchRow = driver.findElements(BatchRow);
@@ -147,11 +152,12 @@ public class BatchList extends DriverClass {
 
 		}
 	}
-
+    //Search batch 
 	public void searchBatch(String searchkey) {
 		driver.findElement(Search).sendKeys(searchkey);
 	}
 
+	//Select coach from create batch 
 	public void selectCoachFromCreatebatch(String coachName) {
 		WebElement cochesList = driver.findElement(CoachListInCreateBatch);
 		List<WebElement> coaches = cochesList.findElements(By.tagName("li"));
@@ -164,9 +170,10 @@ public class BatchList extends DriverClass {
 
 		}
 	}
-
+    
+	//Select swimmers from  create batch 
 	public void selectSwimmersFromCreateBatch(String swimmerName) {
-		WebElement swimmersList = driver.findElement(PlayerListInCreateBatch);
+		WebElement swimmersList = driver.findElement(SwimmerListInCreateBatch);
 		List <WebElement>swimmers = swimmersList.findElements(By.tagName("li"));
 		for (WebElement webElement : swimmers) {
 			System.out.println(webElement.getText());
@@ -196,7 +203,7 @@ public class BatchList extends DriverClass {
 	}
 
 	public boolean SwimmersStatusFromCreateBatch(String swimmerName) {
-		WebElement swimmersList = driver.findElement(PlayerListInCreateBatch);
+		WebElement swimmersList = driver.findElement(SwimmerListInCreateBatch);
 		List <WebElement>swimmers = swimmersList.findElements(By.tagName("li"));
 		for (WebElement webElement : swimmers) {
 			System.out.println(webElement.getText());
@@ -248,8 +255,8 @@ public class BatchList extends DriverClass {
 		return getCoachName;
 	}
 	
-	public boolean checkCoachnameInTranferPage (String coachName){
-		WebElement coachNamesList= driver.findElement(CoachResultInCoachTranferPage);
+	public boolean coachStatusInAssignPage (String coachName){
+		WebElement coachNamesList= driver.findElement(CoachResultInCoachAssignPage);
 		List<WebElement> coaches = coachNamesList.findElements(By.tagName("li"));
 		for (WebElement WebElement :coaches  ){
 			System.out.println(WebElement.getText());
@@ -264,6 +271,17 @@ public class BatchList extends DriverClass {
 		return coachStatus;
 		
 		
+	}
+	
+	public void selectCoachesFromAssignpage (String coachName){
+		WebElement coachNamesList= driver.findElement(CoachResultInCoachAssignPage);
+		List<WebElement> coaches = coachNamesList.findElements(By.tagName("li"));
+		for (WebElement WebElement :coaches  ){
+			System.out.println(WebElement.getText());
+			if (WebElement.getText().equals(coachName)){
+				WebElement.click();
+			}
+			}
 	}
 	public void clickOnDowbLoadData (String downloadType){
 		switch (downloadType){
@@ -299,5 +317,6 @@ public class BatchList extends DriverClass {
 		}
 		return swimmersCount;
 	}
+	
 }
 

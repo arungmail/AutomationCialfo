@@ -50,14 +50,14 @@ public class SwimmersTest extends DriverClass {
 	public void verifyUnApprovedCoachesareListedInCoachesFilterOrNot() {
 
 	}
-
-	public void checkApprovedSwimmersDisplyedInUnAssignedList() throws InterruptedException {
+	// Verifying approved swimmers available in Unassigned list
+	public void verifyApprovedSwimmersDisplyedInUnAssignedList() throws InterruptedException {
 		driver.navigate().refresh();
 		dash.clickOnSwimmers();
 		WebElement batchselection = driver.findElement(swimmers.BatchSelection);
 		swimmers.batchSelection("Un Assigned");
 		Thread.sleep(500);
-		swimmers.search(input.SwimmerAfterApprovng);
+		swimmers.search(input.Swimmer1AfterApprovng);
 		Thread.sleep(500);
 		String actualSwimmer = driver.findElement(By.linkText(input.SwimmerAfterApprovng)).getText();
 		// String expectedSwimmer = input.swimmer;
