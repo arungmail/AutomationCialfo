@@ -8,7 +8,7 @@ public class InputValues {
 	public String ApprovdCoach3 =  "";
 	
 	public String ApprovedSwimmer1 = ""; //
-	public String ApprovedSwimmer2 ="";
+	public String ApprovedSwimmer2 ="";  
 	public String ApprovedSwimmer3 ="";
 	public String ApprovedSwimmerEmailID = "";
 	public String ApprovedSwimmer1Username = "";
@@ -17,12 +17,12 @@ public class InputValues {
 	public String UnApprovedCoach1EmailID = ""; //
 	public String UnApprovedCoach2EmailID = "";
 	public String UnApprovedCoach1 ="";  //
-	public String UnApprovedCoach2 = "";
+	public String UnApprovedCoach2 = "";  //Keep this for Unapproved coaches checks 
 	
 	
 	public String UnApprovedSwimmer1EmailID ="";
 	public String UnApprovedSwimmer1 = "";
-	public String UnApprovedSwimmer2 = "";
+	public String UnApprovedSwimmer2 = "";  //Keep this for UnApproved Swimmer checks 
 	public String UnApprovedSwimmer2EmailId = ""
 			;
 	public String Coach1AfterApproving = "";

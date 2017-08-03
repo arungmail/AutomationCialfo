@@ -26,6 +26,8 @@ public class DashBoard extends DriverClass {
 	public By PendingUsers = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[12]/a/span");
 	public By ChangeLocationButton = By.xpath("(//li[@class='dropdown messages-menu'])[1]");
 	public By ChangeLocationList	= By.xpath("//ul[@class='menu']");
+	public By MeetTable  = By.xpath("//table[@class='table no-margin']");
+	
 	
 	
 	
@@ -111,6 +113,24 @@ public class DashBoard extends DriverClass {
 				
 			}
 		}
+		
+	}
+	
+	//Get Meet name in from meet table 
+	public String getMeetsNameFromtable (String meetName){
+		WebElement table = driver.findElement(MeetTable);
+		List <WebElement> row = table.findElements(By.tagName("tr"));
+		row.size();
+		for (int i =0;i < row.size();i++){
+			List <WebElement> col = row.get(i).findElements(By.tagName("td"));
+			for (int j=0;j<col.size();j++){
+				String meetNames = col.get(i).getText();
+				if (meetNames.equals(meetName)){	
+				}	
+			}
+		}
+		return meetName;
+		
 		
 	}
 }

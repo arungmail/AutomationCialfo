@@ -76,7 +76,7 @@ public class MessagePage extends DriverClass {
 				String subjects = inboxCol.get(j).getText();
 				System.out.println(subjects);
 				if (subjects.contentEquals(subject)) {
-					subjectsname.add(subjects);
+					//subjectsname.add(subjects);
 					///Assert.assertEquals(subjects, subject);
 					//return subjectsname;	
 					break;
