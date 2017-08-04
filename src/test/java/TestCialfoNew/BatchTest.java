@@ -32,7 +32,7 @@ public class BatchTest extends DriverClass {
 		batch.clickOnAddbacthButton();
 		batch.enterBacthname(input.batchName);
 		driver.findElement(batch.CoachSelectionInCreateBatch).click();
-		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.UnApprovedCoach), false);
+		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.UnApprovedCoach2), false);
 	}
 	
 	public void verifyApprovedCoachesStatusInAddbatchPage (){
@@ -42,7 +42,7 @@ public class BatchTest extends DriverClass {
 	
 	public void verifyUnApprovedSwimmersStatusInAddBatchPage (){
 		driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
-		Assert.assertEquals(batch.SwimmersStatusFromCreateBatch(input.UnApprovedSwimmer), false);
+		Assert.assertEquals(batch.SwimmersStatusFromCreateBatch(input.UnApprovedSwimmer2), false);
 	}
 	
 	public void verifyApprovedSwimmersStatusInAddBatchPAge(){
@@ -77,7 +77,7 @@ public class BatchTest extends DriverClass {
 		System.out.println(batch.getSuccessmessage());
 	}
 	
-	public void batchesAresListedOrNot () {
+	public void batchesAreListedOrNot () {
 		batch.getBatchFromList(input.batchName);
 		Assert.assertEquals(batch.getBatchFromList(input.batchName), input.batchName);
 	}

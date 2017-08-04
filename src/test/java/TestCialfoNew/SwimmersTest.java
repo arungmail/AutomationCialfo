@@ -59,12 +59,12 @@ public class SwimmersTest extends DriverClass {
 		Thread.sleep(500);
 		swimmers.search(input.Swimmer1AfterApprovng);
 		Thread.sleep(500);
-		String actualSwimmer = driver.findElement(By.linkText(input.SwimmerAfterApprovng)).getText();
+		String actualSwimmer = driver.findElement(By.linkText(input.Swimmer1AfterApprovng)).getText();
 		// String expectedSwimmer = input.swimmer;
-		Assert.assertEquals(actualSwimmer, input.SwimmerAfterApprovng);
+		Assert.assertEquals(actualSwimmer, input.Swimmer1AfterApprovng);
 	}
 
-	public void verifyBatchesAreListedOrNot() throws InterruptedException {
+/*	public void verifyBatchesAreListedOrNot() throws InterruptedException {
 		WebElement batchSelection = driver.findElement(swimmers.BatchSelection);
 		batchSelection.click();
 		Thread.sleep(500);
@@ -73,14 +73,14 @@ public class SwimmersTest extends DriverClass {
 		// swimmers.checkBatchStatus("xxxx");
 		Assert.assertEquals(swimmers.checkBatchStatus("xxx"), true);
 
-	}
+	}*/
 
 	public void checkUnApprovedCoachinCoachSelection() throws InterruptedException {
 		WebElement coachSelection = driver.findElement(swimmers.CoachSelection);
 		coachSelection.click();
 		Thread.sleep(500);
 		swimmers.coachSelection("");
-		Assert.assertEquals(swimmers.checkCoachStatus(input.UnApprovedCoach), false);
+		Assert.assertEquals(swimmers.checkCoachStatus(input.UnApprovedCoach2), false);
 
 	}
 
@@ -97,10 +97,10 @@ public class SwimmersTest extends DriverClass {
 		WebElement batchselection = driver.findElement(swimmers.BatchSelection);
 		swimmers.batchSelection("Un Assigned");
 		Thread.sleep(500);
-		swimmers.search(input.SwimmerAfterApprovng);
+		swimmers.search(input.Swimmer1AfterApprovng);
 		Thread.sleep(500);
 		// swimmers.getAtendancePercentage(input.SwimmerAfterApprovng);
-		Assert.assertEquals(swimmers.getAtendancePercentage(input.SwimmerAfterApprovng), "0%");
+		Assert.assertEquals(swimmers.getAtendancePercentage(input.Swimmer1AfterApprovng), "0%");
 	}
 
 	public void addSwimmerFromSwimmerPage() {
@@ -127,11 +127,11 @@ public class SwimmersTest extends DriverClass {
 		WebElement batchselection = driver.findElement(swimmers.BatchSelection);
 		swimmers.batchSelection("Un Assigned");
 		Thread.sleep(500);
-		swimmers.search(input.SwimmerAfterApprovng);
+		swimmers.search(input.Swimmer1AfterApprovng);
 		Thread.sleep(500);
 		String actualSwimmer = driver.findElement(By.linkText(input.SwimmerEmailIdAddedByInsideClub)).getText();
 		// String expectedSwimmer = input.swimmer;
-		Assert.assertEquals(actualSwimmer, input.SwimmerAfterApprovng);
+		Assert.assertEquals(actualSwimmer, input.Swimmer1AfterApprovng);
 	}
 /*
 	public void screenNameValidation() {
@@ -242,7 +242,7 @@ public class SwimmersTest extends DriverClass {
 		swimmers.clickCheckBoxBasedOnSwimmersName("");
 		WebElement coachSelection = driver.findElement(swimmers.CoachSelectionInAssignSwimmerPage);
 		coachSelection.click();
-		Assert.assertEquals(swimmers.checkCoachStatusinAssignSwimmerPage(input.UnApprovedCoach), false);
+		Assert.assertEquals(swimmers.checkCoachStatusinAssignSwimmerPage(input.UnApprovedCoach2), false);
 	}
 	
 	public void checkApprovedCoachesInSwimmerAssignPage () throws InterruptedException{

@@ -14,8 +14,7 @@ public class DashBoard extends DriverClass {
 	
 
 	public By ProfileNameinSecondarymenu = By.xpath(".//*[@id='profile_name']/p");
-	public By profilenameInTopRightSide = By
-			.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span");
+	public By profilenameInTopRightSide = By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span");
 	private By Dashboard = By.partialLinkText("dashboard");
 	private By Attendanace = By.partialLinkText("attendance");
 	private By Swimmers = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[4]/a/span");
@@ -116,7 +115,7 @@ public class DashBoard extends DriverClass {
 		
 	}
 	
-	//Get Meet name in from meet table 
+	//Get Meet name from meet table 
 	public String getMeetsNameFromtable (String meetName){
 		WebElement table = driver.findElement(MeetTable);
 		List <WebElement> row = table.findElements(By.tagName("tr"));
@@ -126,11 +125,10 @@ public class DashBoard extends DriverClass {
 			for (int j=0;j<col.size();j++){
 				String meetNames = col.get(i).getText();
 				if (meetNames.equals(meetName)){	
+					return meetNames;
 				}	
 			}
 		}
 		return meetName;
-		
-		
 	}
 }
