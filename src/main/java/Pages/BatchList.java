@@ -318,5 +318,25 @@ public class BatchList extends DriverClass {
 		return swimmersCount;
 	}
 	
+	public void clickOnMessageIconBasedOnBatchName (){
+		WebElement table = driver.findElement(BatchTable);
+		List<WebElement> tablerow = driver.findElements(BatchRow);
+		tablerow.size();
+		for (int i = 0; i < tablerow.size(); i++) {
+			List<WebElement> tableColoumn = tablerow.get(i).findElements(BacthColumn);
+			tableColoumn.size();
+			List<String> batchname = new ArrayList<String>();
+			for (int j = 0; j < tableColoumn.size(); j++) {
+				String batchNames = tableColoumn.get(j).getText();
+				System.out.println(batchName);
+				if (batchNames.equals(batchName)){
+					String xp1 = "html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[";
+					String xp2 = "]/td[3]";
+					
+				}
+			}
+		}
+	
+	}
 }
 

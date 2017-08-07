@@ -39,6 +39,7 @@ public class SwimmersPage extends DriverClass {
 	public By BatchSelectionInAssigSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[12]");
 	public By CoachListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
 	public By BatchListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
+	public By TransferButtonInAssignpage = By.xpath("");
 	public By AddSwimmerButton = By.xpath("//button[@routerlink='/signup']");
 	public By ScreenName = By.xpath("//input[@formcontrolname='name']");
     public By EmailId = By.xpath("//input[@formcontrolname='email']");

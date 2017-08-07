@@ -109,20 +109,86 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(batch.getSwimmersCount(batch.batchName), 1, "swimmer count");
 	}
 	
+	public void verifyCreatedbatchDisplaysInSwimmerspage () throws InterruptedException{
+		dash.clickOnSwimmers();
+		Thread.sleep(500);
+		driver.findElement(swimmers.BatchSelection).click();
+		swimmers.checkBatchStatus(input.batchName);
+		Assert.assertEquals(swimmers.checkBatchStatus(input.batchName), false);
+	}
+	
+	public void swimmersInSwimmersPage (){
+		swimmers.search(input.ApprovedSwimmer1Firstname);
+		String swimmerName = swimmers.getStringvalue(input.ApprovedSwimmer1Firstname);
+		Assert.assertEquals(swimmerName, input.ApprovedSwimmer1Firstname);
+	}
+	
+	public void verifybatchNameInSwimmerPage () throws InterruptedException{
+		driver.navigate().refresh();
+		dash.clickOnManageBatch();
+		dash.clickOnSwimmers();
+		driver.findElement(swimmers.BatchSelection).click();
+		Thread.sleep(500);
+		swimmers.batchSelection(input.batchName);
+		Assert.assertEquals(swimmers.getmatchingBatch(input.ApprovedSwimmer1Firstname), input.batchName);
+		
+	}
+	
+	public void verifyCoachNameInSwimmerspage (){
+		Assert.assertEquals(swimmers.getmatchingCoachNameforSwimmers(input.ApprovedSwimmer1Firstname), input.batchName);
+	}
+	
+	public void assignSwimmersToAnotherBatch () throws InterruptedException{
+		swimmers.clickCheckBoxBasedOnSwimmersName(input.ApprovedSwimmer1Firstname);
+		Thread.sleep(500);
+		swimmers.clickOnTranferButton();
+		swimmers.selectCoachFromCoacheSelectionInAssignSwimmerPage(input.ApprovdCoach3);
+		swimmers.selectBatchFromBatchesListInAssignSwimmerPage(input.Batchname1);
+		driver.findElement(swimmers.TransferButtonInAssignpage).click();
+		Thread.sleep(500);
+	}
+	
+	public void swimmersInswimmersListAfterSwimmerTransfer () throws InterruptedException{
+		driver.findElement(swimmers.BatchSelection).click();
+		swimmers.batchSelection(input.Batchname1);
+		swimmers.search(input.ApprovedSwimmer1Firstname);
+		String swimmerName = swimmers.getStringvalue(input.ApprovedSwimmer1Firstname);
+		Assert.assertEquals(swimmerName, input.ApprovedSwimmer1Firstname);
+	}
+	public void veriyBatchNameAfterTransfer () throws InterruptedException{
+		dash.clickOnCoach();
+		dash.clickOnSwimmers();
+		driver.findElement(swimmers.BatchSelection).click();
+		swimmers.batchSelection(input.Batchname1);
+	}
+	public void verifyCoachNameAfterTranfer (){
+		Assert.assertEquals(swimmers.getmatchingCoachNameforSwimmers(input.ApprovedSwimmer1Firstname),input.Coach2AfterApproving);
+	}
+	
+	
+	public void verifyUnApprovedCoachInAssigBatchCoachSelectionpage () throws InterruptedException{
+		batch.selectCheckBoxbasedOnBatchName(batch.batchName);
+		batch.clickOnAssign();
+	    driver.findElement(batch.CoachSelectionInCoachAssign).click();
+	    Assert.assertEquals(batch.coachStatusInAssignPage(input.UnApprovedCoach2), input.UnApprovedCoach2);
+	}
+	
 	public void assignBatchToCoach () throws InterruptedException{
 		batch.selectCheckBoxbasedOnBatchName(batch.batchName);
 		batch.clickOnAssign();
 	    driver.findElement(batch.CoachSelectionInCoachAssign);
-	    batch.selectCoachesFromAssignpage(input.UnApprovedCoach1);
+	    batch.selectCoachesFromAssignpage(input.ApprovedCoach1);// Approved coach 1
 	    driver.findElement(batch.AssignButtonInAssignPage).click(); 
 	    Assert.assertEquals(batch.getSuccessmessage(), "Batch Transfered Sucessfully");
 	}
 	
 	public void checkCoachNameAfterTranfertheBatch (){
 		String currentCoach = batch.getCoachNameFromBatchesList(batch.batchName);
-		String ecpectedCoach = input.CoachAfterApproving;
+		String ecpectedCoach = input.ApprovedCoach1 ;
 		Assert.assertEquals(currentCoach, ecpectedCoach);	
 	}
+	
+	
 	
 	
 
