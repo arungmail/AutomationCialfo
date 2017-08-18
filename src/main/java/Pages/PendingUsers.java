@@ -12,11 +12,11 @@ import junit.framework.Assert;
 public class PendingUsers extends DriverClass{
 	public By FilterDropDown = By.xpath("(//select[@class='form-control'])[1]");
 	public By FilterByRole  = By.xpath("(//select[@class='form-control'])[2]");
-	public By SwimmersTable  = By.xpath("//table[@id='swimmertable']");
+	public By SwimmersTable  = By.xpath(".//*[@id='swimmertable']/tbody");
 	public By Row 				= By.tagName("tr");
 	public By Col				= By.tagName("td");
-	boolean swimmerstatus ;
-	private String swimmernames;
+	public boolean swimmerstatus ;
+	public String swimmernames;
 	
 	public void approveOrRejectSwimmerSBasedOnName(String name,String action) {
 		WebElement table = driver.findElement(SwimmersTable);
@@ -86,10 +86,10 @@ public class PendingUsers extends DriverClass{
 				String swimmernames = col.get(j).getText();
 				System.err.println(swimmernames);
 				if (swimmernames.equals(name)){
-					//swimmername.add(name);
-					return name;
-				}
+					break;
 					
+				}
+				
 				}
 			
 		
@@ -99,6 +99,17 @@ public class PendingUsers extends DriverClass{
 	
 	public boolean usersIsListedOrNot(String name)
 	{
+//		WebElement table = driver.findElement(SwimmersTable);
+//		List <WebElement> row = table.findElements(Row);
+//		row.size();
+//		System.out.println(row.size());
+//		
+//		for (int i=0;i<row.size();i++){
+//			List<WebElement> col = row.get(i).findElements(Col);
+//			System.out.println(col.size());
+//			for (int j = 0; j < col.size(); j++) {
+//				String swimmernames = col.get(j).getText();
+//				System.err.println(swimmernames);
 		WebElement table = driver.findElement(SwimmersTable);
 		List <WebElement> row = table.findElements(Row);
 		row.size();
@@ -108,7 +119,7 @@ public class PendingUsers extends DriverClass{
 			for (int j = 0; j < col.size(); j++) {
 				String swimmernames = col.get(j).getText();
 				System.err.println(swimmernames);
-				
+//				
 				if (swimmernames.equals(name)){
 					swimmerstatus = true;
 					//return swimmerstatus;
@@ -118,7 +129,7 @@ public class PendingUsers extends DriverClass{
 					//return swimmerstatus;
 				}
 			
-		
+		break;
 		}
 		}
 

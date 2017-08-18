@@ -16,18 +16,22 @@ public class InputValues {
 	public String ApprovedSwimmer1Username = "";
 	
 	
-	public String UnApprovedCoach1EmailID = ""; //
+	public String UnApprovedCoach1EmailID = "autocoach3@mailinator.com"; //
+	public String UnApprovedCoach2EmailID = "autocoach2@mailinator.com"; 
 	public String UNApprovedCoach1FirstName = "";
-	public String UnApprovedCoach2EmailID = "";
+
 	public String UNApprovedCoach2FirstName = "";
 	public String UnApprovedCoach1 ="";  //
 	public String UnApprovedCoach2 = "";  //Keep this for Unapproved coaches checks 
+	public String UnApprovedCoach3 = ""; 
 	
 	
-	public String UnApprovedSwimmer1EmailID ="";
+	public String UnApprovedSwimmer1EmailID = "autoswimmer2@mailinator.com";
+	public String UnApprovedSwimmer2EmailID ="autoswimmer2@mailinator.com";
 	public String UnApprovedSwimmer1FirstName = "";
-	public String UnApprovedSwimmer1 = "";
+	public String UnApprovedSwimmer1 = "";  
 	public String UnApprovedSwimmer2 = ""; 
+	public String UnApprovedSwimmer3 = ""; 
 	//Keep this for UnApproved Swimmer checks 
 	public String UnApprovedSwimmer2FirstName = "";
 	public String UnApprovedSwimmer2EmailId = ""
@@ -41,8 +45,8 @@ public class InputValues {
 	
 	public String SwimmerFirstNameAddedInsideClub = "";
 	public String SwimmerEmailIdAddedByInsideClub = "";
-	public String club 	= "swimlifebengaluru@gmail.com"	;
-	public String ClubPassword = "swimlife@2017";
+	public String club 	= "club6@mailinator.com";
+	public String ClubPassword = "Nichi123";
 	public String batchName  = "sdsgdfddf";
 	public String Batchname1 = "";
 

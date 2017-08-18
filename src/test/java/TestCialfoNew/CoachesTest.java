@@ -40,9 +40,9 @@ public class CoachesTest extends DriverClass{
 	@Test(priority=4)
 	public void verifySearch()
 	{
-		driver.findElement(By.xpath("//input[@type='search']")).sendKeys(input.coach);
-		String actuLCoachName = driver.findElement(By.linkText(input.coach)).getText();
-		String expectedCoach = input.coach;
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys(input.ApprovedCoach1);
+		String actuLCoachName = driver.findElement(By.linkText(input.ApprovedCoach1)).getText();
+		String expectedCoach = input.ApprovedCoach1;
 		Assert.assertEquals(expectedCoach, actuLCoachName);
 		
 	}
@@ -50,13 +50,22 @@ public class CoachesTest extends DriverClass{
      public void coachRedirectingToCoachProfilePage () throws InterruptedException
      {
     	 dash.clickOnCoach();
-    	 driver.findElement(By.linkText(input.coach)).click();
+    	 driver.findElement(By.linkText(input.ApprovedCoach1)).click();
     	 Thread.sleep(500);
     	 String actualCoachProfileName = driver.findElement(By.xpath("//h1[@class='font-green sbold uppercase']")).getText();
-    	 String expectedCoachname = input.coach;
+    	 String expectedCoachname = input.ApprovedCoach1;
     	 Assert.assertEquals(expectedCoachname, actualCoachProfileName);
     	 Thread.sleep(500);
     	 dash.logingOut();
     	 
      }
+	
+	public void verifyCoachesSwimmmresareDisplayingInCoachTable () throws InterruptedException{
+		driver.findElement(By.linkText("Swimmers")).click();
+		Thread.sleep(500);
+		String swimmername = driver.findElement(By.partialLinkText(input.ApprovedSwimmer1)).getText();
+		Assert.assertEquals(input.ApprovedSwimmer1, swimmername);
+		
+}
+
 }

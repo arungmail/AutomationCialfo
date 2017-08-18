@@ -22,8 +22,9 @@ public class PendingUsersTest extends DriverClass {
 
 	SwimmersPage swimmers = new SwimmersPage();
 	BatchList batch = new BatchList();
-
-	public void checkUnApprovedSwimmersAreInPendingListOrNot() {
+     
+	@Test(priority=10)
+	public void verifyUnApprovedSwimmersAreInPendingListOrNot() {
 		login.enterEmailId(input.club);
 		login.enterPassword(input.ClubPassword);
 		login.clickSignButton();
@@ -31,88 +32,101 @@ public class PendingUsersTest extends DriverClass {
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
-		util.selectValueByValue(role, "Swimmer");
-		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer);
+		util.selectValueByValue(role, "Player");
+		pending.usersIsListedOrNot(input.UnApprovedSwimmer1EmailID);
+		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer1EmailID);
 		Assert.assertEquals(true, swimmerStatus);
 	}
 	
+	@Test(priority=15)
 	public void checkUnApprovedCoachesAreListedOrNot (){
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Coach");
-		boolean coachStatus = pending.usersIsListedOrNot(input.UnApprovedCoach);
+		boolean coachStatus = pending.usersIsListedOrNot(input.UnApprovedCoach1EmailID);
 		Assert.assertEquals(true, coachStatus);
 	}
 	
+	@Test(priority=20)
 	public void rejectSwimmer(){
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
-		util.selectValueByValue(role, "Swimmer");
-		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedSwimmer,"Reject");
+		util.selectValueByValue(role, "Player");
+		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedSwimmer2EmailID,"Reject");
 	}
 	
+	@Test(priority=25)
 	public void rejectCoach (){
 		driver.navigate().refresh();
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Coach");
-		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedCoach, "Reject");
+		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedCoach1EmailID, "Reject");
 		
 	}
+	
+	@Test(priority=30)
 	public void checkSwimmerInRejectedTab (){
 		driver.navigate().refresh();
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "reject");
-		util.selectValueByValue(role, "Swimmer");
-		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer);
+		util.selectValueByValue(role, "Player");
+		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer2EmailID);
 		Assert.assertEquals(true, swimmerStatus);
 	}
+	
+	@Test(priority=35)
 	public void checkCoachInRejectedTab (){
 		driver.navigate().refresh();
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "reject");
 		util.selectValueByValue(role, "Coach");
-		boolean coachStatus = pending.usersIsListedOrNot(input.UnApprovedCoach);
+		boolean coachStatus = pending.usersIsListedOrNot(input.UnApprovedCoach2EmailID);
 		Assert.assertEquals(true, coachStatus);
 	}
 	
+	@Test(priority=40)
 	public void approveSwimmerFromPendingList(){
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
-		util.selectValueByValue(role, "Swimmer");
-        pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedSwimmer1, "Approve");
+		util.selectValueByValue(role, "Player");
+        pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedSwimmer1EmailID, "Approve");
 	}
 	
+	@Test(priority=45)
 	public void approveCoachesFromPendingTab (){
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Coach");
-		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedCoach1, "Approve");
+		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedCoach1EmailID, "Approve");
 	}
 	
+	@Test(priority=50)
 	public void checkApprovedSwimmerInPendinglistOrNot(){
 		driver.navigate().refresh();
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
-		util.selectValueByValue(role, "Swimmer");
-		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer1);
-		Assert.assertEquals(true, swimmerStatus);
+		util.selectValueByValue(role, "Player");
+		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer1EmailID);
+		Assert.assertEquals(false, swimmerStatus);
 	}
 	
+	@Test(priority=55)
 	public void checkApprovedCoachesInPendingList(){
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Coach");
-		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedCoach, "Coach");
+		Assert.assertEquals(false, pending.usersIsListedOrNot(input.UnApprovedCoach1EmailID));
+		
 	}
 	
 	
