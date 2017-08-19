@@ -33,9 +33,9 @@ public boolean status;
 	
 	
 	
-	@Test
+
 	
-	public void  hdhd (){
+	/*public void  hdhd (){
 		LoginForm.enterEmailId(input.club);
 		LoginForm.enterPassword(input.ClubPassword);
 		LoginForm.clickSignButton();
@@ -44,8 +44,10 @@ public boolean status;
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Player");
-		pending.getSwimmersFromTable("Auto");
-		/*LoginForm.enterEmailId(input.club);
+		boolean actual = pending.usersIsListedOrNot("Auto");
+		System.out.println(actual);
+		Assert.assertEquals(actual,true);
+		LoginForm.enterEmailId(input.club);
 		LoginForm.enterPassword(input.ClubPassword);
 		LoginForm.clickSignButton();
 		driver.findElement(dash.PendingUsers).click();
@@ -128,9 +130,31 @@ public boolean status;
 		Assert.assertEquals(swimmerStatus, true);
 			}
 		}
-		*/
-	}
+		
+	}*/
 	
+
+              @Test
+
+       public void vvvv() throws InterruptedException{
+            	LoginForm.enterEmailId(input.club);
+          		LoginForm.enterPassword(input.ClubPassword);
+          		LoginForm.clickSignButton(); 
+          		Thread.sleep(5000);
+            	dash.clickOnSwimmers();
+            	driver.findElement(swimmers.AddSwimmerButton).click();
+            	WebElement year = driver.findElement(swimmers.Year);
+        		year.click();
+        		util.selectValueByValue(year, "2000");
+        		WebElement month = driver.findElement(swimmers.Month);
+        		month.click();
+        		util.selectValueByValue(month, "4");
+        		WebElement day = driver.findElement(swimmers.Day);
+        		day.click();
+        		util.selectValueByValue(day, "28");
+       }
+
+
 }
 
 

@@ -9,16 +9,18 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.PendingUsersTest">
+      <class name="TestCialfoNew.SwimmersTest">
         <methods>
-          <include name="rejectSwimmer"/>
-          <include name="checkCoachInRejectedTab"/>
-          <include name="checkUnApprovedCoachesAreListedOrNot"/>
-          <include name="checkSwimmerInRejectedTab"/>
-          <include name="verifyUnApprovedSwimmersAreInPendingListOrNot"/>
-          <include name="rejectCoach"/>
+          <include name="checkvalidationError"/>
+          <include name="checkApprovedCoachesInSwimmerAssignPage"/>
+          <include name="checkUnApprovedCoachesNotInSwimmerAssignPage"/>
+          <include name="checkApprovedCoachesInCoachesList"/>
+          <include name="verifyDOBValidationError2"/>
+          <include name="verifyDOBValidationError1"/>
+          <include name="checkUnAssignedSwimmerAttendancePercenatge"/>
+          <include name="verifySwimmerIsAvailableOrNotOnUnassigned"/>
         </methods>
-      </class> <!-- TestCialfoNew.PendingUsersTest -->
+      </class> <!-- TestCialfoNew.SwimmersTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

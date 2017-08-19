@@ -141,7 +141,7 @@ public class BatchList extends DriverClass {
 				System.out.println(swimmernames);
 				if (swimmernames.equalsIgnoreCase(batchname)) {
 
-					String xpath1 = ".//*[@id='batcheslist']/tbody/tr[";
+					String xpath1 = "html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[";
 					String xpath2 = "]/td[1]/input";
 					driver.findElement(By.xpath(xpath1 + i + xpath2)).click();
 					Thread.sleep(500);
@@ -330,8 +330,8 @@ public class BatchList extends DriverClass {
 				String batchNames = tableColoumn.get(j).getText();
 				System.out.println(batchName);
 				if (batchNames.equals(batchName)){
-					String xp1 = "html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[";
-					String xp2 = "]/td[3]";
+					String xp1 = "html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[";
+					String xp2 = "]/td[6]/i";
 					
 				}
 			}
