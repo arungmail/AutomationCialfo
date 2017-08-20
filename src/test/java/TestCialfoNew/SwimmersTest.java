@@ -138,6 +138,8 @@ public class SwimmersTest extends DriverClass {
 		WebElement day = driver.findElement(swimmers.Day);
 		day.click();
 		util.selectValueByValue(day, "28");
+		driver.findElement(swimmers.AddSwimmerButton).click();
+		
 
 	}
 	@Test(priority=35)
