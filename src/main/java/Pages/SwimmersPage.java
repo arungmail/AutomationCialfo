@@ -78,9 +78,9 @@ public class SwimmersPage extends DriverClass {
 
 	public String coachName;
 
-	public boolean coachStatus;
+	public boolean coachStatus = false;
 
-	public boolean batchStatus;
+	public boolean batchStatus = false ;
 
 	public String attendancePercentage;
 	// public WebElement batchname = driver.findElement(BatchSelection);
@@ -124,11 +124,8 @@ public class SwimmersPage extends DriverClass {
 				System.out.println(webElement.getText());
 				if (webElement.getText().equalsIgnoreCase(batchName)) {
 					batchStatus = true;
+					break;
 				}
-				else {
-					batchStatus = false;
-				}
-				break;
 			}
 			return batchStatus;
 			
@@ -141,11 +138,9 @@ public class SwimmersPage extends DriverClass {
 				System.out.println(coachesnames.getText());
 				if (coachesnames.getText().equals(coachName)){
 					coachStatus = true;
+					break;
+				}
 					
-				}
-				else {
-					coachStatus = false;
-				}
 			}
 			return coachStatus;
 		}
@@ -301,8 +296,9 @@ public class SwimmersPage extends DriverClass {
 			System.out.println(coachNames.getText());
 			if (coachNames.getText().equals(coachName)) {
 				coachNames.click();
+				break;
 			}
-			break;
+			
 
 		}
 
@@ -333,10 +329,8 @@ public class SwimmersPage extends DriverClass {
 			System.out.println(coachNames.getText());
 			if (coachNames.getText().equals(coachName)) {
 				coachStatus = true;
-			} else {
-				coachStatus = false;
+				break;
 			}
-			break;
 
 		}
 		return coachStatus;
@@ -352,10 +346,7 @@ public class SwimmersPage extends DriverClass {
 			System.out.println(batchNames.getText());
 			if (batchNames.getText().equals(batchName)) {
 				batchStatus = true;
-			} else {
-				batchStatus = false;
 			}
-			break;
 
 		}
 		return batchStatus;

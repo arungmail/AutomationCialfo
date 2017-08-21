@@ -44,7 +44,10 @@ public boolean status;
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Player");
-		pending.getSwimmersFromTable("Auto");
+		boolean actual = pending.usersIsListedOrNot("Swimmer2");
+		System.out.println(actual);
+		Assert.assertEquals(actual, true);
+		
 		/*LoginForm.enterEmailId(input.club);
 		LoginForm.enterPassword(input.ClubPassword);
 		LoginForm.clickSignButton();
