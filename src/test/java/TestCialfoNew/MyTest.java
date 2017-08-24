@@ -3,6 +3,8 @@ package TestCialfoNew;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.plaf.synth.SynthSpinnerUI;
+
 import org.apache.commons.collections.bag.SynchronizedSortedBag;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +14,7 @@ import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
 import BasePackage.Utility;
+import Pages.Atendance;
 import Pages.BatchList;
 import Pages.DashBoard;
 import Pages.LoginForm;
@@ -26,114 +29,48 @@ public class MyTest extends DriverClass{
 	SwimmersPage swimmers = new SwimmersPage ();
 	InputValues input = new InputValues ();
 	PendingUsers pending = new PendingUsers();
+	Atendance att = new Atendance ();
 	public boolean swimmerstatus;
 	public String swimmernames;
 	
-public boolean status;
-	
-	
-	
-	@Test
-	
-	public void  hdhd (){
-		LoginForm.enterEmailId(input.club);
-		LoginForm.enterPassword(input.ClubPassword);
-		LoginForm.clickSignButton();
-		driver.findElement(dash.PendingUsers).click();
-		WebElement filter = driver.findElement(pending.FilterDropDown);
-		WebElement role = driver.findElement(pending.FilterByRole);
-		util.selectValueByValue(filter, "inactive");
-		util.selectValueByValue(role, "Player");
-		boolean actual = pending.usersIsListedOrNot("Swimmer2");
-		System.out.println(actual);
-		Assert.assertEquals(actual, true);
-		
-		/*LoginForm.enterEmailId(input.club);
-		LoginForm.enterPassword(input.ClubPassword);
-		LoginForm.clickSignButton();
-		driver.findElement(dash.PendingUsers).click();
-		WebElement filter = driver.findElement(pending.FilterDropDown);
-		WebElement role = driver.findElement(pending.FilterByRole);
-		util.selectValueByValue(filter, "inactive");
-		util.selectValueByValue(role, "Player");
-		WebElement table = driver.findElement(pending.SwimmersTable);
-		List <WebElement> row = table.findElements(pending.Row);
-		row.size();
-		
-		for (int i=0;i<row.size();i++){
-			List<WebElement> col = row.get(i).findElements(pending.Col);
-			for (int j = 0; j < col.size(); j++) {
-				String swimmernames = col.get(j).getText();
-				System.err.println(swimmernames);
-				
-				if (swimmernames.contentEquals("autoswimmer1@mailinator.com")){
-					System.out.println("pass");
-					
-				}
-				else {
-					System.out.println("false");
-				}
-				
-				if (swimmernames.equals(input.UnApprovedCoach1EmailID)){
-					swimmerstatus = true;
-					//return swimmerstatus;
-				}
-				else {
-					swimmerstatus = false;
-					//return swimmerstatus;
-				}
-			
-		
-		}
-		}
-		return swimmerstatus;	
-	}
-	
 
-		return swimmerstatus;
-		
-		driver.findElement(dash.PendingUsers).click();
-		WebElement filter = driver.findElement(pending.FilterDropDown);
-		WebElement role = driver.findElement(pending.FilterByRole);
-		util.selectValueByValue(filter, "inactive");
-		util.selectValueByValue(role, "Player");
-		WebElement table = driver.findElement(By.xpath(".//*[@id='swimmertable']/tbody"));
-		List <WebElement> row = table.findElements(By.tagName("tr"));
-		row.size();
-		for (int i=0;i<row.size();i++){
-			List <WebElement>  col = row.get(i).findElements(By.tagName("td"));
-			col.size();
-			for (int j =0;j<col.size();j++){
-				String cv = col.get(j).getText();
-				System.out.println(cv);
-				if (cv.equals("autoswimmer1@mailinator.com")){
-					status = true;
-					
-					}
-				else 
-					status = false; ;
-				}
-			
-			}
-		return status;
-			
-			
-		}
-		
-		
-		driver.findElement(dash.PendingUsers).click();
-		WebElement filter = driver.findElement(pending.FilterDropDown);
-		WebElement role = driver.findElement(pending.FilterByRole);
-		util.selectValueByValue(filter, "inactive");
-		util.selectValueByValue(role, "Player");
-		pending.usersIsListedOrNot(input.UnApprovedSwimmer1EmailID);
-		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer1EmailID);
-		Assert.assertEquals(swimmerStatus, true);
-			}
-		}
-		*/
-	}
-	
+           
+       @Test
+       public void vvvv() throws InterruptedException{
+            	LoginForm.enterEmailId(input.club);
+          		LoginForm.enterPassword(input.ClubPassword);
+          		LoginForm.clickSignButton();
+          		Thread.sleep(5000);
+            	driver.findElement(By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[3]/a/span")).click();
+            	Thread.sleep(5000);
+            	System.out.println("sdfsd");
+            	driver.findElement(By.xpath("html/body/div[1]/app-root/app-attendance/div/section[2]/div/div/div/div[1]/div[1]/div/span/span[1]/span")).click();
+            	Thread.sleep(5000);
+            	att.selectBatchFromBatchList("Sunday batch");
+            	Thread.sleep(5000);
+            	WebElement table = driver.findElement(By.xpath("html/body/div/app-root/app-attendance/div/section[2]/div/div/div/div[2]/table/tbody"));
+            	List <WebElement>  row = driver.findElements(By.tagName("tr"));
+            	for (int i=0;i<row.size();i++){
+            		List <WebElement> col = row.get(i).findElements(By.tagName("th"));
+            		col.size();
+            		for (int j =0;j<col.size();j++){
+            			List<WebElement> head = row.get(i).findElements(By.tagName("td"));
+            			System.out.println(head.size());
+            			for (int h =0;j<head.size();h++){
+            				String names = col.get(h).getText();
+            				System.out.println(names);
+            			}
+            				
+            			}
+            				
+            			
+            		}
+            		
+            	}
+            	
+            	
+            	
+       
 }
 
 

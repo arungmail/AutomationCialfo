@@ -33,8 +33,8 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Player");
-		pending.usersIsListedOrNot(input.UnApprovedSwimmer1EmailID);
-		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer1EmailID);
+		pending.usersIsListedOrNot(input.Swimmer1EmailID);
+		boolean swimmerStatus = pending.usersIsListedOrNot(input.Swimmer1EmailID);
 		Assert.assertEquals(true, swimmerStatus);
 	}
 	
@@ -44,7 +44,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Coach");
-		boolean coachStatus = pending.usersIsListedOrNot(input.UnApprovedCoach1EmailID);
+		boolean coachStatus = pending.usersIsListedOrNot(input.Coach1EmailID);
 		Assert.assertEquals(true, coachStatus);
 	}
 	
@@ -54,7 +54,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Player");
-		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedSwimmer2EmailID,"Reject");
+		pending.approveOrRejectSwimmerSBasedOnName(input.Swimmer3EmailID,"Reject");
 	}
 	
 	@Test(priority=25)
@@ -64,7 +64,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Coach");
-		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedCoach1EmailID, "Reject");
+		pending.approveOrRejectSwimmerSBasedOnName(input.Swimmer3EmailID, "Reject");
 		
 	}
 	
@@ -75,7 +75,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "reject");
 		util.selectValueByValue(role, "Player");
-		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer2EmailID);
+		boolean swimmerStatus = pending.usersIsListedOrNot(input.Swimmer3EmailID);
 		Assert.assertEquals(true, swimmerStatus);
 	}
 	
@@ -86,7 +86,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "reject");
 		util.selectValueByValue(role, "Coach");
-		boolean coachStatus = pending.usersIsListedOrNot(input.UnApprovedCoach2EmailID);
+		boolean coachStatus = pending.usersIsListedOrNot(input.Coach3EmailID);
 		Assert.assertEquals(true, coachStatus);
 	}
 	
@@ -96,7 +96,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Player");
-        pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedSwimmer1EmailID, "Approve");
+        pending.approveOrRejectSwimmerSBasedOnName(input.Swimmer1EmailID, "Approve");
 	}
 	
 	@Test(priority=45)
@@ -105,7 +105,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Coach");
-		pending.approveOrRejectSwimmerSBasedOnName(input.UnApprovedCoach1EmailID, "Approve");
+		pending.approveOrRejectSwimmerSBasedOnName(input.Coach1EmailID, "Approve");
 	}
 	
 	@Test(priority=50)
@@ -115,7 +115,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Player");
-		boolean swimmerStatus = pending.usersIsListedOrNot(input.UnApprovedSwimmer1EmailID);
+		boolean swimmerStatus = pending.usersIsListedOrNot(input.Swimmer1EmailID);
 		Assert.assertEquals(false, swimmerStatus);
 	}
 	
@@ -125,7 +125,7 @@ public class PendingUsersTest extends DriverClass {
 		WebElement role = driver.findElement(pending.FilterByRole);
 		util.selectValueByValue(filter, "inactive");
 		util.selectValueByValue(role, "Coach");
-		Assert.assertEquals(false, pending.usersIsListedOrNot(input.UnApprovedCoach1EmailID));
+		Assert.assertEquals(false, pending.usersIsListedOrNot(input.Coach1EmailID));
 		
 	}
 	

@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-RegressionSutie">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.MyTest" hash-for-method="hdhd">hdhd</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSutie" title="TestCialfoNew.MyTest" hash-for-method="vvvv">vvvv</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-RegressionSutie -->
@@ -125,12 +125,14 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="hdhd">
-                  </a> <!-- hdhd -->
-                  <span class="method-name">hdhd</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at TestCialfoNew.MyTest.hdhd(MyTest.java:49)
-... Removed 31 stack frames
+                  <a name="vvvv">
+                  </a> <!-- vvvv -->
+                  <span class="method-name">vvvv</span>
+                  <div class="stack-trace">java.lang.IndexOutOfBoundsException: Index: 16, Size: 16
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at TestCialfoNew.MyTest.vvvv(MyTest.java:60)
+... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -191,14 +193,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'hdhd')
+data.setCell(0, 1, 'vvvv')
 data.setCell(0, 2, 'TestCialfoNew.MyTest')
-data.setCell(0, 3, 3463);
+data.setCell(0, 3, 1042309);
 window.suiteTableData['RegressionSutie']= { tableData: data, tableDiv: 'times-div-RegressionSutie'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 17 minutes</span>
               <div id="times-div-RegressionSutie">
               </div> <!-- times-div-RegressionSutie -->
             </div> <!-- times-div -->
@@ -235,15 +237,15 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">hdhd</span>
-                <span class="method-start">8520 ms</span>
+                <span class="method-name">vvvv</span>
+                <span class="method-start">8372 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">BasePackage.BaseClass</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">cleanUp</span>
-                <span class="method-start">12016 ms</span>
+                <span class="method-start">1050750 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

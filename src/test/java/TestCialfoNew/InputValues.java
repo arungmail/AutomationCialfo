@@ -2,40 +2,37 @@ package TestCialfoNew;
 
 public class InputValues {
 
-	public String ApprovedCoachEmailID = "sfgasdfg";  //
-	public String ApprovedCoach1 ="";
-	public String ApprovedCoach2 ="";
-	public String ApprovdCoach3 =  "";
+	public String Coach1EmailID = "sfgasdfg";  //Approve
+	public String Coach2EmailID = "sfgasdfg";  //Approve
+	public String Coach3EmailID ="";   //UnApprove
+	public String Coach1 ="";  //Approve
+	public String Coach2 =""; //Approve
+	public String Coach3 =""; //UnApprove
 	
-	public String ApprovedSwimmer1 = ""; //
-	public String ApprovedSwimmer1Firstname = "";
-	public String ApprovedSwimmer2 ="";  
-	public String ApprovedSwimmer2Firstname = "";
-	public String ApprovedSwimmer3 ="";
-	public String ApprovedSwimmerEmailID = "";
-	public String ApprovedSwimmer1Username = "";
+	public String Swimmer1 = ""; // Approve
+	public String Swimmer1EmailID = ""; //Approve
+	public String Swimmer2 ="";   //Approve
+	public String Swimmer2EmailID = "";  //Approve
+	public String Swimmer3 =""; //unApprove
+	public String Swimmer3EmailID  = ""; //UNApprrove
+	/*//public String ApprovedSwimmerEmailID = "";
+	public String ApprovedSwimmer3EmailID = "";
 	
 	
 	public String UnApprovedCoach1EmailID = "autocoach3@mailinator.com"; //
 	public String UnApprovedCoach2EmailID = "autocoach2@mailinator.com"; 
-	public String UNApprovedCoach1FirstName = "";
+	public String UNApprovedCoach1 = "";
+	public String UNApprovedCoach2 = "";
 
-	public String UNApprovedCoach2FirstName = "";
-	public String UnApprovedCoach1 ="";  //
-	public String UnApprovedCoach2 = "";  //Keep this for Unapproved coaches checks 
-	public String UnApprovedCoach3 = ""; 
 	
 	
 	public String UnApprovedSwimmer1EmailID = "autoswimmer2@mailinator.com";
 	public String UnApprovedSwimmer2EmailID ="autoswimmer2@mailinator.com";
-	public String UnApprovedSwimmer1FirstName = "";
 	public String UnApprovedSwimmer1 = "";  
 	public String UnApprovedSwimmer2 = ""; 
-	public String UnApprovedSwimmer3 = ""; 
 	//Keep this for UnApproved Swimmer checks 
-	public String UnApprovedSwimmer2FirstName = "";
-	public String UnApprovedSwimmer2EmailId = ""
-			;
+
+			
 	public String Coach1AfterApproving = "";
 	public String Swimmer2AfterApprovng = "";
 	public String Swimmer1AfterApprovng = "";
@@ -44,11 +41,11 @@ public class InputValues {
 	
 	
 	public String SwimmerFirstNameAddedInsideClub = "";
-	public String SwimmerEmailIdAddedByInsideClub = "";
+	public String SwimmerEmailIdAddedByInsideClub = "";*/
 	public String club 	= "club6@mailinator.com";
 	public String ClubPassword = "Nichi123";
-	public String batchName  = "sdsgdfddf";
-	public String Batchname1 = "";
+	public String BatchName1  = "sdsgdfddf";
+	public String Batchname2 = "";
 
 	
 	

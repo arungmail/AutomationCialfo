@@ -2,35 +2,31 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="RegressionSutie" duration-ms="3496" started-at="2017-08-21T13:38:48Z" finished-at="2017-08-21T13:38:52Z">
+  <suite name="RegressionSutie" duration-ms="1042343" started-at="2017-08-24T12:23:16Z" finished-at="2017-08-24T12:40:38Z">
     <groups>
     </groups>
-    <test name="CialfoNewversion" duration-ms="3496" started-at="2017-08-21T13:38:48Z" finished-at="2017-08-21T13:38:52Z">
+    <test name="CialfoNewversion" duration-ms="1042343" started-at="2017-08-24T12:23:16Z" finished-at="2017-08-24T12:40:38Z">
       <class name="BasePackage.BaseClass">
-        <test-method status="PASS" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@77cd7a0]" name="launchAUTApplication" is-config="true" duration-ms="8491" started-at="2017-08-21T19:08:40Z" finished-at="2017-08-21T19:08:48Z">
+        <test-method status="PASS" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@77cd7a0]" name="launchAUTApplication" is-config="true" duration-ms="8356" started-at="2017-08-24T17:53:08Z" finished-at="2017-08-24T17:53:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchAUTApplication -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@77cd7a0]" name="cleanUp" is-config="true" duration-ms="92" started-at="2017-08-21T19:08:52Z" finished-at="2017-08-21T19:08:52Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@77cd7a0]" name="cleanUp" is-config="true" duration-ms="408" started-at="2017-08-24T18:10:38Z" finished-at="2017-08-24T18:10:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- BasePackage.BaseClass -->
       <class name="TestCialfoNew.MyTest">
-        <test-method status="FAIL" signature="hdhd()[pri:0, instance:TestCialfoNew.MyTest@204f30ec]" name="hdhd" duration-ms="3463" started-at="2017-08-21T19:08:48Z" finished-at="2017-08-21T19:08:52Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="FAIL" signature="vvvv()[pri:0, instance:TestCialfoNew.MyTest@204f30ec]" name="vvvv" duration-ms="1042309" started-at="2017-08-24T17:53:16Z" finished-at="2017-08-24T18:10:38Z">
+          <exception class="java.lang.IndexOutOfBoundsException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[Index: 16, Size: 16]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:305)
-	at org.testng.Assert.assertEquals(Assert.java:315)
-	at TestCialfoNew.MyTest.hdhd(MyTest.java:49)
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index: 16, Size: 16
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at TestCialfoNew.MyTest.vvvv(MyTest.java:60)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -58,10 +54,10 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- hdhd -->
+        </test-method> <!-- vvvv -->
       </class> <!-- TestCialfoNew.MyTest -->
     </test> <!-- CialfoNewversion -->
   </suite> <!-- RegressionSutie -->
