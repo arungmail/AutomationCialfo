@@ -14,9 +14,9 @@ public class DashBoard extends DriverClass {
 	
 
 	public By ProfileNameinSecondarymenu = By.xpath(".//*[@id='profile_name']/p");
-	public By profilenameInTopRightSide = By.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span");
+	public By profilenameInTopRightSide = By.xpath("//span[@data-placement='bottom']");
 	private By Dashboard = By.partialLinkText("dashboard");
-	private By Attendanace = By.partialLinkText("attendance");
+	private By Attendanace = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[3]/a/span");
 	public By Swimmers = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[4]/a/span");
 	private By Coach = By.partialLinkText("Coach");
 	private By ManageGroup = By.partialLinkText("manage-group");
@@ -34,15 +34,22 @@ public class DashBoard extends DriverClass {
 	public void clickOnProfileNameOnTop() {
 		driver.findElement(profilenameInTopRightSide).click();
 	}
+	
+	public void clickOnMessage (){
+		driver.findElement(Message).click();
+	}
+	public void clickOnAttendance(){
+		driver.findElement(Attendanace).click();
+	}
 
 	public void logingOut() throws InterruptedException {
 		driver.findElement(profilenameInTopRightSide).click();
-		driver.findElement(By.linkText("Sign out"));
+		driver.findElement(By.xpath("(//a[@class='btn btn-default btn-flat'])[2]")).click();
 		Thread.sleep(500);
 	}
 
 	public String getProfilenameOnTopRightSide() {
-		String profilename = driver.findElement(ProfileNameinSecondarymenu).getText();
+		String profilename = driver.findElement(profilenameInTopRightSide).getText();
 		System.out.println(profilename);
 		return profilename;
 	}
@@ -98,7 +105,7 @@ public class DashBoard extends DriverClass {
 	}
 	
 	public void selectUserFromQuickMessage (String name,String name1){
-		driver.findElement(By.xpath("//li[@class='select2-search select2-search--inline']")).click();
+		driver.findElement(By.xpath("//input[@class='select2-search__field']")).click();
 		List <WebElement> Alllist = driver.findElements(By.xpath("//span[@class='select2-results']"));
 		for (WebElement lists : Alllist){
 			System.out.println(lists.getText());

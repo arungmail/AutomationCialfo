@@ -1,64 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="3" ignored="0" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="RegressionSutie" duration-ms="1042343" started-at="2017-08-24T12:23:16Z" finished-at="2017-08-24T12:40:38Z">
+  <suite name="RegressionSutie" duration-ms="69978" started-at="2017-08-27T09:18:55Z" finished-at="2017-08-27T09:20:05Z">
     <groups>
     </groups>
-    <test name="CialfoNewversion" duration-ms="1042343" started-at="2017-08-24T12:23:16Z" finished-at="2017-08-24T12:40:38Z">
+    <test name="CialfoNewversion" duration-ms="69978" started-at="2017-08-27T09:18:55Z" finished-at="2017-08-27T09:20:05Z">
       <class name="BasePackage.BaseClass">
-        <test-method status="PASS" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@77cd7a0]" name="launchAUTApplication" is-config="true" duration-ms="8356" started-at="2017-08-24T17:53:08Z" finished-at="2017-08-24T17:53:16Z">
+        <test-method status="PASS" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@4dfa3a9d]" name="launchAUTApplication" is-config="true" duration-ms="15123" started-at="2017-08-27T14:48:40Z" finished-at="2017-08-27T14:48:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchAUTApplication -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@77cd7a0]" name="cleanUp" is-config="true" duration-ms="408" started-at="2017-08-24T18:10:38Z" finished-at="2017-08-24T18:10:39Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@4dfa3a9d]" name="cleanUp" is-config="true" duration-ms="94" started-at="2017-08-27T14:50:05Z" finished-at="2017-08-27T14:50:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.MyTest">
-        <test-method status="FAIL" signature="vvvv()[pri:0, instance:TestCialfoNew.MyTest@204f30ec]" name="vvvv" duration-ms="1042309" started-at="2017-08-24T17:53:16Z" finished-at="2017-08-24T18:10:38Z">
-          <exception class="java.lang.IndexOutOfBoundsException">
+      <class name="TestCialfoNew.LogInTest">
+        <test-method status="FAIL" signature="validClubLogin()[pri:1, instance:TestCialfoNew.LogInTest@6eebc39e]" name="validClubLogin" duration-ms="65680" started-at="2017-08-27T14:48:55Z" finished-at="2017-08-27T14:50:01Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Index: 16, Size: 16]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span"}
+  (Session info: chrome=58.0.3029.96)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60.06 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LAPTOP-V26TDURT', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\Arun\AppData\Local\Temp\scoped_dir10488_19371}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.96, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: f962e17dcff90e5692a74c660ac18003
+*** Element info: {Using=xpath, value=html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IndexOutOfBoundsException: Index: 16, Size: 16
-	at java.util.ArrayList.rangeCheck(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at TestCialfoNew.MyTest.vvvv(MyTest.java:60)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span"}
+  (Session info: chrome=58.0.3029.96)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60.06 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LAPTOP-V26TDURT', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\Arun\AppData\Local\Temp\scoped_dir10488_19371}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.96, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: f962e17dcff90e5692a74c660ac18003
+*** Element info: {Using=xpath, value=html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/a/span}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at Pages.DashBoard.profileNameIsVisibleOrNot(DashBoard.java:65)
+	at TestCialfoNew.LogInTest.validClubLogin(LogInTest.java:34)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:746)
-	at org.testng.TestRunner.run(TestRunner.java:600)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
-	at org.testng.TestNG.runSuites(TestNG.java:1104)
-	at org.testng.TestNG.run(TestNG.java:1076)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- vvvv -->
-      </class> <!-- TestCialfoNew.MyTest -->
+        </test-method> <!-- validClubLogin -->
+        <test-method status="PASS" signature="emailErrorValidationChecks()[pri:2, instance:TestCialfoNew.LogInTest@6eebc39e]" name="emailErrorValidationChecks" duration-ms="589" started-at="2017-08-27T14:50:01Z" finished-at="2017-08-27T14:50:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emailErrorValidationChecks -->
+        <test-method status="FAIL" signature="passwordErrorValidationChecks()[pri:3, instance:TestCialfoNew.LogInTest@6eebc39e]" name="passwordErrorValidationChecks" duration-ms="473" started-at="2017-08-27T14:50:01Z" finished-at="2017-08-27T14:50:02Z">
+          <exception class="junit.framework.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<> but was:<Wrong username or password. Try again.>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[junit.framework.ComparisonFailure: expected:<> but was:<Wrong username or password. Try again.>
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at TestCialfoNew.LogInTest.passwordErrorValidationChecks(LogInTest.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- junit.framework.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordErrorValidationChecks -->
+        <test-method status="FAIL" signature="checkUnApprovedCoachLogin()[pri:4, instance:TestCialfoNew.LogInTest@6eebc39e]" name="checkUnApprovedCoachLogin" duration-ms="3140" started-at="2017-08-27T14:50:02Z" finished-at="2017-08-27T14:50:05Z">
+          <exception class="junit.framework.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<Account is not activated> but was:<>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[junit.framework.ComparisonFailure: expected:<Account is not activated> but was:<>
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at TestCialfoNew.LogInTest.checkUnApprovedCoachLogin(LogInTest.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- junit.framework.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkUnApprovedCoachLogin -->
+      </class> <!-- TestCialfoNew.LogInTest -->
     </test> <!-- CialfoNewversion -->
   </suite> <!-- RegressionSutie -->
 </testng-results>

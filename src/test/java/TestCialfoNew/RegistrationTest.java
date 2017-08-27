@@ -27,7 +27,7 @@ public class RegistrationTest extends DriverClass {
 	
 	@AfterMethod
 	public void clickGoTOSignpage(){
-		driver.get("http://192.168.1.206:4200/login");
+		driver.get("http://34.223.236.112/#/login");
 	}
 	/*@BeforeMethod
 	public void openHomePage () throws IOException{
@@ -39,7 +39,7 @@ public class RegistrationTest extends DriverClass {
 	public void validSwimmerRegistration () throws InterruptedException{
 		login.clickOnRegister();
 		reg.enterUserName("Venu");
-		reg.enterEmail(input.UnApprovedSwimmerEmailID);
+		reg.enterEmail(input.Swimmer1EmailID);
 		reg.enterFirstname("Venu");
 		reg.enterLastName("viya");
 		reg.enterPhoneNumber("919901395048");
@@ -52,15 +52,15 @@ public class RegistrationTest extends DriverClass {
 		//reg.selectRole("Player");
 		//reg.selectRole("Male");
 		util.selectradioButton("Female","label");
-		util.selectradioButton("Player","label");
-		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
-		reg.clickRegisterButton();
-		Thread.sleep(500);
-		util.handleWindow();
-		reg.enterOTP("");
-		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);
-		dash.logingOut();
-		
+		util.selectradioButton("Swimmer","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Brigade School, Malleshwaram )");
+   		reg.clicktermsAndCondition();
+   		reg.clickRegisterButton();
+   		/*util.handleWindow();
+   		reg.enterOTP("");*/
+   		Thread.sleep(5000);
+   		String sucess = driver.findElement(By.xpath("//p[@id='success_validation']")).getText();
+   		Assert.assertEquals(sucess, "Registration in progress. Our team will get back to you soon!");
 	}
 	
 	@Test(priority=2)
@@ -68,7 +68,7 @@ public class RegistrationTest extends DriverClass {
 	{
 		login.clickOnRegister();
 		reg.enterUserName("Seenu");
-		reg.enterEmail(input.UnApprovedCoach1EmailID);
+		reg.enterEmail(input.Coach1);
 		reg.enterFirstname("Seenu");
 		reg.enterLastName("Mohan");
 		reg.enterPhoneNumber("919901395048");
@@ -82,12 +82,14 @@ public class RegistrationTest extends DriverClass {
 		//reg.selectRole("Male");
 		util.selectradioButton("Female","label");
 		util.selectradioButton("Player","label");
-		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
-		reg.clickRegisterButton();
-		Thread.sleep(500);
-		util.handleWindow();
-		reg.enterOTP("");	
-		dash.logingOut();
+		reg.selectClubFromDropdownlist("Swimlife Club ( Brigade School, Malleshwaram )");
+   		reg.clicktermsAndCondition();
+   		reg.clickRegisterButton();
+   		/*util.handleWindow();
+   		reg.enterOTP("");*/
+   		Thread.sleep(5000);
+   		String sucess = driver.findElement(By.xpath("//p[@id='success_validation']")).getText();
+   		Assert.assertEquals(sucess, "Registration in progress. Our team will get back to you soon!");
 	}
 	
 	
@@ -109,38 +111,17 @@ public class RegistrationTest extends DriverClass {
 		//reg.selectRole("Male");
 		util.selectradioButton("Female","label");
 		util.selectradioButton("Coach","label");
-		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
-		reg.clickRegisterButton();
-		Thread.sleep(500);
-		util.handleWindow();
-		reg.enterOTP("");	
-		dash.logingOut();
+		reg.selectClubFromDropdownlist("Swimlife Club ( Brigade School, Malleshwaram )");
+   		reg.clicktermsAndCondition();
+   		reg.clickRegisterButton();
+   		/*util.handleWindow();
+   		reg.enterOTP("");*/
+   		Thread.sleep(5000);
+   		String sucess = driver.findElement(By.xpath("//p[@id='success_validation']")).getText();
+   		Assert.assertEquals(sucess, "Registration in progress. Our team will get back to you soon!");
 	}
 	
-	public void validCoachRegistrationForCaoch2 () throws InterruptedException
-	{
-		login.clickOnRegister();
-		reg.enterUserName("Sreeedhar");
-		reg.enterEmail("sreedhar@mailinator.com");
-		reg.enterFirstname("Sreedhar");
-		reg.enterLastName("Kumar");
-		reg.enterPhoneNumber("919901395048");
-		reg.enterPassword("Nichi123");
-		reg.reEnterPassword("Nichi123");
-		reg.enterLocation("Cochin");		
-		reg.selectYear("1990");
-		reg.selectMonth("Apr");
-		reg.selectDate("28");
-		//reg.selectRole("Player");
-		//reg.selectRole("Male");
-		util.selectradioButton("Female","label");
-		util.selectradioButton("Coach","label");
-		reg.selectClubFromDropdownlist("Swimlife Club ( Bangalore )");
-		reg.clickRegisterButton();
-		Thread.sleep(500);
-		Assert.assertEquals(dash.profileNameIsVisibleOrNot(), true);	
-		dash.logingOut();
-	}
+	
 	@Test(priority=3)
 	public void emptyUserNamevalidationchecks () throws InterruptedException
 	{
@@ -392,7 +373,122 @@ public class RegistrationTest extends DriverClass {
 		reg.clickRegisterButton();
 		String Actual = reg.locationErrorvalidation();
 		Assert.assertEquals(Actual,"This field is required!");
-		dash.logingOut();
+		//dash.logingOut();
 		
+	}
+	
+	@Test(priority=13)
+	
+	public void vaidSwimmerRegistration2 () throws InterruptedException{
+		login.clickOnRegister();
+		reg.enterUserName("Venu");
+		reg.enterEmail(input.Swimmer2EmailID);
+		reg.enterFirstname("Venu");
+		reg.enterLastName("viya");
+		reg.enterPhoneNumber("919901395048");
+		reg.enterPassword("Nichi123");
+		reg.reEnterPassword("Nichi123");
+		reg.enterLocation("Cochin");		
+		reg.selectYear("1990");
+		reg.selectMonth("Apr");
+		reg.selectDate("28");
+		//reg.selectRole("Player");
+		//reg.selectRole("Male");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Swimmer","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Brigade School, Malleshwaram )");
+   		reg.clicktermsAndCondition();
+   		reg.clickRegisterButton();
+   		/*util.handleWindow();
+   		reg.enterOTP("");*/
+   		Thread.sleep(5000);
+   		String sucess = driver.findElement(By.xpath("//p[@id='success_validation']")).getText();
+   		Assert.assertEquals(sucess, "Registration in progress. Our team will get back to you soon!");
+	}
+	
+	@Test(priority=14)
+	
+	public void validSwimmerRegistration3 () throws InterruptedException {
+		
+		login.clickOnRegister();
+		reg.enterUserName("Venu");
+		reg.enterEmail(input.Swimmer3EmailID);
+		reg.enterFirstname("Venu");
+		reg.enterLastName("viya");
+		reg.enterPhoneNumber("919901395048");
+		reg.enterPassword("Nichi123");
+		reg.reEnterPassword("Nichi123");
+		reg.enterLocation("Cochin");		
+		reg.selectYear("1990");
+		reg.selectMonth("Apr");
+		reg.selectDate("28");
+		//reg.selectRole("Player");
+		//reg.selectRole("Male");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Swimmer","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Brigade School, Malleshwaram )");
+   		reg.clicktermsAndCondition();
+   		reg.clickRegisterButton();
+   		/*util.handleWindow();
+   		reg.enterOTP("");*/
+   		Thread.sleep(5000);
+   		String sucess = driver.findElement(By.xpath("//p[@id='success_validation']")).getText();
+   		Assert.assertEquals(sucess, "Registration in progress. Our team will get back to you soon!");
+	}
+	
+	
+	@Test(priority=15)
+	public void validCoachRegistration2 () throws InterruptedException{
+		login.clickOnRegister();
+		reg.enterUserName("Venu");
+		reg.enterEmail(input.Coach2EmailID);
+		reg.enterFirstname("Venu");
+		reg.enterLastName("viya");
+		reg.enterPhoneNumber("919901395048");
+		reg.enterPassword("Nichi123");
+		reg.reEnterPassword("Nichi123");
+		reg.enterLocation("Cochin");		
+		reg.selectYear("1990");
+		reg.selectMonth("Apr");
+		reg.selectDate("28");
+		//reg.selectRole("Player");
+		//reg.selectRole("Male");
+		util.selectradioButton("Female","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Brigade School, Malleshwaram )");
+   		reg.clicktermsAndCondition();
+   		reg.clickRegisterButton();
+   		/*util.handleWindow();
+   		reg.enterOTP("");*/
+   		Thread.sleep(5000);
+   		String sucess = driver.findElement(By.xpath("//p[@id='success_validation']")).getText();
+   		Assert.assertEquals(sucess, "Registration in progress. Our team will get back to you soon!");
+	}
+	
+	@Test(priority=16)
+	public void validCoachRegistration3 () throws InterruptedException{
+		login.clickOnRegister();
+		reg.enterUserName("Venu");
+		reg.enterEmail(input.Coach3EmailID);
+		reg.enterFirstname("Venu");
+		reg.enterLastName("viya");
+		reg.enterPhoneNumber("919901395048");
+		reg.enterPassword("Nichi123");
+		reg.reEnterPassword("Nichi123");
+		reg.enterLocation("Cochin");		
+		reg.selectYear("1990");
+		reg.selectMonth("Apr");
+		reg.selectDate("28");
+		//reg.selectRole("Player");
+		//reg.selectRole("Male");
+		util.selectradioButton("Female","label");
+		util.selectradioButton("Coach","label");
+		reg.selectClubFromDropdownlist("Swimlife Club ( Brigade School, Malleshwaram )");
+   		reg.clicktermsAndCondition();
+   		reg.clickRegisterButton();
+   		/*util.handleWindow();
+   		reg.enterOTP("");*/
+   		Thread.sleep(5000);
+   		String sucess = driver.findElement(By.xpath("//p[@id='success_validation']")).getText();
+   		Assert.assertEquals(sucess, "Registration in progress. Our team will get back to you soon!");
 	}
 }

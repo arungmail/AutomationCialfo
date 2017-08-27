@@ -45,8 +45,8 @@ public class LogInTest extends DriverClass {
 	@Test(priority=3)
 	public void passwordErrorValidationChecks ()
 	{
-		login.enterEmailId("sdfsdsdf@gmail.com");
-		login.enterPassword("jhjghgfff");
+		login.enterEmailId("club6@mailinator.com");
+		login.enterPassword("Nichi12345");
 		login.clickSignButton();
 		String error = login.signInPasswordValidationError();
 		Assert.assertEquals(error,"Wrong username or password. Try again.");
@@ -56,7 +56,7 @@ public class LogInTest extends DriverClass {
 	
 	public void checkUnApprovedCoachLogin () throws InterruptedException{
 		driver.navigate().refresh();
-		login.enterEmailId(input.UnApprovedCoachEmailID);
+		login.enterEmailId(input.Coach3EmailID);
 		login.enterPassword("Nichi!23");
 		login.clickSignButton();
 		Thread.sleep(500);
@@ -64,21 +64,14 @@ public class LogInTest extends DriverClass {
 		Assert.assertEquals("Account is not activated", actualError);	
 	}
 	
+	@Test(priority = 5)
 	public void checkUnApprovedSwimmerLogin () throws InterruptedException{
 		driver.navigate().refresh();
-		login.enterEmailId(input.UnApprovedSwimmerEmailID);
+		login.enterEmailId(input.Swimmer3EmailID);
 		login.enterPassword("Nichi!23");
 		login.clickSignButton();
 		Thread.sleep(500);
 		String actualError = login.errorvalidation();
 		Assert.assertEquals("Account is not activated", actualError);
 	}
-	
-	
-	
-		
-	
-	
-	
-
 }

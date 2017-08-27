@@ -21,24 +21,18 @@ public class MessageTest extends DriverClass {
 	Utility util = new Utility();
 	SwimmersPage swimmers = new SwimmersPage();
 	MessagePage msg = new MessagePage();
+	InputValues input = new InputValues ();
 
 	@Test
 	public void composeMail() throws InterruptedException {
-		login.enterEmailId("swimlife@gmail.com");
-		login.enterPassword("12345678");
-		login.clickSignButton();
-		driver.findElement(dash.Message).click();
+		dash.clickOnMessage();
 		msg.clickOnComposeButton();
 		driver.findElement(msg.To).click();
 		Thread.sleep(500);
-		WebElement list = driver.findElement(msg.UserList);
-		msg.selectUserFromList(list, "Divya Mohandas");
-		// driver.findElement(msg.To).click();
-		// msg.selectUserFromList(list, "Jithu Haridas");
-		msg.enterSubJect("My First Automation Message");
-		driver.findElement(By.xpath("//iframe[@class='wysihtml5-sandbox']")).click();
-		msg.enterBody("Hi Test ");
-		msg.clickOnSendButton();
+		msg.selectUserFromList(input.Swimmer1);
+		msg.selectUserFromList(input.Coach1);
+		driver.findElement(msg.Subject).sendKeys("First Message");
+		msg.enterMessageBody(ifameName, contentTotype, element);
 
 	}
 	

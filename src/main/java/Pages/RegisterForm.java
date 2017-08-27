@@ -11,8 +11,8 @@ import BasePackage.Utility;
 public class RegisterForm extends DriverClass {
 	Utility util = new Utility();
 
-	private By Username = By.xpath("//input[@placeholder='User Name']");
-	private By Email = By.xpath("html/body/div[1]/app-root/app-signup/body/div/div[2]/form/div[1]/div[2]/div/input");
+	private By Username = By.xpath("//input[@placeholder='Screen Name']");
+	private By Email = By.xpath("//input[@placeholder='Email']");
 	private By Firstname = By.xpath("//input[@placeholder='First Name']");
 	private By Lastname = By.xpath("//input[@placeholder='Last Name']");
 	private By PhoneNumber = By.xpath("//input[@placeholder='Phone Number']");
@@ -22,7 +22,7 @@ public class RegisterForm extends DriverClass {
 	private By MonthDropdown = By.id("month");
 	private By DayDropDown = By.id("day");
 	private By TermandCondition = By
-			.xpath("html/body/div[1]/app-root/app-signup/body/div/div[2]/form/div[6]/div[1]/div/label/div/ins");
+			.xpath("html/body/div/app-root/app-signup/body/div/div[2]/form/div[7]/div[1]/div/label/div/ins");
 	private By RegisterButton = By.id("register_btn");
 	private By Location = By.xpath("//input[@placeholder='Location']");
 	private By UsenamevalidationError = By.xpath("//p[@id='name_validation']");
@@ -48,37 +48,43 @@ public class RegisterForm extends DriverClass {
 	{
 		driver.findElement(EnterOTP).clear();
 		driver.findElement(EnterOTP).sendKeys(otp);
-		Thread.sleep(50000);
-		driver.findElement(OTPSubmitButton).click();
+		
 	}
 	
 	
 
 	public void enterUserName(String value) {
+		driver.findElement(Username).clear();
 		driver.findElement(Username).sendKeys(value);
 	}
 
 	public void enterEmail(String value) {
+		driver.findElement(Email).clear();
 		driver.findElement(Email).sendKeys(value);
 	}
 
 	public void enterFirstname(String value) {
+		driver.findElement(Firstname).clear();
 		driver.findElement(Firstname).sendKeys(value);
 	}
 
 	public void enterLastName(String value) {
+		driver.findElement(Lastname).clear();
 		driver.findElement(Lastname).sendKeys(value);
 	}
 
 	public void enterPhoneNumber(String value) {
+		driver.findElement(PhoneNumber).clear();
 		driver.findElement(PhoneNumber).sendKeys(value);
 	}
 
 	public void enterPassword(String value) {
+		driver.findElement(Password).clear();
 		driver.findElement(Password).sendKeys(value);
 	}
 
 	public void reEnterPassword(String value) {
+		driver.findElement(ReenterPassword).clear();
 		driver.findElement(ReenterPassword).sendKeys(value);
 	}
 
@@ -117,10 +123,11 @@ public class RegisterForm extends DriverClass {
 	}
 
 	public void enterLocation(String value) {
+		driver.findElement(Location).clear();
 		driver.findElement(Location).sendKeys(value);
 	}
 
-	public void termsAndCondition() {
+	public void clicktermsAndCondition() {
 		driver.findElement(TermandCondition).click();
 	}
 
@@ -129,10 +136,22 @@ public class RegisterForm extends DriverClass {
 
 	}
 
-	public void selectClubFromDropdownlist(String clubname) {
+	public void selectClubFromDropdownlist(String clubname) throws InterruptedException {
 		WebElement element = driver.findElement(ClubDropDown);
 		element.click();
-		util.selectValueByVisibleText(element, clubname);
+		driver.findElement(By.xpath("//input[@class='select2-search__field']")).sendKeys(clubname);
+		Thread.sleep(5000);
+		WebElement all = driver.findElement(By.xpath("//span[@class='select2-results']"));
+		List <WebElement> allClubList = all.findElements(By.tagName("li"));
+		allClubList.size();
+		for (WebElement club : allClubList){
+			System.out.println(club.getText());
+			if (club.getText().equals(clubname)){
+				club.click();
+				break;
+			}
+			
+		}
 	}
 
 	// Returning Username validation error

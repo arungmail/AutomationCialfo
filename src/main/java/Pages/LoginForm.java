@@ -15,7 +15,7 @@ public class LoginForm extends DriverClass {
 	private static By RememberMe = By.xpath("//ins[@class='iCheck-helper']");
 	private static By SignInButton = By.xpath("(//button[@type='submit'])[1]");
 	private static By Forgotpassword = By.partialLinkText("I forgot my password");
-	private static By CreateNewAccount = By.partialLinkText("Register a new membership");
+	private static By CreateNewAccount = By.partialLinkText("Sign Up");
 	private static By FaceBookLogin = By.xpath("html/body/div/app-root/app-login/body/div/div[2]/div/a[1]");
 	private static By GooglePlus = By.xpath("html/body/div[1]/app-root/app-login/body/div/div[2]/div/a[2]");
 	private static By InvaliErrorEmail = By.xpath("//p[@id='email_validation']");
@@ -23,6 +23,7 @@ public class LoginForm extends DriverClass {
 	public By ErrorValidation = By.id("error_validation");
 
 	public static void enterEmailId(String value) {
+		driver.findElement(email).clear();
 		driver.findElement(email).sendKeys(value);
 	}
 

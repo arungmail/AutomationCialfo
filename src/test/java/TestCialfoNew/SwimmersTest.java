@@ -30,24 +30,7 @@ public class SwimmersTest extends DriverClass {
 	
 	
 
-	@Test
 
-	/*
-	 * public void checkAddedBatchIsListedOrNot() {
-	 * login.enterEmailId(input.club); login.enterPassword(input.ClubPassword);
-	 * login.clickSignButton(); dash.clickOnSwimmers();
-	 * driver.findElement(swimmers.BatchSelection).click(); List <String>
-	 * batchname = new ArrayList <String>(); WebElement batchlist =
-	 * driver.findElement(By.xpath("html/body/span/span/span[2]")); List
-	 * <WebElement> batches = batchlist.findElements(By.tagName("li")); for
-	 * (WebElement webElement : batches) {
-	 * System.out.println(webElement.getText()); if
-	 * (webElement.getText().equalsIgnoreCase("Week End Batch")) {
-	 * //Thread.sleep(500); batchname.add("Week End Batch");
-	 * Assert.assertEquals(webElement, "Week End Batch"); break; } }
-	 * 
-	 * }
-	 */
 
 	public void verifyUnApprovedCoachesareListedInCoachesFilterOrNot() {
 
@@ -158,67 +141,7 @@ public class SwimmersTest extends DriverClass {
 		Assert.assertEquals(actualSwimmer,input.Swimmer2EmailID);
 	}
 	
-	
-/*
-	public void screenNameValidation() {
-		driver.findElement(swimmers.AddSwimmerButton).click();
-		driver.findElement(swimmers.ScreenName).sendKeys("");
-		driver.findElement(swimmers.Firstname);
-		driver.findElement(swimmers.EmailId).sendKeys("xxxxx");
-		driver.findElement(swimmers.Lastname).sendKeys("xxx");
-		driver.findElement(swimmers.Password).sendKeys("dfdsfdf");
-		driver.findElement(swimmers.ConfirmPassword).sendKeys("dhfdsfgdshf");
-		driver.findElement(swimmers.PhoneNumber).sendKeys("xxxx");
-		driver.findElement(swimmers.Location).sendKeys("sfafas");
-		WebElement year = driver.findElement(swimmers.Year);
-		WebElement month = driver.findElement(swimmers.Month);
-		WebElement day = driver.findElement(swimmers.Day);
-		util.selectValueByValue(day, "1990");
-		util.selectValueByValue(month, "March");
-		util.selectValueByValue(year, "28");
-		driver.findElement(swimmers.RegisterButton).click();
-		String error = swimmers.getAnValidationError(swimmers.NameValidation);
-		Assert.assertEquals(error, "This field is required!");
-	}
 
-	public void verifyFirstNameValidation() {
-		
-		driver.findElement(swimmers.Firstname).sendKeys("");
-		driver.findElement(swimmers.EmailId).sendKeys("xxxxx");
-		driver.findElement(swimmers.Lastname).sendKeys("xxx");
-		driver.findElement(swimmers.Password).sendKeys("dfdsfdf");
-		driver.findElement(swimmers.ConfirmPassword).sendKeys("dhfdsfgdshf");
-		driver.findElement(swimmers.PhoneNumber).sendKeys("xxxx");
-		driver.findElement(swimmers.Location).sendKeys("sfafas");
-		WebElement year = driver.findElement(swimmers.Year);
-		WebElement month = driver.findElement(swimmers.Month);
-		WebElement day = driver.findElement(swimmers.Day);
-		util.selectValueByValue(day, "1990");
-		util.selectValueByValue(month, "March");
-		util.selectValueByValue(year, "28");
-		driver.findElement(swimmers.RegisterButton).click();
-		Assert.assertEquals(swimmers.getAnValidationError(swimmers.FirstNameValidation), "This field is required!");
-	}
-	
-	public void verifyLastNameValidationError (){
-		driver.findElement(swimmers.EmailId).sendKeys("xxxxx");
-		driver.findElement(swimmers.Lastname).sendKeys("");
-		driver.findElement(swimmers.Password).sendKeys("dfdsfdf");
-		driver.findElement(swimmers.ConfirmPassword).sendKeys("dhfdsfgdshf");
-		driver.findElement(swimmers.PhoneNumber).sendKeys("xxxx");
-		driver.findElement(swimmers.Location).sendKeys("sfafas");
-		WebElement year = driver.findElement(swimmers.Year);
-		WebElement month = driver.findElement(swimmers.Month);
-		WebElement day = driver.findElement(swimmers.Day);
-		util.selectValueByValue(day, "1990");
-		util.selectValueByValue(month, "March");
-		util.selectValueByValue(year, "28");
-		driver.findElement(swimmers.RegisterButton).click();
-		Assert.assertEquals(swimmers.getAnValidationError(swimmers.LastNameValidation), "This field is required!");
-	}
-	*/
-	
-	
 	@Test(priority=40)
 	public void checkvalidationError (){
 		driver.findElement(swimmers.AddSwimmerButton).click();
@@ -296,75 +219,5 @@ public class SwimmersTest extends DriverClass {
 		Assert.assertEquals(swimmers.checkCoachStatusinAssignSwimmerPage(input.Coach1), true);
 	}
 	
-	
-	
-
-	
-	/*
-	 * public void simmerAfterSearch() throws InterruptedException {
-	 * login.enterEmailId(input.club); login.enterPassword(input.ClubPassword);
-	 * login.clickSignButton(); dash.clickOnSwimmers();
-	 * swimmers.search(input.swimmer2); Thread.sleep(5000); String
-	 * actulaSwimmername =
-	 * driver.findElement(By.linkText(input.swimmer2)).getText();
-	 * System.out.println(actulaSwimmername); String expectedSwimmername =
-	 * input.swimmer2; Assert.assertEquals(actulaSwimmername,
-	 * expectedSwimmername); }
-	 
-
-	public void searchInvalidSwimmers() throws InterruptedException {
-		driver.navigate().refresh();
-		dash.clickOnSwimmers();
-		swimmers.search("sngbdjgbsd");
-		Thread.sleep(5000);
-		WebElement error = driver.findElement(swimmers.DataEmptyMessage);
-		String actualError = util.getErrorMessage(error);
-		String expectedError = "No data available in table";
-		Assert.assertEquals(actualError, expectedError);
-
-	}
-
-	
-	 * public void tranferSwimmersToBatch () throws InterruptedException {
-	 * driver.navigate().refresh();
-	 * driver.findElement(swimmers.BatchSelection).click(); WebElement
-	 * batchResult = driver.findElement(swimmers.batchresults);
-	 * swimmers.batchSelection(batchResult, ""); try {
-	 * swimmers.clickCheckBoxBasedOnSwimmersName("Divya");
-	 * driver.findElement(swimmers.BatchResultsInTransferSwimmerpage);
-	 * WebElement batchResult1 =
-	 * driver.findElement(swimmers.BatchResultsInTransferSwimmerpage);
-	 * batch.selectCoachFromCoachList(batchResult1, "cvf");
-	 * driver.findElement(swimmers.SubmitButonInTransferSwimmerPage).click();
-	 * 
-	 * 
-	 * } catch(Exception e){ System.out.println("swimmer not found"); }
-	 * 
-	 * }
-	 
-
-	public void checkSwimmersisdiaplayingAfterSwimmertranfer() throws InterruptedException {
-		driver.navigate().refresh();
-		dash.clickOnSwimmers();
-		driver.findElement(swimmers.BatchSelection).click();
-		WebElement batchList3 = driver.findElement(swimmers.batchresults);
-		swimmers.batchSelection(batchList3, "");
-		String actulaSwimmer = driver.findElement(By.linkText("Divya")).getText();
-
-		String expectedSwimmer = "Divya";
-		Assert.assertEquals(actulaSwimmer, expectedSwimmer);
-
-	}
-
-	public void checkbatchnameIsMatchingOrNot() {
-		swimmers.getmatchingBatch("Divya", "");
-	}
-
-	public void checkCoachIsmatchingOrNot() {
-		// swimmers.getmatchingCoachNameforSwimmers(swimmername,
-		// expectedCoachName);
-		// swimmers.getmatchingCoachNameforSwimmers((driverclass.getValuesFromPropertiesFile("BrowserName"),
-		// "fdgf"));
-	}*/
 }
 

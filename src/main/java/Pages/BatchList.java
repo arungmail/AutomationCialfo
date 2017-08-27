@@ -329,6 +329,7 @@ public class BatchList extends DriverClass {
 				if (batchNames.equals(batchName)){
 					String xp1 = "html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[";
 					String xp2 = "]/td[6]/i";
+					break;
 					
 				}
 			}

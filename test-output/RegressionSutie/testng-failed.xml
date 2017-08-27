@@ -9,11 +9,13 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.MyTest">
+      <class name="TestCialfoNew.LogInTest">
         <methods>
-          <include name="vvvv"/>
+          <include name="passwordErrorValidationChecks"/>
+          <include name="validClubLogin"/>
+          <include name="checkUnApprovedCoachLogin"/>
         </methods>
-      </class> <!-- TestCialfoNew.MyTest -->
+      </class> <!-- TestCialfoNew.LogInTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

@@ -2,19 +2,19 @@ package TestCialfoNew;
 
 public class InputValues {
 
-	public String Coach1EmailID = "sfgasdfg";  //Approve
+	public String Coach1EmailID = "201@mailinator.com";  //Approve
 	public String Coach2EmailID = "sfgasdfg";  //Approve
-	public String Coach3EmailID ="";   //UnApprove
+	public String Coach3EmailID ="1bbb@mailinaor.com";   //UnApprove
 	public String Coach1 ="";  //Approve
 	public String Coach2 =""; //Approve
 	public String Coach3 =""; //UnApprove
 	
 	public String Swimmer1 = ""; // Approve
-	public String Swimmer1EmailID = ""; //Approve
+	public String Swimmer1EmailID = "101@mailinator.com"; //Approve
 	public String Swimmer2 ="";   //Approve
 	public String Swimmer2EmailID = "";  //Approve
 	public String Swimmer3 =""; //unApprove
-	public String Swimmer3EmailID  = ""; //UNApprrove
+	public String Swimmer3EmailID  = "kkkkkk@mailinator.com"; //UNApprrove
 	/*//public String ApprovedSwimmerEmailID = "";
 	public String ApprovedSwimmer3EmailID = "";
 	

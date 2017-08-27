@@ -11,8 +11,8 @@ import BasePackage.Utility;
 public class ProfilePage extends DriverClass {
 	Utility util = new Utility();
 
-	public By Profile = By.linkText("Profile");
-	public By Account = By.linkText("Account");
+	public By Profile = By.xpath("(//a[@class='btn btn-default btn-flat'])[1]");
+	public By Account = By.linkText("Settings");
 	private By PersonalInfo = By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[1]/a");
 	private By ChangeProfileImage = By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[2]/a");
 	private By ChangePasswrd = By.xpath(".//*[@id='tab_1_3']/div/div[1]/ul/li[3]/a");
@@ -53,7 +53,7 @@ public class ProfilePage extends DriverClass {
 	private By EmailIdInOverviewPage = By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[3]/a");
 	public By ProfleNameInOverViewpage = By.xpath(".//*[@id='tab_1_1']/div/div[2]/div[1]/div[1]/h1");
 	public By LogOutbutton = By
-			.xpath("html/body/div[1]/app-root/app-header-menu/header/nav/div/ul/li[4]/ul/li[2]/div[2]/a");
+			.xpath("html/body/div/app-root/app-header-menu/header/nav/div/ul/li[3]/ul/li[2]/div[2]/a");
 
 	public void clickOnProfile() {
 		driver.findElement(Profile).click();

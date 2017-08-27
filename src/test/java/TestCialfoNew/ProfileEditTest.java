@@ -20,8 +20,8 @@ public class ProfileEditTest extends DriverClass {
 	
 	@Test(priority=1)
     public void enterValuesInPersonalInfoAndCheckSucessMessage() throws InterruptedException{
-			driver.get("http://192.168.1.206:4200/login");
-	    	log.normalLogin();
+			/*driver.get("http://192.168.1.206:4200/login");
+	    	log.normalLogin();*/
 	    	dash.clickOnProfileNameOnTop();
 	    	Thread.sleep(500);
 	    	profile.clickOnProfile();
@@ -33,7 +33,7 @@ public class ProfileEditTest extends DriverClass {
     	profile.enterLandline("8086251295");
     	//util.selectradioButton("Female","lable");
     	//util.selectradioButton("Player","lable");
-    	profile.selectDOBInProfilePage("1980","March","24");
+    	//profile.selectDOBInProfilePage("1980","March","24");
     	profile.clickOnSaveChanges();
     	String actualSeccesmessage = profile.checkSucsessMessage();
     	String expectedSuccessMessage = "Details updated successfully";
