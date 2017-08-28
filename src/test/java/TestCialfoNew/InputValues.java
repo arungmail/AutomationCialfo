@@ -2,17 +2,17 @@ package TestCialfoNew;
 
 public class InputValues {
 
-	public String Coach1EmailID = "201@mailinator.com";  //Approve
-	public String Coach2EmailID = "sfgasdfg";  //Approve
+	public String Coach1EmailID = "17@mailianator.com";  //Approve
+	public String Coach2EmailID = "18@mailinator.com";  //Approve
 	public String Coach3EmailID ="1bbb@mailinaor.com";   //UnApprove
-	public String Coach1 ="";  //Approve
-	public String Coach2 =""; //Approve
+	public String Coach1 ="Veera Sathyan";  //Approve
+	public String Coach2 ="Meera Vasumdev"; //Approve
 	public String Coach3 =""; //UnApprove
 	
-	public String Swimmer1 = ""; // Approve
-	public String Swimmer1EmailID = "101@mailinator.com"; //Approve
-	public String Swimmer2 ="";   //Approve
-	public String Swimmer2EmailID = "";  //Approve
+	public String Swimmer1 = "Nithish Kumar"; // Approve
+	public String Swimmer1EmailID = "30@mailinator.com"; //Approve
+	public String Swimmer2 ="Nithin Dev";   //Approve
+	public String Swimmer2EmailID = "33@mailinator.com";  //Approve
 	public String Swimmer3 =""; //unApprove
 	public String Swimmer3EmailID  = "kkkkkk@mailinator.com"; //UNApprrove
 	/*//public String ApprovedSwimmerEmailID = "";
@@ -44,7 +44,7 @@ public class InputValues {
 	public String SwimmerEmailIdAddedByInsideClub = "";*/
 	public String club 	= "club6@mailinator.com";
 	public String ClubPassword = "Nichi123";
-	public String BatchName1  = "sdsgdfddf";
+	public String BatchName1  = "First";
 	public String Batchname2 = "";
 
 	

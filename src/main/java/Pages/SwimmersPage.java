@@ -19,7 +19,7 @@ public class SwimmersPage extends DriverClass {
 	public By Searchbutton = By.xpath("//input[@type='search']");
 	public By EntrySelection = By.xpath("//select[@name='swimmertable_length']");
 	public By Homebredcrumbs = By.xpath("html/body/div[1]/app-root/app-player/div/section[1]/ol/li[1]/a");
-	public By TranferButton = By.xpath("(//button[@id='assign_btn']");
+	public By TranferButton = By.xpath("//button[@id='assign_btn']");
 	//public By BatchSelectionInTranferPlayer = By.xpath(".//*[@id='myModal']/div/div/div[2]/div/div/span/span[1]/span");
 	public By SubmitButton = By.xpath(".//*[@id='myModal']/div/div/div[3]/button[2]");
 	public By CloseButton = By.xpath(".//*[@id='myModal']/div/div/div[3]/button[1]'");
@@ -197,8 +197,8 @@ public class SwimmersPage extends DriverClass {
 				String swimmernames = swimcol.get(j).getText();
 				System.err.println(swimmernames);
 				if (swimmernames.equalsIgnoreCase(swimmername)) {
-					String xpath1 = "html/body/div[1]/app-root/app-player/div/section[2]/div/div/div/div[2]/div[2]/table/tbody/tr[";
-					String xpath2 = "]/td[9]/a";
+					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
+					String xpath2 = "]/td[5]";
 					String coachName = driver.findElement(By.xpath(xpath1 + i + xpath2)).getText();
 					/*
 					 * String expectedResult = expectedCoachName;

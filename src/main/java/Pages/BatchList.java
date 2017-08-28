@@ -15,19 +15,19 @@ public class BatchList extends DriverClass {
 	private By Brecrumbs = By.xpath("(//a[@routerlink='/dashboard'])[3]");
 	private By AddButton = By.xpath("(//button[@type='button'])[2]");
 	private By Assign = By.xpath("(//button[@type='button'])[3]");
-	public By BatchTable = By.xpath("//table[@id='batcheslist']");
+	public By BatchTable = By.xpath("//table[@id='batcheslist']/tbody");
 	public By BatchRow = By.tagName("tr");
 	public By BacthColumn = By.tagName("td");
 	private By BatchName = By.id("batch_name");
-	public By CoachSelectionInCreateBatch = By.xpath("(//span[@class='select2-selection__arrow'])[3]");
+	public By CoachSelectionInCreateBatch = By.xpath("//span[@class='select2-selection__arrow']");
 	public By CoachListInCreateBatch = By.xpath("//span[@class='select2-results']");
 	public By SwimmersSelectionInCrreateBatch = By.xpath("//span[@class='select2-selection select2-selection--multiple']");
-	public By SwimmerListInCreateBatch = By.xpath("//ul[@id='select2-mrjk-results']");
+	public By SwimmerListInCreateBatch = By.xpath("//span[@class='select2-results']");
 	private By CreatebatchButton = By.xpath("//button[@type='submit']");
 	private By namevalidation = By.xpath("//p[@id='name_validation']");
 	private By Commenvalidation = By.xpath("//p[@id='common_validation']");
 	public By SubmitButton = By.xpath("(//button[@type='button'])[6]");
-	public By CoachSelectionInCoachAssign  = By.xpath("(//span[@class='select2-selection__arrow'])[4]");
+	public By CoachSelectionInCoachAssign  = By.xpath("//span[@class='selection']");
 	public By Search = By.xpath("(//input[@type='search'])[2]");
 	public By CoachResultInCoachAssignPage = By.xpath("//span[@class='select2-results']");
 	//public By SwimmersResult = By.xpath("//span[@class='select2-results']");
@@ -35,7 +35,7 @@ public class BatchList extends DriverClass {
 	public By CoachValidation 			= By.id("coachs_validation");
 	public By SwimmerValdiation 		= By.id("swimmer_validation");
 	public By AssignButtonInAssignPage   = By.xpath("");
-	public String batchName;
+	public String batchName= null;
 	public Boolean coachStatus  = false ;
 	public Boolean swimmerstatus = false ;;
 	private String getCoachName;
@@ -106,7 +106,7 @@ public class BatchList extends DriverClass {
     //Get batches details from list
 	public String getBatchFromList(String batchNameInList) {
 		WebElement table = driver.findElement(BatchTable);
-		List<WebElement> tablerow = driver.findElements(BatchRow);
+		List<WebElement> tablerow = table.findElements(BatchRow);
 		tablerow.size();
 		for (int i = 0; i < tablerow.size(); i++) {
 			List<WebElement> tableColoumn = tablerow.get(i).findElements(BacthColumn);
@@ -115,12 +115,13 @@ public class BatchList extends DriverClass {
 			for (int j = 0; j < tableColoumn.size(); j++) {
 				String batchName = tableColoumn.get(j).getText();
 				System.out.println(batchName);
-				if (batchName.equals(batchNameInList)) {
+				if (batchName.equals(batchNameInList)){
 					return batchName;
-				}
 				
+				}
+				}
 			}
-		}
+		
 		return batchName;
 
 	}
@@ -194,8 +195,8 @@ public class BatchList extends DriverClass {
 			System.out.println(webElement.getText());
 			if (webElement.getText().equalsIgnoreCase(coachName)) {
 				coachStatus = true;
-			} else {
-				coachStatus = false;
+				break;
+			
 			}
 		}
 		return coachStatus;
@@ -210,6 +211,7 @@ public class BatchList extends DriverClass {
 			if (webElement.getText().equalsIgnoreCase(swimmerName)) {
 				swimmerstatus = true;
 				break;
+			
 			}
 		}
 		return swimmerstatus;
@@ -242,10 +244,10 @@ public class BatchList extends DriverClass {
 			for (int j=0;j<col.size();j++){
 				String swimmernames = col.get(j).getText();
 				if (swimmernames.equals(swimmerName)){
-					String xp1 = "html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[";
+					String xp1 = ".//*[@id='batcheslist']/tbody/tr[";
 					String xp2 = "]/td[5]";
 					String getCoachName = driver.findElement(By.xpath(xp1+i+xp2)).getText();
-					
+					System.out.println(getCoachName);
 				}
 				
 			}
@@ -306,9 +308,10 @@ public class BatchList extends DriverClass {
 				String batchNames = tableColoumn.get(j).getText();
 				System.out.println(batchName);
 				if (batchNames.equals(batchName)){
-					String xp1 = "html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[";
+					String xp1 = ".//*[@id='batcheslist']/tbody/tr[";
 					String xp2 = "]/td[3]";
 					int swimmersCount = Integer.parseInt(driver.findElement(By.xpath(xp1+xp2)).getText());
+					System.out.println(swimmersCount);
 				}
 			}
 		}

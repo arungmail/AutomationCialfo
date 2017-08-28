@@ -31,7 +31,11 @@ public class BatchTest extends DriverClass {
 	//Testing 
 	
 	@Test (priority = 5)
-	public void verifyUnApprovedCoachesStatusInAddBatchPage (){
+	public void verifyUnApprovedCoachesStatusInAddBatchPage () throws InterruptedException{
+		LoginForm.enterEmailId(input.club);
+  		LoginForm.enterPassword(input.ClubPassword);
+  		LoginForm.clickSignButton();
+  		Thread.sleep(5000);
 		dash.clickOnManageBatch();
 		batch.clickOnAddbacthButton();
 		batch.enterBacthname(input.BatchName1);
@@ -125,7 +129,7 @@ public class BatchTest extends DriverClass {
 	@Test (priority = 50)
 	public void checkSwimmersCountInBatch (){
 		driver.navigate().refresh();
-		batch.getSwimmersCount(batch.batchName);
+		batch.getSwimmersCount(input.BatchName1);
 		Assert.assertEquals(batch.getSwimmersCount(input.BatchName1), 1, "swimmer count");
 	}
 	
@@ -141,9 +145,8 @@ public class BatchTest extends DriverClass {
 		dash.clickOnSwimmers();
 		dash.clickOnManageBatch();
 		Thread.sleep(500);
-		batch.getBatchFromList(input.BatchName1);
-		Assert.assertEquals(swimmers.checkBatchStatus(input.BatchName1), true);
-	}
+		String batchname = batch.getBatchFromList(input.BatchName1);
+		Assert.assertEquals(batchname, input.BatchName1);
 	
 	/*public void swimmersInSwimmersPage (){
 		//swimmers.search(input.ApprovedSwimmer1Firstname);
@@ -152,7 +155,7 @@ public class BatchTest extends DriverClass {
 		String swimmerName = swimmers.getStringvalue(input.ApprovedSwimmer1Firstname);
 		Assert.assertEquals(swimmerName, input.ApprovedSwimmer1Firstname);
 	}*/
-	
+	}
 	@Test (priority = 56)
 	public void verifyCoachNameismatchignOrNotInbatchpage (){
 		System.out.println(batch.getCoachNameFromBatchesList(input.Coach1));
@@ -166,7 +169,7 @@ public class BatchTest extends DriverClass {
 		dash.clickOnManageBatch();
 		dash.clickOnSwimmers();
 		driver.findElement(swimmers.BatchSelection).click();
-		Thread.sleep(500);
+		Thread.sleep(5000);
 		swimmers.batchSelection(input.BatchName1);
 		Thread.sleep(500);
 		Assert.assertEquals(swimmers.getmatchingBatch(input.Swimmer1EmailID), input.BatchName1);
@@ -215,6 +218,7 @@ public class BatchTest extends DriverClass {
 	public void swimmersInswimmersListAfterSwimmerTransfer () throws InterruptedException{
 		dash.clickOnSwimmers();
 		driver.findElement(swimmers.BatchSelection).click();
+		Thread.sleep(5000);
 		swimmers.batchSelection(input.Batchname2);
 		//swimmers.search(input.);
 		Thread.sleep(500);
@@ -236,8 +240,9 @@ public class BatchTest extends DriverClass {
 	}
 	
 	@Test (priority = 95)
-	public void verifyUnApprovedCoachInAssigBatchCoachSelectionpage () throws InterruptedException{
-		batch.selectCheckBoxbasedOnBatchName(batch.batchName);
+	public void verifyUnApprovedCoachInAssigBatchToCoachSelectionpage () throws InterruptedException{
+		dash.clickOnManageBatch();
+		batch.selectCheckBoxbasedOnBatchName(input.BatchName1);
 		batch.clickOnAssign();
 	    driver.findElement(batch.CoachSelectionInCoachAssign).click();
 	    Assert.assertEquals(batch.coachStatusInAssignPage(input.Coach3), input.Coach3);
