@@ -44,7 +44,7 @@ public class InputValues {
 	public String SwimmerEmailIdAddedByInsideClub = "";*/
 	public String club 	= "club6@mailinator.com";
 	public String ClubPassword = "Nichi123";
-	public String BatchName1  = "First";
+	public String BatchName1  = "Second";
 	public String Batchname2 = "";
 
 	

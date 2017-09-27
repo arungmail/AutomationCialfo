@@ -39,11 +39,18 @@ public class BatchTest extends DriverClass {
 		dash.clickOnManageBatch();
 		batch.clickOnAddbacthButton();
 		batch.enterBacthname(input.BatchName1);
-		driver.findElement(batch.CoachSelectionInCreateBatch).click();
-		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.Coach3), false);
+		//driver.findElement(By.xpath("html/body/div/app-root/app-manage-batch/div/section[2]/div/div/div/div/form/div[1]/div[2]/div/span/span[1]/span/span[2]/b")).click();
+		//driver.findElement
+		Thread.sleep(5000);
+		driver.findElement(By.id("fff")).click();
+		
+		//driver.findElement(batch.CoachSelectionInCreateBatch).click();
+		
+		/*Thread.sleep(5000);
+		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.Coach1), false);*/
 	}
 	
-	@Test (priority = 10)
+	/*@Test (priority = 10)
 	public void verifyApprovedCoachesStatusInAddbatchPage (){
 		driver.findElement(batch.CoachSelectionInCreateBatch).click();
 		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.Coach1), true);
@@ -88,9 +95,9 @@ public class BatchTest extends DriverClass {
 		}
 		batch.clickOnCreateButton();
 		System.out.println(batch.getSuccessmessage());
-	}
+	}*/
 	
-	@Test (priority = 30)
+	/*@Test (priority = 30)
 	
 	public void batchesAreListedOrNot () {
 		batch.getBatchFromList(input.BatchName1);
@@ -133,7 +140,7 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(batch.getSwimmersCount(input.BatchName1), 1, "swimmer count");
 	}
 	
-	@Test (priority = 50)
+	@Test (priority = 54)
 	
 	public void checkCoachNameOnbatchPageforTheBatch (){
 		String coach = batch.getCoachNameFromBatchesList(input.BatchName1);
@@ -148,13 +155,13 @@ public class BatchTest extends DriverClass {
 		String batchname = batch.getBatchFromList(input.BatchName1);
 		Assert.assertEquals(batchname, input.BatchName1);
 	
-	/*public void swimmersInSwimmersPage (){
+	public void swimmersInSwimmersPage (){
 		//swimmers.search(input.ApprovedSwimmer1Firstname);
 		driver.navigate().refresh();
 		dash.clickOnSwimmers();
 		String swimmerName = swimmers.getStringvalue(input.ApprovedSwimmer1Firstname);
 		Assert.assertEquals(swimmerName, input.ApprovedSwimmer1Firstname);
-	}*/
+	}
 	}
 	@Test (priority = 56)
 	public void verifyCoachNameismatchignOrNotInbatchpage (){
@@ -216,6 +223,7 @@ public class BatchTest extends DriverClass {
 	
 	@Test (priority = 85)
 	public void swimmersInswimmersListAfterSwimmerTransfer () throws InterruptedException{
+		driver.navigate().refresh();
 		dash.clickOnSwimmers();
 		driver.findElement(swimmers.BatchSelection).click();
 		Thread.sleep(5000);
@@ -226,13 +234,13 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(swimmerName, input.Swimmer2EmailID);
 	}
 	
-	/*@Test (priority = 80)
+	@Test (priority = 80)
 	public void veriyBatchNameAfterTransfer () throws InterruptedException{
 		dash.clickOnCoach();
 		dash.clickOnSwimmers();
 		driver.findElement(swimmers.BatchSelection).click();
 		swimmers.batchSelection(input.Batchname1);
-	}*/
+	}
 	@Test (priority = 90)
 	public void verifyCoachNameAfterTranfer (){
 		dash.clickOnSwimmers();
@@ -276,5 +284,5 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(currentbatch, input.Coach1);
 	}
 	
-	
+	*/
 }

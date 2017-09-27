@@ -19,9 +19,9 @@ public class BatchList extends DriverClass {
 	public By BatchRow = By.tagName("tr");
 	public By BacthColumn = By.tagName("td");
 	private By BatchName = By.id("batch_name");
-	public By CoachSelectionInCreateBatch = By.xpath("//span[@class='select2-selection__arrow']");
+	public By CoachSelectionInCreateBatch = (By.xpath("html/body/div/app-root/app-manage-batch/div/section[2]/div/div/div/div/form/div[1]/div[2]/div/span/span[1]/span/span[2]/b"));
 	public By CoachListInCreateBatch = By.xpath("//span[@class='select2-results']");
-	public By SwimmersSelectionInCrreateBatch = By.xpath("//span[@class='select2-selection select2-selection--multiple']");
+	public By SwimmersSelectionInCrreateBatch = (By.xpath("//li[@class='select2-search select2-search--inline']"));
 	public By SwimmerListInCreateBatch = By.xpath("//span[@class='select2-results']");
 	private By CreatebatchButton = By.xpath("//button[@type='submit']");
 	private By namevalidation = By.xpath("//p[@id='name_validation']");
@@ -118,7 +118,7 @@ public class BatchList extends DriverClass {
 				if (batchName.equals(batchNameInList)){
 					return batchName;
 				
-				}
+				   }
 				}
 			}
 		
