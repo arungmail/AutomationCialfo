@@ -425,7 +425,7 @@ public class SwimmersPage extends DriverClass {
 		}
 		
 	}
-	public void clickOnDowbLoadData (String downloadType){
+	public void clickOnDowbLoadDatas (String downloadType){
 		switch (downloadType){
 		
 		case "CSV":
