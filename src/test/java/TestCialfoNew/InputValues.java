@@ -2,7 +2,7 @@ package TestCialfoNew;
 
 public class InputValues {
 
-	public String Coach1EmailID = "201@mailinator.com";  //Approve
+	/*public String Coach1EmailID = "201@mailinator.com";  //Approve
 	public String Coach2EmailID = "sfgasdfg";  //Approve
 	public String Coach3EmailID ="1bbb@mailinaor.com";   //UnApprove
 	public String Coach1 ="";  //Approve
@@ -15,7 +15,7 @@ public class InputValues {
 	public String Swimmer2EmailID = "";  //Approve
 	public String Swimmer3 =""; //unApprove
 	public String Swimmer3EmailID  = "kkkkkk@mailinator.com"; //UNApprrove
-	/*//public String ApprovedSwimmerEmailID = "";
+	//public String ApprovedSwimmerEmailID = "";
 	public String ApprovedSwimmer3EmailID = "";
 	
 	
@@ -47,6 +47,19 @@ public class InputValues {
 	public String BatchName1  = "sdsgdfddf";
 	public String Batchname2 = "";
 
-	
+	public String Swimmer1EmailID = "";
+	public String Swimmer1Name = "Sel SwimmerOne";
+	public String Swimmer2EmailID = "";
+	public String Swimmer2Name = "Sel SwimmerOne";
+	public String Coach1Name = "Sel CoachOne";
+	public String Coach1EmailID = "";
+	public String Coach2Name = "Sel CoachOne";
+	public String Coach2EmailID = "";
+	public String UpApprovedCoach = "";
+	public String UnApprovedSwimmer = "";
+	public String PublicGroups = "";
+	public String AllCoachesGroup = "";
+	public String Personalgroup = "";
+			
 	
 }

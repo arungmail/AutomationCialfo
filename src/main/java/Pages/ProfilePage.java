@@ -4,6 +4,7 @@ import java.awt.List;
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import BasePackage.DriverClass;
 import BasePackage.Utility;
@@ -51,10 +52,12 @@ public class ProfilePage extends DriverClass {
 	public By Overview = By.linkText("Overview");
 	private By MobileNumberinOverviewPage = By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[2]/a");
 	private By EmailIdInOverviewPage = By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[3]/a");
-	public By ProfleNameInOverViewpage = By.xpath(".//*[@id='tab_1_1']/div/div[2]/div[1]/div[1]/h1");
-	public By LogOutbutton = By
-			.xpath("html/body/div/app-root/app-header-menu/header/nav/div/ul/li[3]/ul/li[2]/div[2]/a");
+	public By ProfleNameInOverViewpage = By.xpath("//h1[@class='font-green sbold uppercase']");
+	public By LogOutbutton = By.xpath("html/body/div/app-root/app-header-menu/header/nav/div/ul/li[3]/ul/li[2]/div[2]/a");
 
+	
+	
+	
 	public void clickOnProfile() {
 		driver.findElement(Profile).click();
 	}
@@ -265,4 +268,10 @@ public class ProfilePage extends DriverClass {
 	public void clickOnLogOutButton() {
 		driver.findElement(LogOutbutton).click();
 	}
+	
+	/*public void clickOnResutsFromProfilePage (){
+		WebElement table = driver.findElement(By.id("swimmertable"));
+		List <WebElement> row1 = table.findElements(By.tagName("tr"));
+		
+	}*/
 }

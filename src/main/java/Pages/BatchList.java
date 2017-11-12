@@ -6,6 +6,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import com.sun.jna.platform.win32.WinUser.INPUT;
+
 import BasePackage.DriverClass;
 import BasePackage.Utility;
 import junit.framework.Assert;
@@ -19,19 +21,21 @@ public class BatchList extends DriverClass {
 	public By BatchRow = By.tagName("tr");
 	public By BacthColumn = By.tagName("td");
 	private By BatchName = By.id("batch_name");
-	public By CoachSelectionInCreateBatch = By.xpath("(//span[@class='select2-selection__arrow'])[3]");
+	public By CoachSelectionInCreateBatch = By.xpath("//span[@id='select2-ucmb-container']");
 	public By CoachListInCreateBatch = By.xpath("//span[@class='select2-results']");
+	public By CoachSearhArea = By.xpath("(//input[@class='select2-search__field'])[2]");
 	public By SwimmersSelectionInCrreateBatch = By.xpath("//span[@class='select2-selection select2-selection--multiple']");
-	public By SwimmerListInCreateBatch = By.xpath("//ul[@id='select2-mrjk-results']");
+	public By SwimmerSearchArea = By.xpath("(//input[@class='select2-search__field'])[1]");
+	public By SwimmerListInCreateBatch = By.xpath("//ul[@id='select2-uo6v-results']");
 	private By CreatebatchButton = By.xpath("//button[@type='submit']");
 	private By namevalidation = By.xpath("//p[@id='name_validation']");
 	private By Commenvalidation = By.xpath("//p[@id='common_validation']");
 	public By SubmitButton = By.xpath("(//button[@type='button'])[6]");
-	public By CoachSelectionInCoachAssign  = By.xpath("(//span[@class='select2-selection__arrow'])[4]");
-	public By Search = By.xpath("(//input[@type='search'])[2]");
-	public By CoachResultInCoachAssignPage = By.xpath("//span[@class='select2-results']");
+	public By CoachSelectionInCoachAssign  = By.xpath("//span[@id='select2-wn8g-container']");
+	public By CoachSearchAssign = By.xpath("//input[@class='select2-search__field']");
+	public By CoachResultInCoachAssignPage = By.xpath("//ul[@id='select2-wn8g-results']");
 	//public By SwimmersResult = By.xpath("//span[@class='select2-results']");
-	public By CoachSelectionInAssignBatch = By.xpath("(//span[@title=' Select Coach'])[2]");
+	//public By CoachSelectionInAssignBatch = By.xpath("(//span[@title=' Select Coach'])[2]");
 	public By CoachValidation 			= By.id("coachs_validation");
 	public By SwimmerValdiation 		= By.id("swimmer_validation");
 	public By AssignButtonInAssignPage   = By.xpath("");
@@ -79,6 +83,26 @@ public class BatchList extends DriverClass {
 		System.out.println(successMessage);
 		return successMessage;
 	}
+	
+	public void mainCoachSelection (String coachName){
+		driver.findElement(By.xpath("//span[@id='select2-ry4x-container']")).click();
+		driver.findElement(CoachSearhArea).sendKeys(coachName);
+		WebElement coachList = driver.findElement(By.xpath("//ul[@id='select2-ry4x-results']"));
+		List <WebElement> allCoaches = coachList.findElements(By.tagName("li"));
+		for (WebElement coaches: allCoaches ){
+			System.out.println(coaches.getText());
+			if (coaches.getText().equalsIgnoreCase(coachName)){
+				coaches.click();
+				
+			}
+			
+			
+			
+			
+		}
+		
+		
+	}
 	/*
 	 * public void selectCoach() { WebElement coach =
 	 * driver.findElement(CoachSelection); coach.click();
@@ -121,7 +145,7 @@ public class BatchList extends DriverClass {
 				
 			}
 		}
-		return batchName;
+		return this.batchName;
 
 	}
 
@@ -153,12 +177,14 @@ public class BatchList extends DriverClass {
 		}
 	}
     //Search batch 
-	public void searchBatch(String searchkey) {
+	/*public void searchBatch(String searchkey) {
 		driver.findElement(Search).sendKeys(searchkey);
-	}
+	}*/
 
 	//Select coach from create batch 
 	public void selectCoachFromCreatebatch(String coachName) {
+		driver.findElement(CoachSelectionInCreateBatch).click();
+		driver.findElement(CoachSearhArea).sendKeys(coachName);
 		WebElement cochesList = driver.findElement(CoachListInCreateBatch);
 		List<WebElement> coaches = cochesList.findElements(By.tagName("li"));
 		for (WebElement webElement : coaches) {
@@ -173,6 +199,7 @@ public class BatchList extends DriverClass {
     
 	//Select swimmers from  create batch 
 	public void selectSwimmersFromCreateBatch(String swimmerName) {
+		driver.findElement(SwimmerSearchArea).sendKeys(swimmerName);
 		WebElement swimmersList = driver.findElement(SwimmerListInCreateBatch);
 		List <WebElement>swimmers = swimmersList.findElements(By.tagName("li"));
 		for (WebElement webElement : swimmers) {
@@ -187,7 +214,8 @@ public class BatchList extends DriverClass {
 	}
 
 	public boolean coachesStatusFromCreateBatch (String coachName) {
-		
+		driver.findElement(CoachSelectionInCreateBatch).click();
+		driver.findElement(CoachSearhArea).sendKeys(coachName);
 		WebElement cochesList = driver.findElement(CoachListInCreateBatch);
 		List<WebElement> coaches = cochesList.findElements(By.tagName("li"));
 		for (WebElement webElement : coaches) {
@@ -203,6 +231,7 @@ public class BatchList extends DriverClass {
 	}
 
 	public boolean SwimmersStatusFromCreateBatch(String swimmerName) {
+		driver.findElement(SwimmerSearchArea).sendKeys(swimmerName);
 		WebElement swimmersList = driver.findElement(SwimmerListInCreateBatch);
 		List <WebElement>swimmers = swimmersList.findElements(By.tagName("li"));
 		for (WebElement webElement : swimmers) {
@@ -255,6 +284,8 @@ public class BatchList extends DriverClass {
 	}
 	
 	public boolean coachStatusInAssignPage (String coachName){
+		driver.findElement(CoachSelectionInCoachAssign).click();
+		driver.findElement(CoachSearchAssign).sendKeys(coachName);
 		WebElement coachNamesList= driver.findElement(CoachResultInCoachAssignPage);
 		List<WebElement> coaches = coachNamesList.findElements(By.tagName("li"));
 		for (WebElement WebElement :coaches  ){
@@ -271,6 +302,8 @@ public class BatchList extends DriverClass {
 	}
 	
 	public void selectCoachesFromAssignpage (String coachName){
+		driver.findElement(CoachSelectionInCoachAssign).click();
+		driver.findElement(CoachSearchAssign).sendKeys(coachName);
 		WebElement coachNamesList= driver.findElement(CoachResultInCoachAssignPage);
 		List<WebElement> coaches = coachNamesList.findElements(By.tagName("li"));
 		for (WebElement WebElement :coaches  ){

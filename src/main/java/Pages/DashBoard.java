@@ -15,13 +15,13 @@ public class DashBoard extends DriverClass {
 
 	public By ProfileNameinSecondarymenu = By.xpath(".//*[@id='profile_name']/p");
 	public By profilenameInTopRightSide = By.xpath("//span[@data-placement='bottom']");
-	private By Dashboard = By.partialLinkText("dashboard");
-	private By Attendanace = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[3]/a/span");
-	public By Swimmers = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[4]/a/span");
-	private By Coach = By.partialLinkText("Coach");
-	private By ManageGroup = By.partialLinkText("manage-group");
-	private By ManageBatch = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[7]/a/span");
-	public By Message = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[8]/a/span");
+	private By Dashboard = By.xpath("//li[@id='dashboard']");
+	public By Attendanace = By.xpath("//li[@id='attendance']");
+	public By Swimmers = By.xpath("//li[@id='swimmers']");
+	public By Coaches = By.xpath("//li[@id='coaches']");
+	public By ManageGroup = By.xpath("//li[@id='groups']");
+	private By ManageBatch = By.xpath("//li[@id='batches']");
+	public By Message = By.xpath("//li[@id='messages']");
 	public By PendingUsers = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[12]/a/span");
 	public By ChangeLocationButton = By.xpath("(//li[@class='dropdown messages-menu'])[1]");
 	public By ChangeLocationList	= By.xpath("//ul[@class='menu']");
@@ -29,7 +29,9 @@ public class DashBoard extends DriverClass {
 	
 	
 	
-	
+	public void clickOnGroups (){
+		driver.findElement(ManageGroup).click();
+	}
 
 	public void clickOnProfileNameOnTop() {
 		driver.findElement(profilenameInTopRightSide).click();

@@ -10,13 +10,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
 import BasePackage.Utility;
 import Pages.BatchList;
+import Pages.CoachesPage;
 import Pages.DashBoard;
 import Pages.LoginForm;
+import Pages.ProfilePage;
 import Pages.SwimmersPage;
 
 public class SwimmersTest extends DriverClass {
@@ -27,17 +30,140 @@ public class SwimmersTest extends DriverClass {
 	BatchList batch = new BatchList();
 	DriverClass driverclass = new DriverClass();
 	InputValues input = new InputValues();
+	CoachesPage coach = new CoachesPage ();
+	ProfilePage profile = new ProfilePage ();
 	
 	
-
-
-
-	public void verifyUnApprovedCoachesareListedInCoachesFilterOrNot() {
-
+	
+	
+	@BeforeMethod
+	public void refreshandclickOnSwimmers () throws InterruptedException{
+		driver.navigate().refresh();
+		dash.clickOnSwimmers();
+		Thread.sleep(5000);
+		
 	}
-	// Verifying approved swimmers available in Unassigned list
+	
 	
 	@Test(priority=10)
+	
+	//TC 1 - Adding swimmer
+	public void addSwimmer () throws InterruptedException{
+		LoginForm.enterEmailId(input.club);
+  		LoginForm.enterPassword(input.ClubPassword);
+  		LoginForm.clickSignButton(); 
+  		Thread.sleep(5000);
+		driver.navigate().refresh();
+		dash.clickOnSwimmers();
+		driver.findElement(swimmers.AddSwimmerButton).click();
+		swimmers.addSwimmer("Arun", input.Swimmer1EmailID, "Sel", "SwimmerOne", "Nichi123", "Nichi123", "8753659888", "Bangalore");	
+	}
+	
+	@Test(priority=10)
+	
+	//TC 2 - Add swimmer validation 
+	public void addSwimmerValidationError (){
+		driver.findElement(swimmers.AddSwimmerButton).click();
+			
+	}
+	
+	//TC 3 - Verifying swimmer in 
+	public void verifyswimmerInUnassignedList () throws InterruptedException{
+		driver.findElement(swimmers.BatchSelection).click();
+		driver.findElement(swimmers.Searcharea).sendKeys("Un Assigned");
+		swimmers.batchSelection("Un Assigned");
+		swimmers.search(input.Swimmer1EmailID);
+		boolean swiimerStatus = swimmers.getBooleanvalue(input.Swimmer1EmailID);
+		Assert.assertEquals(swiimerStatus, true);
+	}
+	
+	//TC 4 - Add Coach
+	public void addCoach (){
+		dash.clickOnCoach();
+        driver.findElement(coach.AddCoachButton).click();
+        coach.addCoach("coach", input.Coach1EmailID, "Sel", "CoachOne", "Nichi123", "Nichi123", "8977445566", "Bangalore");
+		
+	}
+	
+	//TC 5- Verify Added Coaches in Coaches Page 
+	public void verifyAddedCoachInCoachesPage (){
+		dash.clickOnCoach();
+		boolean coachStatus = coach.coachStatusInCoachesPage(input.Coach1EmailID);
+		Assert.assertEquals(coachStatus, true);
+	}
+	
+	//TC 6 Verify Coaches in Swimmers coach selection page 
+	public void verifyCoachInSwimmersCoachSelectionPage () throws InterruptedException{
+		driver.findElement(swimmers.CoachSelection).click();
+		swimmers.checkCoachStatus(input.Coach1Name);
+		Assert.assertEquals(swimmers.checkCoachStatus(input.Coach1Name), true);
+	}
+	
+	// TC 7 - Verify coach name in unassign swimmer
+	public void verifyCoachNameforUnAssignedSwimmer (){
+		dash.clickOnSwimmers();
+		String coachName = swimmers.getmatchingCoachNameforSwimmers(input.Swimmer1EmailID);
+		Assert.assertEquals(coachName, "");
+	}
+	
+	public void verifyBatchname (){
+		String batchname = swimmers.getmatchingBatch(input.Swimmer1EmailID);
+		Assert.assertEquals(batchname, "Un Assigned");
+	}
+	
+	//TC 8 - Verify Attendance Percentage of UnAssignswimmer
+	public void verifyAttendanePecenatgeofUnAssignedSwimmer (){
+		String per = swimmers.getAtendancePercentage(input.Swimmer1EmailID);
+		Assert.assertEquals(per, "0.0%");
+		
+	}
+	
+	//TC - 9 Verify Swimmers Profile
+	public void verifySwimmerProfileFromSwimmersPage (){
+		dash.clickOnSwimmers();
+		driver.findElement(By.partialLinkText(input.Swimmer1Name)).click();
+		String profileName = driver.findElement(profile.ProfleNameInOverViewpage).getText();
+		System.out.println(profileName);
+		Assert.assertTrue(profileName.contains(input.Swimmer1Name));
+	}
+	
+	//TC - 10 Verify Swimmers email id in Profile page 
+	public void verifySwimmersEmailIdInProfilePage (){
+		String emailId = driver.findElement(By.linkText(input.Swimmer1EmailID)).getText();
+		Assert.assertEquals(emailId, input.Swimmer1EmailID);
+	}
+	
+	//TC - 11  Verify coach Profile 
+	public void verifyCoachProfileFromSwimmersPage (){
+		dash.clickOnSwimmers();
+		driver.findElement(By.linkText(input.Coach1Name)).click();
+		String coachname = driver.findElement(profile.ProfleNameInOverViewpage).getText();
+		Assert.assertEquals(coachname, input.Coach1Name);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+}
+
+	
+	// Verifying approved swimmers available in Unassigned list
+	
+	/*@Test(priority=10)
 	public void verifyApprovedSwimmersDisplyedInUnAssignedList() throws InterruptedException {
 		LoginForm.enterEmailId(input.club);
   		LoginForm.enterPassword(input.ClubPassword);
@@ -57,7 +183,7 @@ public class SwimmersTest extends DriverClass {
 		Assert.assertEquals(actualSwimmer, input.Swimmer1EmailID);
 	}
 
-/*	public void verifyBatchesAreListedOrNot() throws InterruptedException {
+	public void verifyBatchesAreListedOrNot() throws InterruptedException {
 		WebElement batchSelection = driver.findElement(swimmers.BatchSelection);
 		batchSelection.click();
 		Thread.sleep(500);
@@ -66,7 +192,7 @@ public class SwimmersTest extends DriverClass {
 		// swimmers.checkBatchStatus("xxxx");
 		Assert.assertEquals(swimmers.checkBatchStatus("xxx"), true);
 
-	}*/
+	}
 	
 	@Test(priority=15)
 
@@ -79,7 +205,7 @@ public class SwimmersTest extends DriverClass {
 
 	}
 	
-/*	@Test(priority=20)
+	@Test(priority=20)
 
 	public void checkApprovedCoachesInCoachesList() throws InterruptedException {
 		WebElement coachSelection = driver.findElement(swimmers.CoachSelection);
@@ -89,7 +215,7 @@ public class SwimmersTest extends DriverClass {
 		Assert.assertEquals(swimmers.checkCoachStatus(input.UnApprovedCoach1), true);
 
 	}
-	*/
+	
 	@Test(priority=25)
 
 	public void checkUnAssignedSwimmerAttendancePercenatge() throws InterruptedException {
@@ -97,8 +223,8 @@ public class SwimmersTest extends DriverClass {
 		batchselection.click();
 		swimmers.batchSelection("Un Assigned");
 		Thread.sleep(500);
-		/*swimmers.search(input.Swimmer1AfterApprovng);
-		Thread.sleep(500);*/
+		swimmers.search(input.Swimmer1AfterApprovng);
+		Thread.sleep(500);
 		// swimmers.getAtendancePercentage(input.SwimmerAfterApprovng);
 		Assert.assertEquals(swimmers.getAtendancePercentage(input.Swimmer1EmailID), "0%");
 	}
@@ -134,8 +260,8 @@ public class SwimmersTest extends DriverClass {
 		batchselection.click();
 		swimmers.batchSelection("Un Assigned");
 		Thread.sleep(500);
-		/*swimmers.search(input.Swimmer1AfterApprovng);
-		Thread.sleep(500);*/
+		swimmers.search(input.Swimmer1AfterApprovng);
+		Thread.sleep(500);
 		String actualSwimmer = driver.findElement(By.linkText(input.Swimmer2EmailID)).getText();
 		// String expectedSwimmer = input.swimmer;
 		Assert.assertEquals(actualSwimmer,input.Swimmer2EmailID);
@@ -219,5 +345,5 @@ public class SwimmersTest extends DriverClass {
 		Assert.assertEquals(swimmers.checkCoachStatusinAssignSwimmerPage(input.Coach1), true);
 	}
 	
-}
+}*/
 

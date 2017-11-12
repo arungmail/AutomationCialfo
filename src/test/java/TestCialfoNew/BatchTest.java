@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.commons.collections.bag.SynchronizedSortedBag;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -30,33 +31,53 @@ public class BatchTest extends DriverClass {
 	
 	//Testing 
 	
+	// TC 1 - Verify Unapproved Coaches in Add batch page 
 	@Test (priority = 5)
 	public void verifyUnApprovedCoachesStatusInAddBatchPage (){
 		dash.clickOnManageBatch();
 		batch.clickOnAddbacthButton();
-		batch.enterBacthname(input.BatchName1);
+		/*batch.enterBacthname(input.BatchName1);
 		driver.findElement(batch.CoachSelectionInCreateBatch).click();
-		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.Coach3), false);
+		driver.findElement(batch.CoachSearhArea).sendKeys(input.UpApprovedCoach);*/
+		batch.coachesStatusFromCreateBatch(input.UpApprovedCoach);
+		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.UpApprovedCoach), false);
 	}
 	
+	// TC 2 - Verify Approved coaches in Add batch page 
 	@Test (priority = 10)
 	public void verifyApprovedCoachesStatusInAddbatchPage (){
-		driver.findElement(batch.CoachSelectionInCreateBatch).click();
-		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.Coach1), true);
+		driver.navigate().refresh();
+		dash.clickOnManageBatch();
+		batch.clickOnAddbacthButton();
+		//driver.findElement(batch.CoachSelectionInCreateBatch).click();
+		/*driver.findElement(batch.CoachSearhArea).clear();
+		driver.findElement(batch.CoachSearhArea).sendKeys(input.UpApprovedCoach);*/
+		//driver.findElement(batch.CoachSearhArea).clear();
+		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.Coach1Name), true);
 	}
 	
+	
+	//TC 3 - Verify UnApproved Swimmers in Add batches page 
 	@Test (priority = 15)
 	public void verifyUnApprovedSwimmersStatusInAddBatchPage (){
-		driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
-		Assert.assertEquals(batch.SwimmersStatusFromCreateBatch(input.Swimmer3), false);
+		/*driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
+		driver.findElement(batch.SwimmerSearchArea).sendKeys(input.UnApprovedSwimmer);*/
+		boolean status = batch.SwimmersStatusFromCreateBatch(input.UnApprovedSwimmer);
+		Assert.assertEquals(status, false);
 	}
 	
+	//TC 4 - Verify Approved swimmers in Create batch Page 
 	@Test (priority = 20)
 	public void verifyApprovedSwimmersStatusInAddBatchPAge(){
-		driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
-		Assert.assertEquals(batch.SwimmersStatusFromCreateBatch(input.Swimmer1), true);
+		dash.clickOnCoach();
+		dash.clickOnSwimmers();
+		/*driver.findElement(batch.SwimmerSearchArea).clear();
+		driver.findElement(batch.SwimmerSearchArea).sendKeys(input.Swimmer1Name);*/
+		boolean status = batch.SwimmersStatusFromCreateBatch(input.Swimmer1Name);
+		Assert.assertEquals(status, true);
 	}
 	
+	// TC 4 - Verify Create batch 
 	@Test (priority = 25)
 	
 	public void createBatch (){
@@ -65,27 +86,29 @@ public class BatchTest extends DriverClass {
 		dash.clickOnManageBatch();
 		batch.clickOnAddbacthButton();
 		batch.enterBacthname(input.BatchName1);
-		driver.findElement(batch.CoachSelectionInCreateBatch).click();
+		//driver.findElement(batch.CoachSelectionInCreateBatch).click();
 		try {
-			batch.selectCoachFromCreatebatch(input.Coach1);
+			batch.selectCoachFromCreatebatch(input.Coach1Name);
 			
 		}
 		catch (Exception e){
 			System.out.println(e+"Coach not found, Selecting different coach");
-			batch.selectCoachFromCreatebatch(input.Coach2);
+			//batch.selectCoachFromCreatebatch(input.);
 		}
-		driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
+		//driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
 		try {
-		batch.selectCoachFromCreatebatch(input.Swimmer1);
+		batch.selectCoachFromCreatebatch(input.Swimmer1Name);
 		}
 		catch (Exception e){
 			System.out.println(e+"Selecting another swimmer");
-			batch.selectSwimmersFromCreateBatch(input.Swimmer2);
+			//batch.selectSwimmersFromCreateBatch(input.Swimmer2);
 		}
 		batch.clickOnCreateButton();
 		System.out.println(batch.getSuccessmessage());
 	}
 	
+	
+	//TC 5 - Verify batches in create batch page
 	@Test (priority = 30)
 	
 	public void batchesAreListedOrNot () {
@@ -94,6 +117,7 @@ public class BatchTest extends DriverClass {
 	}
 	
 	
+	//TC 6 - Batch name Validation 
 
 	@Test (priority = 35)
 	public void batchNameValidationOnCreatebatchPage () throws InterruptedException{
@@ -103,7 +127,7 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(batch.getBatchnamevalidation(), "This field is required!");
 	}
 	
-
+     // TC 7 - Verify CoachName Validation 
 	@Test (priority = 40)
 	public void coachValidationonCreatebatchPage (){
 		batch.enterBacthname(input.BatchName1);
@@ -112,29 +136,37 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(coachvalidationError,"This field is required!");
 	}
 	
-
+     
+	//TC 8 -  Verify Swimmer validation 
 	@Test (priority = 45)
 	public void swimmerValidationError () {
 		driver.findElement(batch.CoachSelectionInCreateBatch).click();
-		batch.selectCoachFromCreatebatch(input.Coach1);
+		batch.selectCoachFromCreatebatch(input.Coach1Name);
 		batch.clickOnCreateButton();
 		String swimmervalidationError = driver.findElement(batch.SwimmerValdiation).getText();
 		Assert.assertEquals(swimmervalidationError,  "This field is required!");
 	}
 	
+	//TC 9 -  Verify Swimmers count in Batch 
 	@Test (priority = 50)
 	public void checkSwimmersCountInBatch (){
 		driver.navigate().refresh();
-		batch.getSwimmersCount(batch.batchName);
-		Assert.assertEquals(batch.getSwimmersCount(input.BatchName1), 1, "swimmer count");
+		dash.clickOnSwimmers();
+		dash.clickOnManageBatch();
+		batch.getSwimmersCount(input.BatchName1);
+		Assert.assertEquals(batch.getSwimmersCount(input.BatchName1),"1");
 	}
 	
+	
+	// TC 10 -Verify Coach name on batch Page 
 	@Test (priority = 50)
 	
-	public void checkCoachNameOnbatchPageforTheBatch (){
+	public void checkCoachNameOnbatchPage (){
 		String coach = batch.getCoachNameFromBatchesList(input.BatchName1);
-		Assert.assertEquals(coach, input.Coach1);
+		Assert.assertEquals(coach, input.Coach1Name);
 	}
+	
+	//TC 11 -  Verify batch in batch page 
 	
 	@Test (priority = 55)
 	public void verifyCreatedbatchDisplaysInBatchPage () throws InterruptedException{
@@ -153,29 +185,31 @@ public class BatchTest extends DriverClass {
 		Assert.assertEquals(swimmerName, input.ApprovedSwimmer1Firstname);
 	}*/
 	
+	// TC 12 - Verify coach is matching for batch in batch page 
 	@Test (priority = 56)
 	public void verifyCoachNameismatchignOrNotInbatchpage (){
-		System.out.println(batch.getCoachNameFromBatchesList(input.Coach1));
-		Assert.assertEquals(batch.getCoachNameFromBatchesList(input.Coach1),input.Coach1);
+		System.out.println(batch.getCoachNameFromBatchesList(input.Coach1Name));
+		Assert.assertEquals(batch.getCoachNameFromBatchesList(input.Coach1Name),input.Coach1Name);
 		
 	}
 	
+	
+	// TC 13 -  Verify batch in Swimmers page 
 	@Test (priority = 60)
 	public void verifybatchNameInSwimmerPage () throws InterruptedException{
 		driver.navigate().refresh();
 		dash.clickOnManageBatch();
 		dash.clickOnSwimmers();
-		driver.findElement(swimmers.BatchSelection).click();
-		Thread.sleep(500);
-		swimmers.batchSelection(input.BatchName1);
-		Thread.sleep(500);
-		Assert.assertEquals(swimmers.getmatchingBatch(input.Swimmer1EmailID), input.BatchName1);
+		boolean status = swimmers.checkBatchStatus(input.BatchName1);
+		Assert.assertEquals(status, input.BatchName1);
 		
 	}
 	
+	// TC 14 -  Verify Coach in Swimmers page 
+	
 	@Test (priority = 65)
 	public void verifyCoachNameInSwimmerspage (){
-		Assert.assertEquals(swimmers.getmatchingCoachNameforSwimmers(input.Swimmer1), input.Coach1);
+		Assert.assertEquals(swimmers.getmatchingCoachNameforSwimmers(input.Swimmer1EmailID), input.Coach1Name);
 	}
 	
 	
@@ -190,32 +224,46 @@ public class BatchTest extends DriverClass {
 	
 	
 	@Test (priority = 75)
-	public void verifySwimmersIsBatchPageInAttendancePage () throws InterruptedException{
+	public void verifySwimmersInBatchPageInAttendancePage () throws InterruptedException{
 		if (att.batchIsDisplayedOrNot(input.BatchName1))equals(true);{
-			String swimmerName= driver.findElement(By.linkText(input.Swimmer1)).getText();
-			Assert.assertEquals(swimmerName, input.Swimmer1);	
+			String swimmerName= driver.findElement(By.linkText(input.Swimmer1Name)).getText();
+			Assert.assertEquals(swimmerName, input.Swimmer1Name);	
 		}	
 		
 	}
+	
+	// TC 15 - verify Swimmer in coach profile page 
+	public void verifySwimmersInCoachProfilePage (){
+		dash.clickOnCoach();
+		driver.findElement(By.linkText(input.Coach1Name)).click();
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+		boolean swimmerStatus = driver.findElement(By.linkText(input.Swimmer1Name)).isDisplayed();
+		Assert.assertEquals(swimmerStatus, true);
+		
+	}
 
+	
+	//TC 16 - Transfer swimmer
 	@Test (priority = 80)
-	public void assignSwimmersToAnotherBatch () throws InterruptedException{
+	public void assignSwimmersToBatch () throws InterruptedException{
 		dash.clickOnSwimmers();
 		Thread.sleep(5000);
-		swimmers.clickCheckBoxBasedOnSwimmersName(input.Swimmer1EmailID);
+		swimmers.clickCheckBoxBasedOnSwimmersName(input.Swimmer2EmailID);
 		Thread.sleep(500);
 		swimmers.clickOnTranferButton();
-		swimmers.selectCoachFromCoacheSelectionInAssignSwimmerPage(input.Coach2);
-		swimmers.selectBatchFromBatchesListInAssignSwimmerPage(input.Batchname2);
+		swimmers.selectCoachFromCoacheSelectionInAssignSwimmerPage(input.Coach1Name);
+		swimmers.selectBatchFromBatchesListInAssignSwimmerPage(input.BatchName1);
 		driver.findElement(swimmers.TransferButtonInAssignpage).click();
 		Thread.sleep(500);
 	}
 	
+	// TC - 17 Verify Swimmers in Swimmerslist after Transfer 
 	@Test (priority = 85)
 	public void swimmersInswimmersListAfterSwimmerTransfer () throws InterruptedException{
 		dash.clickOnSwimmers();
-		driver.findElement(swimmers.BatchSelection).click();
-		swimmers.batchSelection(input.Batchname2);
+		//driver.findElement(swimmers.BatchSelection).click();
+		swimmers.batchSelection(input.BatchName1);
 		//swimmers.search(input.);
 		Thread.sleep(500);
 		String swimmerName = swimmers.getStringvalue(input.Swimmer2EmailID);
@@ -229,47 +277,118 @@ public class BatchTest extends DriverClass {
 		driver.findElement(swimmers.BatchSelection).click();
 		swimmers.batchSelection(input.Batchname1);
 	}*/
+	
+	//TC 18 - Verify Coach name after trannsfer 
 	@Test (priority = 90)
+	
 	public void verifyCoachNameAfterTranfer (){
 		dash.clickOnSwimmers();
-		Assert.assertEquals(swimmers.getmatchingCoachNameforSwimmers(input.Swimmer1EmailID),input.Coach2);
+		String coach = swimmers.getmatchingCoachNameforSwimmers(input.Swimmer2EmailID);
+		Assert.assertEquals(coach,input.Coach1Name);
 	}
 	
-	@Test (priority = 95)
-	public void verifyUnApprovedCoachInAssigBatchCoachSelectionpage () throws InterruptedException{
-		batch.selectCheckBoxbasedOnBatchName(batch.batchName);
-		batch.clickOnAssign();
-	    driver.findElement(batch.CoachSelectionInCoachAssign).click();
-	    Assert.assertEquals(batch.coachStatusInAssignPage(input.Coach3), input.Coach3);
+	//TC 19 - 
+	public void verifyCoachNameInSwimmerspageafterTranfer (){
+		Assert.assertEquals(swimmers.getmatchingCoachNameforSwimmers(input.Swimmer2EmailID), input.Coach1Name);
 	}
+	
+	public void verifyAttendanePecenatgeofUnAssignedSwimmer (){
+		String per = swimmers.getAtendancePercentage(input.Swimmer2EmailID);
+		Assert.assertEquals(per, "0.0%");
+		
+	}
+	public void verifyBatchname (){
+		String batchname = swimmers.getmatchingBatch(input.Swimmer2EmailID);
+		Assert.assertEquals(batchname,input.BatchName1);
+	}
+	
+	public void checkSwimmersCountInBatch1 (){
+		driver.navigate().refresh();
+		dash.clickOnSwimmers();
+		dash.clickOnManageBatch();
+		batch.getSwimmersCount(input.BatchName1);
+		Assert.assertEquals(batch.getSwimmersCount(input.BatchName1), "2");
+	}
+	
+	
+	
 	
 	@Test (priority = 100)
 
 	public void assignBatchToCoach () throws InterruptedException{
-		batch.selectCheckBoxbasedOnBatchName(input.Batchname2);
+		batch.selectCheckBoxbasedOnBatchName(input.BatchName1);
 		batch.clickOnAssign();
 		Thread.sleep(500);
-	    driver.findElement(batch.CoachSelectionInCoachAssign).click();
-	    Thread.sleep(500);
-	    batch.selectCoachesFromAssignpage(input.Coach1);// Approved coach 1
+	    batch.selectCoachesFromAssignpage(input.Coach2Name);// Approved coach 1
 	    driver.findElement(batch.AssignButtonInAssignPage).click(); 
 	    Assert.assertEquals(batch.getSuccessmessage(), "Batch Transfered Sucessfully");
 	}
 	
 	
 	@Test (priority = 105)
-	public void checkCoachNameAfterTranfertheBatch (){
+	public void checkCoachNameAfterTranferTheBatch (){
 		String currentCoach = batch.getCoachNameFromBatchesList(input.Batchname2);
-		String ecpectedCoach = input.Coach1 ;
+		String ecpectedCoach = input.Coach2Name ;
 		Assert.assertEquals(currentCoach, ecpectedCoach);	
 	}
 	
 	@Test (priority = 110)
 	public void verifyBatchUnderOnNewCoach (){
 		dash.clickOnSwimmers();
-		String currentbatch = swimmers.getmatchingBatch(input.Swimmer1EmailID);
-		Assert.assertEquals(currentbatch, input.Coach1);
+		String currentbatch = swimmers.getmatchingBatch(input.Swimmer2EmailID);
+		Assert.assertEquals(currentbatch, input.Coach2Name);
 	}
+	
+	public void verifyCoachNamefortheSwimmer (){
+		dash.clickOnSwimmers();
+		String coachName = swimmers.getmatchingCoachNameforSwimmers(input.Swimmer1EmailID);
+		Assert.assertEquals(coachName,input.Coach2Name);
+	}
+	
+	public void verifyAttendanePecenatgeOfSwimmer (){
+		String per = swimmers.getAtendancePercentage(input.Swimmer1EmailID);
+		Assert.assertEquals(per, "0.0%");
+	}
+	
+	public void verifySwimmersInOLDCoachProfileAfterTransfer (){
+		dash.clickOnCoach();
+		driver.findElement(By.linkText(input.Coach1Name)).click();
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+		boolean swimmerStatus = driver.findElement(By.linkText(input.Swimmer1Name)).isDisplayed();
+		Assert.assertEquals(swimmerStatus, false);
+		
+	}
+	public void verifySwimmersInNewCoachProfilePage (){
+		dash.clickOnCoach();
+		driver.findElement(By.linkText(input.Coach1Name)).click();
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+		boolean swimmerStatus = driver.findElement(By.linkText(input.Swimmer1Name)).isDisplayed();
+		Assert.assertEquals(swimmerStatus, true);
+	}
+	
+	public void verifySwimmersInCoachFilter () throws InterruptedException{
+		dash.clickOnSwimmers();
+		swimmers.coachSelection(input.Coach2Name);
+		boolean status = driver.findElement(By.linkText(input.Swimmer1Name)).isDisplayed();
+		Assert.assertEquals(status, true);
+	}
+	
+	public void verifycoachFilterInBatchPageCase1 (){
+		dash.clickOnManageBatch();
+		batch.mainCoachSelection(input.Coach2Name);
+		boolean status = driver.findElement(By.linkText(input.BatchName1)).isDisplayed();
+		Assert.assertEquals(status, true);
+	}
+	
+	public void verifycoachFilterInBatchPageCase2 (){
+		dash.clickOnManageBatch();
+		batch.mainCoachSelection(input.Coach1Name);
+		boolean status = driver.findElement(By.linkText(input.BatchName1)).isDisplayed();
+		Assert.assertEquals(status, true);
+	}
+	
 	
 	
 }
