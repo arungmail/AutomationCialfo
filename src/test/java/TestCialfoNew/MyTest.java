@@ -20,12 +20,8 @@ import Pages.DashBoard;
 import Pages.LoginForm;
 import Pages.PendingUsers;
 import Pages.RegisterForm;
-import Pages.Registration;
 import Pages.SwimmersPage;
-import Pages.back;
-import Pages.progress;
-import Pages.will;
-import Pages.you;
+
 
 public class MyTest extends DriverClass{
 	LoginForm login = new LoginForm();
@@ -39,6 +35,7 @@ public class MyTest extends DriverClass{
 	public boolean swimmerstatus;
 	public String swimmernames;
 	RegisterForm reg = new RegisterForm ();
+	private String batchName;
 	
 
            
@@ -77,33 +74,15 @@ public class MyTest extends DriverClass{
          @Test   	
             	
        public void hhhhh () throws InterruptedException{
-    	login.clickOnRegister();
-   		reg.enterUserName("Venu");
-   		reg.enterEmail(input.Swimmer1EmailID);
-   		reg.enterFirstname("Venu");
-   		reg.enterLastName("viya");
-   		reg.enterPhoneNumber("9901395048");
-   		reg.enterPassword("Nichi123");
-   		reg.reEnterPassword("Nichi123");
-   		reg.enterLocation("Cochin");		
-   		reg.selectYear("1990");
-   		reg.selectMonth("Apr");
-   		reg.selectDate("28");
-   		//reg.selectRole("Player");
-   		//reg.selectRole("Male");
-   		util.selectradioButton("Female","label");
-   		util.selectradioButton("Swimmer","label");
-   		reg.selectClubFromDropdownlist("Swimlife Club ( Brigade School, Malleshwaram )");
-   		reg.clicktermsAndCondition();
-   		reg.clickRegisterButton();
-   		/*util.handleWindow();
-   		reg.enterOTP("");*/
-   		Thread.sleep(5000);
-   		String sucess = driver.findElement(By.xpath("//p[@id='success_validation']")).getText();
-   		Assert.assertEquals(sucess, "Registration in progress. Our team will get back to you soon!");
-   		//driver.findElement(By.id("dsfsdf")).click();
-       }
-       
+        	LoginForm.enterEmailId(input.club);
+       		LoginForm.enterPassword(input.ClubPassword);
+       		LoginForm.clickSignButton();
+       		Thread.sleep(5000);
+     		dash.clickOnManageBatch();
+     		batch.getBatchFromList("Sunday batch");
+     		Assert.assertEquals(batch.getBatchFromList("sgsd"), "Sunday batch");
+        	 
+         }
 }
 
 

@@ -3,7 +3,7 @@
    <test name="CialfoNewversion">
       <classes>
       <class name="BasePackage.BaseClass" />
-      <class name="TestCialfoNew.LogInTest"/>
+      <class name="TestCialfoNew.BatchTest"/>
       
      
     

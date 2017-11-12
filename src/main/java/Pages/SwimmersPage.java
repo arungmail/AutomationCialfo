@@ -19,7 +19,11 @@ public class SwimmersPage extends DriverClass {
 	public By Searcharea = By.xpath("//input[@class='select2-search__field']");
 	public By EntrySelection = By.xpath("//select[@name='swimmertable_length']");
 	public By Homebredcrumbs = By.xpath("html/body/div[1]/app-root/app-player/div/section[1]/ol/li[1]/a");
+<<<<<<< HEAD
 	public By Assign = By.xpath("//button[@class='btn btn-primary pull-right'][2]");
+=======
+	public By TranferButton = By.xpath("//button[@id='assign_btn']");
+>>>>>>> 635b243f62d1f6953d4a6c9af38974f4764cbc93
 	//public By BatchSelectionInTranferPlayer = By.xpath(".//*[@id='myModal']/div/div/div[2]/div/div/span/span[1]/span");
 	public By SubmitButton = By.xpath("//button[@class='btn btn-primary align_top']");
 	public By CloseButton = By.xpath("//button[@class='btn btn-default align_top']");
@@ -33,6 +37,7 @@ public class SwimmersPage extends DriverClass {
 	//public By BatchSelectionInTranferSwimmerpage 	= By.xpath("//span[@title='Select Batch']");
 	//public By BatchResultsInTransferSwimmerpage  = By.xpath("//span[@class='select2-results']");
 	//public By SubmitButonInTransferSwimmerPage = By.xpath("(//button[@type='button'])[5]");
+<<<<<<< HEAD
 	public By CoachSelection  = By.xpath("//span[@id='select2-f9d0-container']");
 	public By CoachList = By.xpath("//ul[@id='select2-hoyp-results']");
 	public By CoachSelectionInAssignSwimmerPage = By.xpath("//span[@id='select2-209h-container']");
@@ -43,6 +48,16 @@ public class SwimmersPage extends DriverClass {
 	public By BatchListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
 	public By TransferButtonInAssignpage = By.xpath("");
 	public By AddSwimmerButton = By.xpath("//button[@class='btn btn-primary pull-right'][1]	");
+=======
+	public By CoachSelection  = By.xpath("(//span[@class='select2-selection__arrow'])[5]");
+	public By CoachList = By.xpath("//ul[@id='select2-o285-results']");
+	public By CoachSelectionInAssignSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[2]");
+	public By BatchSelectionInAssigSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[3]");
+	public By CoachListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
+	public By BatchListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
+	public By TransferButtonInAssignpage = By.xpath("//button[@class='btn btn-primary align_top']");
+	public By AddSwimmerButton = By.xpath("//button[@routerlink='/signup']");
+>>>>>>> 635b243f62d1f6953d4a6c9af38974f4764cbc93
 	public By ScreenName = By.xpath("//input[@formcontrolname='name']");
 	public By SwimmerSearch = By.xpath("//div[@id='swimmertable_filter']/label/input");
 	
@@ -219,8 +234,13 @@ public class SwimmersPage extends DriverClass {
 				String swimmernames = swimcol.get(j).getText();
 				System.err.println(swimmernames);
 				if (swimmernames.equalsIgnoreCase(swimmername)) {
+<<<<<<< HEAD
 					String xpath1 = "//table[@id='swimmertable']/tbody/tr[@class='even'][";
 					String xpath2 = "]/td[10]";
+=======
+					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
+					String xpath2 = "]/td[5]";
+>>>>>>> 635b243f62d1f6953d4a6c9af38974f4764cbc93
 					String coachName = driver.findElement(By.xpath(xpath1 + i + xpath2)).getText();
 					/*
 					 * String expectedResult = expectedCoachName;
@@ -452,7 +472,7 @@ public class SwimmersPage extends DriverClass {
 		}
 		
 	}
-	public void clickOnDowbLoadData (String downloadType){
+	public void clickOnDowbLoadDatas (String downloadType){
 		switch (downloadType){
 		
 		case "CSV":
