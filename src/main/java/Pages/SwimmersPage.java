@@ -15,7 +15,7 @@ public class SwimmersPage extends DriverClass {
 
 	Utility util = new Utility();
 
-	public By BatchSelection = By.xpath("(//b[@role='presentation'])[4]");
+	public By BatchSelection = By.xpath("//span[@id='select2-hqor-container']");
 	public By Searchbutton = By.xpath("//input[@type='search']");
 	public By EntrySelection = By.xpath("//select[@name='swimmertable_length']");
 	public By Homebredcrumbs = By.xpath("html/body/div[1]/app-root/app-player/div/section[1]/ol/li[1]/a");
