@@ -13,19 +13,20 @@ public class DashBoard extends DriverClass {
 	Utility util = new Utility ();
 	
 
-	public By ProfileNameinSecondarymenu = By.xpath(".//*[@id='profile_name']/p");
-	public By profilenameInTopRightSide = By.xpath("//span[@data-placement='bottom']");
-	private By Dashboard = By.xpath("//li[@id='dashboard']");
-	public By Attendanace = By.xpath("//li[@id='attendance']");
-	public By Swimmers = By.xpath("//li[@id='swimmers']");
-	public By Coaches = By.xpath("//li[@id='coaches']");
-	public By ManageGroup = By.xpath("//li[@id='groups']");
-	private By ManageBatch = By.xpath("//li[@id='batches']");
-	public By Message = By.xpath("//li[@id='messages']");
-	public By PendingUsers = By.xpath("html/body/div/app-root/app-side-menu/aside/section/ul/li[12]/a/span");
+	public By ProfileNameinSecondarymenu = By.xpath("//div[@id='profile_name']/p");
+	public By profilenameInTopRightSide = By.xpath("//span[@class='hidden-xs']");
+	private By Dashboard = By.xpath("//li[@id='dashboard']/a/span");
+	public By Attendanace = By.xpath("//li[@id='attendance']/a/span");
+	public By Swimmers = By.xpath("//li[@id='swimmers']/a/span");
+	public By Coaches = By.xpath("//li[@id='coaches']/a/span");
+	public By ManageGroup = By.xpath("//li[@id='groups']/a/span");
+	private By ManageBatch = By.xpath("//li[@id='batches']/a/span");
+	public By Message = By.xpath("//li[@id='messages']/a/span");
+	public By PendingUsers = By.xpath("//li[@id='pending']/a/span");
 	public By ChangeLocationButton = By.xpath("(//li[@class='dropdown messages-menu'])[1]");
 	public By ChangeLocationList	= By.xpath("//ul[@class='menu']");
 	public By MeetTable  = By.xpath("//table[@class='table no-margin']");
+	public By ACL   = By.xpath("//li[@id='acl']/a/span");
 	
 	
 	

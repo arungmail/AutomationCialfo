@@ -32,7 +32,7 @@ public class GroupTest extends DriverClass {
 		Assert.assertEquals(coachStatus, true);
 		Assert.assertEquals(swimmerStatus, true);	
 	}
-	
+
 	
 	public void verifyAllcoachesGroups (){
 		boolean status = group.checkGroupName(input.AllCoachesGroup);
@@ -46,6 +46,16 @@ public class GroupTest extends DriverClass {
 		Assert.assertEquals(swimmersStatus, false);
 		
 		}
+	
+	public void verifyClubandCoachAccountGroup(){
+		boolean status = group.checkGroupName(input.club+"-"+input.Coach1Name);
+		Assert.assertEquals(status, true);
+	}
+	
+	public void verifyClubandCoachGroupMembers () throws InterruptedException{
+		boolean coachStatus = group.statusOfMembersFromContactList(input.club+"-"+input.Coach1Name, input.Coach1Name);
+		Assert.assertEquals(coachStatus, true);
+	}
 	
 	public void createPersonalBatch (){
 		driver.findElement(group.GroupCreationButton).click();
@@ -67,5 +77,92 @@ public class GroupTest extends DriverClass {
 		Assert.assertEquals(swimmerStatus, true);
 	}
 	
+	public void verifyPublicGroupInCoachAccount () throws InterruptedException{
+		dash.logingOut();
+		LoginForm.enterEmailId(input.Coach1EmailID);
+  		LoginForm.enterPassword("Nichi123");
+  		LoginForm.clickSignButton();
+  		verifyPublicGroupsInClubAccount();	
+	}
+	
+	public void verifyMembersinPublicGroupInCoachAccount () throws InterruptedException{
+	 verifymembersInPublicGroup();
+	}
+	public void verifyAllcoachesGroupsInCoachAccount (){
+		verifyAllcoachesGroups();
+	}
+	
+	public void verifyMembersInAllcoachesGroupIncoachAccount() throws InterruptedException{
+		verifyCoachesGroupMembers();
+	}
+	public void verifypersonalGroupInCoachAccount (){
+		verifyPersonalGroup();
+	}
+	
+	public void verifymembersOfPersonalGroupInCoachAccount() throws InterruptedException{
+		verifyPersonalGroupMembers();
+	}
+	
+	public void verifyCoachplusClubGroupInClubAccount (){
+		//dash.clickOnGroups();
+		boolean status = group.checkGroupName(input.club+"-"+input.Coach1Name);
+		Assert.assertEquals(status, true);
+		
+	}
+	
+	public void verifyClubandCoachGroupMembersInCoachAccount () throws InterruptedException{
+		boolean coachStatus = group.statusOfMembersFromContactList(input.club+"-"+input.Coach1Name, input.Coach1Name);
+		Assert.assertEquals(coachStatus, true);
+	}
+	
+	public void verifybatchGroupInCoachAccount (){
+		boolean status = group.checkGroupName(input.BatchName1);
+		Assert.assertEquals(status, true);
+	}
+	
+	public void verifyBatchGroupMembers () throws InterruptedException{
+		boolean coachStatus = group.statusOfMembersFromContactList(input.Personalgroup, input.Swimmer1Name);
+		boolean swimmerStatus = group.statusOfMembersFromContactList(input.Personalgroup, input.Coach1Name);
+		Assert.assertEquals(coachStatus, true);
+		Assert.assertEquals(swimmerStatus, true);
+	}
+	
+	public void verifypublicGroupInSwimmerAccount () throws InterruptedException{
+		dash.logingOut();
+		LoginForm.enterEmailId(input.Swimmer1EmailID);
+  		LoginForm.enterPassword("Nichi123");
+  		LoginForm.clickSignButton();
+  		verifyPublicGroupsInClubAccount();	
+	}
+	
+	public void verifyMembersinPublicGroupInSwimmerAccount () throws InterruptedException{
+		verifymembersInPublicGroup();
+	}
+	
+	/*public void verifyAllcoachesGroupsInCoacAccount (){
+		verifyAllcoachesGroups();
+	}*/
+	
+	
+	public void verifypersonalGroupInSwimmerAccount (){
+		verifyPersonalGroup();
+	}
+	
+	public void verifymembersOfPersonalGroupInSwimmerAccount() throws InterruptedException{
+		verifyPersonalGroupMembers();
+	}
+	
+	
+	public void verifySwimmerAndCoachAccount(){
+		//dash.clickOnGroups();
+		boolean status = group.checkGroupName((input.club+"-"+input.Coach1Name));
+		Assert.assertEquals(status, true);
+	}
+	
+	public void verifymembersSwimmerandCoachGroupInSwimmerAccount () throws InterruptedException{
+	    boolean swimmerStatus = group.statusOfMembersFromContactList(input.Swimmer1Name+"-"+input.Coach1Name, input.Coach1Name);
+	    Assert.assertEquals(swimmerStatus, true);
+	
+	}
 
 }
