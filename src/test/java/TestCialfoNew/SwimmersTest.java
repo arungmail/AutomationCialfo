@@ -43,8 +43,6 @@ public class SwimmersTest extends DriverClass {
 		Thread.sleep(5000);
 		
 	}
-	
-	
 	@Test(priority=10)
 	
 	//TC 1 - Adding swimmer
