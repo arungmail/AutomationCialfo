@@ -20,33 +20,23 @@ public class BatchList extends DriverClass {
 	public By BatchTable = By.xpath("//table[@id='batcheslist']/tbody");
 	public By BatchRow = By.tagName("tr");
 	public By BacthColumn = By.tagName("td");
-	private By BatchName = By.id("batch_name");
-<<<<<<< HEAD
-	public By CoachSelectionInCreateBatch = By.xpath("//span[@id='select2-ucmb-container']");
+	public By BatchName = By.id("batch_name");
+	public By CoachSelectionInCreateBatch = By.xpath("//span[@id='select2-bdsu-container']");
 	public By CoachListInCreateBatch = By.xpath("//span[@class='select2-results']");
 	public By CoachSearhArea = By.xpath("(//input[@class='select2-search__field'])[2]");
 	public By SwimmersSelectionInCrreateBatch = By.xpath("//span[@class='select2-selection select2-selection--multiple']");
 	public By SwimmerSearchArea = By.xpath("(//input[@class='select2-search__field'])[1]");
-	public By SwimmerListInCreateBatch = By.xpath("//ul[@id='select2-uo6v-results']");
-=======
-	public By CoachSelectionInCreateBatch = (By.xpath("html/body/div/app-root/app-manage-batch/div/section[2]/div/div/div/div/form/div[1]/div[2]/div/span/span[1]/span/span[2]/b"));
-	public By CoachListInCreateBatch = By.xpath("//span[@class='select2-results']");
-	public By SwimmersSelectionInCrreateBatch = (By.xpath("//li[@class='select2-search select2-search--inline']"));
-	public By SwimmerListInCreateBatch = By.xpath("//span[@class='select2-results']");
->>>>>>> 635b243f62d1f6953d4a6c9af38974f4764cbc93
-	private By CreatebatchButton = By.xpath("//button[@type='submit']");
+	public By SwimmerListInCreateBatch = By.xpath("//ul[@id='select2-4xh3-results']");
+
+	
 	private By namevalidation = By.xpath("//p[@id='name_validation']");
 	private By Commenvalidation = By.xpath("//p[@id='common_validation']");
-	public By SubmitButton = By.xpath("(//button[@type='button'])[6]");
-<<<<<<< HEAD
-	public By CoachSelectionInCoachAssign  = By.xpath("//span[@id='select2-wn8g-container']");
+	public By SubmitButton = By.xpath("//button[@type='submit']");
+
+	public By CoachSelectionInCoachAssign  = By.xpath("//span[@id='select2-rv76-container']");
 	public By CoachSearchAssign = By.xpath("//input[@class='select2-search__field']");
-	public By CoachResultInCoachAssignPage = By.xpath("//ul[@id='select2-wn8g-results']");
-=======
-	public By CoachSelectionInCoachAssign  = By.xpath("//span[@class='selection']");
-	public By Search = By.xpath("(//input[@type='search'])[2]");
-	public By CoachResultInCoachAssignPage = By.xpath("//span[@class='select2-results']");
->>>>>>> 635b243f62d1f6953d4a6c9af38974f4764cbc93
+	public By CoachResultInCoachAssignPage = By.xpath("//span[@class='select2-dropdown select2-dropdown--below']");
+
 	//public By SwimmersResult = By.xpath("//span[@class='select2-results']");
 	//public By CoachSelectionInAssignBatch = By.xpath("(//span[@title=' Select Coach'])[2]");
 	public By CoachValidation 			= By.id("coachs_validation");
@@ -82,7 +72,7 @@ public class BatchList extends DriverClass {
 	}
 
 	public void clickOnCreateButton() {
-		driver.findElement(CreatebatchButton).click();
+		driver.findElement(SubmitButton).click();
 	}
 
 	public String getBatchnamevalidation() {
@@ -158,13 +148,9 @@ public class BatchList extends DriverClass {
 				   }
 				}
 			}
-<<<<<<< HEAD
-		}
+
 		return this.batchName;
-=======
-		
-		return batchName;
->>>>>>> 635b243f62d1f6953d4a6c9af38974f4764cbc93
+
 
 	}
 
