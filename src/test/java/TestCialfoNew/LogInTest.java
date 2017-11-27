@@ -56,7 +56,7 @@ public class LogInTest extends DriverClass {
 	
 	public void checkUnApprovedCoachLogin () throws InterruptedException{
 		driver.navigate().refresh();
-		login.enterEmailId(input.Coach3EmailID);
+		login.enterEmailId(input.UpApprovedCoach);
 		login.enterPassword("Nichi!23");
 		login.clickSignButton();
 		Thread.sleep(500);
@@ -67,7 +67,7 @@ public class LogInTest extends DriverClass {
 	@Test(priority = 5)
 	public void checkUnApprovedSwimmerLogin () throws InterruptedException{
 		driver.navigate().refresh();
-		login.enterEmailId(input.Swimmer3EmailID);
+		login.enterEmailId(input.Swimmer1EmailID);
 		login.enterPassword("Nichi!23");
 		login.clickSignButton();
 		Thread.sleep(500);
