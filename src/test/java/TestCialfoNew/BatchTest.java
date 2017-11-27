@@ -40,9 +40,6 @@ public class BatchTest extends DriverClass {
   		Thread.sleep(5000);
 		dash.clickOnManageBatch();
 		batch.clickOnAddbacthButton();
-		/*batch.enterBacthname(input.BatchName1);
-		driver.findElement(batch.CoachSelectionInCreateBatch).click();
-		driver.findElement(batch.CoachSearhArea).sendKeys(input.UpApprovedCoach);*/
 		batch.coachesStatusFromCreateBatch(input.UpApprovedCoach);
 		Assert.assertEquals(batch.coachesStatusFromCreateBatch(input.UpApprovedCoach), false);
 	}
@@ -58,8 +55,6 @@ public class BatchTest extends DriverClass {
 	//TC 3 - Verify UnApproved Swimmers in Add batches page 
 	@Test (priority = 15)
 	public void verifyUnApprovedSwimmersStatusInAddBatchPage (){
-		/*driver.findElement(batch.SwimmersSelectionInCrreateBatch).click();
-		driver.findElement(batch.SwimmerSearchArea).sendKeys(input.UnApprovedSwimmer);*/
 		boolean status = batch.SwimmersStatusFromCreateBatch(input.UnApprovedSwimmer);
 		Assert.assertEquals(status, false);
 	}
@@ -69,8 +64,6 @@ public class BatchTest extends DriverClass {
 	public void verifyApprovedSwimmersStatusInAddBatchPAge(){
 		dash.clickOnCoach();
 		dash.clickOnSwimmers();
-		/*driver.findElement(batch.SwimmerSearchArea).clear();
-		driver.findElement(batch.SwimmerSearchArea).sendKeys(input.Swimmer1Name);*/
 		boolean status = batch.SwimmersStatusFromCreateBatch(input.Swimmer1Name);
 		Assert.assertEquals(status, true);
 	}
@@ -307,6 +300,4 @@ public class BatchTest extends DriverClass {
 		boolean status = driver.findElement(By.linkText(input.BatchName1)).isDisplayed();
 		Assert.assertEquals(status, true);
 	}
-	
-	
 }
