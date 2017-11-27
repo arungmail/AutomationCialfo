@@ -70,7 +70,7 @@ public class DashBoard extends DriverClass {
 	}
 
 	public void clickOnCoach() {
-		driver.findElement(Coach).click();
+		driver.findElement(Coaches).click();
 	}
 
 	public void clickOnManageBatch() {

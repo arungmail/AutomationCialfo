@@ -118,7 +118,7 @@ public class MessagePage extends DriverClass {
 		List <WebElement> iframe = driver.findElements(By.tagName("iframe"));
 		System.out.println(iframe.size());
 		//Switching to iframe
-		driver.switchTo().frame(By.xpath("//iframe[@class='wysihtml5-sandbox']"));
+		//driver.switchTo().frame(By.xpath("//iframe[@class='wysihtml5-sandbox']"));
 		element = driver.findElement(By.xpath("html/body/p"));
 		element.sendKeys(contentTotype);
 	}

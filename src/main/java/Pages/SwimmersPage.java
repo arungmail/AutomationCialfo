@@ -15,6 +15,13 @@ public class SwimmersPage extends DriverClass {
 
 	Utility util = new Utility();
 
+<<<<<<< HEAD
+=======
+
+	//public By BatchSelection = By.xpath("//span[@id='select2-hqor-container']");
+	public By Searchbutton = By.xpath("//input[@type='search']");
+
+>>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
 	public By BatchSelection = By.xpath("//span[@id='select2-ygdm-container']");
 	public By Searcharea = By.xpath("//input[@class='select2-search__field']");
 
@@ -23,6 +30,11 @@ public class SwimmersPage extends DriverClass {
 
 	public By Assign = By.xpath("//button[@class='btn btn-primary pull-right'][2]");
 
+<<<<<<< HEAD
+=======
+	public By TranferButton = By.xpath("//button[@id='assign_btn']");
+
+>>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
 	//public By BatchSelectionInTranferPlayer = By.xpath(".//*[@id='myModal']/div/div/div[2]/div/div/span/span[1]/span");
 	public By SubmitButton = By.xpath("//button[@class='btn btn-primary align_top']");
 	public By CloseButton = By.xpath("//button[@class='btn btn-default align_top']");
@@ -48,6 +60,17 @@ public class SwimmersPage extends DriverClass {
 	public By TransferButtonInAssignpage = By.xpath("");
 	public By AddSwimmerButton = By.xpath("//button[@class='btn btn-primary pull-right'][1]	");
 
+<<<<<<< HEAD
+=======
+/*	public By CoachSelection  = By.xpath("(//span[@class='select2-selection__arrow'])[5]");
+	public By CoachList = By.xpath("//ul[@id='select2-o285-results']");
+	public By CoachSelectionInAssignSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[2]");
+	public By BatchSelectionInAssigSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[3]");
+	public By CoachListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
+	public By BatchListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
+	public By TransferButtonInAssignpage = By.xpath("//button[@class='btn btn-primary align_top']");
+	public By AddSwimmerButton = By.xpath("//button[@routerlink='/signup']");*/
+>>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
 
 	public By ScreenName = By.xpath("//input[@formcontrolname='name']");
 	public By SwimmerSearch = By.xpath("//div[@id='swimmertable_filter']/label/input");
@@ -226,12 +249,19 @@ public class SwimmersPage extends DriverClass {
 				System.err.println(swimmernames);
 				if (swimmernames.equalsIgnoreCase(swimmername)) {
 
+<<<<<<< HEAD
 					String xpath1 = "//table[@id='swimmertable']/tbody/tr[@class='even'][";
 
 					String xpath11 = ".//*[@id='swimmertable']/tbody/tr[";
 					String xpath2 = "]/td[5]";
 
 					String coachName = driver.findElement(By.xpath(xpath11 + i + xpath2)).getText();
+=======
+					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
+					String xpath2 = "]/td[5]";
+
+					String coachName = driver.findElement(By.xpath(xpath1 + i + xpath2)).getText();
+>>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
 					/*
 					 * String expectedResult = expectedCoachName;
 					 * Assert.assertEquals(actualCoachname, expectedResult);

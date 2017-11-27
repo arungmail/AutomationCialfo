@@ -2,6 +2,10 @@ package TestCialfoNew;
 
 public class InputValues {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
 	/*public String Coach1EmailID = "201@mailinator.com";  //Approve
 	public String Coach2EmailID = "sfgasdfg";  //Approve
 =======
