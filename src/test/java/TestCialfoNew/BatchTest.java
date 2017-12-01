@@ -165,7 +165,7 @@ public class BatchTest extends DriverClass {
 		Thread.sleep(5000);
 		swimmers.clickCheckBoxBasedOnSwimmersName(input.Swimmer2EmailID);
 		Thread.sleep(500);
-		swimmers.clickOnTranferButton();
+		swimmers.();
 		swimmers.selectCoachFromCoacheSelectionInAssignSwimmerPage(input.Coach1Name);
 		swimmers.selectBatchFromBatchesListInAssignSwimmerPage(input.BatchName1);
 		driver.findElement(swimmers.TransferButtonInAssignpage).click();

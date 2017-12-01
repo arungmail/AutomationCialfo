@@ -15,66 +15,57 @@ public class SwimmersPage extends DriverClass {
 
 	Utility util = new Utility();
 
-<<<<<<< HEAD
-=======
 
-	//public By BatchSelection = By.xpath("//span[@id='select2-hqor-container']");
+	
 	public By Searchbutton = By.xpath("//input[@type='search']");
-
->>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
-	public By BatchSelection = By.xpath("//span[@id='select2-ygdm-container']");
+	
+	public By BatchSelection = By.xpath("/html/body/div/app-root/app-player/div/section[2]/div/div/div/div[1]/div[2]/div[1]/span/span[1]/span/span[2]");
+	
 	public By Searcharea = By.xpath("//input[@class='select2-search__field']");
-
-	public By EntrySelection = By.xpath("//select[@name='swimmertable_length']");
+	
+	public By EntrySelection = By.xpath("//div[@id='swimmertable_length']/label/select");
+	
 	public By Homebredcrumbs = By.xpath("html/body/div[1]/app-root/app-player/div/section[1]/ol/li[1]/a");
-
-	public By Assign = By.xpath("//button[@class='btn btn-primary pull-right'][2]");
-
-<<<<<<< HEAD
-=======
+	
 	public By TranferButton = By.xpath("//button[@id='assign_btn']");
-
->>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
-	//public By BatchSelectionInTranferPlayer = By.xpath(".//*[@id='myModal']/div/div/div[2]/div/div/span/span[1]/span");
+	
+	public By BatchSelectionInTranferPlayer = By.xpath("//span[@id='select2-4oqv-container']");
+	
 	public By SubmitButton = By.xpath("//button[@class='btn btn-primary align_top']");
+	
 	public By CloseButton = By.xpath("//button[@class='btn btn-default align_top']");
+	
 	public By ErrorValidation = By.id("error_validation");
+	
 	public By Successvalidation = By.id("success_validation");
+	
 	public By SwimmersTable = By.xpath(".//*[@id='swimmertable']/tbody");
+	
 	public By SwimmersRow = By.tagName("tr");
+	
+	
 	public By SwimmersColoumn = By.tagName("td");
 	public By DataEmptyMessage = By.xpath("//td[@class='dataTables_empty']");
-	public By BatchList = By.xpath("//ul[@id='select2-w2wc-results']");
-	//public By BatchSelectionInTranferSwimmerpage 	= By.xpath("//span[@title='Select Batch']");
-	//public By BatchResultsInTransferSwimmerpage  = By.xpath("//span[@class='select2-results']");
-	//public By SubmitButonInTransferSwimmerPage = By.xpath("(//button[@type='button'])[5]");
-
-	public By CoachSelection  = By.xpath("//span[@id='select2-f9d0-container']");
-	public By CoachList = By.xpath("//ul[@id='select2-hoyp-results']");
-	public By CoachSelectionInAssignSwimmerPage = By.xpath("//span[@id='select2-209h-container']");
-	public By CoachSearchinAssignSwimmerPage = By.xpath("//input[@class='select2-search__field']");
-	public By BatchSelectionInAssigSwimmerPage = By.xpath("//span[@id='select2-p5kz-container']");
 	
-	public By CoachListInAssignSwimmerPage = By.xpath("//ul[@id='select2-p5kz-results']");
-	public By BatchListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
-	public By TransferButtonInAssignpage = By.xpath("");
-	public By AddSwimmerButton = By.xpath("//button[@class='btn btn-primary pull-right'][1]	");
-
-<<<<<<< HEAD
-=======
-/*	public By CoachSelection  = By.xpath("(//span[@class='select2-selection__arrow'])[5]");
-	public By CoachList = By.xpath("//ul[@id='select2-o285-results']");
-	public By CoachSelectionInAssignSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[2]");
-	public By BatchSelectionInAssigSwimmerPage = By.xpath("(//span[@class='select2-selection__arrow'])[3]");
-	public By CoachListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
-	public By BatchListInAssignSwimmerPage = By.xpath("//span[@class='select2-results']");
+	public By BatchList = By.className("select2-results__options");
+	
+	public By CoachSelection  = By.xpath("/html/body/div/app-root/app-player/div/section[2]/div/div/div/div[1]/div[2]/div[2]/span/span[1]/span/span[2]");
+	
+	public By CoachList = By.className("select2-results__options");
+	public By CoachSelectionInAssignSwimmerPage = By.xpath("//*[@id='myModal']/div/div/div[2]/div/div[1]/span/span[1]/span/span[2]");
+	
+	
+	public By CoachListInAssignSwimmerPage = By.className("select2-results__options");
+	
+	public By BatchSelectionInAssigSwimmerPage = By.xpath("//*[@id='myModal']/div/div/div[2]/div/div[2]/span/span[1]/span/span[2]");
+	
+	public By BatchListInAssignSwimmerPage = By.className("select2-results__options");
+	
 	public By TransferButtonInAssignpage = By.xpath("//button[@class='btn btn-primary align_top']");
-	public By AddSwimmerButton = By.xpath("//button[@routerlink='/signup']");*/
->>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
-
+	
+	public By AddSwimmerButton = By.xpath("//button[@class='btn btn-primary pull-right'][1]	");
 	public By ScreenName = By.xpath("//input[@formcontrolname='name']");
 	public By SwimmerSearch = By.xpath("//div[@id='swimmertable_filter']/label/input");
-	
     public By EmailId = By.xpath("//input[@formcontrolname='email']");
     public By Firstname = By.xpath("//input[@formcontrolname='first_name']");
     public By Lastname = By.xpath("//input[@formcontrolname='last_name']");
@@ -96,17 +87,7 @@ public class SwimmersPage extends DriverClass {
     public By AvailablePhonenumbervalidation = By.id("available_phone_error_validation");
     public By PasswordMatchingValidation = By.id("error_validation");
     public By PhoneNumber = By.xpath("//input[@placeholder='Phone Number']");
-    
-    
-    
-    
-    		
-    
-    
-    
-			
-	
-	
+
 	public String actualbatchname;
 
 	public String coachName;
@@ -195,45 +176,7 @@ public class SwimmersPage extends DriverClass {
 			}
 			return this.coachStatus;
 		}
-	
-	/*public void getCoachNameFromTable(String swimmerName) {
 
-		WebElement table = driver.findElement(SwimmersTable);
-		List<WebElement> row = driver.findElements(SwimmersRow);
-		row.size();
-		for (int i = 0; i < row.size(); i++) {
-			List<WebElement> col = row.get(i).findElements(SwimmersColoumn);
-			col.size();
-			List<String> swimmersName = new ArrayList<String>();
-			for (int j = 0; j < col.size(); j++) {
-				String name = col.get(j).getText();
-				if (name.equals(actual)) {
-					swimmersName.add(name);
-					Assert.assertEquals(name, expected);
-
-					// String status = System.out.println("Coach1");
-					
-					 * String xp1 =
-					 * "html/body/div[1]/div[5]/div[2]/div/div/table/tbody/tr[";
-					 * String xp2 = "]/td[6]";
-					 * driver.findElement(By.xpath(xp1+i+xp2)).click();
-					 
-				}
-				System.out.println(name);
-
-			}
-		}
-
-	}
-	
-	 * public checkBatchNameIsListedOrNot(String name) { WebElement batchList =
-	 * driver.findElement(BatchSelection); WebElement name2 =
-	 * driver.findElement(By.xpath(
-	 * ".//*[@id='select2-5dzp-result-kei1-590876017b31794b2a5bfe32']")); return
-	 * name2; }
-	 */
-
-	
 	//get CoachName
 	public String getmatchingCoachNameforSwimmers(String swimmername) {
 		WebElement swimmerstable = driver.findElement(SwimmersTable);
@@ -249,19 +192,10 @@ public class SwimmersPage extends DriverClass {
 				System.err.println(swimmernames);
 				if (swimmernames.equalsIgnoreCase(swimmername)) {
 
-<<<<<<< HEAD
-					String xpath1 = "//table[@id='swimmertable']/tbody/tr[@class='even'][";
-
-					String xpath11 = ".//*[@id='swimmertable']/tbody/tr[";
-					String xpath2 = "]/td[5]";
-
-					String coachName = driver.findElement(By.xpath(xpath11 + i + xpath2)).getText();
-=======
 					String xpath1 = ".//*[@id='swimmertable']/tbody/tr[";
 					String xpath2 = "]/td[5]";
 
 					String coachName = driver.findElement(By.xpath(xpath1 + i + xpath2)).getText();
->>>>>>> 3cc274b28a2c12e7e3fcd9165af6641dd4fad5c6
 					/*
 					 * String expectedResult = expectedCoachName;
 					 * Assert.assertEquals(actualCoachname, expectedResult);
@@ -332,11 +266,6 @@ public class SwimmersPage extends DriverClass {
 		}
 	}
 
-	public void clickOnTranferButton() {
-		driver.findElement(Assign).click();
-
-	}
-
 	public boolean getBooleanvalue(String value) {
 		boolean status = driver.findElement(By.linkText(value)).isDisplayed();
 		return status;
@@ -352,7 +281,7 @@ public class SwimmersPage extends DriverClass {
 	public void selectCoachFromCoacheSelectionInAssignSwimmerPage(String coachName) throws InterruptedException {
 		driver.findElement(CoachSelectionInAssignSwimmerPage).click();
 		Thread.sleep(500);
-		driver.findElement(CoachSearchinAssignSwimmerPage).sendKeys(coachName);
+		driver.findElement(Searcharea).sendKeys(coachName);
 		WebElement coaches = driver.findElement(CoachListInAssignSwimmerPage);
 		List<WebElement> coachList = coaches.findElements(By.tagName("li"));
 		for (WebElement coachNames : coachList) {
@@ -387,7 +316,7 @@ public class SwimmersPage extends DriverClass {
 	public boolean checkCoachStatusinAssignSwimmerPage(String coachName) throws InterruptedException {
 		driver.findElement(CoachSelectionInAssignSwimmerPage).click();
 		Thread.sleep(500);
-		driver.findElement(CoachSearchinAssignSwimmerPage).sendKeys(coachName);
+		driver.findElement(Searcharea).sendKeys(coachName);
 		WebElement coaches = driver.findElement(CoachListInAssignSwimmerPage);
 		List<WebElement> coachList = coaches.findElements(By.tagName("li"));
 		for (WebElement coachNames : coachList) {
@@ -422,20 +351,8 @@ public class SwimmersPage extends DriverClass {
 		String error = ((WebElement) nameValidation2).getText();
 		return error;
 	}
-	
-	/*public void addingSwimmer (){
-		driver.findElement(AddSwimmerButton).click();
-		driver.findElement(ScreenName).sendKeys("Arun");
-		driver.findElement(Firstname).sendKeys("Arun");
-		driver.findElement(Lastname).sendKeys("asdsdas");
-		driver.findElement(Password).sendKeys("Nichi12");
-		driver.findElement(ConfirmPassword).sendKeys("Nichi123");
-		driver.findElement(Location).sendKeys("Bangalore");
-		util.selectValueByVisibleText(Year, "2016");
-				
-				
-	}
-*/
+
+
 	public String getAtendancePercentage(String swimmerName) {
 
 		WebElement table = driver.findElement(SwimmersTable);
@@ -453,18 +370,15 @@ public class SwimmersPage extends DriverClass {
 					String xp1 = "html/body/div[1]/app-root/app-player/div/section[2]/div/div/div/div[2]/div[2]/table/tbody/tr[";
 					String xp2 = "]/td[7]";
 					String attendancePercentage = driver.findElement(By.xpath(xp1+i+xp2)).getText();
-					/*WebElement attendance = driver.findElement(By.xpath(xp1+i+xp2));
-					attendance.click();*/
+					WebElement attendance = driver.findElement(By.xpath(xp1+i+xp2));
+					attendance.click();
 					
 					break;
 				}
 			}
 		}
 		return this.attendancePercentage;
-		/*WebElement attendance = driver.findElement(By.xpath(xp1+i+xp2));
-		attendance.click();*/
-		
-		
+
 		
 	}
 	
@@ -528,7 +442,7 @@ public class SwimmersPage extends DriverClass {
 		util.selectValueByVisibleText(year, "2000");
 		util.selectValueByVisibleText(month, "Mar");
 		util.selectValueByVisibleText(day, "9");
-		driver.findElement(RegisterButton);
+		driver.findElement(RegisterButton).click();
 		
 	}
 	

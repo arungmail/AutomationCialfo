@@ -7,7 +7,7 @@ public class InputValues {
 	public String BatchName1  = "Second";
 	public String Batchname2 = "";
 
-	public String Swimmer1EmailID = "";
+	public String Swimmer1EmailID = "automation1@mailinator.com";
 	public String Swimmer1Name = "Sel SwimmerOne";
 	public String Swimmer2EmailID = "";
 	public String Swimmer2Name = "Sel SwimmerOne";
@@ -19,7 +19,5 @@ public class InputValues {
 	public String UnApprovedSwimmer = "";
 	public String PublicGroups = "";
 	public String AllCoachesGroup = "";
-	public String Personalgroup = "";
-			
-	
+	public String Personalgroup = "";	
 }
