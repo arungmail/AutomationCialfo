@@ -52,7 +52,7 @@ public class ProfilePage extends DriverClass {
 	public By Overview = By.linkText("Overview");
 	private By MobileNumberinOverviewPage = By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[2]/a");
 	private By EmailIdInOverviewPage = By.xpath(".//*[@id='tab_1_1']/div/div[1]/ul/li[3]/a");
-	public By ProfleNameInOverViewpage = By.xpath("//h1[@class='font-green sbold uppercase']");
+	public By ProfleNameInOverViewpage = By.xpath("html/body/div[1]/app-root/app-profile/div/section[2]/div/div/div/div[2]/div/div/div/div[1]/div/div[2]/div/div[1]/h1//h1[@class='font-green sbold uppercase']");
 	public By LogOutbutton = By.xpath("html/body/div/app-root/app-header-menu/header/nav/div/ul/li[3]/ul/li[2]/div[2]/a");
 
 	

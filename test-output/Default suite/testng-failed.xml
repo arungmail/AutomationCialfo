@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TestCialfoNew.SwimmersTest">
+      <class name="TestCialfoNew.BatchTest">
         <methods>
-          <include name="addSwimmer"/>
+          <include name="verifyUnApprovedCoachesStatusInAddBatchPage"/>
+          <include name="assignSwimmersToBatch"/>
+          <include name="swimmersInswimmersListAfterSwimmerTransfer"/>
         </methods>
-      </class> <!-- TestCialfoNew.SwimmersTest -->
+      </class> <!-- TestCialfoNew.BatchTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

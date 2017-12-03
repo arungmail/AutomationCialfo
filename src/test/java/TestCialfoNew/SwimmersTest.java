@@ -51,11 +51,10 @@ public class SwimmersTest extends DriverClass {
   		LoginForm.enterPassword(input.ClubPassword);
   		LoginForm.clickSignButton(); 
   		Thread.sleep(5000);
-	}
-		/*driver.navigate().refresh();
+		driver.navigate().refresh();
 		dash.clickOnSwimmers();
 		driver.findElement(swimmers.AddSwimmerButton).click();
-		swimmers.addSwimmer("Arun", input.Swimmer1EmailID, "Sel", "SwimmerOne", "Nichi123", "Nichi123", "8753659888", "Bangalore");	
+		swimmers.addSwimmer("Arun", input.Swimmer1EmailID, "Sel", "SwimmerOne", "Nichi123", "Nichi123", "8753659880", "Bangalore");	
 	}
 	
 	@Test(priority=10)
@@ -65,13 +64,12 @@ public class SwimmersTest extends DriverClass {
 		driver.findElement(swimmers.AddSwimmerButton).click();
 			
 	}
-	*/
+	
 	//TC 3 - Verifying swimmer in Unassignd List
 	
 	 @Test(priority=11)
 	public void verifySwimmerInUnassignedList () throws InterruptedException{
 		 dash.clickOnSwimmers();
-		 //driver.findElement(By.xpath("/html/body/div/app-root/app-player/div/section[2]/div/div/div/div[1]/div[2]/div[1]/span/span[1]/span/span[2]")).click();
 		swimmers.batchSelection("Un Assigned");
 		swimmers.search(input.Swimmer1EmailID);
 		boolean swiimerStatus = swimmers.getBooleanvalue(input.Swimmer1EmailID);
@@ -79,13 +77,16 @@ public class SwimmersTest extends DriverClass {
 	}
 	
 	//TC 4 - Add Coach
+	 
+	 @Test(priority=12)
 	public void addCoach (){
 		dash.clickOnCoach();
         driver.findElement(coach.AddCoachButton).click();
-        coach.addCoach("coach", input.Coach1EmailID, "Sel", "CoachOne", "Nichi123", "Nichi123", "8977445566", "Bangalore");
+        coach.addCoach("coach", input.Coach1EmailID, "Sel", "CoachOne", "Nichi123", "Nichi123", "8977445562", "Bangalore");
 		
 	}
 	
+	 @Test(priority=13)
 	//TC 5- Verify Added Coaches in Coaches Page 
 	public void verifyAddedCoachInCoachesPage (){
 		dash.clickOnCoach();
@@ -93,46 +94,65 @@ public class SwimmersTest extends DriverClass {
 		Assert.assertEquals(coachStatus, true);
 	}
 	
+	 
+	 @Test(priority=14)
 	//TC 6 Verify Coaches in Swimmers coach selection page 
 	public void verifyCoachInSwimmersCoachSelectionPage () throws InterruptedException{
+		dash.clickOnSwimmers();
+		Thread.sleep(5000);
 		swimmers.checkCoachStatus(input.Coach1Name);
 		Assert.assertEquals(swimmers.checkCoachStatus(input.Coach1Name), true);
 	}
 	
+	 @Test(priority=15)
 	// TC 7 - Verify coach name in unassign swimmer
-	public void verifyCoachNameforUnAssignedSwimmer (){
-		dash.clickOnSwimmers();
-		String coachName = swimmers.getmatchingCoachNameforSwimmers(input.Swimmer1EmailID);
-		Assert.assertEquals(coachName, "");
+	public void verifyCoachNameforUnAssignedSwimmer () throws InterruptedException{
+		refreshandclickOnSwimmers();
+		swimmers.search(input.Swimmer1EmailID);
+		Thread.sleep(5000);
+		String coachName = driver.findElement(swimmers.CoachNameinSwimmerspage).getText();
+		Assert.assertNull(coachName);
 	}
 	
-	public void verifyBatchname (){
-		String batchname = swimmers.getmatchingBatch(input.Swimmer1EmailID);
+	 @Test(priority=16)
+	public void verifyBatchname () throws InterruptedException{
+		//String batchname = swimmers.getmatchingBatch(input.Swimmer1EmailID);
+		 swimmers.search(input.Swimmer1EmailID);
+		 Thread.sleep(5000);
+		 String batchname = driver.findElement(swimmers.BatchNameInSwimmersPage).getText();
+		System.out.println(batchname);
 		Assert.assertEquals(batchname, "Un Assigned");
 	}
 	
+	 @Test(priority=17)
 	//TC 8 - Verify Attendance Percentage of UnAssignswimmer
-	public void verifyAttendanePecenatgeofUnAssignedSwimmer (){
-		String per = swimmers.getAtendancePercentage(input.Swimmer1EmailID);
+	public void verifyAttendanePecenatgeofUnAssignedSwimmer () throws InterruptedException{
+		//String per = swimmers.getAtendancePercentage(input.Swimmer1EmailID);
+		 swimmers.search(input.Swimmer1EmailID);
+		 Thread.sleep(5000);
+		 String per = driver.findElement(swimmers.AttendanceInSwimmerPage).getText();
 		Assert.assertEquals(per, "0.0%");
 		
 	}
 	
+	 @Test(priority=18)
 	//TC - 9 Verify Swimmers Profile
 	public void verifySwimmerProfileFromSwimmersPage (){
 		dash.clickOnSwimmers();
-		driver.findElement(By.partialLinkText(input.Swimmer1Name)).click();
+		swimmers.clickOnSwimmerName(input.Swimmer1EmailID);
 		String profileName = driver.findElement(profile.ProfleNameInOverViewpage).getText();
 		System.out.println(profileName);
 		Assert.assertTrue(profileName.contains(input.Swimmer1Name));
 	}
 	
+	 @Test(priority=19)
 	//TC - 10 Verify Swimmers email id in Profile page 
 	public void verifySwimmersEmailIdInProfilePage (){
 		String emailId = driver.findElement(By.linkText(input.Swimmer1EmailID)).getText();
 		Assert.assertEquals(emailId, input.Swimmer1EmailID);
 	}
 	
+	 @Test(priority=20)
 	//TC - 11  Verify coach Profile 
 	public void verifyCoachProfileFromSwimmersPage (){
 		dash.clickOnSwimmers();
@@ -140,5 +160,122 @@ public class SwimmersTest extends DriverClass {
 		String coachname = driver.findElement(profile.ProfleNameInOverViewpage).getText();
 		Assert.assertEquals(coachname, input.Coach1Name);
 	}
+	
+	 
+	 @Test(priority=22)
+	public void verifyUserNameValidation (){
+		dash.clickOnSwimmers();
+		driver.findElement(swimmers.AddSwimmerButton).click();
+		swimmers.addSwimmer("", "dhfdshg@gmail.com", "Arun", "Vijay", "Nichi123", "Nichi123", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.NameValidation).getText();
+		Assert.assertEquals(error,"This field is required!");
+	}
+	
+	 
+	 @Test(priority=24)
+	public void verifyEmailValidation (){
+		 driver.navigate().refresh();
+		//driver.findElement(swimmers.AddSwimmerButton).click();
+		swimmers.addSwimmer("dfds", "", "Arun", "Vijay", "Nichi123", "Nichi123", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.EmailValidation).getText();
+		Assert.assertEquals(error,"This field is required!");
+	}
+	
+	 @Test(priority=26)
+	public void verifyInvalidEmailID(){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("hfgd", "dhfdshg", "Arun", "Vijay", "Nichi123", "Nichi123", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.EmailValidation).getText();
+		Assert.assertEquals(error,"Invalid email address!");
+	}
+	
+	 @Test(priority=28)
+	public void verifyExistingEmailIDValidation (){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("hfgd",input.Swimmer1EmailID, "Arun", "Vijay", "Nichi123", "Nichi123", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.EmailValidation).getText();
+		Assert.assertEquals(error,"Email you have entered already exist");
+	}
+	 @Test(priority=30)
+	public void verifyFirstNameValidation (){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("dfdsfd", "dhfdshg@gmail.com", "", "Vijay", "Nichi123", "Nichi123", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.FirstNameValidation).getText();
+		Assert.assertEquals(error,"This field is required!");
+	}
+	
+	 @Test(priority=32)
+	public void verifyLastnameValidation(){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "", "Nichi123", "Nichi123", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.LastNameValidation).getText();
+		Assert.assertEquals(error,"This field is required!");
+	}
 
+	 @Test(priority=34)
+	public void verifyPasswordValidation(){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "sfsfa", "", "Nichi123", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.PasswordValidation).getText();
+		Assert.assertEquals(error,"This field is required!");
+		
+	}
+	
+	 
+	 @Test(priority=36)
+	public void verifyPasswordValidationError1(){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "dggs", "Nich", "Nichi123", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.PasswordValidation).getText();
+		Assert.assertEquals(error,"Password must contain at least 8 characters!");
+	}
+	
+	 @Test(priority=38)
+	public void verifyConfirmPasswordValidation(){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "", "Nichi123", "", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.ConfirmPasswordValidation).getText();
+		Assert.assertEquals(error,"This field is required!");
+	}
+	
+	 @Test(priority=40)
+	public void verifyConfirmPasswordValidation1(){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "ddgsgdsg", "Nichi123", "Nich", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.ConfirmPasswordValidation).getText();
+		Assert.assertEquals(error,"Password must contain at least 8 characters!");
+	}
+	 
+	 @Test(priority=42)
+	public void verifyNotMatchingPasswordValidation (){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "ddgsgdsg", "Nichi123", "Nichdfdsf", "9901395048", "Bangalore");
+		String error = driver.findElement(swimmers.PasswordMatchingValidation).getText();
+		Assert.assertEquals(error,"Password Not matching!");
+	}
+	
+	 @Test(priority=44)
+	public void verifyPhoneNumberVaidation(){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "ddgsgdsg", "Nichi123", "Nichi123", "", "Bangalore");
+		String error = driver.findElement(swimmers.PhoneNumberValidation).getText();
+		Assert.assertEquals(error,"This field is required!");
+	}
+	
+	 @Test(priority=46)
+	public void verifyINvalidPhoneNumberValidation (){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "ddgsgdsg", "Nichi123", "Nichi123", "98656", "Bangalore");
+		String error = driver.findElement(swimmers.PhoneNumberValidation).getText();
+		Assert.assertEquals(error,"Phone number format Ex:- 7022939501");
+	}
+	
+	 @Test(priority=48)
+	public void verifyLocationValidation (){
+		 driver.navigate().refresh();
+		swimmers.addSwimmer("djhfgdsh", "dhfdshg@gmail.com", "Arun", "ddgsgdsg", "Nichi123", "Nichi123", "9865669852", "");
+		String error = driver.findElement(swimmers.LocationValidation).getText();
+		Assert.assertEquals(error,"This field is required!");
+	}
+	
 }

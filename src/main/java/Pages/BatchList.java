@@ -21,21 +21,21 @@ public class BatchList extends DriverClass {
 	public By BatchRow = By.tagName("tr");
 	public By BacthColumn = By.tagName("td");
 	public By BatchName = By.id("batch_name");
-	public By CoachSelectionInCreateBatch = By.xpath("//span[@id='select2-bdsu-container']");
-	public By CoachListInCreateBatch = By.xpath("//span[@class='select2-results']");
-	public By CoachSearhArea = By.xpath("(//input[@class='select2-search__field'])[2]");
-	public By SwimmersSelectionInCrreateBatch = By.xpath("//span[@class='select2-selection select2-selection--multiple']");
+	public By CoachSelectionInCreateBatch = By.xpath("/html/body/div/app-root/app-manage-batch/div/section[2]/div/div/div/div/form/div[1]/div[2]/div/span/span[1]/span/span[2]");
+	public By CoachListInCreateBatch = By.className("select2-results__options");
+	public By CoachSearhArea = By.xpath("//input[@class='select2-search__field']");
+	public By SwimmersSelectionInCrreateBatch = By.xpath("/html/body/div/app-root/app-manage-batch/div/section[2]/div/div/div/div/form/div[1]/div[3]/div/span/span[1]/span/ul");
 	public By SwimmerSearchArea = By.xpath("(//input[@class='select2-search__field'])[1]");
-	public By SwimmerListInCreateBatch = By.xpath("//ul[@id='select2-4xh3-results']");
+	public By SwimmerListInCreateBatch = By.className("select2-results__options");
 
 	
 	private By namevalidation = By.xpath("//p[@id='name_validation']");
 	private By Commenvalidation = By.xpath("//p[@id='common_validation']");
 	public By SubmitButton = By.xpath("//button[@type='submit']");
 
-	public By CoachSelectionInCoachAssign  = By.xpath("//span[@id='select2-rv76-container']");
+	public By CoachSelectionInCoachAssign  = By.className("select2-selection__arrow");
 	public By CoachSearchAssign = By.xpath("//input[@class='select2-search__field']");
-	public By CoachResultInCoachAssignPage = By.xpath("//span[@class='select2-dropdown select2-dropdown--below']");
+	public By CoachResultInCoachAssignPage = By.className("select2-results__options");
 
 	//public By SwimmersResult = By.xpath("//span[@class='select2-results']");
 	//public By CoachSelectionInAssignBatch = By.xpath("(//span[@title=' Select Coach'])[2]");
@@ -47,8 +47,11 @@ public class BatchList extends DriverClass {
 	public Boolean swimmerstatus = false ;;
 	private String getCoachName;
 	private String swimmersCount;
-	
-
+	public By BatchNameInBatchPage = By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[2]/a");
+	public By TotolSwimmersInBatchpage  = By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[3]/a");
+	public By CoachNameInBatchPage = By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[5]/a");
+	public By MessageButton = By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[6]/i");
+    public By RadioButtoForBatchSelection = By.xpath("html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[1]/input");
 	// public void clickOnCoachSelection
 
 	public void clickOnBredCrumbs() {
@@ -89,6 +92,7 @@ public class BatchList extends DriverClass {
 	
 	public void mainCoachSelection (String coachName){
 		driver.findElement(By.xpath("//span[@id='select2-ry4x-container']")).click();
+		driver.findElement(CoachSearhArea).clear();
 		driver.findElement(CoachSearhArea).sendKeys(coachName);
 		WebElement coachList = driver.findElement(By.xpath("//ul[@id='select2-ry4x-results']"));
 		List <WebElement> allCoaches = coachList.findElements(By.tagName("li"));
@@ -182,13 +186,14 @@ public class BatchList extends DriverClass {
 		}
 	}
     //Search batch 
-	/*public void searchBatch(String searchkey) {
+	public void searchBatch(String searchkey) {
 		driver.findElement(Search).sendKeys(searchkey);
-	}*/
+	}
 
 	//Select coach from create batch 
 	public void selectCoachFromCreatebatch(String coachName) {
 		driver.findElement(CoachSelectionInCreateBatch).click();
+		driver.findElement(CoachSearhArea).clear();
 		driver.findElement(CoachSearhArea).sendKeys(coachName);
 		WebElement cochesList = driver.findElement(CoachListInCreateBatch);
 		List<WebElement> coaches = cochesList.findElements(By.tagName("li"));
@@ -204,6 +209,8 @@ public class BatchList extends DriverClass {
     
 	//Select swimmers from  create batch 
 	public void selectSwimmersFromCreateBatch(String swimmerName) {
+		driver.findElement(SwimmersSelectionInCrreateBatch).click();
+		driver.findElement(SwimmerSearchArea).clear();
 		driver.findElement(SwimmerSearchArea).sendKeys(swimmerName);
 		WebElement swimmersList = driver.findElement(SwimmerListInCreateBatch);
 		List <WebElement>swimmers = swimmersList.findElements(By.tagName("li"));
@@ -220,6 +227,7 @@ public class BatchList extends DriverClass {
 
 	public boolean coachesStatusFromCreateBatch (String coachName) {
 		driver.findElement(CoachSelectionInCreateBatch).click();
+		driver.findElement(CoachSearhArea).clear();
 		driver.findElement(CoachSearhArea).sendKeys(coachName);
 		WebElement cochesList = driver.findElement(CoachListInCreateBatch);
 		List<WebElement> coaches = cochesList.findElements(By.tagName("li"));
@@ -236,6 +244,8 @@ public class BatchList extends DriverClass {
 	}
 
 	public boolean SwimmersStatusFromCreateBatch(String swimmerName) {
+		driver.findElement(SwimmersSelectionInCrreateBatch).click();
+		driver.findElement(SwimmerSearchArea).clear();
 		driver.findElement(SwimmerSearchArea).sendKeys(swimmerName);
 		WebElement swimmersList = driver.findElement(SwimmerListInCreateBatch);
 		List <WebElement>swimmers = swimmersList.findElements(By.tagName("li"));
@@ -291,6 +301,7 @@ public class BatchList extends DriverClass {
 	
 	public boolean coachStatusInAssignPage (String coachName){
 		driver.findElement(CoachSelectionInCoachAssign).click();
+		driver.findElement(CoachSearchAssign).clear();
 		driver.findElement(CoachSearchAssign).sendKeys(coachName);
 		WebElement coachNamesList= driver.findElement(CoachResultInCoachAssignPage);
 		List<WebElement> coaches = coachNamesList.findElements(By.tagName("li"));
@@ -309,6 +320,7 @@ public class BatchList extends DriverClass {
 	
 	public void selectCoachesFromAssignpage (String coachName){
 		driver.findElement(CoachSelectionInCoachAssign).click();
+		driver.findElement(CoachSearchAssign).clear();
 		driver.findElement(CoachSearchAssign).sendKeys(coachName);
 		WebElement coachNamesList= driver.findElement(CoachResultInCoachAssignPage);
 		List<WebElement> coaches = coachNamesList.findElements(By.tagName("li"));

@@ -69,6 +69,7 @@ public class CoachesPage extends DriverClass {
 	}*/
 
 	public boolean coachStatusInCoachesPage (String coach){
+		driver.findElement(SearchButton).sendKeys(coach);
 		boolean coachName = driver.findElement(By.linkText(coach)).isDisplayed();
 		return coachName;
 	}
