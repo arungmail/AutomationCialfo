@@ -9,11 +9,11 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-      <class name="TestCialfoNew.BatchTest">
+      <class name="TestCialfoNew.MessageTest">
         <methods>
-          <include name="assignSwimmersToBatch"/>
+          <include name="sendMeesageToAllCoachesGourpabdAllMembersGroup"/>
         </methods>
-      </class> <!-- TestCialfoNew.BatchTest -->
+      </class> <!-- TestCialfoNew.MessageTest -->
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

@@ -20,4 +20,13 @@ public class InputValues {
 	public String PublicGroups = "";
 	public String AllCoachesGroup = "";
 	public String Personalgroup = "";	
+	public String MessageTOAllGroupsandCoaches = "Message to All groups and Coaches from Club";
+	public String MessageTOSwimmerandCoach  = "Message to Swimmer and Coach from Club";
+	public String MessageFromSwimmer = "Message From Swimmer";
+	public String MessageFromCoach = "Message From Coach";
+	public String QuickMessageFromSwimmer = "Quick Message From Swimmer";
+	public String QuickMessageFromCoach = "Quick Message From Coach";
+	public String QuickMessageToAllGroupsandCoaches = "Quick Message to All groups and Coaches from Club";
+	public String QuickMessageToSwimmerandCoach    = "Quick Message to Swimmer and Coach from Club";
+	
 }

@@ -29,6 +29,9 @@ public class DashBoard extends DriverClass {
 	public By ACL   = By.xpath("//li[@id='acl']/a/span");
 	
 	
+	public void clickOnDashBoard (){
+		driver.findElement(Dashboard).click();
+	}
 	
 	public void clickOnGroups (){
 		driver.findElement(ManageGroup).click();
