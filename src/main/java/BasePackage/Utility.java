@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -154,6 +155,11 @@ public class Utility extends DriverClass{
 			String paranetwindowhandle = driver.getWindowHandle();
 			System.out.println(paranetwindowhandle);
 			driver.switchTo().window(paranetwindowhandle);
+		}
+		
+		public void scrollingToBottomofAPage() {
+			 ((JavascriptExecutor) driver)
+	         .executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		}
 }
 

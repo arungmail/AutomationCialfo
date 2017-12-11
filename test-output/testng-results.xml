@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
   </reporter-output>
@@ -66,10 +67,26 @@ Session ID: fc5013dec4e99281e4b83fb3dbd49e86
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.WebDriverException -->
+=======
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="RegressionSutie" duration-ms="28313" started-at="2017-12-09T06:36:51Z" finished-at="2017-12-09T06:37:19Z">
+    <groups>
+    </groups>
+    <test name="CialfoNewversion" duration-ms="28313" started-at="2017-12-09T06:36:51Z" finished-at="2017-12-09T06:37:19Z">
+      <class name="BasePackage.BaseClass">
+        <test-method status="PASS" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@4dfa3a9d]" name="launchAUTApplication" is-config="true" duration-ms="15010" started-at="2017-12-09T12:06:36Z" finished-at="2017-12-09T12:06:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchAUTApplication -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@4dfa3a9d]" name="cleanUp" is-config="true" duration-ms="111" started-at="2017-12-09T12:07:19Z" finished-at="2017-12-09T12:07:19Z">
+>>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- BasePackage.BaseClass -->
+<<<<<<< HEAD
       <class name="TestCialfoNew.ProfileEditTest">
         <test-method status="FAIL" signature="enterValuesInPersonalInfoAndCheckSucessMessage()[pri:1, instance:TestCialfoNew.ProfileEditTest@204f30ec]" name="enterValuesInPersonalInfoAndCheckSucessMessage" duration-ms="9872" started-at="2017-12-05T20:10:47Z" finished-at="2017-12-05T20:10:57Z">
           <exception class="java.lang.AssertionError">
@@ -154,6 +171,14 @@ Session ID: fc5013dec4e99281e4b83fb3dbd49e86
           </reporter-output>
         </test-method> <!-- verifyFirstNamevalidationError -->
       </class> <!-- TestCialfoNew.ProfileEditTest -->
+=======
+      <class name="TestCialfoNew.MessageTest">
+        <test-method status="PASS" signature="sendMeesageToAllCoachesGourpabdAllMembersGroup()[pri:0, instance:TestCialfoNew.MessageTest@6eebc39e]" name="sendMeesageToAllCoachesGourpabdAllMembersGroup" duration-ms="28292" started-at="2017-12-09T12:06:51Z" finished-at="2017-12-09T12:07:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMeesageToAllCoachesGourpabdAllMembersGroup -->
+      </class> <!-- TestCialfoNew.MessageTest -->
+>>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
     </test> <!-- CialfoNewversion -->
   </suite> <!-- RegressionSutie -->
 </testng-results>

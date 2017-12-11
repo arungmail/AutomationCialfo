@@ -9,12 +9,20 @@
           <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
+<<<<<<< HEAD
       <class name="TestCialfoNew.ProfileEditTest">
         <methods>
           <include name="verifyFirstNamevalidationError"/>
           <include name="enterValuesInPersonalInfoAndCheckSucessMessage"/>
         </methods>
       </class> <!-- TestCialfoNew.ProfileEditTest -->
+=======
+      <class name="TestCialfoNew.MessageTest">
+        <methods>
+          <include name="sendMeesageToAllCoachesGourpabdAllMembersGroup"/>
+        </methods>
+      </class> <!-- TestCialfoNew.MessageTest -->
+>>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->
