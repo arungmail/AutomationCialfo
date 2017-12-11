@@ -52,13 +52,16 @@ public class DashBoard extends DriverClass {
 	}
 
 	public String getProfilenameOnTopRightSide() {
-		String profilename = driver.findElement(profilenameInTopRightSide).getText();
+		//String profilename = driver.findElement(profilenameInTopRightSide).getText();
+		WebElement element = driver.findElement(profilenameInTopRightSide);
+		String profilename = element.getAttribute("title");
 		System.out.println(profilename);
 		return profilename;
 	}
 
 	public String getProfilenameOnSecondarymenu() {
-		String profilename = driver.findElement(ProfileNameinSecondarymenu).getText();
+		WebElement element = driver.findElement(ProfileNameinSecondarymenu);
+		String profilename = element.getAttribute("title");
 		System.out.println(profilename);
 		return profilename;
 
@@ -102,9 +105,6 @@ public class DashBoard extends DriverClass {
 			}
 			driver.findElement(By.id("sfgdfgsdf")).click();
 		}
-		
-		
-		
 	}
 	
 	public void selectUserFromQuickMessage (String name,String name1){
@@ -119,10 +119,8 @@ public class DashBoard extends DriverClass {
 			if (lists.equals(name1)){
 				lists.click();
 				break;
-				
 			}
-		}
-		
+		}	
 	}
 	
 	//Get Meet name from meet table 

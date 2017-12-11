@@ -31,10 +31,10 @@ public class BatchTest extends DriverClass {
 	// TC 1 - Verify Unapproved Coaches in Add batch page
 	@Test(priority = 5)
 	public void verifyUnApprovedCoachesStatusInAddBatchPage() throws InterruptedException {
-		LoginForm.enterEmailId(input.club);
+		/*LoginForm.enterEmailId(input.club);
 		LoginForm.enterPassword(input.ClubPassword);
 		LoginForm.clickSignButton();
-		Thread.sleep(5000);
+		Thread.sleep(5000);*/
 		dash.clickOnManageBatch();
 		batch.clickOnAddbacthButton();
 		batch.coachesStatusFromCreateBatch(input.UpApprovedCoach);
@@ -49,8 +49,8 @@ public class BatchTest extends DriverClass {
 
 	// TC 3 - Verify UnApproved Swimmers in Add batches page
 	@Test(priority = 15)
-	public void verifyUnApprovedSwimmersStatusInAddBatchPage() {
-		driver.findElement(batch.BatchName).click();
+	public void verifyUnApprovedSwimmersStatusInAddBatchPage(){
+		driver.findElement(batch.BatchName).click();//To Hide the Coach Screen 
 		boolean status = batch.SwimmersStatusFromCreateBatch(input.UnApprovedSwimmer);
 		Assert.assertEquals(status, false);
 	}
@@ -88,7 +88,7 @@ public class BatchTest extends DriverClass {
 
 	}
 	
-	public void addedBatchIsDisplayedOrNot () throws InterruptedException{
+	public void VerifyAddedBatchIsDisplayedOrNot () throws InterruptedException{
 		swimmers.search(input.BatchName1);
 		Thread.sleep(5000);
 		boolean batchStatus = driver.findElement(By.linkText(input.BatchName1)).isDisplayed();
@@ -326,5 +326,15 @@ public class BatchTest extends DriverClass {
 		batch.mainCoachSelection(input.Coach1Name);
 		boolean status = driver.findElement(By.linkText(input.BatchName1)).isDisplayed();
 		Assert.assertEquals(status, true);
+	}
+	
+	public void verifyAddbatchNameValidation () throws InterruptedException{
+		batch.clickOnAddbacthButton();
+		batch.enterBacthname("");
+		batch.selectCoachFromCreatebatch(input.Coach1Name);
+		Thread.sleep(500);
+		batch.selectSwimmersFromCreateBatch(input.Swimmer1Name);
+		batch.clickOnCreateButton();
+		String msg = batch.getBatchnamevalidation();
 	}
 }

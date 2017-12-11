@@ -185,10 +185,7 @@ public class BatchList extends DriverClass {
 
 		}
 	}
-    //Search batch 
-	public void searchBatch(String searchkey) {
-		driver.findElement(Search).sendKeys(searchkey);
-	}
+   
 
 	//Select coach from create batch 
 	public void selectCoachFromCreatebatch(String coachName) {

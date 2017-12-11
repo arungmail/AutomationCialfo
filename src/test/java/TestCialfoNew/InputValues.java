@@ -2,6 +2,7 @@ package TestCialfoNew;
 
 public class InputValues {
 
+	public String clubName  = "cvbb";
 	public String club 	= "club6@mailinator.com";
 	public String ClubPassword = "Nichi123";
 	public String BatchName1  = "Second";
@@ -15,7 +16,7 @@ public class InputValues {
 	public String Coach1EmailID = "autocoach3@mailinator.com";
 	public String Coach2Name = "Meera Vasumdev";
 	public String Coach2EmailID = "18@mailinator.com";
-	public String UpApprovedCoach = "ddsfdsfd dfsdfds";
+	public String UpApprovedCoach = "ddsfdsfd@mailinator.com";
 	public String UnApprovedSwimmer = "";
 	public String PublicGroups = "";
 	public String AllCoachesGroup = "";

@@ -3,13 +3,25 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TestCialfoNew.BatchTest">
+      <class name="TestCialfoNew.ProfileEditTest">
         <methods>
-          <include name="verifyUnApprovedCoachesStatusInAddBatchPage"/>
-          <include name="assignSwimmersToBatch"/>
-          <include name="swimmersInswimmersListAfterSwimmerTransfer"/>
+          <include name="verifyLandmarkValiadtionError"/>
+          <include name="verifyZipValidationError"/>
+          <include name="profileNameInTopRightSide"/>
+          <include name="verifyCountryValidationError"/>
+          <include name="enterAddressAndSave"/>
+          <include name="enterValuesInPersonalInfoAndCheckSucessMessage"/>
+          <include name="verifyStateValidationError"/>
+          <include name="verifyMobileNumbervalidationError"/>
+          <include name="verifyPersonalInfoIsUpdatedOrNot"/>
+          <include name="verifyProfileNameinOverviewpage"/>
+          <include name="verifyCityValidationError"/>
+          <include name="verifyFirstNamevalidationError"/>
+          <include name="verifyStreetvalidationError"/>
+          <include name="profileNameInSecondaryMenu"/>
+          <include name="verifyLastNameValidationError"/>
         </methods>
-      </class> <!-- TestCialfoNew.BatchTest -->
+      </class> <!-- TestCialfoNew.ProfileEditTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

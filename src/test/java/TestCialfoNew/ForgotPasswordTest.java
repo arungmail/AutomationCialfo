@@ -21,7 +21,7 @@ public class ForgotPasswordTest extends DriverClass{
 	}
 	
 	@Test(priority=1)
-	public void ValidForgotPassword () throws InterruptedException
+	public void validateForgotPassword () throws InterruptedException
 	{
 		login.clickOnForgotPassword();
 		forgot.enterForgotPassword("arun@mailinator.com");

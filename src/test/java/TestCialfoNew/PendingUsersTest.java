@@ -25,9 +25,9 @@ public class PendingUsersTest extends DriverClass {
      
 	@Test(priority=10)
 	public void verifyUnApprovedSwimmersAreInPendingListOrNot() {
-		login.enterEmailId(input.club);
+		/*login.enterEmailId(input.club);
 		login.enterPassword(input.ClubPassword);
-		login.clickSignButton();
+		login.clickSignButton();*/
 		driver.findElement(dash.PendingUsers).click();
 		WebElement filter = driver.findElement(pending.FilterDropDown);
 		WebElement role = driver.findElement(pending.FilterByRole);

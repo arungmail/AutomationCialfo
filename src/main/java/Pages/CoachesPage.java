@@ -100,4 +100,5 @@ public class CoachesPage extends DriverClass {
 		driver.findElement(RegisterButton);
 	
 	}
+	
 }
