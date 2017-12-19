@@ -29,5 +29,15 @@ public class InputValues {
 	public String QuickMessageFromCoach = "Quick Message From Coach";
 	public String QuickMessageToAllGroupsandCoaches = "Quick Message to All groups and Coaches from Club";
 	public String QuickMessageToSwimmerandCoach    = "Quick Message to Swimmer and Coach from Club";
+	public String MeetsSwimmerFirstName = "";
+	public String MeetSwimmerSecondName = "";
+	public String MeetSwimmerEmailId = "";
+	public String MeetsSwimmer2FirstName = "";
+	public String MeetSwimmer2SecondName = "";
+	public String MeetSwimmer2EmailId = "";
+	public String Calendardate = "";
+	
+	
+			
 	
 }

@@ -3,17 +3,8 @@
    <test name="CialfoNewversion">
       <classes>
       <class name="BasePackage.BaseClass" />   
-<<<<<<< HEAD
-      <class name="TestCialfoNew.ProfileEditTest" />
-=======
       <class name="TestCialfoNew.MessageTest" />
-      
-      
-      
-      
      
->>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
-    
    </classes>
    </test> 
 </suite>

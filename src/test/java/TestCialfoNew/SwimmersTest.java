@@ -55,13 +55,8 @@ public class SwimmersTest extends DriverClass {
 				"Bangalore");
 	}
 
-	@Test(priority = 10)
+	//@Test(priority = 10)
 
-	// TC 2 - Add swimmer validation
-	public void addSwimmerValidationError() {
-		driver.findElement(swimmers.AddSwimmerButton).click();
-
-	}
 
 	// TC 3 - Verifying swimmer in Unassignd List
 
@@ -104,28 +99,48 @@ public class SwimmersTest extends DriverClass {
 
 	@Test(priority = 15)
 	// TC 7 - Verify coach name in unassign swimmer
-	public void verifyCoachNameforUnAssignedSwimmer() throws InterruptedException {
+	public void verifyCoachNameforUnAssignedSwimmerInSwimmerPage() throws InterruptedException {
 		refreshandclickOnSwimmers();
 		swimmers.search(input.Swimmer1EmailID);
 		Thread.sleep(5000);
 		String coachName = driver.findElement(swimmers.CoachNameinSwimmerspage).getText();
 		Assert.assertNull(coachName);
 	}
+	
+	public void verifyCoachNameforUnAssignedSwimmerInSwimmerreportpage () throws InterruptedException{
+		dash.clickOnSwimmerSReports();
+		swimmers.search(input.Swimmer1EmailID);
+		Thread.sleep(5000);
+		String coachName = driver.findElement(swimmers.CoachNameInSwimmerReportPage).getText();
+		Assert.assertNull(coachName);
+	}
+	
 
 	@Test(priority = 16)
-	public void verifyBatchname() throws InterruptedException {
+	public void verifyBatchnameInSwimmerspage() throws InterruptedException {
 		// String batchname = swimmers.getmatchingBatch(input.Swimmer1EmailID);
+		dash.clickOnSwimmers();
 		swimmers.search(input.Swimmer1EmailID);
 		Thread.sleep(5000);
 		String batchname = driver.findElement(swimmers.BatchNameInSwimmersPage).getText();
 		System.out.println(batchname);
 		Assert.assertEquals(batchname, "Un Assigned");
 	}
+	public void verifyBatchnameInSwimmersreportpage () throws InterruptedException{
+		dash.clickOnSwimmerSReports();
+		swimmers.search(input.Swimmer1EmailID);
+		Thread.sleep(5000);
+		String batchname = driver.findElement(swimmers.BatchNameInSwimmersreportpage).getText();
+		System.out.println(batchname);
+		Assert.assertEquals(batchname, "Un Assigned");
+	}
+	
 
 	@Test(priority = 17)
 	// TC 8 - Verify Attendance Percentage of UnAssignswimmer
 	public void verifyAttendanePecenatgeofUnAssignedSwimmer() throws InterruptedException {
 		// String per = swimmers.getAtendancePercentage(input.Swimmer1EmailID);
+		dash.clickOnSwimmers();
 		swimmers.search(input.Swimmer1EmailID);
 		Thread.sleep(5000);
 		String per = driver.findElement(swimmers.AttendanceInSwimmerPage).getText();

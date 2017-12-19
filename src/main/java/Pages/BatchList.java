@@ -3,6 +3,8 @@ package Pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.plaf.synth.SynthSpinnerUI;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -100,6 +102,7 @@ public class BatchList extends DriverClass {
 			System.out.println(coaches.getText());
 			if (coaches.getText().equalsIgnoreCase(coachName)){
 				coaches.click();
+				System.out.println("Clicking the coach");
 				
 			}
 			
@@ -147,8 +150,8 @@ public class BatchList extends DriverClass {
 				String batchName = tableColoumn.get(j).getText();
 				System.out.println(batchName);
 				if (batchName.equals(batchNameInList)){
+					System.out.println("Selecting batch from list"+batchName);
 					return batchName;
-				
 				   }
 				}
 			}
@@ -178,7 +181,7 @@ public class BatchList extends DriverClass {
 					String xpath2 = "]/td[1]/input";
 					driver.findElement(By.xpath(xpath1 + i + xpath2)).click();
 					Thread.sleep(500);
-
+					System.out.println("selectCheckBoxbasedOnBatchName");
 				}
 
 			}
@@ -198,6 +201,7 @@ public class BatchList extends DriverClass {
 			System.out.println(webElement.getText());
 			if (webElement.getText().equalsIgnoreCase(coachName)) {
 				webElement.click();
+				System.out.println("Selecting coach from create batch");
 				break;
 			}
 
@@ -215,6 +219,7 @@ public class BatchList extends DriverClass {
 			System.out.println(webElement.getText());
 			if (webElement.getText().equalsIgnoreCase(swimmerName)) {
 				webElement.click();
+				System.out.println("Selecting swimmer from create batch");
 				break;
 
 			}
@@ -232,6 +237,7 @@ public class BatchList extends DriverClass {
 			System.out.println(webElement.getText());
 			if (webElement.getText().equalsIgnoreCase(coachName)) {
 				coachStatus = true;
+				System.out.println("Coach status from create batch");
 				break;
 			
 			}
@@ -250,6 +256,7 @@ public class BatchList extends DriverClass {
 			System.out.println(webElement.getText());
 			if (webElement.getText().equalsIgnoreCase(swimmerName)) {
 				swimmerstatus = true;
+				System.out.println("Swimmers atstus from create batch");
 				break;
 			
 			}
@@ -257,24 +264,6 @@ public class BatchList extends DriverClass {
 		return swimmerstatus;
 	}
 
-	/*public boolean checkSwimmersAreDisplayedOrNot(WebElement element, String swimmerName){
-		List<WebElement> swimmers = element.findElements(By.tagName("li"));
-		for (WebElement webElement : swimmers) {
-			System.out.println(webElement.getText());
-			boolean swimmer = false;
-			if (webElement.getText().equals(swimmerName)) {
-				return swimmer;
-			}
-			else {
-				return swimmer;
-			}
-
-		}
-		
-		boolean swimmer = false;
-		return swic`c`mmer;
-	}*/
-	
 	public String getCoachNameFromBatchesList (String swimmerName){
 		WebElement batchTable = driver.findElement(BatchTable);
 		List <WebElement> row = batchTable.findElements(BatchRow);
@@ -306,6 +295,7 @@ public class BatchList extends DriverClass {
 			System.out.println(WebElement.getText());
 			if (WebElement.getText().equals(coachName)){
 				coachStatus = true;
+				System.out.println("Coach status from create batch");
 				break;
 			}
 			
@@ -325,6 +315,8 @@ public class BatchList extends DriverClass {
 			System.out.println(WebElement.getText());
 			if (WebElement.getText().equals(coachName)){
 				WebElement.click();
+				System.out.println("Selectiiong coach from assign page");
+				break;
 			}
 			}
 	}
@@ -378,6 +370,7 @@ public class BatchList extends DriverClass {
 				if (batchNames.equals(batchName)){
 					String xp1 = "html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[html/body/div[1]/app-root/app-manage-batch/div/section[3]/div/div/div/div/div[2]/div[2]/table/tbody/tr[";
 					String xp2 = "]/td[6]/i";
+					System.out.println("Click on message icon based on batch name");
 					break;
 					
 				}

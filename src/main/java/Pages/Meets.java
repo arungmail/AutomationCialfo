@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import BasePackage.DriverClass;
 
 public class Meets extends DriverClass{
+	SwimmersPage swimmers = new SwimmersPage ();
 	public By AddResult    = By.linkText("Add Results");
 	public By Meets 		= By.linkText("Meets");
 	public By Swimmers 		= By.linkText("Swimmers");
@@ -72,6 +73,7 @@ public class Meets extends DriverClass{
 	public By SummeryValidationError				= By.id("summery_validation");
 	public By SearchSwimmerInSwimmerPage			= By.xpath("(//input[@placeholder=''])[2]");
 	public By SubmitButtonInAddSwiimer 				= By.xpath("html/body/div/app-root/app-meets/div[1]/section[2]/div/div/div/div[2]/div/div/div/div[3]/div[1]/form/div[6]/div[2]/button");
+	public By CalenderTable  = By.xpath("//table[@class='table table-condensed']");
 	public boolean Swimmerstatus;
 	public By SwimmerTable = By.id("swimmertable");
 	public By MeetsTable = By.id("meettable");
@@ -129,8 +131,7 @@ public class Meets extends DriverClass{
 	
 	//
 	public boolean getSwimmerStatus (String value) throws InterruptedException{
-		driver.findElement(SearchSwimmerInSwimmerPage).sendKeys("sdfsdfd");
-		Thread.sleep(500);
+		swimmers.search(value);
 		WebElement table = driver.findElement(By.xpath("//id[@id='swimmertable']"));
 		List <WebElement> row = table.findElements(By.tagName("tr"));
 		row.size();
@@ -155,8 +156,7 @@ public class Meets extends DriverClass{
 	
 
 	public void editAndDelete (String swimmerName, String ediDeletevalue) throws InterruptedException{
-		driver.findElement(SearchSwimmerInSwimmerPage).sendKeys("sdfsdfd");
-		Thread.sleep(500);
+		swimmers.search(swimmerName);
 		WebElement table = driver.findElement(SwimmerTable);
 		List <WebElement> row = table.findElements(By.tagName("tr"));
 		row.size();
@@ -182,7 +182,7 @@ public class Meets extends DriverClass{
 	}
 	
 	public boolean getMeetStatus (String meetsName){
-		driver.findElement(SearchMeet).sendKeys("dgdsg");
+		swimmers.search(meetsName);
 		WebElement meetsTable = driver.findElement(MeetsTable);
 		List <WebElement> row = meetsTable.findElements(By.tagName("tr"));
 		row.size();
@@ -202,8 +202,24 @@ public class Meets extends DriverClass{
 				
 			}
 		return meetStatus;
-		
-	}				
+
+	}		
+	
+	public void selectDateFromCalendar (String date){
+		WebElement table = driver.findElement(CalenderTable);
+		List <WebElement> row = driver.findElements(By.tagName("tr"));
+		row.size();
+		for (int i=0;i<row.size();i++){
+			List <WebElement> alldates = row.get(i).findElements(By.tagName("td"));
+			for (int j=0;j<alldates.size();j++){
+				String dates = alldates.get(j).getText();
+				if (alldates.get(j).getText().equals(date)){
+					alldates.get(j).click();
+					break;
+				}
+			}
+		}	
+	}
 }
 
 

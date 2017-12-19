@@ -71,7 +71,7 @@ public class SwimmersPage extends DriverClass {
 	
 	public By AddSwimmerButton = By.xpath("//button[@class='btn btn-primary pull-right'][1]	");
 	public By ScreenName = By.xpath("//input[@formcontrolname='name']");
-	public By SwimmerSearch = By.xpath("//div[@id='swimmertable_filter']/label/input");
+	public By SwimmerSearch = By.xpath("	");
     public By EmailId = By.xpath("//input[@formcontrolname='email']");
     public By Firstname = By.xpath("//input[@formcontrolname='first_name']");
     public By Lastname = By.xpath("//input[@formcontrolname='last_name']");
@@ -94,6 +94,9 @@ public class SwimmersPage extends DriverClass {
     public By PasswordMatchingValidation = By.id("error_validation");
     public By PhoneNumber = By.xpath("//input[@placeholder='Phone Number']");
     public By LocationValidation = By.id("location_validation");
+    public By AttendancePercentageInReportpage = By.xpath(".//*[@id='swimmertable']/tbody/tr/td[6]");
+    public By BatchNameInSwimmersreportpage = By.xpath(".//*[@id='swimmertable']/tbody/tr/td[8]");
+    public By CoachNameInSwimmerReportPage = By.xpath(".//*[@id='swimmertable']/tbody/tr/td[9]");
 
 	public String actualbatchname;
 

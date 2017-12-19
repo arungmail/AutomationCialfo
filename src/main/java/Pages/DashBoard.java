@@ -28,6 +28,26 @@ public class DashBoard extends DriverClass {
 	public By ChangeLocationList	= By.xpath("//ul[@class='menu']");
 	public By MeetTable  = By.xpath("//table[@class='table no-margin']");
 	public By ACL   = By.xpath("//li[@id='acl']/a/span");
+	public By Reports =  By.xpath("//li[@id='reports']/a/span");
+	public By Swimmersreport = By.xpath("(//li[@class='nav_link'])[1]");
+	public By Coachesreports = By.xpath("(//li[@class='nav_link'])[2]");
+	public By Meets = By.xpath("//li[@id='meets']/a/span");
+	
+	
+	public void clickOnMeets (){
+		driver.findElement(Meets).click();
+	}
+	public void clickOnSwimmerSReports () throws InterruptedException{
+		driver.findElement(Reports).click();
+		Thread.sleep(5000);
+		driver.findElement(Swimmersreport).click();
+	}
+	
+	public void clickOnCoachReports () throws InterruptedException{
+		driver.findElement(Reports).click();
+		Thread.sleep(5000);
+		driver.findElement(Coachesreports).click();
+	}
 	
 	
 	public void clickOnDashBoard (){
