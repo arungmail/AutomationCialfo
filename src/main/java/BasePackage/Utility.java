@@ -161,5 +161,10 @@ public class Utility extends DriverClass{
 			 ((JavascriptExecutor) driver)
 	         .executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		}
+		
+		public void scrollDiv(WebElement element, int count){
+			JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+			jsExec.executeScript("element.scrollDown += count");
+		}
 }
 
