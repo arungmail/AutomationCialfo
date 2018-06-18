@@ -29,12 +29,9 @@ public class BatchList extends DriverClass {
 	public By SwimmersSelectionInCrreateBatch = By.xpath("/html/body/div/app-root/app-manage-batch/div/section[2]/div/div/div/div/form/div[1]/div[3]/div/span/span[1]/span/ul");
 	public By SwimmerSearchArea = By.xpath("(//input[@class='select2-search__field'])[1]");
 	public By SwimmerListInCreateBatch = By.className("select2-results__options");
-
-	
 	private By namevalidation = By.xpath("//p[@id='name_validation']");
 	private By Commenvalidation = By.xpath("//p[@id='common_validation']");
 	public By SubmitButton = By.xpath("//button[@type='submit']");
-
 	public By CoachSelectionInCoachAssign  = By.className("select2-selection__arrow");
 	public By CoachSearchAssign = By.xpath("//input[@class='select2-search__field']");
 	public By CoachResultInCoachAssignPage = By.className("select2-results__options");
@@ -80,18 +77,22 @@ public class BatchList extends DriverClass {
 		driver.findElement(SubmitButton).click();
 	}
 
+	//Get name validation 
 	public String getBatchnamevalidation() {
 		String error = driver.findElement(namevalidation).getText();
 		System.out.println(error);
 		return error;
 	}
 
+	
+	//Get success message 
 	public String getSuccessmessage() {
 		String successMessage = driver.findElement(Commenvalidation).getText();
 		System.out.println(successMessage);
 		return successMessage;
 	}
 	
+	//main Coach selection 
 	public void mainCoachSelection (String coachName){
 		driver.findElement(By.xpath("//span[@id='select2-ry4x-container']")).click();
 		driver.findElement(CoachSearhArea).clear();
@@ -138,6 +139,7 @@ public class BatchList extends DriverClass {
 	 * }
 	 */
     //Get batches details from list
+	//Get batch from list
 	public String getBatchFromList(String batchNameInList) {
 		WebElement table = driver.findElement(BatchTable);
 		List<WebElement> tablerow = table.findElements(BatchRow);
@@ -227,6 +229,7 @@ public class BatchList extends DriverClass {
 		}
 	}
 
+	//Get coach status from create batch 
 	public boolean coachesStatusFromCreateBatch (String coachName) {
 		driver.findElement(CoachSelectionInCreateBatch).click();
 		driver.findElement(CoachSearhArea).clear();
@@ -246,6 +249,7 @@ public class BatchList extends DriverClass {
 		
 	}
 
+	//Get swimmer status from create batch 
 	public boolean SwimmersStatusFromCreateBatch(String swimmerName) {
 		driver.findElement(SwimmersSelectionInCrreateBatch).click();
 		driver.findElement(SwimmerSearchArea).clear();
@@ -264,6 +268,7 @@ public class BatchList extends DriverClass {
 		return swimmerstatus;
 	}
 
+	//Get cocah name from batch list
 	public String getCoachNameFromBatchesList (String swimmerName){
 		WebElement batchTable = driver.findElement(BatchTable);
 		List <WebElement> row = batchTable.findElements(BatchRow);
@@ -285,6 +290,7 @@ public class BatchList extends DriverClass {
 		return getCoachName;
 	}
 	
+	//Coach status in Assign page 
 	public boolean coachStatusInAssignPage (String coachName){
 		driver.findElement(CoachSelectionInCoachAssign).click();
 		driver.findElement(CoachSearchAssign).clear();
@@ -305,6 +311,7 @@ public class BatchList extends DriverClass {
 		
 	}
 	
+	//Select coaches from Assign page 
 	public void selectCoachesFromAssignpage (String coachName){
 		driver.findElement(CoachSelectionInCoachAssign).click();
 		driver.findElement(CoachSearchAssign).clear();
@@ -320,6 +327,7 @@ public class BatchList extends DriverClass {
 			}
 			}
 	}
+	//Click on Download data
 	public void clickOnDowbLoadData (String downloadType){
 		switch (downloadType){
 		
@@ -334,6 +342,7 @@ public class BatchList extends DriverClass {
 		
 	}
 
+	//Get swimmer count
 	public String getSwimmersCount(String batchName){
 		WebElement table = driver.findElement(BatchTable);
 		List<WebElement> tablerow = driver.findElements(BatchRow);
@@ -356,6 +365,7 @@ public class BatchList extends DriverClass {
 		return swimmersCount;
 	}
 	
+	//Click on Message 
 	public void clickOnMessageIconBasedOnBatchName (){
 		WebElement table = driver.findElement(BatchTable);
 		List<WebElement> tablerow = driver.findElements(BatchRow);

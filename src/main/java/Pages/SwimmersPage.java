@@ -258,6 +258,7 @@ public class SwimmersPage extends DriverClass {
 		searchButton.sendKeys(searchKey);
 	}
 
+	
 	public void clickCheckBoxBasedOnSwimmersName(String swimmername) {
 		WebElement swimmerstable = driver.findElement(SwimmersTable);
 		List<WebElement> swimRow = driver.findElements(SwimmersRow);

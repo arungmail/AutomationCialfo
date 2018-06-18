@@ -166,5 +166,6 @@ public class Utility extends DriverClass{
 			JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 			jsExec.executeScript("element.scrollDown += count");
 		}
+		
 }
 

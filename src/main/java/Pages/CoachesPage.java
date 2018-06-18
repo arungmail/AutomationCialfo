@@ -47,33 +47,14 @@ public class CoachesPage extends DriverClass {
 	    public By PasswordMatchingValidation = By.id("error_validation");
 	    public By PhoneNumber = By.xpath("//input[@placeholder='Phone Number']");
 
-	/*public void getCoachNameFromtable(String expectedCoach) {
-		WebElement table = driver.findElement(CoachTable);
-		List<WebElement> row = driver.findElements(CoachRow);
-		row.size();
-
-		for (int i = 0; i < row.size(); i++) {
-			List<WebElement> col = row.get(i).findElements(CoachColomn);
-			col.size();
-			List<String> coachesName = new ArrayList<String>();
-			for (int j = 0; j < col.size(); j++) {
-				String name = col.get(j).getText();
-				if (name.equals(expectedCoach)) {
-					coachesName.add(name);
-					Assert.assertEquals(name, expectedCoach);
-				}
-				System.out.println(name);
-			}
-		}
-
-	}*/
-
+	//Check coach status
 	public boolean coachStatusInCoachesPage (String coach){
 		driver.findElement(SearchButton).sendKeys(coach);
 		boolean coachName = driver.findElement(By.linkText(coach)).isDisplayed();
 		return coachName;
 	}
 	
+	// Add coach
 	public void addCoach (String screenName, String email, String firstname,String lastName, String password,String confirmPassword, String phNo, String location  ){
 		driver.findElement(ScreenName).clear();
 		driver.findElement(ScreenName).sendKeys(screenName);

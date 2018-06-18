@@ -21,6 +21,7 @@ public class ForgotpasswordForm extends DriverClass {
 		driver.findElement(EmailForgotPassword).sendKeys(value);
 	}
 
+	//get Email validation Error 
 	public String getEmailIdValidationError() {
 		// WebElement errormessage =
 		// driver.findElement(EmptyEmailValidationError);

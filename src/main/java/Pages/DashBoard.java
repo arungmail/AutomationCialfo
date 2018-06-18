@@ -37,12 +37,15 @@ public class DashBoard extends DriverClass {
 	public void clickOnMeets (){
 		driver.findElement(Meets).click();
 	}
+	
+	//Click on Swimmer reports
 	public void clickOnSwimmerSReports () throws InterruptedException{
 		driver.findElement(Reports).click();
 		Thread.sleep(5000);
 		driver.findElement(Swimmersreport).click();
 	}
 	
+	//Click on coach report
 	public void clickOnCoachReports () throws InterruptedException{
 		driver.findElement(Reports).click();
 		Thread.sleep(5000);
@@ -75,6 +78,7 @@ public class DashBoard extends DriverClass {
 		Thread.sleep(500);
 	}
 
+	//Get profile name on top right side 
 	public String getProfilenameOnTopRightSide() {
 		//String profilename = driver.findElement(profilenameInTopRightSide).getText();
 		WebElement element = driver.findElement(profilenameInTopRightSide);
@@ -83,6 +87,7 @@ public class DashBoard extends DriverClass {
 		return profilename;
 	}
 
+	//Get profile name on Secondary menu 
 	public String getProfilenameOnSecondarymenu() {
 		WebElement element = driver.findElement(ProfileNameinSecondarymenu);
 		String profilename = element.getAttribute("title");
@@ -91,6 +96,7 @@ public class DashBoard extends DriverClass {
 
 	}
 
+	//Check profile name 
 	public boolean profileNameIsVisibleOrNot() {
 		boolean profilename = driver.findElement(profilenameInTopRightSide).isDisplayed();
 		return true;
@@ -108,6 +114,8 @@ public class DashBoard extends DriverClass {
 	public void clickOnSwimmers() {
 		driver.findElement(Swimmers).click();
 	}
+	
+	//Select location 
 	public void selectLocation(String location) throws InterruptedException
 	{
 		
@@ -131,6 +139,7 @@ public class DashBoard extends DriverClass {
 		}
 	}
 	
+	//Select user from quick message 
 	public void selectUserFromQuickMessage (String name,String name1){
 		driver.findElement(By.xpath("//input[@class='select2-search__field']")).click();
 		List <WebElement> Alllist = driver.findElements(By.xpath("//span[@class='select2-results']"));

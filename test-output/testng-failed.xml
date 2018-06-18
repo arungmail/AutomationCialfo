@@ -6,23 +6,41 @@
       <class name="BasePackage.BaseClass">
         <methods>
           <include name="launchAUTApplication"/>
-          <include name="cleanUp"/>
         </methods>
       </class> <!-- BasePackage.BaseClass -->
-<<<<<<< HEAD
-      <class name="TestCialfoNew.ProfileEditTest">
-        <methods>
-          <include name="verifyFirstNamevalidationError"/>
-          <include name="enterValuesInPersonalInfoAndCheckSucessMessage"/>
-        </methods>
-      </class> <!-- TestCialfoNew.ProfileEditTest -->
-=======
       <class name="TestCialfoNew.MessageTest">
         <methods>
+          <include name="verifyQuickMessageSubjectVallidationInSwimmerAccount"/>
+          <include name="verifySubjectValidationInSwimmerAccount"/>
+          <include name="verifyAllCachesGroupsInSwimmerAccount"/>
+          <include name="verifyUsresValidationInSwimmerAccount"/>
+          <include name="sendMessageToSwimmerandCoach"/>
+          <include name="sendMessageFromQuickMessageToSwimmerandCoach"/>
+          <include name="sendMessageToCoachandSwimmer"/>
+          <include name="verifyMessageInInboxPage"/>
+          <include name="verifyQuickMessageSubjectVallidation"/>
+          <include name="verifyGroupMessageInSwimmerAccount"/>
+          <include name="verifyQuickMessagesInSwimmerAccount"/>
+          <include name="verifyEmbptyvalidationInSwimmerAccount"/>
+          <include name="sendMessageFromQuickMessageToSwimmerandCoachfromSwimmerAccount"/>
+          <include name="sendMessageFromQuickMessageToGroupsFromSwimmerAccount"/>
+          <include name="verifyUsresValidation"/>
+          <include name="quickMessageEmptyValidationInSwimmerAccount"/>
+          <include name="verifySubjectValidation"/>
+          <include name="sendMessageFromQuickMessageToGroups"/>
+          <include name="verifyQuickMessagesInSwimmerAccount1"/>
+          <include name="verifyQuickMessageUsersValidation"/>
+          <include name="verifyoneToOneMessageinSwimmerAccount"/>
+          <include name="verifyAllMembersGroupInMessage"/>
+          <include name="verifyAllMembersGroupInSwimmerAccount"/>
+          <include name="verifyQuickMessageUsersValidationInSwimmerAccount"/>
+          <include name="sendMessageToAllGroupFromSwimmerAccount"/>
+          <include name="quickMessageEmptyValidation"/>
           <include name="sendMeesageToAllCoachesGourpabdAllMembersGroup"/>
+          <include name="verifyAllCachesGroupsinMessage"/>
+          <include name="verifyEmbptyvalidation"/>
         </methods>
       </class> <!-- TestCialfoNew.MessageTest -->
->>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
     </classes>
   </test> <!-- CialfoNewversion(failed) -->
 </suite> <!-- Failed suite [RegressionSutie] -->

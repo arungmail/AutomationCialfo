@@ -129,7 +129,7 @@ public class Meets extends DriverClass{
 	
 	}
 	
-	//
+	//Get swimmers status
 	public boolean getSwimmerStatus (String value) throws InterruptedException{
 		swimmers.search(value);
 		WebElement table = driver.findElement(By.xpath("//id[@id='swimmertable']"));
@@ -154,7 +154,7 @@ public class Meets extends DriverClass{
 	}	
 	
 	
-
+    //Edit and Delete 
 	public void editAndDelete (String swimmerName, String ediDeletevalue) throws InterruptedException{
 		swimmers.search(swimmerName);
 		WebElement table = driver.findElement(SwimmerTable);
@@ -181,6 +181,7 @@ public class Meets extends DriverClass{
 		}
 	}
 	
+	//Get meet status
 	public boolean getMeetStatus (String meetsName){
 		swimmers.search(meetsName);
 		WebElement meetsTable = driver.findElement(MeetsTable);
@@ -205,6 +206,7 @@ public class Meets extends DriverClass{
 
 	}		
 	
+	//Get date from calendar 
 	public void selectDateFromCalendar (String date){
 		WebElement table = driver.findElement(CalenderTable);
 		List <WebElement> row = driver.findElements(By.tagName("tr"));

@@ -55,19 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>CialfoNewversion</h2><table border='1' align="center">
 <tr>
-<<<<<<< HEAD
-<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/29</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Dec 05 20:10:47 IST 2017</td>
+<td>Started on:</td><td>Mon Jan 08 17:44:59 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>39 seconds (39917 ms)</td>
-=======
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
-</tr><tr>
-<td>Started on:</td><td>Sat Dec 09 12:06:51 IST 2017</td>
-</tr>
-<tr><td>Total time:</td><td>28 seconds (28313 ms)</td>
->>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
+<tr><td>Total time:</td><td>0 seconds (86 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,47 +67,61 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<<<<<<< HEAD
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-=======
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
->>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
-<<<<<<< HEAD
 <tr>
-<td title='TestCialfoNew.ProfileEditTest.enterValuesInPersonalInfoAndCheckSucessMessage()'><b>enterValuesInPersonalInfoAndCheckSucessMessage</b><br>Test class: TestCialfoNew.ProfileEditTest</td>
-<td><div><pre>java.lang.AssertionError: expected [Samsung SwimClub] but found [Samsung SwimCl...]
-	at TestCialfoNew.ProfileEditTest.enterValuesInPersonalInfoAndCheckSucessMessage(ProfileEditTest.java:47)
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1208203046", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1208203046'><pre>java.lang.AssertionError: expected [Samsung SwimClub] but found [Samsung SwimCl...]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at TestCialfoNew.ProfileEditTest.enterValuesInPersonalInfoAndCheckSucessMessage(ProfileEditTest.java:47)
+<td title='BasePackage.BaseClass.launchAUTApplication()'><b>launchAUTApplication</b><br>Test class: BasePackage.BaseClass</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from unknown error: missing or invalid &apos;entry.level&apos;
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 4.66 seconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC093&apos;, ip: &apos;192.168.1.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir5516_4569}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=63.0.3239.132, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: b824e86ab35f4663c790385d9970697b
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
+	at BasePackage.DriverClass.launchBrowser(DriverClass.java:47)
+	at BasePackage.BaseClass.launchAUTApplication(BaseClass.java:39)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1973233403", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1973233403'><pre>org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from unknown error: missing or invalid &apos;entry.level&apos;
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 4.66 seconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;NIS-PC093&apos;, ip: &apos;192.168.1.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir5516_4569}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=63.0.3239.132, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: b824e86ab35f4663c790385d9970697b
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
+	at BasePackage.DriverClass.launchBrowser(DriverClass.java:47)
+	at BasePackage.BaseClass.launchAUTApplication(BaseClass.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:746)
-	at org.testng.TestRunner.run(TestRunner.java:600)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:216)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:143)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
@@ -127,52 +133,161 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
 </pre></div></td>
-<td>9</td>
-<td>TestCialfoNew.ProfileEditTest@204f30ec</td></tr>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='TestCialfoNew.ProfileEditTest.verifyFirstNamevalidationError()'><b>verifyFirstNamevalidationError</b><br>Test class: TestCialfoNew.ProfileEditTest</td>
-<td><div><pre>java.lang.NullPointerException
-	at Pages.ProfilePage.checkFirstNameValidationError(ProfilePage.java:98)
-	at TestCialfoNew.ProfileEditTest.verifyFirstNamevalidationError(ProfileEditTest.java:123)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1704237553", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1704237553'><pre>java.lang.NullPointerException
-	at Pages.ProfilePage.checkFirstNameValidationError(ProfilePage.java:98)
-	at TestCialfoNew.ProfileEditTest.verifyFirstNamevalidationError(ProfileEditTest.java:123)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:746)
-	at org.testng.TestRunner.run(TestRunner.java:600)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
-	at org.testng.TestNG.runSuites(TestNG.java:1104)
-	at org.testng.TestNG.run(TestNG.java:1076)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-</pre></div></td>
-<td>30</td>
-<td>TestCialfoNew.ProfileEditTest@204f30ec</td></tr>
-=======
+<td title='TestCialfoNew.MessageTest.quickMessageEmptyValidation()'><b>quickMessageEmptyValidation</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.quickMessageEmptyValidationInSwimmerAccount()'><b>quickMessageEmptyValidationInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
 <tr>
 <td title='TestCialfoNew.MessageTest.sendMeesageToAllCoachesGourpabdAllMembersGroup()'><b>sendMeesageToAllCoachesGourpabdAllMembersGroup</b><br>Test class: TestCialfoNew.MessageTest</td>
 <td></td>
-<td>28</td>
-<td>TestCialfoNew.MessageTest@6eebc39e</td></tr>
->>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.sendMessageFromQuickMessageToGroups()'><b>sendMessageFromQuickMessageToGroups</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.sendMessageFromQuickMessageToGroupsFromSwimmerAccount()'><b>sendMessageFromQuickMessageToGroupsFromSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.sendMessageFromQuickMessageToSwimmerandCoach()'><b>sendMessageFromQuickMessageToSwimmerandCoach</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.sendMessageFromQuickMessageToSwimmerandCoachfromSwimmerAccount()'><b>sendMessageFromQuickMessageToSwimmerandCoachfromSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.sendMessageToAllGroupFromSwimmerAccount()'><b>sendMessageToAllGroupFromSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.sendMessageToCoachandSwimmer()'><b>sendMessageToCoachandSwimmer</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.sendMessageToSwimmerandCoach()'><b>sendMessageToSwimmerandCoach</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyAllCachesGroupsInSwimmerAccount()'><b>verifyAllCachesGroupsInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyAllCachesGroupsinMessage()'><b>verifyAllCachesGroupsinMessage</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyAllMembersGroupInMessage()'><b>verifyAllMembersGroupInMessage</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyAllMembersGroupInSwimmerAccount()'><b>verifyAllMembersGroupInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyEmbptyvalidation()'><b>verifyEmbptyvalidation</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyEmbptyvalidationInSwimmerAccount()'><b>verifyEmbptyvalidationInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyGroupMessageInSwimmerAccount()'><b>verifyGroupMessageInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyMessageInInboxPage()'><b>verifyMessageInInboxPage</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyQuickMessageSubjectVallidation()'><b>verifyQuickMessageSubjectVallidation</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyQuickMessageSubjectVallidationInSwimmerAccount()'><b>verifyQuickMessageSubjectVallidationInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyQuickMessageUsersValidation()'><b>verifyQuickMessageUsersValidation</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyQuickMessageUsersValidationInSwimmerAccount()'><b>verifyQuickMessageUsersValidationInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyQuickMessagesInSwimmerAccount()'><b>verifyQuickMessagesInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyQuickMessagesInSwimmerAccount1()'><b>verifyQuickMessagesInSwimmerAccount1</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifySubjectValidation()'><b>verifySubjectValidation</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifySubjectValidationInSwimmerAccount()'><b>verifySubjectValidationInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyUsresValidation()'><b>verifyUsresValidation</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyUsresValidationInSwimmerAccount()'><b>verifyUsresValidationInSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
+<tr>
+<td title='TestCialfoNew.MessageTest.verifyoneToOneMessageinSwimmerAccount()'><b>verifyoneToOneMessageinSwimmerAccount</b><br>Test class: TestCialfoNew.MessageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCialfoNew.MessageTest@e25b2fe</td></tr>
 </table><p>
 </body>
 </html>

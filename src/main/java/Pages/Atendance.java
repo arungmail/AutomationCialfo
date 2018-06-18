@@ -21,6 +21,7 @@ public class Atendance extends DriverClass{
 	
 	public boolean batchStatus = false;
 	
+	//Select batch from list
 	public void selectBatchFromBatchList (String batchName){
 		driver.findElement(BatchSelection).click();
 		driver.findElement(SearchBatch).clear();
@@ -35,6 +36,8 @@ public class Atendance extends DriverClass{
 			}
 		}
 	}
+	
+	//Select Batch is displayed or Not
 	public boolean batchIsDisplayedOrNot(String batchName){
 		driver.findElement(BatchSelection).click();
 		driver.findElement(SearchBatch).clear();
@@ -51,10 +54,13 @@ public class Atendance extends DriverClass{
 		}
 		return batchStatus;
 	}
+	
+	//Get month details 
 	public String getMontheDetails (){
 		String monthdetails = driver.findElement(MonthDetails).getText();
 		return monthdetails;
 	}
+	//Click on Generate Attendance 
 	public void clickOngenerateAttendance(){
 		driver.findElement(Genarate).click();
 	}

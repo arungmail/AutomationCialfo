@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results skipped="0" failed="2" total="2" passed="0">
+<testng-results skipped="29" failed="0" total="29" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="RegressionSutie" duration-ms="39917" started-at="2017-12-05T14:40:47Z" finished-at="2017-12-05T14:41:27Z">
+  <suite name="RegressionSutie" duration-ms="86" started-at="2018-01-08T12:14:59Z" finished-at="2018-01-08T12:14:59Z">
     <groups>
     </groups>
-    <test name="CialfoNewversion" duration-ms="39917" started-at="2017-12-05T14:40:47Z" finished-at="2017-12-05T14:41:27Z">
+    <test name="CialfoNewversion" duration-ms="86" started-at="2018-01-08T12:14:59Z" finished-at="2018-01-08T12:14:59Z">
       <class name="BasePackage.BaseClass">
-        <test-method status="PASS" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@77cd7a0]" name="launchAUTApplication" is-config="true" duration-ms="18983" started-at="2017-12-05T20:10:28Z" finished-at="2017-12-05T20:10:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchAUTApplication -->
-        <test-method status="FAIL" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@77cd7a0]" name="cleanUp" is-config="true" duration-ms="0" started-at="2017-12-05T20:11:28Z" finished-at="2017-12-05T20:11:28Z">
+        <test-method status="FAIL" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@204f30ec]" name="launchAUTApplication" is-config="true" duration-ms="0" started-at="2018-01-08T17:44:49Z" finished-at="2018-01-08T17:44:49Z">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[chrome not reachable
-  (Session info: chrome=62.0.3202.94)
+              <![CDATA[unknown error: cannot determine loading status
+from unknown error: missing or invalid 'entry.level'
+  (Session info: chrome=63.0.3239.132)
   (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 2.02 seconds
+Command duration or timeout: 4.66 seconds
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
 System info: host: 'NIS-PC093', ip: '192.168.1.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir12212_17424}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=62.0.3202.94, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: fc5013dec4e99281e4b83fb3dbd49e86]]>
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir5516_4569}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=63.0.3239.132, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: b824e86ab35f4663c790385d9970697b]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=62.0.3202.94)
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from unknown error: missing or invalid 'entry.level'
+  (Session info: chrome=63.0.3239.132)
   (Driver info: chromedriver=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 2.02 seconds
+Command duration or timeout: 4.66 seconds
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
 System info: host: 'NIS-PC093', ip: '192.168.1.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir12212_17424}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=62.0.3202.94, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: fc5013dec4e99281e4b83fb3dbd49e86
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9), userDataDir=C:\Users\NICHIU~1\AppData\Local\Temp\scoped_dir5516_4569}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=63.0.3239.132, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: b824e86ab35f4663c790385d9970697b
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -42,9 +39,9 @@ Session ID: fc5013dec4e99281e4b83fb3dbd49e86
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)
-	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:521)
-	at BasePackage.BaseClass.cleanUp(BaseClass.java:47)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
+	at BasePackage.DriverClass.launchBrowser(DriverClass.java:47)
+	at BasePackage.BaseClass.launchAUTApplication(BaseClass.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -53,7 +50,7 @@ Session ID: fc5013dec4e99281e4b83fb3dbd49e86
 	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:216)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:143)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:336)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
@@ -67,118 +64,132 @@ Session ID: fc5013dec4e99281e4b83fb3dbd49e86
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.WebDriverException -->
-=======
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
-  <reporter-output>
-  </reporter-output>
-  <suite name="RegressionSutie" duration-ms="28313" started-at="2017-12-09T06:36:51Z" finished-at="2017-12-09T06:37:19Z">
-    <groups>
-    </groups>
-    <test name="CialfoNewversion" duration-ms="28313" started-at="2017-12-09T06:36:51Z" finished-at="2017-12-09T06:37:19Z">
-      <class name="BasePackage.BaseClass">
-        <test-method status="PASS" signature="launchAUTApplication()[pri:0, instance:BasePackage.BaseClass@4dfa3a9d]" name="launchAUTApplication" is-config="true" duration-ms="15010" started-at="2017-12-09T12:06:36Z" finished-at="2017-12-09T12:06:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchAUTApplication -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@4dfa3a9d]" name="cleanUp" is-config="true" duration-ms="111" started-at="2017-12-09T12:07:19Z" finished-at="2017-12-09T12:07:19Z">
->>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
+        <test-method status="SKIP" signature="cleanUp()[pri:0, instance:BasePackage.BaseClass@204f30ec]" name="cleanUp" is-config="true" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- BasePackage.BaseClass -->
-<<<<<<< HEAD
-      <class name="TestCialfoNew.ProfileEditTest">
-        <test-method status="FAIL" signature="enterValuesInPersonalInfoAndCheckSucessMessage()[pri:1, instance:TestCialfoNew.ProfileEditTest@204f30ec]" name="enterValuesInPersonalInfoAndCheckSucessMessage" duration-ms="9872" started-at="2017-12-05T20:10:47Z" finished-at="2017-12-05T20:10:57Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Samsung SwimClub] but found [Samsung SwimCl...]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Samsung SwimClub] but found [Samsung SwimCl...]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at TestCialfoNew.ProfileEditTest.enterValuesInPersonalInfoAndCheckSucessMessage(ProfileEditTest.java:47)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:746)
-	at org.testng.TestRunner.run(TestRunner.java:600)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
-	at org.testng.TestNG.runSuites(TestNG.java:1104)
-	at org.testng.TestNG.run(TestNG.java:1076)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- enterValuesInPersonalInfoAndCheckSucessMessage -->
-        <test-method status="FAIL" signature="verifyFirstNamevalidationError()[pri:12, instance:TestCialfoNew.ProfileEditTest@204f30ec]" name="verifyFirstNamevalidationError" duration-ms="30019" started-at="2017-12-05T20:10:57Z" finished-at="2017-12-05T20:11:27Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at Pages.ProfilePage.checkFirstNameValidationError(ProfilePage.java:98)
-	at TestCialfoNew.ProfileEditTest.verifyFirstNamevalidationError(ProfileEditTest.java:123)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:746)
-	at org.testng.TestRunner.run(TestRunner.java:600)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
-	at org.testng.TestNG.runSuites(TestNG.java:1104)
-	at org.testng.TestNG.run(TestNG.java:1076)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyFirstNamevalidationError -->
-      </class> <!-- TestCialfoNew.ProfileEditTest -->
-=======
       <class name="TestCialfoNew.MessageTest">
-        <test-method status="PASS" signature="sendMeesageToAllCoachesGourpabdAllMembersGroup()[pri:0, instance:TestCialfoNew.MessageTest@6eebc39e]" name="sendMeesageToAllCoachesGourpabdAllMembersGroup" duration-ms="28292" started-at="2017-12-09T12:06:51Z" finished-at="2017-12-09T12:07:19Z">
+        <test-method status="SKIP" signature="verifyAllCachesGroupsinMessage()[pri:2, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyAllCachesGroupsinMessage" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllCachesGroupsinMessage -->
+        <test-method status="SKIP" signature="verifyAllMembersGroupInMessage()[pri:4, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyAllMembersGroupInMessage" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllMembersGroupInMessage -->
+        <test-method status="SKIP" signature="sendMeesageToAllCoachesGourpabdAllMembersGroup()[pri:6, instance:TestCialfoNew.MessageTest@e25b2fe]" name="sendMeesageToAllCoachesGourpabdAllMembersGroup" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sendMeesageToAllCoachesGourpabdAllMembersGroup -->
+        <test-method status="SKIP" signature="verifyMessageInInboxPage()[pri:8, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyMessageInInboxPage" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMessageInInboxPage -->
+        <test-method status="SKIP" signature="verifyEmbptyvalidation()[pri:10, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyEmbptyvalidation" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmbptyvalidation -->
+        <test-method status="SKIP" signature="verifyUsresValidation()[pri:12, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyUsresValidation" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUsresValidation -->
+        <test-method status="SKIP" signature="verifySubjectValidation()[pri:14, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifySubjectValidation" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubjectValidation -->
+        <test-method status="SKIP" signature="sendMessageToCoachandSwimmer()[pri:16, instance:TestCialfoNew.MessageTest@e25b2fe]" name="sendMessageToCoachandSwimmer" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMessageToCoachandSwimmer -->
+        <test-method status="SKIP" signature="sendMessageFromQuickMessageToGroups()[pri:18, instance:TestCialfoNew.MessageTest@e25b2fe]" name="sendMessageFromQuickMessageToGroups" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMessageFromQuickMessageToGroups -->
+        <test-method status="SKIP" signature="sendMessageFromQuickMessageToSwimmerandCoach()[pri:20, instance:TestCialfoNew.MessageTest@e25b2fe]" name="sendMessageFromQuickMessageToSwimmerandCoach" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMessageFromQuickMessageToSwimmerandCoach -->
+        <test-method status="SKIP" signature="quickMessageEmptyValidation()[pri:22, instance:TestCialfoNew.MessageTest@e25b2fe]" name="quickMessageEmptyValidation" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quickMessageEmptyValidation -->
+        <test-method status="SKIP" signature="verifyQuickMessageUsersValidation()[pri:24, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyQuickMessageUsersValidation" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuickMessageUsersValidation -->
+        <test-method status="SKIP" signature="verifyQuickMessageSubjectVallidation()[pri:26, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyQuickMessageSubjectVallidation" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuickMessageSubjectVallidation -->
+        <test-method status="SKIP" signature="verifyGroupMessageInSwimmerAccount()[pri:28, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyGroupMessageInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGroupMessageInSwimmerAccount -->
+        <test-method status="SKIP" signature="verifyoneToOneMessageinSwimmerAccount()[pri:30, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyoneToOneMessageinSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyoneToOneMessageinSwimmerAccount -->
+        <test-method status="SKIP" signature="verifyQuickMessagesInSwimmerAccount()[pri:32, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyQuickMessagesInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuickMessagesInSwimmerAccount -->
+        <test-method status="SKIP" signature="verifyQuickMessagesInSwimmerAccount1()[pri:34, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyQuickMessagesInSwimmerAccount1" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuickMessagesInSwimmerAccount1 -->
+        <test-method status="SKIP" signature="verifyAllCachesGroupsInSwimmerAccount()[pri:36, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyAllCachesGroupsInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllCachesGroupsInSwimmerAccount -->
+        <test-method status="SKIP" signature="verifyAllMembersGroupInSwimmerAccount()[pri:38, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyAllMembersGroupInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllMembersGroupInSwimmerAccount -->
+        <test-method status="SKIP" signature="sendMessageToAllGroupFromSwimmerAccount()[pri:40, instance:TestCialfoNew.MessageTest@e25b2fe]" name="sendMessageToAllGroupFromSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMessageToAllGroupFromSwimmerAccount -->
+        <test-method status="SKIP" signature="sendMessageToSwimmerandCoach()[pri:42, instance:TestCialfoNew.MessageTest@e25b2fe]" name="sendMessageToSwimmerandCoach" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMessageToSwimmerandCoach -->
+        <test-method status="SKIP" signature="verifyEmbptyvalidationInSwimmerAccount()[pri:46, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyEmbptyvalidationInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmbptyvalidationInSwimmerAccount -->
+        <test-method status="SKIP" signature="verifyUsresValidationInSwimmerAccount()[pri:48, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyUsresValidationInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUsresValidationInSwimmerAccount -->
+        <test-method status="SKIP" signature="verifySubjectValidationInSwimmerAccount()[pri:50, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifySubjectValidationInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubjectValidationInSwimmerAccount -->
+        <test-method status="SKIP" signature="sendMessageFromQuickMessageToGroupsFromSwimmerAccount()[pri:52, instance:TestCialfoNew.MessageTest@e25b2fe]" name="sendMessageFromQuickMessageToGroupsFromSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMessageFromQuickMessageToGroupsFromSwimmerAccount -->
+        <test-method status="SKIP" signature="sendMessageFromQuickMessageToSwimmerandCoachfromSwimmerAccount()[pri:54, instance:TestCialfoNew.MessageTest@e25b2fe]" name="sendMessageFromQuickMessageToSwimmerandCoachfromSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMessageFromQuickMessageToSwimmerandCoachfromSwimmerAccount -->
+        <test-method status="SKIP" signature="quickMessageEmptyValidationInSwimmerAccount()[pri:56, instance:TestCialfoNew.MessageTest@e25b2fe]" name="quickMessageEmptyValidationInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quickMessageEmptyValidationInSwimmerAccount -->
+        <test-method status="SKIP" signature="verifyQuickMessageUsersValidationInSwimmerAccount()[pri:58, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyQuickMessageUsersValidationInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuickMessageUsersValidationInSwimmerAccount -->
+        <test-method status="SKIP" signature="verifyQuickMessageSubjectVallidationInSwimmerAccount()[pri:60, instance:TestCialfoNew.MessageTest@e25b2fe]" name="verifyQuickMessageSubjectVallidationInSwimmerAccount" duration-ms="0" started-at="2018-01-08T17:44:59Z" finished-at="2018-01-08T17:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuickMessageSubjectVallidationInSwimmerAccount -->
       </class> <!-- TestCialfoNew.MessageTest -->
->>>>>>> 71481dab766ce5caf1222292e9e01e10ce0325b2
     </test> <!-- CialfoNewversion -->
   </suite> <!-- RegressionSutie -->
 </testng-results>

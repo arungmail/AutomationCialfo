@@ -18,6 +18,8 @@ public class PendingUsers extends DriverClass{
 	public boolean swimmerstatus ;
 	public String swimmernames;
 	
+	
+	//Approve or reject 
 	public void approveOrRejectSwimmerSBasedOnName(String name,String action) {
 		WebElement table = driver.findElement(SwimmersTable);
 		List <WebElement> row = table.findElements(Row);
@@ -75,6 +77,8 @@ public class PendingUsers extends DriverClass{
 			
 		}*/
 //	}
+	
+	//Get swimmer from table
 	public String getSwimmersFromTable(String name){
 		WebElement table = driver.findElement(SwimmersTable);
 		List <WebElement> row = table.findElements(Row);
@@ -100,6 +104,7 @@ public class PendingUsers extends DriverClass{
 		return name;
 		
 	}
+	
 	
 	public boolean usersIsListedOrNot(String name)
 	{
@@ -130,10 +135,7 @@ public class PendingUsers extends DriverClass{
 
 	}
 }
-	/*	
-		boolean swimmerstustus = false;
-		return swimmerstustus;*/
-
+	
 	
 
 		

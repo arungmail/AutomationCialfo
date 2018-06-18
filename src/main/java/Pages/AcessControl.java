@@ -13,7 +13,7 @@ public class AcessControl extends DriverClass{
 	public By CoachTable = By.id("example");
 	
 	
-	
+	//Click on action based on coach
 	public void clickOnActionBasedOnCoachName (String coachName) throws InterruptedException{
 		driver.findElement(Search).sendKeys("adaa");
 		Thread.sleep(500);

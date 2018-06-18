@@ -33,7 +33,7 @@ public class Groups extends DriverClass{
 	public boolean membersStatus;
 	public String memberCount;
 	
-	
+	//Select swimmers on Add group
 	public void selectSwimmersonAddGroup (String name){
 		driver.findElement(SwimmerSearchFied).sendKeys(name);
 		WebElement result = driver.findElement(SwimmerList);
@@ -48,6 +48,7 @@ public class Groups extends DriverClass{
 		
 	}
 	
+	//Search Group
 	public void searchGroup (String searchKey){
 		driver.findElement(Search).click();
 		driver.findElement(Search).clear();
@@ -137,6 +138,7 @@ public class Groups extends DriverClass{
 		
 		
 	}
+	//Get status of members 
 	public boolean statusOfMembersFromContactList(String groupName, String memberName) throws InterruptedException {
 		searchGroup(groupName);
 		String name = driver.findElement(GroupNames).getText();

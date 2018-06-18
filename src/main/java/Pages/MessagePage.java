@@ -37,6 +37,7 @@ public class MessagePage extends DriverClass {
 		driver.findElement(InBox).click();
 	}
 	
+	//Get user status
 	public boolean userStatus (String user) throws InterruptedException{
 		driver.findElement(To).clear();
 		driver.findElement(To).click();
@@ -55,7 +56,9 @@ public class MessagePage extends DriverClass {
 		return status;
 
 	}
-		
+	
+	
+	//Select User
 	public void selectUserFromList(String user) throws InterruptedException {
 		//driver.findElement(To).clear();
 		driver.findElement(To).click();
